@@ -1,0 +1,42 @@
+{
+    "schema_version": {
+        "major": "1",
+        "minor": "0",
+        "patch": "0"
+    },
+    "design_state": "Routed",
+    "user_budget": {
+        "actual_resources": {
+            "LUT": "3696",
+            "LUTAsMem": "331",
+            "REG": "6340",
+            "BRAM": "7",
+            "DSP": "64"
+        },
+        "supply_resources": {
+            "LUT": "215066",
+            "LUTAsMem": "69960",
+            "REG": "433172",
+            "BRAM": "541",
+            "DSP": "900"
+        }
+    },
+    "kernels": [
+        {
+            "name": "matmul",
+            "compute_unit_count": "1",
+            "compute_units": [
+                {
+                    "cu_name": "matmul_1",
+                    "actual_resources": {
+                        "LUT": "3696",
+                        "LUTAsMem": "331",
+                        "REG": "6340",
+                        "BRAM": "7",
+                        "DSP": "64"
+                    }
+                }
+            ]
+        }
+    ]
+}

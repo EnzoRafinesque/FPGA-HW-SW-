@@ -1,0 +1,18 @@
+{
+    "kernelContainerValues": [
+        "matmul:xo"
+    ],
+    "compile": "false",
+    "debug": "false",
+    "exportScript": "false",
+    "gccHostCompile": "false",
+    "generateEstimateRpt": "false",
+    "keepSolution": "false",
+    "link": "false",
+    "logDir": "\/home\/mdu\/Desktop\/first_proj\/xilinx_zc706_base\/vitis\/matmul_system_hw_link\/Hardware\/binary_container_1.build\/logs\/link",
+    "package": "false",
+    "reportDir": "\/home\/mdu\/Desktop\/first_proj\/xilinx_zc706_base\/vitis\/matmul_system_hw_link\/Hardware\/binary_container_1.build\/reports\/link",
+    "saveTemps": "false",
+    "verbose": "false",
+    "vplNoIpCache": "false"
+}

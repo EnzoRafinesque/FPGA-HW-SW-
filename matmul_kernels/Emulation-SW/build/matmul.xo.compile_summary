@@ -1,0 +1,168 @@
+<ENTRY>
+{
+ "thisFile": "/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/Emulation-SW/build/matmul.xo.compile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu Jun 16 14:56:14 2022",
+ "timestampMillis": "1655384174809",
+ "buildStep": {
+  "cmdId": "38dcb7d8-93ab-41c9-8b10-2f690f8dc845",
+  "name": "v++",
+  "logFile": "/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/Emulation-SW/build/matmul/matmul.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2021.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --target sw_emu --compile -I../src --config matmul-compile.cfg -obuild/matmul.xo ../src/krnl_matrixmul.cpp ",
+  "args": [
+   "--target",
+   "sw_emu",
+   "--compile",
+   "-I../src",
+   "--config",
+   "matmul-compile.cfg",
+   "-obuild/matmul.xo",
+   "../src/krnl_matrixmul.cpp"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/Emulation-SW/matmul-compile.cfg",
+    "content": "platform=/home/mdu/Desktop/first_proj/xilinx_zc706_base/platform_repo/xilinx_zc706_base_202120_1/export/xilinx_zc706_base_202120_1/xilinx_zc706_base_202120_1.xpfm\nsave-temps=1\nkernel=matmul\ndebug=1\nmessageDb=build/matmul.mdb\ntemp_dir=build\nreport_dir=build/reports\nlog_dir=build/logs\n\n[advanced]\nmisc=solution_name=matmul\n\n[hls]\nmemory_port_data_width=matmul:32"
+   }
+  ],
+  "cwd": "/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/Emulation-SW"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jun 16 14:56:14 2022",
+ "timestampMillis": "1655384174810",
+ "status": {
+  "cmdId": "38dcb7d8-93ab-41c9-8b10-2f690f8dc845",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Thu Jun 16 14:56:16 2022",
+ "timestampMillis": "1655384176678",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_zc706_base_202120_1.xpfm",
+  "hardwareDsa": "hw.xsa",
+  "platformDirectory": "/home/mdu/Desktop/first_proj/xilinx_zc706_base/platform_repo/xilinx_zc706_base_202120_1/export/xilinx_zc706_base_202120_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_COMPILE",
+  "target": "TT_SW_EMU",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "matmul",
+     "file": "/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/Emulation-SW/build/matmul.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/src/krnl_matrixmul.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2021.2. SW Build 3363252 on 2021-10-14-04:41:01"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Jun 16 14:56:16 2022",
+ "timestampMillis": "1655384176683",
+ "buildStep": {
+  "cmdId": "e1b9b3bc-f9c7-4216-b9c1-4442fb682012",
+  "name": "vitis_hls",
+  "logFile": "/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/Emulation-SW/build/matmul/matmul/vitis_hls.log",
+  "commandLine": "vitis_hls -f /home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/Emulation-SW/build/matmul/matmul/matmul.tcl -messageDb vitis_hls.pb",
+  "args": [
+   "vitis_hls",
+   "-f",
+   "/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/Emulation-SW/build/matmul/matmul/matmul.tcl",
+   "-messageDb",
+   "vitis_hls.pb"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/Emulation-SW"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jun 16 14:56:16 2022",
+ "timestampMillis": "1655384176683",
+ "status": {
+  "cmdId": "e1b9b3bc-f9c7-4216-b9c1-4442fb682012",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jun 16 14:56:32 2022",
+ "timestampMillis": "1655384192929",
+ "status": {
+  "cmdId": "e1b9b3bc-f9c7-4216-b9c1-4442fb682012",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun 16 14:56:32 2022",
+ "timestampMillis": "1655384192941",
+ "report": {
+  "path": "/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/Emulation-SW/guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun 16 14:56:32 2022",
+ "timestampMillis": "1655384192942",
+ "report": {
+  "path": "/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/Emulation-SW/guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jun 16 14:56:32 2022",
+ "timestampMillis": "1655384192943",
+ "status": {
+  "cmdId": "38dcb7d8-93ab-41c9-8b10-2f690f8dc845",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

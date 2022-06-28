@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="xilinx_zc706_base_matmul_1_0_synth_1" LaunchDir="/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_system_hw_link/Hardware/binary_container_1.build/link/vivado/vpl/prj/prj.runs/xilinx_zc706_base_matmul_1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_system_hw_link/Hardware/binary_container_1.build/link/vivado/vpl/prj/prj.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="xilinx_zc706_base_matmul_1_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

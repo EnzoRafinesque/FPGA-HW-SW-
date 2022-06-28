@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Project Version="1" Minor="7" DIGEST="">
+	<TOOL_VERSION Version="2021.2"/>
+	<MODE Name="Pre-Synthesis"/>
+	<SYSTEMINFO BOARD="xilinx.com:zc706:1.4" PART="xc7z045ffg900-2" ARCH="zynq" PACKAGE="ffg900" DEVICE="7z045" SPEED="-2"/>
+	<HIERARCHY Name="xilinx_zc706_base_wrapper"/>
+	<File Type="HW_HANDOFF" Name="xilinx_zc706_base.hwh" src_db="xilinx_zc706_base.hwdef" DESIGN_HIERARCHY="xilinx_zc706_base_i" BD_TYPE="DEFAULT_BD">
+	</File>
+	<File Type="BDA" Name="xilinx_zc706_base.bda" src_db="xilinx_zc706_base.hwdef">
+	</File>
+	<File Type="PS_FSBL_INIT" Name="ps7_init.c" src_db="xilinx_zc706_base_ps7_0.hwdef">
+	</File>
+	<File Type="PS_FSBL_INIT" Name="ps7_init.h" src_db="xilinx_zc706_base_ps7_0.hwdef">
+	</File>
+	<File Type="PS_FSBL_INIT_GPL" Name="ps7_init_gpl.c" src_db="xilinx_zc706_base_ps7_0.hwdef">
+	</File>
+	<File Type="PS_FSBL_INIT_GPL" Name="ps7_init_gpl.h" src_db="xilinx_zc706_base_ps7_0.hwdef">
+	</File>
+	<File Type="PS_INIT_HELP" Name="ps7_init.html" src_db="xilinx_zc706_base_ps7_0.hwdef">
+	</File>
+	<File Type="PS_XMD_INIT" Name="ps7_init.tcl" src_db="xilinx_zc706_base_ps7_0.hwdef">
+	</File>
+	<USEDRESOURCES/>
+</Project>
+

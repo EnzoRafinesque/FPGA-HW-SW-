@@ -1,0 +1,299 @@
+
+
+================================================================
+== Synthesis Summary Report of 'matmul'
+================================================================
++ General Information: 
+    * Date:           Fri Jun 24 10:49:49 2022
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+    * Project:        matmul
+    * Solution:       solution (Vitis Kernel Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z045-ffg900-2
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+---------+------------+-----------+-----+
+    |               Modules              |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |         |         |            |           |     |
+    |               & Loops              |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |   DSP   |     FF     |    LUT    | URAM|
+    +------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+---------+------------+-----------+-----+
+    |+ matmul                            |  Timing|  -0.00|   262299|  2.623e+06|         -|   262300|     -|        no|  20 (1%)|  64 (7%)|   6825 (1%)|  8122 (3%)|    -|
+    | + matmul_Pipeline_readA            |  Timing|  -0.00|    65539|  6.554e+05|         -|    65539|     -|        no|        -|        -|  1601 (~0%)|  352 (~0%)|    -|
+    |  o readA                           |      II|   7.30|    65537|  6.554e+05|        18|       16|  4096|       yes|        -|        -|           -|          -|    -|
+    | + matmul_Pipeline_readB            |  Timing|  -0.00|    65539|  6.554e+05|         -|    65539|     -|        no|        -|        -|  1601 (~0%)|  352 (~0%)|    -|
+    |  o readB                           |      II|   7.30|    65537|  6.554e+05|        18|       16|  4096|       yes|        -|        -|           -|          -|    -|
+    | + matmul_Pipeline_nopart1_nopart2  |       -|   2.40|   131077|  1.311e+06|         -|   131077|     -|        no|        -|  64 (7%)|  1125 (~0%)|  3728 (1%)|    -|
+    |  o nopart1_nopart2                 |      II|   7.30|   131075|  1.311e+06|        36|       32|  4096|       yes|        -|        -|           -|          -|    -|
+    | + matmul_Pipeline_writeC           |  Timing|  -0.00|    65539|  6.554e+05|         -|    65539|     -|        no|        -|        -|  1074 (~0%)|  947 (~0%)|    -|
+    |  o writeC                          |      II|   7.30|    65537|  6.554e+05|        17|       16|  4096|       yes|        -|        -|           -|          -|    -|
+    +------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+---------+------------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface   | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|             | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem0 | 16 -> 32   | 32            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=4            |
+| m_axi_gmem1 | 16 -> 32   | 32            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=4            |
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                             |
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                               |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN 5=CHAN2_INT_EN                           |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST 5=CHAN2_INT_ST                           |
+| s_axi_control | in1      | 0x10   | 32    | W      | Data signal of in1               |                                                                        |
+| s_axi_control | in2      | 0x18   | 32    | W      | Data signal of in2               |                                                                        |
+| s_axi_control | out_r    | 0x20   | 32    | W      | Data signal of out_r             |                                                                        |
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+---------------+-----------+
+| Interface | Type          | Ports     |
++-----------+---------------+-----------+
+| ap_clk    | clock         | ap_clk    |
+| ap_rst_n  | reset         | ap_rst_n  |
+| interrupt | interrupt     | interrupt |
+| ap_ctrl   | ap_ctrl_chain |           |
++-----------+---------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+-------------+
+| Argument | Direction | Datatype    |
++----------+-----------+-------------+
+| in1      | inout     | ap_int<16>* |
+| in2      | in        | ap_int<16>* |
+| out_r    | inout     | ap_int<16>* |
++----------+-----------+-------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+---------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                         |
++----------+---------------+-----------+----------+---------------------------------+
+| in1      | m_axi_gmem0   | interface |          |                                 |
+| in1      | s_axi_control | register  | offset   | name=in1 offset=0x10 range=32   |
+| in2      | m_axi_gmem1   | interface |          |                                 |
+| in2      | s_axi_control | register  | offset   | name=in2 offset=0x18 range=32   |
+| out_r    | m_axi_gmem0   | interface |          |                                 |
+| out_r    | s_axi_control | register  | offset   | name=out_r offset=0x20 range=32 |
++----------+---------------+-----------+----------+---------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+-------------------------------------------------------------------------------------------------+
+| HW Interface | Direction | Length | Width | Location                                                                                        |
++--------------+-----------+--------+-------+-------------------------------------------------------------------------------------------------+
+| m_axi_gmem0  | read      | 2048   | 32    | /home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/src/krnl_matrixmul.cpp:34:9 |
+| m_axi_gmem1  | read      | 2048   | 32    | /home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/src/krnl_matrixmul.cpp:45:9 |
+| m_axi_gmem0  | write     | 2048   | 32    | /home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/src/krnl_matrixmul.cpp:90:9 |
++--------------+-----------+--------+-------+-------------------------------------------------------------------------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------+-----+--------+---------------+-----+--------+---------+
+| Name                                  | DSP | Pragma | Variable      | Op  | Impl   | Latency |
++---------------------------------------+-----+--------+---------------+-----+--------+---------+
+| + matmul                              | 64  |        |               |     |        |         |
+|  + matmul_Pipeline_readA              | 0   |        |               |     |        |         |
+|    add_ln34_fu_148_p2                 | -   |        | add_ln34      | add | fabric | 0       |
+|    add_ln38_fu_194_p2                 | -   |        | add_ln38      | add | fabric | 0       |
+|    add_ln40_fu_232_p2                 | -   |        | add_ln40      | add | fabric | 0       |
+|    j_6_fu_279_p2                      | -   |        | j_6           | add | fabric | 0       |
+|  + matmul_Pipeline_readB              | 0   |        |               |     |        |         |
+|    add_ln45_fu_148_p2                 | -   |        | add_ln45      | add | fabric | 0       |
+|    add_ln49_fu_194_p2                 | -   |        | add_ln49      | add | fabric | 0       |
+|    add_ln51_fu_232_p2                 | -   |        | add_ln51      | add | fabric | 0       |
+|    j_4_fu_279_p2                      | -   |        | j_4           | add | fabric | 0       |
+|  + matmul_Pipeline_nopart1_nopart2    | 64  |        |               |     |        |         |
+|    add_ln68_1_fu_1539_p2              | -   |        | add_ln68_1    | add | fabric | 0       |
+|    add_ln68_fu_1551_p2                | -   |        | add_ln68      | add | fabric | 0       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U7  | 1   |        | mul_ln885     | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U7  | 1   |        | temp_sum_V_0  | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U8  | 1   |        | mul_ln885_1   | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U8  | 1   |        | temp_sum_V_1  | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U9  | 1   |        | mul_ln885_2   | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U9  | 1   |        | temp_sum_V_2  | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U10 | 1   |        | mul_ln885_3   | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U10 | 1   |        | temp_sum_V_3  | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U11 | 1   |        | mul_ln885_4   | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U11 | 1   |        | temp_sum_V_4  | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U12 | 1   |        | mul_ln885_5   | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U12 | 1   |        | temp_sum_V_5  | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U13 | 1   |        | mul_ln885_6   | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U13 | 1   |        | temp_sum_V_6  | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U14 | 1   |        | mul_ln885_7   | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U14 | 1   |        | temp_sum_V_7  | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U15 | 1   |        | mul_ln885_8   | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U15 | 1   |        | temp_sum_V_8  | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U16 | 1   |        | mul_ln885_9   | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U16 | 1   |        | temp_sum_V_9  | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U17 | 1   |        | mul_ln885_10  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U17 | 1   |        | temp_sum_V_10 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U18 | 1   |        | mul_ln885_11  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U18 | 1   |        | temp_sum_V_11 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U19 | 1   |        | mul_ln885_12  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U19 | 1   |        | temp_sum_V_12 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U20 | 1   |        | mul_ln885_13  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U20 | 1   |        | temp_sum_V_13 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U21 | 1   |        | mul_ln885_14  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U21 | 1   |        | temp_sum_V_14 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U22 | 1   |        | mul_ln885_15  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U22 | 1   |        | temp_sum_V_15 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U23 | 1   |        | mul_ln885_16  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U23 | 1   |        | temp_sum_V_16 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U24 | 1   |        | mul_ln885_17  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U24 | 1   |        | temp_sum_V_17 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U25 | 1   |        | mul_ln885_18  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U25 | 1   |        | temp_sum_V_18 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U26 | 1   |        | mul_ln885_19  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U26 | 1   |        | temp_sum_V_19 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U27 | 1   |        | mul_ln885_20  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U27 | 1   |        | temp_sum_V_20 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U28 | 1   |        | mul_ln885_21  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U28 | 1   |        | temp_sum_V_21 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U29 | 1   |        | mul_ln885_22  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U29 | 1   |        | temp_sum_V_22 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U30 | 1   |        | mul_ln885_23  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U30 | 1   |        | temp_sum_V_23 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U31 | 1   |        | mul_ln885_24  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U31 | 1   |        | temp_sum_V_24 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U32 | 1   |        | mul_ln885_25  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U32 | 1   |        | temp_sum_V_25 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U33 | 1   |        | mul_ln885_26  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U33 | 1   |        | temp_sum_V_26 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U34 | 1   |        | mul_ln885_27  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U34 | 1   |        | temp_sum_V_27 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U35 | 1   |        | mul_ln885_28  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U35 | 1   |        | temp_sum_V_28 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U36 | 1   |        | mul_ln885_29  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U36 | 1   |        | temp_sum_V_29 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U37 | 1   |        | mul_ln885_30  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U37 | 1   |        | temp_sum_V_30 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U38 | 1   |        | mul_ln885_31  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U38 | 1   |        | temp_sum_V_31 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U39 | 1   |        | mul_ln885_32  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U39 | 1   |        | temp_sum_V_32 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U40 | 1   |        | mul_ln885_33  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U40 | 1   |        | temp_sum_V_33 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U41 | 1   |        | mul_ln885_34  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U41 | 1   |        | temp_sum_V_34 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U42 | 1   |        | mul_ln885_35  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U42 | 1   |        | temp_sum_V_35 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U43 | 1   |        | mul_ln885_36  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U43 | 1   |        | temp_sum_V_36 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U44 | 1   |        | mul_ln885_37  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U44 | 1   |        | temp_sum_V_37 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U45 | 1   |        | mul_ln885_38  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U45 | 1   |        | temp_sum_V_38 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U46 | 1   |        | mul_ln885_39  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U46 | 1   |        | temp_sum_V_39 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U47 | 1   |        | mul_ln885_40  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U47 | 1   |        | temp_sum_V_40 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U48 | 1   |        | mul_ln885_41  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U48 | 1   |        | temp_sum_V_41 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U49 | 1   |        | mul_ln885_42  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U49 | 1   |        | temp_sum_V_42 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U50 | 1   |        | mul_ln885_43  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U50 | 1   |        | temp_sum_V_43 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U51 | 1   |        | mul_ln885_44  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U51 | 1   |        | temp_sum_V_44 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U52 | 1   |        | mul_ln885_45  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U52 | 1   |        | temp_sum_V_45 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U53 | 1   |        | mul_ln885_46  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U53 | 1   |        | temp_sum_V_46 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U54 | 1   |        | mul_ln885_47  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U54 | 1   |        | temp_sum_V_47 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U55 | 1   |        | mul_ln885_48  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U55 | 1   |        | temp_sum_V_48 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U56 | 1   |        | mul_ln885_49  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U56 | 1   |        | temp_sum_V_49 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U57 | 1   |        | mul_ln885_50  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U57 | 1   |        | temp_sum_V_50 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U58 | 1   |        | mul_ln885_51  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U58 | 1   |        | temp_sum_V_51 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U59 | 1   |        | mul_ln885_52  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U59 | 1   |        | temp_sum_V_52 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U60 | 1   |        | mul_ln885_53  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U60 | 1   |        | temp_sum_V_53 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U61 | 1   |        | mul_ln885_54  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U61 | 1   |        | temp_sum_V_54 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U62 | 1   |        | mul_ln885_55  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U62 | 1   |        | temp_sum_V_55 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U63 | 1   |        | mul_ln885_56  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U63 | 1   |        | temp_sum_V_56 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U64 | 1   |        | mul_ln885_57  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U64 | 1   |        | temp_sum_V_57 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U65 | 1   |        | mul_ln885_58  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U65 | 1   |        | temp_sum_V_58 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U66 | 1   |        | mul_ln885_59  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U66 | 1   |        | temp_sum_V_59 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U67 | 1   |        | mul_ln885_60  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U67 | 1   |        | temp_sum_V_60 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U68 | 1   |        | mul_ln885_61  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U68 | 1   |        | temp_sum_V_61 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U69 | 1   |        | mul_ln885_62  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U69 | 1   |        | temp_sum_V_62 | add | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U70 | 1   |        | mul_ln885_63  | mul | dsp    | 3       |
+|    mac_muladd_16s_16s_16ns_16_4_1_U70 | 1   |        | temp_sum_V_63 | add | dsp    | 3       |
+|    add_ln72_fu_1640_p2                | -   |        | add_ln72      | add | fabric | 0       |
+|  + matmul_Pipeline_writeC             | 0   |        |               |     |        |         |
+|    add_ln90_fu_327_p2                 | -   |        | add_ln90      | add | fabric | 0       |
+|    add_ln94_fu_349_p2                 | -   |        | add_ln94      | add | fabric | 0       |
+|    add_ln96_fu_387_p2                 | -   |        | add_ln96      | add | fabric | 0       |
+|    j_2_fu_404_p2                      | -   |        | j_2           | add | fabric | 0       |
++---------------------------------------+-----+--------+---------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++----------+------+------+--------+----------+---------+------+---------+
+| Name     | BRAM | URAM | Pragma | Variable | Storage | Impl | Latency |
++----------+------+------+--------+----------+---------+------+---------+
+| + matmul | 20   | 0    |        |          |         |      |         |
+|   A_V_U  | 4    | -    |        | A_V      | ram_1p  | auto | 1       |
+|   B_V_U  | 4    | -    |        | B_V      | rom_np  | auto | 1       |
+|   C_V_U  | 4    | -    |        | C_V      | ram_t2p | auto | 1       |
++----------+------+------+--------+----------+---------+------+---------+
+
+
+================================================================
+== User Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+-----------------------------------+---------------------------------------------------------------------------------------------------------+
+| Type      | Options                           | Location                                                                                                |
++-----------+-----------------------------------+---------------------------------------------------------------------------------------------------------+
+| interface | m_axi port = in1 bundle = gmem0   | /home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/src/krnl_matrixmul.cpp:18 in matmul |
+| interface | m_axi port = in2 bundle = gmem1   | /home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/src/krnl_matrixmul.cpp:19 in matmul |
+| interface | m_axi port = out_r bundle = gmem0 | /home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_kernels/src/krnl_matrixmul.cpp:20 in matmul |
++-----------+-----------------------------------+---------------------------------------------------------------------------------------------------------+
+
+

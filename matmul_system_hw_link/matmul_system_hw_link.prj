@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ASCII"?>
+<hwlink:HwLinkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hwlink="http://www.xilinx.com/acceleration/hwlink" name="matmul_system_hw_link" platform="/tools/Xilinx/Vitis/2021.2/platforms/xilinx_zc706_base_202120_1/xilinx_zc706_base_202120_1.xpfm" platformUID="xilinx.com:xd:xilinx_zc706_base_202120_1:202120.1" systemProject="matmul_system" sysConfig="xilinx_zc706_base_202120_1" cpu="pl">
+  <configuration name="Emulation-SW" id="com.xilinx.ide.accel.config.hwlink.sw_emu.1230751577">
+    <configBuildOptions xsi:type="hwlink:LinkOptions">
+      <binaryContainers name="binary_container_1">
+        <kernels name="matmul" projectName="matmul_kernels">
+          <computeUnits name="matmul_1" slr="">
+            <args name="in1" master="true" memory=""/>
+            <args name="in2" master="true" memory=""/>
+            <args name="out_r" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </configBuildOptions>
+    <lastBuildOptions xsi:type="hwlink:LinkOptions">
+      <binaryContainers name="binary_container_1">
+        <kernels name="matmul" projectName="matmul_kernels">
+          <computeUnits name="matmul_1" slr="">
+            <args name="in1" master="true" memory=""/>
+            <args name="in2" master="true" memory=""/>
+            <args name="out_r" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </lastBuildOptions>
+  </configuration>
+  <configuration name="Emulation-HW" id="com.xilinx.ide.accel.config.hwlink.hw_emu.1675899059">
+    <configBuildOptions xsi:type="hwlink:LinkOptions" target="hw_emu">
+      <binaryContainers name="binary_container_1">
+        <kernels name="matmul" projectName="matmul_kernels">
+          <computeUnits name="matmul_1" slr="">
+            <args name="in1" master="true" memory=""/>
+            <args name="in2" master="true" memory=""/>
+            <args name="out_r" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </configBuildOptions>
+    <lastBuildOptions xsi:type="hwlink:LinkOptions" target="hw_emu">
+      <binaryContainers name="binary_container_1">
+        <kernels name="matmul" projectName="matmul_kernels">
+          <computeUnits name="matmul_1" slr="">
+            <args name="in1" master="true" memory=""/>
+            <args name="in2" master="true" memory=""/>
+            <args name="out_r" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </lastBuildOptions>
+  </configuration>
+  <configuration name="Hardware" id="com.xilinx.ide.accel.config.hwlink.hw.567555904">
+    <configBuildOptions xsi:type="hwlink:LinkOptions" target="hw">
+      <binaryContainers name="binary_container_1">
+        <kernels name="matmul" projectName="matmul_kernels">
+          <computeUnits name="matmul_1" slr="">
+            <args name="in1" master="true" memory=""/>
+            <args name="in2" master="true" memory=""/>
+            <args name="out_r" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </configBuildOptions>
+    <lastBuildOptions xsi:type="hwlink:LinkOptions" target="hw">
+      <binaryContainers name="binary_container_1">
+        <kernels name="matmul" projectName="matmul_kernels">
+          <computeUnits name="matmul_1" slr="">
+            <args name="in1" master="true" memory=""/>
+            <args name="in2" master="true" memory=""/>
+            <args name="out_r" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </lastBuildOptions>
+  </configuration>
+</hwlink:HwLinkProject>
