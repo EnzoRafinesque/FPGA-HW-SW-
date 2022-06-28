@@ -1,0 +1,2 @@
+Here is a code for matrix multiplication applied for the zc706 board.
+In this branch we'll extend the AXI data width on differents size of matrix and compare the lattency and ressources evolutions depending on the AXI data width
