@@ -22,23 +22,23 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>10395</Best-caseLatency>
-<Average-caseLatency>10395</Average-caseLatency>
-<Worst-caseLatency>10395</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.104 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.104 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.104 ms</Worst-caseRealTimeLatency>
-<Interval-min>10396</Interval-min>
-<Interval-max>10396</Interval-max>
+<Best-caseLatency>6299</Best-caseLatency>
+<Average-caseLatency>6299</Average-caseLatency>
+<Worst-caseLatency>6299</Worst-caseLatency>
+<Best-caseRealTimeLatency>62.990 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>62.990 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>62.990 us</Worst-caseRealTimeLatency>
+<Interval-min>6300</Interval-min>
+<Interval-max>6300</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>11</BRAM_18K>
+<BRAM_18K>19</BRAM_18K>
 <DSP>16</DSP>
-<FF>6002</FF>
-<LUT>5277</LUT>
+<FF>6051</FF>
+<LUT>5425</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -558,7 +558,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>32</Bits>
+<Bits>64</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -570,7 +570,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>4</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -798,7 +798,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>32</Bits>
+<Bits>64</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -1098,7 +1098,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>32</Bits>
+<Bits>64</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -1110,7 +1110,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>4</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -1338,7 +1338,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>32</Bits>
+<Bits>64</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>

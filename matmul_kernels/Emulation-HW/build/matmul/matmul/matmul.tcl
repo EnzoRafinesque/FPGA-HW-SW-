@@ -24,9 +24,9 @@ config_interface -m_axi_addr64=0
 # v++ --hls.max_memory_ports
 config_interface -m_axi_auto_max_ports=0
 # v++ --hls.memory_port_data_width
-config_interface -m_axi_min_bitwidth 32
+config_interface -m_axi_min_bitwidth 64
 # v++ --hls.memory_port_data_width
-config_interface -m_axi_max_bitwidth 32
+config_interface -m_axi_max_bitwidth 64
 config_export -format xo -ipname matmul
 csynth_design
 export_design

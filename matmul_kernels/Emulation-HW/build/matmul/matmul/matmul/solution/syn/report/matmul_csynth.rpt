@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'matmul'
 ================================================================
-* Date:           Thu Jun 30 11:12:25 2022
+* Date:           Thu Jun 30 11:26:13 2022
 
 * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
 * Project:        matmul
@@ -25,12 +25,12 @@
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+----------+-------+-------+---------+
-    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
-    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
-    +---------+---------+----------+----------+-------+-------+---------+
-    |    10395|    10395|  0.104 ms|  0.104 ms|  10396|  10396|       no|
-    +---------+---------+----------+----------+-------+-------+---------+
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     6299|     6299|  62.990 us|  62.990 us|  6300|  6300|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
 
     + Detail: 
         * Instance: 
@@ -38,10 +38,10 @@
         |                                            |                                 |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
         |                  Instance                  |              Module             |   min   |   max   |    min    |    max    |  min |  max |   Type  |
         +--------------------------------------------+---------------------------------+---------+---------+-----------+-----------+------+------+---------+
-        |grp_matmul_Pipeline_readA_fu_128            |matmul_Pipeline_readA            |     4099|     4099|  40.990 us|  40.990 us|  4099|  4099|       no|
-        |grp_matmul_Pipeline_readB_fu_136            |matmul_Pipeline_readB            |     4099|     4099|  40.990 us|  40.990 us|  4099|  4099|       no|
-        |grp_matmul_Pipeline_nopart1_nopart2_fu_144  |matmul_Pipeline_nopart1_nopart2  |     2053|     2053|  20.530 us|  20.530 us|  2053|  2053|       no|
-        |grp_matmul_Pipeline_writeC_fu_151           |matmul_Pipeline_writeC           |     4099|     4099|  40.990 us|  40.990 us|  4099|  4099|       no|
+        |grp_matmul_Pipeline_readA_fu_126            |matmul_Pipeline_readA            |     2051|     2051|  20.510 us|  20.510 us|  2051|  2051|       no|
+        |grp_matmul_Pipeline_readB_fu_134            |matmul_Pipeline_readB            |     2051|     2051|  20.510 us|  20.510 us|  2051|  2051|       no|
+        |grp_matmul_Pipeline_nopart1_nopart2_fu_142  |matmul_Pipeline_nopart1_nopart2  |     2053|     2053|  20.530 us|  20.530 us|  2053|  2053|       no|
+        |grp_matmul_Pipeline_writeC_fu_149           |matmul_Pipeline_writeC           |     2051|     2051|  20.510 us|  20.510 us|  2051|  2051|       no|
         +--------------------------------------------+---------------------------------+---------+---------+-----------+-----------+------+------+---------+
 
         * Loop: 
@@ -59,12 +59,12 @@
 |DSP              |        -|    -|       -|       -|    -|
 |Expression       |        -|    -|       0|       9|    -|
 |FIFO             |        -|    -|       -|       -|    -|
-|Instance         |        8|   16|    5756|    3922|    -|
+|Instance         |       16|   16|    5808|    4070|    -|
 |Memory           |        3|    -|       0|       0|    0|
 |Multiplexer      |        -|    -|       -|    1346|    -|
-|Register         |        -|    -|     246|       -|    -|
+|Register         |        -|    -|     243|       -|    -|
 +-----------------+---------+-----+--------+--------+-----+
-|Total            |       11|   16|    6002|    5277|    0|
+|Total            |       19|   16|    6051|    5425|    0|
 +-----------------+---------+-----+--------+--------+-----+
 |Available        |     1090|  900|  437200|  218600|    0|
 +-----------------+---------+-----+--------+--------+-----+
@@ -77,14 +77,14 @@
     |                  Instance                  |              Module             | BRAM_18K| DSP|  FF  | LUT | URAM|
     +--------------------------------------------+---------------------------------+---------+----+------+-----+-----+
     |control_s_axi_U                             |control_s_axi                    |        0|   0|   157|  234|    0|
-    |gmem0_m_axi_U                               |gmem0_m_axi                      |        4|   0|   512|  580|    0|
-    |gmem1_m_axi_U                               |gmem1_m_axi                      |        4|   0|   512|  580|    0|
-    |grp_matmul_Pipeline_nopart1_nopart2_fu_144  |matmul_Pipeline_nopart1_nopart2  |        0|  16|   319|  898|    0|
-    |grp_matmul_Pipeline_readA_fu_128            |matmul_Pipeline_readA            |        0|   0|  1593|  342|    0|
-    |grp_matmul_Pipeline_readB_fu_136            |matmul_Pipeline_readB            |        0|   0|  1593|  342|    0|
-    |grp_matmul_Pipeline_writeC_fu_151           |matmul_Pipeline_writeC           |        0|   0|  1070|  946|    0|
+    |gmem0_m_axi_U                               |gmem0_m_axi                      |        8|   0|   566|  766|    0|
+    |gmem1_m_axi_U                               |gmem1_m_axi                      |        8|   0|   566|  766|    0|
+    |grp_matmul_Pipeline_nopart1_nopart2_fu_142  |matmul_Pipeline_nopart1_nopart2  |        0|  16|   319|  898|    0|
+    |grp_matmul_Pipeline_readA_fu_126            |matmul_Pipeline_readA            |        0|   0|  1585|  282|    0|
+    |grp_matmul_Pipeline_readB_fu_134            |matmul_Pipeline_readB            |        0|   0|  1585|  282|    0|
+    |grp_matmul_Pipeline_writeC_fu_149           |matmul_Pipeline_writeC           |        0|   0|  1030|  842|    0|
     +--------------------------------------------+---------------------------------+---------+----+------+-----+-----+
-    |Total                                       |                                 |        8|  16|  5756| 3922|    0|
+    |Total                                       |                                 |       16|  16|  5808| 4070|    0|
     +--------------------------------------------+---------------------------------+---------+----+------+-----+-----+
 
     * DSP: 
@@ -197,15 +197,15 @@
     |ap_rst_reg_1                                             |    1|   0|    1|          0|
     |ap_rst_reg_2                                             |    1|   0|    1|          0|
     |ap_str_blocking_n_reg                                    |    1|   0|    1|          0|
-    |grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_start_reg  |    1|   0|    1|          0|
-    |grp_matmul_Pipeline_readA_fu_128_ap_start_reg            |    1|   0|    1|          0|
-    |grp_matmul_Pipeline_readB_fu_136_ap_start_reg            |    1|   0|    1|          0|
-    |grp_matmul_Pipeline_writeC_fu_151_ap_start_reg           |    1|   0|    1|          0|
-    |trunc_ln1_reg_225                                        |   30|   0|   30|          0|
-    |trunc_ln4_reg_231                                        |   30|   0|   30|          0|
-    |trunc_ln_reg_219                                         |   30|   0|   30|          0|
+    |grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_start_reg  |    1|   0|    1|          0|
+    |grp_matmul_Pipeline_readA_fu_126_ap_start_reg            |    1|   0|    1|          0|
+    |grp_matmul_Pipeline_readB_fu_134_ap_start_reg            |    1|   0|    1|          0|
+    |grp_matmul_Pipeline_writeC_fu_149_ap_start_reg           |    1|   0|    1|          0|
+    |trunc_ln1_reg_223                                        |   29|   0|   29|          0|
+    |trunc_ln4_reg_229                                        |   29|   0|   29|          0|
+    |trunc_ln_reg_217                                         |   29|   0|   29|          0|
     +---------------------------------------------------------+-----+----+-----+-----------+
-    |Total                                                    |  246|   0|  246|          0|
+    |Total                                                    |  243|   0|  243|          0|
     +---------------------------------------------------------+-----+----+-----+-----------+
 
 
@@ -261,8 +261,8 @@
 |m_axi_gmem0_AWUSER     |  out|    1|          m_axi|         gmem0|       pointer|
 |m_axi_gmem0_WVALID     |  out|    1|          m_axi|         gmem0|       pointer|
 |m_axi_gmem0_WREADY     |   in|    1|          m_axi|         gmem0|       pointer|
-|m_axi_gmem0_WDATA      |  out|   32|          m_axi|         gmem0|       pointer|
-|m_axi_gmem0_WSTRB      |  out|    4|          m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WDATA      |  out|   64|          m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WSTRB      |  out|    8|          m_axi|         gmem0|       pointer|
 |m_axi_gmem0_WLAST      |  out|    1|          m_axi|         gmem0|       pointer|
 |m_axi_gmem0_WID        |  out|    1|          m_axi|         gmem0|       pointer|
 |m_axi_gmem0_WUSER      |  out|    1|          m_axi|         gmem0|       pointer|
@@ -281,7 +281,7 @@
 |m_axi_gmem0_ARUSER     |  out|    1|          m_axi|         gmem0|       pointer|
 |m_axi_gmem0_RVALID     |   in|    1|          m_axi|         gmem0|       pointer|
 |m_axi_gmem0_RREADY     |  out|    1|          m_axi|         gmem0|       pointer|
-|m_axi_gmem0_RDATA      |   in|   32|          m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RDATA      |   in|   64|          m_axi|         gmem0|       pointer|
 |m_axi_gmem0_RLAST      |   in|    1|          m_axi|         gmem0|       pointer|
 |m_axi_gmem0_RID        |   in|    1|          m_axi|         gmem0|       pointer|
 |m_axi_gmem0_RUSER      |   in|    1|          m_axi|         gmem0|       pointer|
@@ -306,8 +306,8 @@
 |m_axi_gmem1_AWUSER     |  out|    1|          m_axi|         gmem1|       pointer|
 |m_axi_gmem1_WVALID     |  out|    1|          m_axi|         gmem1|       pointer|
 |m_axi_gmem1_WREADY     |   in|    1|          m_axi|         gmem1|       pointer|
-|m_axi_gmem1_WDATA      |  out|   32|          m_axi|         gmem1|       pointer|
-|m_axi_gmem1_WSTRB      |  out|    4|          m_axi|         gmem1|       pointer|
+|m_axi_gmem1_WDATA      |  out|   64|          m_axi|         gmem1|       pointer|
+|m_axi_gmem1_WSTRB      |  out|    8|          m_axi|         gmem1|       pointer|
 |m_axi_gmem1_WLAST      |  out|    1|          m_axi|         gmem1|       pointer|
 |m_axi_gmem1_WID        |  out|    1|          m_axi|         gmem1|       pointer|
 |m_axi_gmem1_WUSER      |  out|    1|          m_axi|         gmem1|       pointer|
@@ -326,7 +326,7 @@
 |m_axi_gmem1_ARUSER     |  out|    1|          m_axi|         gmem1|       pointer|
 |m_axi_gmem1_RVALID     |   in|    1|          m_axi|         gmem1|       pointer|
 |m_axi_gmem1_RREADY     |  out|    1|          m_axi|         gmem1|       pointer|
-|m_axi_gmem1_RDATA      |   in|   32|          m_axi|         gmem1|       pointer|
+|m_axi_gmem1_RDATA      |   in|   64|          m_axi|         gmem1|       pointer|
 |m_axi_gmem1_RLAST      |   in|    1|          m_axi|         gmem1|       pointer|
 |m_axi_gmem1_RID        |   in|    1|          m_axi|         gmem1|       pointer|
 |m_axi_gmem1_RUSER      |   in|    1|          m_axi|         gmem1|       pointer|

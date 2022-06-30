@@ -3407,7 +3407,7 @@ window.onload = function () { addSorting(); }
 <center><h1>Design Guidance Report</h1></center><center><table class="header" border="0">
 <tr><td><b>Copyright</b></td><td>Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.</td></tr>
 <tr><td><b>Tool Version</b></td><td>xrcserver v.2021.2 (lin64) Build 0 </td></tr>
-<tr><td><b>Date</b></td><td>Thu Jun 30 11:12:54 2022</td></tr>
+<tr><td><b>Date</b></td><td>Thu Jun 30 11:26:42 2022</td></tr>
 <tr><td><b>Host</b></td><td>mdu-virtual-machine running 64-bit Ubuntu 18.04.3 LTS</td></tr>
 <tr><td><b>Command</b></td><td>Vitis IDE session Emulation-HW</td></tr>
 </table></center><br>
@@ -3417,7 +3417,7 @@ window.onload = function () { addSorting(); }
 <tr><td><a href="#CONFIG FILE DETAILS">3 CONFIG FILE DETAILS</a></tr></td>
 </table>
 <a name="REPORT SUMMARY"></a><h1>1 REPORT SUMMARY</h1>
-<pre>Violations found: 33
+<pre>Violations found: 30
 </pre>
 <pre>Rule Specs Violated: 3
 </pre>
@@ -3435,194 +3435,172 @@ window.onload = function () { addSorting(); }
 <th align="left" width="380">Resolution</th>
 </tr>
 <tr>
-<td align="left">17</td>
+<td align="left">51</td>
 <td align="left">Interface</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Interface Related</td>
 <td align="left">Accelerator.matmul.Interface</td>
-<td align="left">Multiple burst reads of length 128 and bit width 32 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=34">krnl_matrixmul.cpp</a>)
+<td align="left">Multiple burst reads of length 64 and bit width 64 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=34">krnl_matrixmul.cpp</a>)
 </td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">18</td>
+<td align="left">52</td>
 <td align="left">Interface</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Interface Related</td>
 <td align="left">Accelerator.matmul.Interface</td>
-<td align="left">Multiple burst reads of length 128 and bit width 32 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=45">krnl_matrixmul.cpp</a>)
+<td align="left">Multiple burst reads of length 64 and bit width 64 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=45">krnl_matrixmul.cpp</a>)
 </td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">19</td>
+<td align="left">53</td>
 <td align="left">Interface</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Interface Related</td>
 <td align="left">Accelerator.matmul.Interface</td>
-<td align="left">Multiple burst writes of length 128 and bit width 32 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=90">krnl_matrixmul.cpp</a>)
+<td align="left">Multiple burst writes of length 64 and bit width 64 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=90">krnl_matrixmul.cpp</a>)
 </td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">20</td>
+<td align="left">54</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_15', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>).
+<td align="left">The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>).
 </td>
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">21</td>
+<td align="left">55</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_15', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>).
+<td align="left">The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>).
 </td>
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">22</td>
+<td align="left">56</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_15', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>).
+<td align="left">The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>).
 </td>
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">23</td>
+<td align="left">57</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_15', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>).
+<td align="left">The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>).
 </td>
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">24</td>
+<td align="left">58</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_15', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>).
+<td align="left">The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>).
 </td>
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">25</td>
-<td align="left">Throughput</td>
-<td align="left">warning</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_15', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>).
-</td>
-<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
-</tr>
-<tr>
-<td align="left">26</td>
+<td align="left">59</td>
 <td align="left">Throughput</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 16, Depth = 18, loop 'readA'
+<td align="left">Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'readA'
 </td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">27</td>
+<td align="left">60</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_15', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) and bus read operation ('gmem1_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>).
+<td align="left">The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) and bus read operation ('gmem1_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>).
 </td>
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">28</td>
+<td align="left">61</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_15', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) and bus read operation ('gmem1_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>).
+<td align="left">The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) and bus read operation ('gmem1_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>).
 </td>
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">29</td>
+<td align="left">62</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_15', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) and bus read operation ('gmem1_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>).
+<td align="left">The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) and bus read operation ('gmem1_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>).
 </td>
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">30</td>
+<td align="left">63</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_15', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) and bus read operation ('gmem1_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>).
+<td align="left">The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) and bus read operation ('gmem1_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>).
 </td>
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">31</td>
+<td align="left">64</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_15', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) and bus read operation ('gmem1_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>).
+<td align="left">The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) and bus read operation ('gmem1_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>).
 </td>
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">32</td>
-<td align="left">Throughput</td>
-<td align="left">warning</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_15', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) and bus read operation ('gmem1_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>).
-</td>
-<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
-</tr>
-<tr>
-<td align="left">33</td>
+<td align="left">65</td>
 <td align="left">Throughput</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 16, Depth = 18, loop 'readB'
+<td align="left">Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'readB'
 </td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">34</td>
+<td align="left">66</td>
 <td align="left">Kernel</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
@@ -3633,7 +3611,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">35</td>
+<td align="left">67</td>
 <td align="left">Kernel</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
@@ -3644,7 +3622,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">36</td>
+<td align="left">68</td>
 <td align="left">Kernel</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
@@ -3655,7 +3633,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">37</td>
+<td align="left">69</td>
 <td align="left">Kernel</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
@@ -3666,7 +3644,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">38</td>
+<td align="left">70</td>
 <td align="left">Kernel</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
@@ -3677,7 +3655,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">39</td>
+<td align="left">71</td>
 <td align="left">Throughput</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
@@ -3688,7 +3666,7 @@ window.onload = function () { addSorting(); }
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">40</td>
+<td align="left">72</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
@@ -3699,7 +3677,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">41</td>
+<td align="left">73</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
@@ -3710,7 +3688,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">42</td>
+<td align="left">74</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
@@ -3721,7 +3699,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">43</td>
+<td align="left">75</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
@@ -3732,40 +3710,29 @@ window.onload = function () { addSorting(); }
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">44</td>
+<td align="left">76</td>
 <td align="left">Throughput</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_writeC' (loop 'writeC'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus write operation ('gmem0_addr_write_ln96', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>) and bus write operation ('gmem0_addr_write_ln96', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>).
+<td align="left">The II Violation in module 'matmul_Pipeline_writeC' (loop 'writeC'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between bus write operation ('gmem0_addr_write_ln96', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>) and bus write operation ('gmem0_addr_write_ln96', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>).
 </td>
 <td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">45</td>
-<td align="left">Throughput</td>
-<td align="left">warning</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_writeC' (loop 'writeC'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus write operation ('gmem0_addr_write_ln96', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>) and bus write operation ('gmem0_addr_write_ln96', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>).
-</td>
-<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
-</tr>
-<tr>
-<td align="left">46</td>
+<td align="left">77</td>
 <td align="left">Throughput</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 16, Depth = 18, loop 'writeC'
+<td align="left">Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'writeC'
 </td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">47</td>
+<td align="left">78</td>
 <td align="left">Interface</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
@@ -3776,7 +3743,7 @@ window.onload = function () { addSorting(); }
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">48</td>
+<td align="left">79</td>
 <td align="left">Kernel</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
@@ -3787,7 +3754,7 @@ window.onload = function () { addSorting(); }
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">49</td>
+<td align="left">80</td>
 <td align="left">Kernel</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>

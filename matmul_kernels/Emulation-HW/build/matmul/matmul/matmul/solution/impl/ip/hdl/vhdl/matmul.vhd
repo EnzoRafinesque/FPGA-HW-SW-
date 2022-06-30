@@ -14,7 +14,7 @@ generic (
     C_M_AXI_GMEM0_ADDR_WIDTH : INTEGER := 32;
     C_M_AXI_GMEM0_ID_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM0_AWUSER_WIDTH : INTEGER := 1;
-    C_M_AXI_GMEM0_DATA_WIDTH : INTEGER := 32;
+    C_M_AXI_GMEM0_DATA_WIDTH : INTEGER := 64;
     C_M_AXI_GMEM0_WUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM0_ARUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM0_RUSER_WIDTH : INTEGER := 1;
@@ -22,7 +22,7 @@ generic (
     C_M_AXI_GMEM1_ADDR_WIDTH : INTEGER := 32;
     C_M_AXI_GMEM1_ID_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM1_AWUSER_WIDTH : INTEGER := 1;
-    C_M_AXI_GMEM1_DATA_WIDTH : INTEGER := 32;
+    C_M_AXI_GMEM1_DATA_WIDTH : INTEGER := 64;
     C_M_AXI_GMEM1_WUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM1_ARUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM1_RUSER_WIDTH : INTEGER := 1;
@@ -161,7 +161,7 @@ end;
 architecture behav of matmul is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "matmul_matmul,hls_ip_2021_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z045-ffg900-2,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=10395,HLS_SYN_TPT=none,HLS_SYN_MEM=11,HLS_SYN_DSP=0,HLS_SYN_FF=6002,HLS_SYN_LUT=5277,HLS_VERSION=2021_2}";
+    "matmul_matmul,hls_ip_2021_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z045-ffg900-2,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=6299,HLS_SYN_TPT=none,HLS_SYN_MEM=19,HLS_SYN_DSP=0,HLS_SYN_FF=6051,HLS_SYN_LUT=5425,HLS_VERSION=2021_2}";
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_logic_1 : STD_LOGIC := '1';
@@ -323,13 +323,15 @@ architecture behav of matmul is
     constant ap_const_lv32_4B : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001011";
     constant ap_const_lv32_4C : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001100";
     constant ap_const_boolean_0 : BOOLEAN := false;
-    constant ap_const_lv32_80 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000010000000";
+    constant ap_const_lv32_40 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001000000";
     constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
     constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
-    constant ap_const_lv32_2 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000010";
+    constant ap_const_lv32_3 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000011";
     constant ap_const_lv32_1F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000011111";
+    constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv9_0 : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
+    constant ap_const_lv8_0 : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
 
 attribute shreg_extract : string;
     signal ap_local_deadlock : STD_LOGIC_VECTOR (0 downto 0);
@@ -363,9 +365,9 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal ap_CS_fsm_state145 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state145 : signal is "none";
     signal gmem1_blk_n_AR : STD_LOGIC;
-    signal trunc_ln_reg_219 : STD_LOGIC_VECTOR (29 downto 0);
-    signal trunc_ln1_reg_225 : STD_LOGIC_VECTOR (29 downto 0);
-    signal trunc_ln4_reg_231 : STD_LOGIC_VECTOR (29 downto 0);
+    signal trunc_ln_reg_217 : STD_LOGIC_VECTOR (28 downto 0);
+    signal trunc_ln1_reg_223 : STD_LOGIC_VECTOR (28 downto 0);
+    signal trunc_ln4_reg_229 : STD_LOGIC_VECTOR (28 downto 0);
     signal A_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
     signal A_V_ce0 : STD_LOGIC;
     signal A_V_we0 : STD_LOGIC;
@@ -382,154 +384,154 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal C_V_q0 : STD_LOGIC_VECTOR (15 downto 0);
     signal C_V_ce1 : STD_LOGIC;
     signal C_V_we1 : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_ap_start : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_ap_done : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_ap_idle : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_ap_ready : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWVALID : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WVALID : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WDATA : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WLAST : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARVALID : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_RREADY : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_BREADY : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_A_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_A_V_ce0 : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_A_V_we0 : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_A_V_d0 : STD_LOGIC_VECTOR (15 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_ap_ext_blocking_n : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_ap_str_blocking_n : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_ap_int_blocking_n : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_ap_start : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_ap_done : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_ap_idle : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_ap_ready : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWVALID : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WVALID : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WDATA : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WLAST : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARVALID : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_RREADY : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_BREADY : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_B_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_B_V_ce0 : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_B_V_we0 : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_B_V_d0 : STD_LOGIC_VECTOR (15 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_ap_ext_blocking_n : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_ap_str_blocking_n : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_ap_int_blocking_n : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_start : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_idle : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_ready : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_ce0 : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_we0 : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_d0 : STD_LOGIC_VECTOR (15 downto 0);
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_address1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_ce1 : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_we1 : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_d1 : STD_LOGIC_VECTOR (15 downto 0);
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_A_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_A_V_ce0 : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_ce0 : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_address1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_ce1 : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_ext_blocking_n : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_str_blocking_n : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_int_blocking_n : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_ap_start : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_ap_done : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_ap_idle : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_ap_ready : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWVALID : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WVALID : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WDATA : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WLAST : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARVALID : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_RREADY : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_BREADY : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_C_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_C_V_ce0 : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_ap_ext_blocking_n : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_ap_str_blocking_n : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_ap_int_blocking_n : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_ap_start : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_ap_done : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_ap_idle : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_ap_ready : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWVALID : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_WVALID : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_WDATA : STD_LOGIC_VECTOR (63 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_WSTRB : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_WLAST : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARVALID : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_RREADY : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_BREADY : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_A_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_A_V_ce0 : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_A_V_we0 : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_A_V_d0 : STD_LOGIC_VECTOR (15 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_126_ap_ext_blocking_n : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_ap_str_blocking_n : STD_LOGIC;
+    signal grp_matmul_Pipeline_readA_fu_126_ap_int_blocking_n : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_ap_start : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_ap_done : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_ap_idle : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_ap_ready : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWVALID : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_WVALID : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_WDATA : STD_LOGIC_VECTOR (63 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_WSTRB : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_WLAST : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARVALID : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_RREADY : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_BREADY : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_B_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_B_V_ce0 : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_B_V_we0 : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_B_V_d0 : STD_LOGIC_VECTOR (15 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_134_ap_ext_blocking_n : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_ap_str_blocking_n : STD_LOGIC;
+    signal grp_matmul_Pipeline_readB_fu_134_ap_int_blocking_n : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_start : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_done : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_idle : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_ready : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_ce0 : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_we0 : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_d0 : STD_LOGIC_VECTOR (15 downto 0);
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_address1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_ce1 : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_we1 : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_d1 : STD_LOGIC_VECTOR (15 downto 0);
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_A_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_A_V_ce0 : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_ce0 : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_address1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_ce1 : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_ext_blocking_n : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_str_blocking_n : STD_LOGIC;
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_int_blocking_n : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_ap_start : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_ap_done : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_ap_idle : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_ap_ready : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWVALID : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WVALID : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WDATA : STD_LOGIC_VECTOR (63 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WSTRB : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WLAST : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARVALID : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_RREADY : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_BREADY : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_C_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_149_C_V_ce0 : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_ap_ext_blocking_n : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_ap_str_blocking_n : STD_LOGIC;
+    signal grp_matmul_Pipeline_writeC_fu_149_ap_int_blocking_n : STD_LOGIC;
     signal gmem0_AWVALID : STD_LOGIC;
     signal gmem0_AWREADY : STD_LOGIC;
     signal gmem0_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
@@ -560,7 +562,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal gmem0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem0_RVALID : STD_LOGIC;
     signal gmem0_RREADY : STD_LOGIC;
-    signal gmem0_RDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal gmem0_RDATA : STD_LOGIC_VECTOR (63 downto 0);
     signal gmem0_RLAST : STD_LOGIC;
     signal gmem0_RID : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem0_RFIFONUM : STD_LOGIC_VECTOR (8 downto 0);
@@ -588,7 +590,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal gmem1_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem1_RVALID : STD_LOGIC;
     signal gmem1_RREADY : STD_LOGIC;
-    signal gmem1_RDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal gmem1_RDATA : STD_LOGIC_VECTOR (63 downto 0);
     signal gmem1_RLAST : STD_LOGIC;
     signal gmem1_RID : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem1_RFIFONUM : STD_LOGIC_VECTOR (8 downto 0);
@@ -598,25 +600,25 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal gmem1_BRESP : STD_LOGIC_VECTOR (1 downto 0);
     signal gmem1_BID : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem1_BUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_ap_start_reg : STD_LOGIC := '0';
+    signal grp_matmul_Pipeline_readA_fu_126_ap_start_reg : STD_LOGIC := '0';
     signal ap_CS_fsm_state72 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state72 : signal is "none";
     signal ap_CS_fsm_state73 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state73 : signal is "none";
-    signal grp_matmul_Pipeline_readB_fu_136_ap_start_reg : STD_LOGIC := '0';
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_start_reg : STD_LOGIC := '0';
+    signal grp_matmul_Pipeline_readB_fu_134_ap_start_reg : STD_LOGIC := '0';
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_start_reg : STD_LOGIC := '0';
     signal ap_CS_fsm_state74 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state74 : signal is "none";
-    signal grp_matmul_Pipeline_writeC_fu_151_ap_start_reg : STD_LOGIC := '0';
+    signal grp_matmul_Pipeline_writeC_fu_149_ap_start_reg : STD_LOGIC := '0';
     signal ap_NS_fsm : STD_LOGIC_VECTOR (144 downto 0);
     signal ap_NS_fsm_state76 : STD_LOGIC;
     signal ap_CS_fsm_state76 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state76 : signal is "none";
     signal ap_CS_fsm_state77 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state77 : signal is "none";
-    signal sext_ln34_fu_189_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal sext_ln45_fu_199_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal sext_ln90_fu_209_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal sext_ln34_fu_187_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal sext_ln45_fu_197_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal sext_ln90_fu_207_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_block_state2_io : BOOLEAN;
     signal ap_block_state1 : BOOLEAN;
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
@@ -816,8 +818,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem0_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_WVALID : OUT STD_LOGIC;
         m_axi_gmem0_WREADY : IN STD_LOGIC;
-        m_axi_gmem0_WDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
-        m_axi_gmem0_WSTRB : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem0_WDATA : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem0_WSTRB : OUT STD_LOGIC_VECTOR (7 downto 0);
         m_axi_gmem0_WLAST : OUT STD_LOGIC;
         m_axi_gmem0_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -836,7 +838,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem0_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_RVALID : IN STD_LOGIC;
         m_axi_gmem0_RREADY : OUT STD_LOGIC;
-        m_axi_gmem0_RDATA : IN STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem0_RDATA : IN STD_LOGIC_VECTOR (63 downto 0);
         m_axi_gmem0_RLAST : IN STD_LOGIC;
         m_axi_gmem0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
@@ -847,7 +849,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        sext_ln34 : IN STD_LOGIC_VECTOR (29 downto 0);
+        sext_ln34 : IN STD_LOGIC_VECTOR (28 downto 0);
         A_V_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         A_V_ce0 : OUT STD_LOGIC;
         A_V_we0 : OUT STD_LOGIC;
@@ -881,8 +883,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem1_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem1_WVALID : OUT STD_LOGIC;
         m_axi_gmem1_WREADY : IN STD_LOGIC;
-        m_axi_gmem1_WDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
-        m_axi_gmem1_WSTRB : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem1_WDATA : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem1_WSTRB : OUT STD_LOGIC_VECTOR (7 downto 0);
         m_axi_gmem1_WLAST : OUT STD_LOGIC;
         m_axi_gmem1_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem1_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -901,7 +903,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem1_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem1_RVALID : IN STD_LOGIC;
         m_axi_gmem1_RREADY : OUT STD_LOGIC;
-        m_axi_gmem1_RDATA : IN STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem1_RDATA : IN STD_LOGIC_VECTOR (63 downto 0);
         m_axi_gmem1_RLAST : IN STD_LOGIC;
         m_axi_gmem1_RID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem1_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
@@ -912,7 +914,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem1_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem1_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem1_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        sext_ln45 : IN STD_LOGIC_VECTOR (29 downto 0);
+        sext_ln45 : IN STD_LOGIC_VECTOR (28 downto 0);
         B_V_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         B_V_ce0 : OUT STD_LOGIC;
         B_V_we0 : OUT STD_LOGIC;
@@ -977,8 +979,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem0_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_WVALID : OUT STD_LOGIC;
         m_axi_gmem0_WREADY : IN STD_LOGIC;
-        m_axi_gmem0_WDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
-        m_axi_gmem0_WSTRB : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem0_WDATA : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem0_WSTRB : OUT STD_LOGIC_VECTOR (7 downto 0);
         m_axi_gmem0_WLAST : OUT STD_LOGIC;
         m_axi_gmem0_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -997,7 +999,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem0_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_RVALID : IN STD_LOGIC;
         m_axi_gmem0_RREADY : OUT STD_LOGIC;
-        m_axi_gmem0_RDATA : IN STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem0_RDATA : IN STD_LOGIC_VECTOR (63 downto 0);
         m_axi_gmem0_RLAST : IN STD_LOGIC;
         m_axi_gmem0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
@@ -1008,7 +1010,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        sext_ln90 : IN STD_LOGIC_VECTOR (29 downto 0);
+        sext_ln90 : IN STD_LOGIC_VECTOR (28 downto 0);
         C_V_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         C_V_ce0 : OUT STD_LOGIC;
         C_V_q0 : IN STD_LOGIC_VECTOR (15 downto 0);
@@ -1198,7 +1200,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         I_ARREGION : IN STD_LOGIC_VECTOR (3 downto 0);
         I_RVALID : OUT STD_LOGIC;
         I_RREADY : IN STD_LOGIC;
-        I_RDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
+        I_RDATA : OUT STD_LOGIC_VECTOR (63 downto 0);
         I_RFIFONUM : OUT STD_LOGIC_VECTOR (8 downto 0);
         I_RID : OUT STD_LOGIC_VECTOR (0 downto 0);
         I_RUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -1219,11 +1221,11 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         I_AWREGION : IN STD_LOGIC_VECTOR (3 downto 0);
         I_WVALID : IN STD_LOGIC;
         I_WREADY : OUT STD_LOGIC;
-        I_WDATA : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_WDATA : IN STD_LOGIC_VECTOR (63 downto 0);
         I_WID : IN STD_LOGIC_VECTOR (0 downto 0);
         I_WUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         I_WLAST : IN STD_LOGIC;
-        I_WSTRB : IN STD_LOGIC_VECTOR (3 downto 0);
+        I_WSTRB : IN STD_LOGIC_VECTOR (7 downto 0);
         I_BVALID : OUT STD_LOGIC;
         I_BREADY : IN STD_LOGIC;
         I_BRESP : OUT STD_LOGIC_VECTOR (1 downto 0);
@@ -1318,7 +1320,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         I_ARREGION : IN STD_LOGIC_VECTOR (3 downto 0);
         I_RVALID : OUT STD_LOGIC;
         I_RREADY : IN STD_LOGIC;
-        I_RDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
+        I_RDATA : OUT STD_LOGIC_VECTOR (63 downto 0);
         I_RFIFONUM : OUT STD_LOGIC_VECTOR (8 downto 0);
         I_RID : OUT STD_LOGIC_VECTOR (0 downto 0);
         I_RUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -1339,11 +1341,11 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         I_AWREGION : IN STD_LOGIC_VECTOR (3 downto 0);
         I_WVALID : IN STD_LOGIC;
         I_WREADY : OUT STD_LOGIC;
-        I_WDATA : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_WDATA : IN STD_LOGIC_VECTOR (63 downto 0);
         I_WID : IN STD_LOGIC_VECTOR (0 downto 0);
         I_WUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         I_WLAST : IN STD_LOGIC;
-        I_WSTRB : IN STD_LOGIC_VECTOR (3 downto 0);
+        I_WSTRB : IN STD_LOGIC_VECTOR (7 downto 0);
         I_BVALID : OUT STD_LOGIC;
         I_BREADY : IN STD_LOGIC;
         I_BRESP : OUT STD_LOGIC_VECTOR (1 downto 0);
@@ -1365,7 +1367,7 @@ begin
         address0 => A_V_address0,
         ce0 => A_V_ce0,
         we0 => A_V_we0,
-        d0 => grp_matmul_Pipeline_readA_fu_128_A_V_d0,
+        d0 => grp_matmul_Pipeline_readA_fu_126_A_V_d0,
         q0 => A_V_q0);
 
     B_V_U : component matmul_B_V_RAM_1WNR_AUTO_1R1W
@@ -1379,9 +1381,9 @@ begin
         address0 => B_V_address0,
         ce0 => B_V_ce0,
         we0 => B_V_we0,
-        d0 => grp_matmul_Pipeline_readB_fu_136_B_V_d0,
+        d0 => grp_matmul_Pipeline_readB_fu_134_B_V_d0,
         q0 => B_V_q0,
-        address1 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_address1,
+        address1 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_address1,
         ce1 => B_V_ce1,
         q1 => B_V_q1);
 
@@ -1396,56 +1398,56 @@ begin
         address0 => C_V_address0,
         ce0 => C_V_ce0,
         we0 => C_V_we0,
-        d0 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_d0,
+        d0 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_d0,
         q0 => C_V_q0,
-        address1 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_address1,
+        address1 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_address1,
         ce1 => C_V_ce1,
         we1 => C_V_we1,
-        d1 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_d1);
+        d1 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_d1);
 
-    grp_matmul_Pipeline_readA_fu_128 : component matmul_matmul_Pipeline_readA
+    grp_matmul_Pipeline_readA_fu_126 : component matmul_matmul_Pipeline_readA
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
-        ap_start => grp_matmul_Pipeline_readA_fu_128_ap_start,
-        ap_done => grp_matmul_Pipeline_readA_fu_128_ap_done,
-        ap_idle => grp_matmul_Pipeline_readA_fu_128_ap_idle,
-        ap_ready => grp_matmul_Pipeline_readA_fu_128_ap_ready,
-        m_axi_gmem0_AWVALID => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWVALID,
+        ap_start => grp_matmul_Pipeline_readA_fu_126_ap_start,
+        ap_done => grp_matmul_Pipeline_readA_fu_126_ap_done,
+        ap_idle => grp_matmul_Pipeline_readA_fu_126_ap_idle,
+        ap_ready => grp_matmul_Pipeline_readA_fu_126_ap_ready,
+        m_axi_gmem0_AWVALID => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWVALID,
         m_axi_gmem0_AWREADY => ap_const_logic_0,
-        m_axi_gmem0_AWADDR => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWADDR,
-        m_axi_gmem0_AWID => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWID,
-        m_axi_gmem0_AWLEN => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWLEN,
-        m_axi_gmem0_AWSIZE => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWSIZE,
-        m_axi_gmem0_AWBURST => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWBURST,
-        m_axi_gmem0_AWLOCK => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWLOCK,
-        m_axi_gmem0_AWCACHE => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWCACHE,
-        m_axi_gmem0_AWPROT => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWPROT,
-        m_axi_gmem0_AWQOS => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWQOS,
-        m_axi_gmem0_AWREGION => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWREGION,
-        m_axi_gmem0_AWUSER => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWUSER,
-        m_axi_gmem0_WVALID => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WVALID,
+        m_axi_gmem0_AWADDR => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWADDR,
+        m_axi_gmem0_AWID => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWID,
+        m_axi_gmem0_AWLEN => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWLEN,
+        m_axi_gmem0_AWSIZE => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWSIZE,
+        m_axi_gmem0_AWBURST => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWBURST,
+        m_axi_gmem0_AWLOCK => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWLOCK,
+        m_axi_gmem0_AWCACHE => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWCACHE,
+        m_axi_gmem0_AWPROT => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWPROT,
+        m_axi_gmem0_AWQOS => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWQOS,
+        m_axi_gmem0_AWREGION => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWREGION,
+        m_axi_gmem0_AWUSER => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_AWUSER,
+        m_axi_gmem0_WVALID => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_WVALID,
         m_axi_gmem0_WREADY => ap_const_logic_0,
-        m_axi_gmem0_WDATA => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WDATA,
-        m_axi_gmem0_WSTRB => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WSTRB,
-        m_axi_gmem0_WLAST => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WLAST,
-        m_axi_gmem0_WID => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WID,
-        m_axi_gmem0_WUSER => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WUSER,
-        m_axi_gmem0_ARVALID => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARVALID,
+        m_axi_gmem0_WDATA => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_WDATA,
+        m_axi_gmem0_WSTRB => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_WSTRB,
+        m_axi_gmem0_WLAST => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_WLAST,
+        m_axi_gmem0_WID => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_WID,
+        m_axi_gmem0_WUSER => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_WUSER,
+        m_axi_gmem0_ARVALID => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARVALID,
         m_axi_gmem0_ARREADY => gmem0_ARREADY,
-        m_axi_gmem0_ARADDR => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARADDR,
-        m_axi_gmem0_ARID => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARID,
-        m_axi_gmem0_ARLEN => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARLEN,
-        m_axi_gmem0_ARSIZE => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARSIZE,
-        m_axi_gmem0_ARBURST => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARBURST,
-        m_axi_gmem0_ARLOCK => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARLOCK,
-        m_axi_gmem0_ARCACHE => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARCACHE,
-        m_axi_gmem0_ARPROT => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARPROT,
-        m_axi_gmem0_ARQOS => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARQOS,
-        m_axi_gmem0_ARREGION => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARREGION,
-        m_axi_gmem0_ARUSER => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARUSER,
+        m_axi_gmem0_ARADDR => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARADDR,
+        m_axi_gmem0_ARID => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARID,
+        m_axi_gmem0_ARLEN => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARLEN,
+        m_axi_gmem0_ARSIZE => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARSIZE,
+        m_axi_gmem0_ARBURST => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARBURST,
+        m_axi_gmem0_ARLOCK => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARLOCK,
+        m_axi_gmem0_ARCACHE => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARCACHE,
+        m_axi_gmem0_ARPROT => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARPROT,
+        m_axi_gmem0_ARQOS => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARQOS,
+        m_axi_gmem0_ARREGION => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARREGION,
+        m_axi_gmem0_ARUSER => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARUSER,
         m_axi_gmem0_RVALID => gmem0_RVALID,
-        m_axi_gmem0_RREADY => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_RREADY,
+        m_axi_gmem0_RREADY => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_RREADY,
         m_axi_gmem0_RDATA => gmem0_RDATA,
         m_axi_gmem0_RLAST => gmem0_RLAST,
         m_axi_gmem0_RID => gmem0_RID,
@@ -1453,62 +1455,62 @@ begin
         m_axi_gmem0_RUSER => gmem0_RUSER,
         m_axi_gmem0_RRESP => gmem0_RRESP,
         m_axi_gmem0_BVALID => ap_const_logic_0,
-        m_axi_gmem0_BREADY => grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_BREADY,
+        m_axi_gmem0_BREADY => grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_BREADY,
         m_axi_gmem0_BRESP => ap_const_lv2_0,
         m_axi_gmem0_BID => ap_const_lv1_0,
         m_axi_gmem0_BUSER => ap_const_lv1_0,
-        sext_ln34 => trunc_ln_reg_219,
-        A_V_address0 => grp_matmul_Pipeline_readA_fu_128_A_V_address0,
-        A_V_ce0 => grp_matmul_Pipeline_readA_fu_128_A_V_ce0,
-        A_V_we0 => grp_matmul_Pipeline_readA_fu_128_A_V_we0,
-        A_V_d0 => grp_matmul_Pipeline_readA_fu_128_A_V_d0,
-        ap_ext_blocking_n => grp_matmul_Pipeline_readA_fu_128_ap_ext_blocking_n,
-        ap_str_blocking_n => grp_matmul_Pipeline_readA_fu_128_ap_str_blocking_n,
-        ap_int_blocking_n => grp_matmul_Pipeline_readA_fu_128_ap_int_blocking_n);
+        sext_ln34 => trunc_ln_reg_217,
+        A_V_address0 => grp_matmul_Pipeline_readA_fu_126_A_V_address0,
+        A_V_ce0 => grp_matmul_Pipeline_readA_fu_126_A_V_ce0,
+        A_V_we0 => grp_matmul_Pipeline_readA_fu_126_A_V_we0,
+        A_V_d0 => grp_matmul_Pipeline_readA_fu_126_A_V_d0,
+        ap_ext_blocking_n => grp_matmul_Pipeline_readA_fu_126_ap_ext_blocking_n,
+        ap_str_blocking_n => grp_matmul_Pipeline_readA_fu_126_ap_str_blocking_n,
+        ap_int_blocking_n => grp_matmul_Pipeline_readA_fu_126_ap_int_blocking_n);
 
-    grp_matmul_Pipeline_readB_fu_136 : component matmul_matmul_Pipeline_readB
+    grp_matmul_Pipeline_readB_fu_134 : component matmul_matmul_Pipeline_readB
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
-        ap_start => grp_matmul_Pipeline_readB_fu_136_ap_start,
-        ap_done => grp_matmul_Pipeline_readB_fu_136_ap_done,
-        ap_idle => grp_matmul_Pipeline_readB_fu_136_ap_idle,
-        ap_ready => grp_matmul_Pipeline_readB_fu_136_ap_ready,
-        m_axi_gmem1_AWVALID => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWVALID,
+        ap_start => grp_matmul_Pipeline_readB_fu_134_ap_start,
+        ap_done => grp_matmul_Pipeline_readB_fu_134_ap_done,
+        ap_idle => grp_matmul_Pipeline_readB_fu_134_ap_idle,
+        ap_ready => grp_matmul_Pipeline_readB_fu_134_ap_ready,
+        m_axi_gmem1_AWVALID => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWVALID,
         m_axi_gmem1_AWREADY => ap_const_logic_0,
-        m_axi_gmem1_AWADDR => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWADDR,
-        m_axi_gmem1_AWID => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWID,
-        m_axi_gmem1_AWLEN => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWLEN,
-        m_axi_gmem1_AWSIZE => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWSIZE,
-        m_axi_gmem1_AWBURST => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWBURST,
-        m_axi_gmem1_AWLOCK => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWLOCK,
-        m_axi_gmem1_AWCACHE => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWCACHE,
-        m_axi_gmem1_AWPROT => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWPROT,
-        m_axi_gmem1_AWQOS => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWQOS,
-        m_axi_gmem1_AWREGION => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWREGION,
-        m_axi_gmem1_AWUSER => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWUSER,
-        m_axi_gmem1_WVALID => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WVALID,
+        m_axi_gmem1_AWADDR => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWADDR,
+        m_axi_gmem1_AWID => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWID,
+        m_axi_gmem1_AWLEN => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWLEN,
+        m_axi_gmem1_AWSIZE => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWSIZE,
+        m_axi_gmem1_AWBURST => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWBURST,
+        m_axi_gmem1_AWLOCK => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWLOCK,
+        m_axi_gmem1_AWCACHE => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWCACHE,
+        m_axi_gmem1_AWPROT => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWPROT,
+        m_axi_gmem1_AWQOS => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWQOS,
+        m_axi_gmem1_AWREGION => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWREGION,
+        m_axi_gmem1_AWUSER => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_AWUSER,
+        m_axi_gmem1_WVALID => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_WVALID,
         m_axi_gmem1_WREADY => ap_const_logic_0,
-        m_axi_gmem1_WDATA => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WDATA,
-        m_axi_gmem1_WSTRB => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WSTRB,
-        m_axi_gmem1_WLAST => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WLAST,
-        m_axi_gmem1_WID => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WID,
-        m_axi_gmem1_WUSER => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WUSER,
-        m_axi_gmem1_ARVALID => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARVALID,
+        m_axi_gmem1_WDATA => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_WDATA,
+        m_axi_gmem1_WSTRB => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_WSTRB,
+        m_axi_gmem1_WLAST => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_WLAST,
+        m_axi_gmem1_WID => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_WID,
+        m_axi_gmem1_WUSER => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_WUSER,
+        m_axi_gmem1_ARVALID => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARVALID,
         m_axi_gmem1_ARREADY => gmem1_ARREADY,
-        m_axi_gmem1_ARADDR => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARADDR,
-        m_axi_gmem1_ARID => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARID,
-        m_axi_gmem1_ARLEN => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARLEN,
-        m_axi_gmem1_ARSIZE => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARSIZE,
-        m_axi_gmem1_ARBURST => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARBURST,
-        m_axi_gmem1_ARLOCK => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARLOCK,
-        m_axi_gmem1_ARCACHE => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARCACHE,
-        m_axi_gmem1_ARPROT => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARPROT,
-        m_axi_gmem1_ARQOS => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARQOS,
-        m_axi_gmem1_ARREGION => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARREGION,
-        m_axi_gmem1_ARUSER => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARUSER,
+        m_axi_gmem1_ARADDR => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARADDR,
+        m_axi_gmem1_ARID => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARID,
+        m_axi_gmem1_ARLEN => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARLEN,
+        m_axi_gmem1_ARSIZE => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARSIZE,
+        m_axi_gmem1_ARBURST => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARBURST,
+        m_axi_gmem1_ARLOCK => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARLOCK,
+        m_axi_gmem1_ARCACHE => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARCACHE,
+        m_axi_gmem1_ARPROT => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARPROT,
+        m_axi_gmem1_ARQOS => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARQOS,
+        m_axi_gmem1_ARREGION => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARREGION,
+        m_axi_gmem1_ARUSER => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARUSER,
         m_axi_gmem1_RVALID => gmem1_RVALID,
-        m_axi_gmem1_RREADY => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_RREADY,
+        m_axi_gmem1_RREADY => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_RREADY,
         m_axi_gmem1_RDATA => gmem1_RDATA,
         m_axi_gmem1_RLAST => gmem1_RLAST,
         m_axi_gmem1_RID => gmem1_RID,
@@ -1516,109 +1518,109 @@ begin
         m_axi_gmem1_RUSER => gmem1_RUSER,
         m_axi_gmem1_RRESP => gmem1_RRESP,
         m_axi_gmem1_BVALID => ap_const_logic_0,
-        m_axi_gmem1_BREADY => grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_BREADY,
+        m_axi_gmem1_BREADY => grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_BREADY,
         m_axi_gmem1_BRESP => ap_const_lv2_0,
         m_axi_gmem1_BID => ap_const_lv1_0,
         m_axi_gmem1_BUSER => ap_const_lv1_0,
-        sext_ln45 => trunc_ln1_reg_225,
-        B_V_address0 => grp_matmul_Pipeline_readB_fu_136_B_V_address0,
-        B_V_ce0 => grp_matmul_Pipeline_readB_fu_136_B_V_ce0,
-        B_V_we0 => grp_matmul_Pipeline_readB_fu_136_B_V_we0,
-        B_V_d0 => grp_matmul_Pipeline_readB_fu_136_B_V_d0,
-        ap_ext_blocking_n => grp_matmul_Pipeline_readB_fu_136_ap_ext_blocking_n,
-        ap_str_blocking_n => grp_matmul_Pipeline_readB_fu_136_ap_str_blocking_n,
-        ap_int_blocking_n => grp_matmul_Pipeline_readB_fu_136_ap_int_blocking_n);
+        sext_ln45 => trunc_ln1_reg_223,
+        B_V_address0 => grp_matmul_Pipeline_readB_fu_134_B_V_address0,
+        B_V_ce0 => grp_matmul_Pipeline_readB_fu_134_B_V_ce0,
+        B_V_we0 => grp_matmul_Pipeline_readB_fu_134_B_V_we0,
+        B_V_d0 => grp_matmul_Pipeline_readB_fu_134_B_V_d0,
+        ap_ext_blocking_n => grp_matmul_Pipeline_readB_fu_134_ap_ext_blocking_n,
+        ap_str_blocking_n => grp_matmul_Pipeline_readB_fu_134_ap_str_blocking_n,
+        ap_int_blocking_n => grp_matmul_Pipeline_readB_fu_134_ap_int_blocking_n);
 
-    grp_matmul_Pipeline_nopart1_nopart2_fu_144 : component matmul_matmul_Pipeline_nopart1_nopart2
+    grp_matmul_Pipeline_nopart1_nopart2_fu_142 : component matmul_matmul_Pipeline_nopart1_nopart2
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
-        ap_start => grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_start,
-        ap_done => grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done,
-        ap_idle => grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_idle,
-        ap_ready => grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_ready,
-        C_V_address0 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_address0,
-        C_V_ce0 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_ce0,
-        C_V_we0 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_we0,
-        C_V_d0 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_d0,
-        C_V_address1 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_address1,
-        C_V_ce1 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_ce1,
-        C_V_we1 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_we1,
-        C_V_d1 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_d1,
-        A_V_address0 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_A_V_address0,
-        A_V_ce0 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_A_V_ce0,
+        ap_start => grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_start,
+        ap_done => grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_done,
+        ap_idle => grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_idle,
+        ap_ready => grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_ready,
+        C_V_address0 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_address0,
+        C_V_ce0 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_ce0,
+        C_V_we0 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_we0,
+        C_V_d0 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_d0,
+        C_V_address1 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_address1,
+        C_V_ce1 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_ce1,
+        C_V_we1 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_we1,
+        C_V_d1 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_d1,
+        A_V_address0 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_A_V_address0,
+        A_V_ce0 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_A_V_ce0,
         A_V_q0 => A_V_q0,
-        B_V_address0 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_address0,
-        B_V_ce0 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_ce0,
+        B_V_address0 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_address0,
+        B_V_ce0 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_ce0,
         B_V_q0 => B_V_q0,
-        B_V_address1 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_address1,
-        B_V_ce1 => grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_ce1,
+        B_V_address1 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_address1,
+        B_V_ce1 => grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_ce1,
         B_V_q1 => B_V_q1,
-        ap_ext_blocking_n => grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_ext_blocking_n,
-        ap_str_blocking_n => grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_str_blocking_n,
-        ap_int_blocking_n => grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_int_blocking_n);
+        ap_ext_blocking_n => grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_ext_blocking_n,
+        ap_str_blocking_n => grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_str_blocking_n,
+        ap_int_blocking_n => grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_int_blocking_n);
 
-    grp_matmul_Pipeline_writeC_fu_151 : component matmul_matmul_Pipeline_writeC
+    grp_matmul_Pipeline_writeC_fu_149 : component matmul_matmul_Pipeline_writeC
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
-        ap_start => grp_matmul_Pipeline_writeC_fu_151_ap_start,
-        ap_done => grp_matmul_Pipeline_writeC_fu_151_ap_done,
-        ap_idle => grp_matmul_Pipeline_writeC_fu_151_ap_idle,
-        ap_ready => grp_matmul_Pipeline_writeC_fu_151_ap_ready,
-        m_axi_gmem0_AWVALID => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWVALID,
+        ap_start => grp_matmul_Pipeline_writeC_fu_149_ap_start,
+        ap_done => grp_matmul_Pipeline_writeC_fu_149_ap_done,
+        ap_idle => grp_matmul_Pipeline_writeC_fu_149_ap_idle,
+        ap_ready => grp_matmul_Pipeline_writeC_fu_149_ap_ready,
+        m_axi_gmem0_AWVALID => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWVALID,
         m_axi_gmem0_AWREADY => gmem0_AWREADY,
-        m_axi_gmem0_AWADDR => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWADDR,
-        m_axi_gmem0_AWID => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWID,
-        m_axi_gmem0_AWLEN => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWLEN,
-        m_axi_gmem0_AWSIZE => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWSIZE,
-        m_axi_gmem0_AWBURST => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWBURST,
-        m_axi_gmem0_AWLOCK => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWLOCK,
-        m_axi_gmem0_AWCACHE => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWCACHE,
-        m_axi_gmem0_AWPROT => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWPROT,
-        m_axi_gmem0_AWQOS => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWQOS,
-        m_axi_gmem0_AWREGION => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWREGION,
-        m_axi_gmem0_AWUSER => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWUSER,
-        m_axi_gmem0_WVALID => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WVALID,
+        m_axi_gmem0_AWADDR => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWADDR,
+        m_axi_gmem0_AWID => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWID,
+        m_axi_gmem0_AWLEN => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWLEN,
+        m_axi_gmem0_AWSIZE => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWSIZE,
+        m_axi_gmem0_AWBURST => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWBURST,
+        m_axi_gmem0_AWLOCK => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWLOCK,
+        m_axi_gmem0_AWCACHE => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWCACHE,
+        m_axi_gmem0_AWPROT => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWPROT,
+        m_axi_gmem0_AWQOS => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWQOS,
+        m_axi_gmem0_AWREGION => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWREGION,
+        m_axi_gmem0_AWUSER => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWUSER,
+        m_axi_gmem0_WVALID => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WVALID,
         m_axi_gmem0_WREADY => gmem0_WREADY,
-        m_axi_gmem0_WDATA => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WDATA,
-        m_axi_gmem0_WSTRB => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WSTRB,
-        m_axi_gmem0_WLAST => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WLAST,
-        m_axi_gmem0_WID => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WID,
-        m_axi_gmem0_WUSER => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WUSER,
-        m_axi_gmem0_ARVALID => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARVALID,
+        m_axi_gmem0_WDATA => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WDATA,
+        m_axi_gmem0_WSTRB => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WSTRB,
+        m_axi_gmem0_WLAST => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WLAST,
+        m_axi_gmem0_WID => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WID,
+        m_axi_gmem0_WUSER => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WUSER,
+        m_axi_gmem0_ARVALID => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARVALID,
         m_axi_gmem0_ARREADY => ap_const_logic_0,
-        m_axi_gmem0_ARADDR => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARADDR,
-        m_axi_gmem0_ARID => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARID,
-        m_axi_gmem0_ARLEN => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARLEN,
-        m_axi_gmem0_ARSIZE => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARSIZE,
-        m_axi_gmem0_ARBURST => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARBURST,
-        m_axi_gmem0_ARLOCK => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARLOCK,
-        m_axi_gmem0_ARCACHE => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARCACHE,
-        m_axi_gmem0_ARPROT => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARPROT,
-        m_axi_gmem0_ARQOS => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARQOS,
-        m_axi_gmem0_ARREGION => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARREGION,
-        m_axi_gmem0_ARUSER => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARUSER,
+        m_axi_gmem0_ARADDR => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARADDR,
+        m_axi_gmem0_ARID => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARID,
+        m_axi_gmem0_ARLEN => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARLEN,
+        m_axi_gmem0_ARSIZE => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARSIZE,
+        m_axi_gmem0_ARBURST => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARBURST,
+        m_axi_gmem0_ARLOCK => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARLOCK,
+        m_axi_gmem0_ARCACHE => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARCACHE,
+        m_axi_gmem0_ARPROT => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARPROT,
+        m_axi_gmem0_ARQOS => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARQOS,
+        m_axi_gmem0_ARREGION => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARREGION,
+        m_axi_gmem0_ARUSER => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_ARUSER,
         m_axi_gmem0_RVALID => ap_const_logic_0,
-        m_axi_gmem0_RREADY => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_RREADY,
-        m_axi_gmem0_RDATA => ap_const_lv32_0,
+        m_axi_gmem0_RREADY => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_RREADY,
+        m_axi_gmem0_RDATA => ap_const_lv64_0,
         m_axi_gmem0_RLAST => ap_const_logic_0,
         m_axi_gmem0_RID => ap_const_lv1_0,
         m_axi_gmem0_RFIFONUM => ap_const_lv9_0,
         m_axi_gmem0_RUSER => ap_const_lv1_0,
         m_axi_gmem0_RRESP => ap_const_lv2_0,
         m_axi_gmem0_BVALID => gmem0_BVALID,
-        m_axi_gmem0_BREADY => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_BREADY,
+        m_axi_gmem0_BREADY => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_BREADY,
         m_axi_gmem0_BRESP => gmem0_BRESP,
         m_axi_gmem0_BID => gmem0_BID,
         m_axi_gmem0_BUSER => gmem0_BUSER,
-        sext_ln90 => trunc_ln4_reg_231,
-        C_V_address0 => grp_matmul_Pipeline_writeC_fu_151_C_V_address0,
-        C_V_ce0 => grp_matmul_Pipeline_writeC_fu_151_C_V_ce0,
+        sext_ln90 => trunc_ln4_reg_229,
+        C_V_address0 => grp_matmul_Pipeline_writeC_fu_149_C_V_address0,
+        C_V_ce0 => grp_matmul_Pipeline_writeC_fu_149_C_V_ce0,
         C_V_q0 => C_V_q0,
-        ap_ext_blocking_n => grp_matmul_Pipeline_writeC_fu_151_ap_ext_blocking_n,
-        ap_str_blocking_n => grp_matmul_Pipeline_writeC_fu_151_ap_str_blocking_n,
-        ap_int_blocking_n => grp_matmul_Pipeline_writeC_fu_151_ap_int_blocking_n);
+        ap_ext_blocking_n => grp_matmul_Pipeline_writeC_fu_149_ap_ext_blocking_n,
+        ap_str_blocking_n => grp_matmul_Pipeline_writeC_fu_149_ap_str_blocking_n,
+        ap_int_blocking_n => grp_matmul_Pipeline_writeC_fu_149_ap_int_blocking_n);
 
     control_s_axi_U : component matmul_control_s_axi
     generic map (
@@ -1660,7 +1662,7 @@ begin
     gmem0_m_axi_U : component matmul_gmem0_m_axi
     generic map (
         CONSERVATIVE => 1,
-        USER_DW => 32,
+        USER_DW => 64,
         USER_AW => 32,
         USER_MAXREQS => 69,
         NUM_READ_OUTSTANDING => 16,
@@ -1764,11 +1766,11 @@ begin
         I_AWREGION => gmem0_AWREGION,
         I_WVALID => gmem0_WVALID,
         I_WREADY => gmem0_WREADY,
-        I_WDATA => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WDATA,
-        I_WID => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WID,
-        I_WUSER => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WUSER,
-        I_WLAST => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WLAST,
-        I_WSTRB => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WSTRB,
+        I_WDATA => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WDATA,
+        I_WID => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WID,
+        I_WUSER => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WUSER,
+        I_WLAST => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WLAST,
+        I_WSTRB => grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WSTRB,
         I_BVALID => gmem0_BVALID,
         I_BREADY => gmem0_BREADY,
         I_BRESP => gmem0_BRESP,
@@ -1778,7 +1780,7 @@ begin
     gmem1_m_axi_U : component matmul_gmem1_m_axi
     generic map (
         CONSERVATIVE => 1,
-        USER_DW => 32,
+        USER_DW => 64,
         USER_AW => 32,
         USER_MAXREQS => 69,
         NUM_READ_OUTSTANDING => 16,
@@ -1882,11 +1884,11 @@ begin
         I_AWREGION => ap_const_lv4_0,
         I_WVALID => ap_const_logic_0,
         I_WREADY => gmem1_WREADY,
-        I_WDATA => ap_const_lv32_0,
+        I_WDATA => ap_const_lv64_0,
         I_WID => ap_const_lv1_0,
         I_WUSER => ap_const_lv1_0,
         I_WLAST => ap_const_logic_0,
-        I_WSTRB => ap_const_lv4_0,
+        I_WSTRB => ap_const_lv8_0,
         I_BVALID => gmem1_BVALID,
         I_BREADY => ap_const_logic_0,
         I_BRESP => gmem1_BRESP,
@@ -1925,64 +1927,64 @@ begin
     end process;
 
 
-    grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_start_reg_assign_proc : process(ap_clk)
+    grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_start_reg_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst_n_inv = '1') then
-                grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_start_reg <= ap_const_logic_0;
+                grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_start_reg <= ap_const_logic_0;
             else
                 if ((ap_const_logic_1 = ap_CS_fsm_state74)) then 
-                    grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_ready = ap_const_logic_1)) then 
-                    grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_start_reg <= ap_const_logic_0;
+                    grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_ready = ap_const_logic_1)) then 
+                    grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_start_reg <= ap_const_logic_0;
                 end if; 
             end if;
         end if;
     end process;
 
 
-    grp_matmul_Pipeline_readA_fu_128_ap_start_reg_assign_proc : process(ap_clk)
+    grp_matmul_Pipeline_readA_fu_126_ap_start_reg_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst_n_inv = '1') then
-                grp_matmul_Pipeline_readA_fu_128_ap_start_reg <= ap_const_logic_0;
+                grp_matmul_Pipeline_readA_fu_126_ap_start_reg <= ap_const_logic_0;
             else
                 if ((ap_const_logic_1 = ap_CS_fsm_state72)) then 
-                    grp_matmul_Pipeline_readA_fu_128_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_matmul_Pipeline_readA_fu_128_ap_ready = ap_const_logic_1)) then 
-                    grp_matmul_Pipeline_readA_fu_128_ap_start_reg <= ap_const_logic_0;
+                    grp_matmul_Pipeline_readA_fu_126_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_matmul_Pipeline_readA_fu_126_ap_ready = ap_const_logic_1)) then 
+                    grp_matmul_Pipeline_readA_fu_126_ap_start_reg <= ap_const_logic_0;
                 end if; 
             end if;
         end if;
     end process;
 
 
-    grp_matmul_Pipeline_readB_fu_136_ap_start_reg_assign_proc : process(ap_clk)
+    grp_matmul_Pipeline_readB_fu_134_ap_start_reg_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst_n_inv = '1') then
-                grp_matmul_Pipeline_readB_fu_136_ap_start_reg <= ap_const_logic_0;
+                grp_matmul_Pipeline_readB_fu_134_ap_start_reg <= ap_const_logic_0;
             else
                 if ((ap_const_logic_1 = ap_CS_fsm_state72)) then 
-                    grp_matmul_Pipeline_readB_fu_136_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_matmul_Pipeline_readB_fu_136_ap_ready = ap_const_logic_1)) then 
-                    grp_matmul_Pipeline_readB_fu_136_ap_start_reg <= ap_const_logic_0;
+                    grp_matmul_Pipeline_readB_fu_134_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_matmul_Pipeline_readB_fu_134_ap_ready = ap_const_logic_1)) then 
+                    grp_matmul_Pipeline_readB_fu_134_ap_start_reg <= ap_const_logic_0;
                 end if; 
             end if;
         end if;
     end process;
 
 
-    grp_matmul_Pipeline_writeC_fu_151_ap_start_reg_assign_proc : process(ap_clk)
+    grp_matmul_Pipeline_writeC_fu_149_ap_start_reg_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst_n_inv = '1') then
-                grp_matmul_Pipeline_writeC_fu_151_ap_start_reg <= ap_const_logic_0;
+                grp_matmul_Pipeline_writeC_fu_149_ap_start_reg <= ap_const_logic_0;
             else
                 if (((ap_const_logic_1 = ap_NS_fsm_state76) and (ap_const_logic_1 = ap_CS_fsm_state75))) then 
-                    grp_matmul_Pipeline_writeC_fu_151_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_matmul_Pipeline_writeC_fu_151_ap_ready = ap_const_logic_1)) then 
-                    grp_matmul_Pipeline_writeC_fu_151_ap_start_reg <= ap_const_logic_0;
+                    grp_matmul_Pipeline_writeC_fu_149_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_matmul_Pipeline_writeC_fu_149_ap_ready = ap_const_logic_1)) then 
+                    grp_matmul_Pipeline_writeC_fu_149_ap_start_reg <= ap_const_logic_0;
                 end if; 
             end if;
         end if;
@@ -2034,14 +2036,14 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state1)) then
-                trunc_ln1_reg_225 <= in2(31 downto 2);
-                trunc_ln4_reg_231 <= out_r(31 downto 2);
-                trunc_ln_reg_219 <= in1(31 downto 2);
+                trunc_ln1_reg_223 <= in2(31 downto 3);
+                trunc_ln4_reg_229 <= out_r(31 downto 3);
+                trunc_ln_reg_217 <= in1(31 downto 3);
             end if;
         end if;
     end process;
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state75, ap_CS_fsm_state145, grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done, grp_matmul_Pipeline_writeC_fu_151_ap_done, gmem0_AWREADY, gmem0_BVALID, ap_CS_fsm_state73, ap_CS_fsm_state77, ap_block_state2_io, ap_block_state73_on_subcall_done)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state75, ap_CS_fsm_state145, grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_done, grp_matmul_Pipeline_writeC_fu_149_ap_done, gmem0_AWREADY, gmem0_BVALID, ap_CS_fsm_state73, ap_CS_fsm_state77, ap_block_state2_io, ap_block_state73_on_subcall_done)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -2205,7 +2207,7 @@ begin
             when ap_ST_fsm_state74 => 
                 ap_NS_fsm <= ap_ST_fsm_state75;
             when ap_ST_fsm_state75 => 
-                if ((not(((gmem0_AWREADY = ap_const_logic_0) or (grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state75))) then
+                if ((not(((gmem0_AWREADY = ap_const_logic_0) or (grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_done = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state75))) then
                     ap_NS_fsm <= ap_ST_fsm_state76;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state75;
@@ -2213,7 +2215,7 @@ begin
             when ap_ST_fsm_state76 => 
                 ap_NS_fsm <= ap_ST_fsm_state77;
             when ap_ST_fsm_state77 => 
-                if (((ap_const_logic_1 = ap_CS_fsm_state77) and (grp_matmul_Pipeline_writeC_fu_151_ap_done = ap_const_logic_1))) then
+                if (((ap_const_logic_1 = ap_CS_fsm_state77) and (grp_matmul_Pipeline_writeC_fu_149_ap_done = ap_const_logic_1))) then
                     ap_NS_fsm <= ap_ST_fsm_state78;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state77;
@@ -2363,132 +2365,132 @@ begin
         end case;
     end process;
 
-    A_V_address0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_readA_fu_128_A_V_address0, grp_matmul_Pipeline_nopart1_nopart2_fu_144_A_V_address0, ap_CS_fsm_state73)
+    A_V_address0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_readA_fu_126_A_V_address0, grp_matmul_Pipeline_nopart1_nopart2_fu_142_A_V_address0, ap_CS_fsm_state73)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state75)) then 
-            A_V_address0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_144_A_V_address0;
+            A_V_address0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_142_A_V_address0;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state73)) then 
-            A_V_address0 <= grp_matmul_Pipeline_readA_fu_128_A_V_address0;
+            A_V_address0 <= grp_matmul_Pipeline_readA_fu_126_A_V_address0;
         else 
             A_V_address0 <= "XXXXXXXX";
         end if; 
     end process;
 
 
-    A_V_ce0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_readA_fu_128_A_V_ce0, grp_matmul_Pipeline_nopart1_nopart2_fu_144_A_V_ce0, ap_CS_fsm_state73)
+    A_V_ce0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_readA_fu_126_A_V_ce0, grp_matmul_Pipeline_nopart1_nopart2_fu_142_A_V_ce0, ap_CS_fsm_state73)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state75)) then 
-            A_V_ce0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_144_A_V_ce0;
+            A_V_ce0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_142_A_V_ce0;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state73)) then 
-            A_V_ce0 <= grp_matmul_Pipeline_readA_fu_128_A_V_ce0;
+            A_V_ce0 <= grp_matmul_Pipeline_readA_fu_126_A_V_ce0;
         else 
             A_V_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    A_V_we0_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_A_V_we0, ap_CS_fsm_state73)
+    A_V_we0_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_A_V_we0, ap_CS_fsm_state73)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state73)) then 
-            A_V_we0 <= grp_matmul_Pipeline_readA_fu_128_A_V_we0;
+            A_V_we0 <= grp_matmul_Pipeline_readA_fu_126_A_V_we0;
         else 
             A_V_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    B_V_address0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_readB_fu_136_B_V_address0, grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_address0, ap_CS_fsm_state73)
+    B_V_address0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_readB_fu_134_B_V_address0, grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_address0, ap_CS_fsm_state73)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state75)) then 
-            B_V_address0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_address0;
+            B_V_address0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_address0;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state73)) then 
-            B_V_address0 <= grp_matmul_Pipeline_readB_fu_136_B_V_address0;
+            B_V_address0 <= grp_matmul_Pipeline_readB_fu_134_B_V_address0;
         else 
             B_V_address0 <= "XXXXXXXX";
         end if; 
     end process;
 
 
-    B_V_ce0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_readB_fu_136_B_V_ce0, grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_ce0, ap_CS_fsm_state73)
+    B_V_ce0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_readB_fu_134_B_V_ce0, grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_ce0, ap_CS_fsm_state73)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state75)) then 
-            B_V_ce0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_ce0;
+            B_V_ce0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_ce0;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state73)) then 
-            B_V_ce0 <= grp_matmul_Pipeline_readB_fu_136_B_V_ce0;
+            B_V_ce0 <= grp_matmul_Pipeline_readB_fu_134_B_V_ce0;
         else 
             B_V_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    B_V_ce1_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_ce1)
+    B_V_ce1_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_ce1)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state75)) then 
-            B_V_ce1 <= grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_ce1;
+            B_V_ce1 <= grp_matmul_Pipeline_nopart1_nopart2_fu_142_B_V_ce1;
         else 
             B_V_ce1 <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    B_V_we0_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_B_V_we0, ap_CS_fsm_state73)
+    B_V_we0_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_B_V_we0, ap_CS_fsm_state73)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state73)) then 
-            B_V_we0 <= grp_matmul_Pipeline_readB_fu_136_B_V_we0;
+            B_V_we0 <= grp_matmul_Pipeline_readB_fu_134_B_V_we0;
         else 
             B_V_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    C_V_address0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_address0, grp_matmul_Pipeline_writeC_fu_151_C_V_address0, ap_CS_fsm_state77)
+    C_V_address0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_address0, grp_matmul_Pipeline_writeC_fu_149_C_V_address0, ap_CS_fsm_state77)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state77)) then 
-            C_V_address0 <= grp_matmul_Pipeline_writeC_fu_151_C_V_address0;
+            C_V_address0 <= grp_matmul_Pipeline_writeC_fu_149_C_V_address0;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state75)) then 
-            C_V_address0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_address0;
+            C_V_address0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_address0;
         else 
             C_V_address0 <= "XXXXXXXX";
         end if; 
     end process;
 
 
-    C_V_ce0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_ce0, grp_matmul_Pipeline_writeC_fu_151_C_V_ce0, ap_CS_fsm_state77)
+    C_V_ce0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_ce0, grp_matmul_Pipeline_writeC_fu_149_C_V_ce0, ap_CS_fsm_state77)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state77)) then 
-            C_V_ce0 <= grp_matmul_Pipeline_writeC_fu_151_C_V_ce0;
+            C_V_ce0 <= grp_matmul_Pipeline_writeC_fu_149_C_V_ce0;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state75)) then 
-            C_V_ce0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_ce0;
+            C_V_ce0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_ce0;
         else 
             C_V_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    C_V_ce1_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_ce1)
+    C_V_ce1_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_ce1)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state75)) then 
-            C_V_ce1 <= grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_ce1;
+            C_V_ce1 <= grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_ce1;
         else 
             C_V_ce1 <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    C_V_we0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_we0)
+    C_V_we0_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_we0)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state75)) then 
-            C_V_we0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_we0;
+            C_V_we0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_we0;
         else 
             C_V_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    C_V_we1_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_we1)
+    C_V_we1_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_we1)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state75)) then 
-            C_V_we1 <= grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_we1;
+            C_V_we1 <= grp_matmul_Pipeline_nopart1_nopart2_fu_142_C_V_we1;
         else 
             C_V_we1 <= ap_const_logic_0;
         end if; 
@@ -2658,9 +2660,9 @@ begin
 
     ap_ST_fsm_state74_blk <= ap_const_logic_0;
 
-    ap_ST_fsm_state75_blk_assign_proc : process(grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done, gmem0_AWREADY)
+    ap_ST_fsm_state75_blk_assign_proc : process(grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_done, gmem0_AWREADY)
     begin
-        if (((gmem0_AWREADY = ap_const_logic_0) or (grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done = ap_const_logic_0))) then 
+        if (((gmem0_AWREADY = ap_const_logic_0) or (grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_done = ap_const_logic_0))) then 
             ap_ST_fsm_state75_blk <= ap_const_logic_1;
         else 
             ap_ST_fsm_state75_blk <= ap_const_logic_0;
@@ -2669,9 +2671,9 @@ begin
 
     ap_ST_fsm_state76_blk <= ap_const_logic_0;
 
-    ap_ST_fsm_state77_blk_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_ap_done)
+    ap_ST_fsm_state77_blk_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_ap_done)
     begin
-        if ((grp_matmul_Pipeline_writeC_fu_151_ap_done = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_writeC_fu_149_ap_done = ap_const_logic_0)) then 
             ap_ST_fsm_state77_blk <= ap_const_logic_1;
         else 
             ap_ST_fsm_state77_blk <= ap_const_logic_0;
@@ -2716,9 +2718,9 @@ begin
     end process;
 
 
-    ap_block_state73_on_subcall_done_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_ap_done, grp_matmul_Pipeline_readB_fu_136_ap_done)
+    ap_block_state73_on_subcall_done_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_ap_done, grp_matmul_Pipeline_readB_fu_134_ap_done)
     begin
-                ap_block_state73_on_subcall_done <= ((grp_matmul_Pipeline_readB_fu_136_ap_done = ap_const_logic_0) or (grp_matmul_Pipeline_readA_fu_128_ap_done = ap_const_logic_0));
+                ap_block_state73_on_subcall_done <= ((grp_matmul_Pipeline_readB_fu_134_ap_done = ap_const_logic_0) or (grp_matmul_Pipeline_readA_fu_126_ap_done = ap_const_logic_0));
     end process;
 
 
@@ -2788,9 +2790,9 @@ begin
     end process;
 
 
-    ap_sub_ext_blocking_0_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_ap_ext_blocking_n)
+    ap_sub_ext_blocking_0_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_ap_ext_blocking_n)
     begin
-        if ((grp_matmul_Pipeline_readA_fu_128_ap_ext_blocking_n = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_readA_fu_126_ap_ext_blocking_n = ap_const_logic_0)) then 
             ap_sub_ext_blocking_0 <= ap_const_logic_1;
         else 
             ap_sub_ext_blocking_0 <= ap_const_logic_0;
@@ -2798,9 +2800,9 @@ begin
     end process;
 
 
-    ap_sub_ext_blocking_1_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_ap_ext_blocking_n)
+    ap_sub_ext_blocking_1_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_ap_ext_blocking_n)
     begin
-        if ((grp_matmul_Pipeline_readB_fu_136_ap_ext_blocking_n = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_readB_fu_134_ap_ext_blocking_n = ap_const_logic_0)) then 
             ap_sub_ext_blocking_1 <= ap_const_logic_1;
         else 
             ap_sub_ext_blocking_1 <= ap_const_logic_0;
@@ -2808,9 +2810,9 @@ begin
     end process;
 
 
-    ap_sub_ext_blocking_2_assign_proc : process(grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_ext_blocking_n)
+    ap_sub_ext_blocking_2_assign_proc : process(grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_ext_blocking_n)
     begin
-        if ((grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_ext_blocking_n = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_ext_blocking_n = ap_const_logic_0)) then 
             ap_sub_ext_blocking_2 <= ap_const_logic_1;
         else 
             ap_sub_ext_blocking_2 <= ap_const_logic_0;
@@ -2818,9 +2820,9 @@ begin
     end process;
 
 
-    ap_sub_ext_blocking_3_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_ap_ext_blocking_n)
+    ap_sub_ext_blocking_3_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_ap_ext_blocking_n)
     begin
-        if ((grp_matmul_Pipeline_writeC_fu_151_ap_ext_blocking_n = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_writeC_fu_149_ap_ext_blocking_n = ap_const_logic_0)) then 
             ap_sub_ext_blocking_3 <= ap_const_logic_1;
         else 
             ap_sub_ext_blocking_3 <= ap_const_logic_0;
@@ -2828,9 +2830,9 @@ begin
     end process;
 
 
-    ap_sub_int_blocking_0_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_ap_int_blocking_n)
+    ap_sub_int_blocking_0_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_ap_int_blocking_n)
     begin
-        if ((grp_matmul_Pipeline_readA_fu_128_ap_int_blocking_n = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_readA_fu_126_ap_int_blocking_n = ap_const_logic_0)) then 
             ap_sub_int_blocking_0 <= ap_const_logic_1;
         else 
             ap_sub_int_blocking_0 <= ap_const_logic_0;
@@ -2838,9 +2840,9 @@ begin
     end process;
 
 
-    ap_sub_int_blocking_1_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_ap_int_blocking_n)
+    ap_sub_int_blocking_1_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_ap_int_blocking_n)
     begin
-        if ((grp_matmul_Pipeline_readB_fu_136_ap_int_blocking_n = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_readB_fu_134_ap_int_blocking_n = ap_const_logic_0)) then 
             ap_sub_int_blocking_1 <= ap_const_logic_1;
         else 
             ap_sub_int_blocking_1 <= ap_const_logic_0;
@@ -2848,9 +2850,9 @@ begin
     end process;
 
 
-    ap_sub_int_blocking_2_assign_proc : process(grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_int_blocking_n)
+    ap_sub_int_blocking_2_assign_proc : process(grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_int_blocking_n)
     begin
-        if ((grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_int_blocking_n = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_int_blocking_n = ap_const_logic_0)) then 
             ap_sub_int_blocking_2 <= ap_const_logic_1;
         else 
             ap_sub_int_blocking_2 <= ap_const_logic_0;
@@ -2858,9 +2860,9 @@ begin
     end process;
 
 
-    ap_sub_int_blocking_3_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_ap_int_blocking_n)
+    ap_sub_int_blocking_3_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_ap_int_blocking_n)
     begin
-        if ((grp_matmul_Pipeline_writeC_fu_151_ap_int_blocking_n = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_writeC_fu_149_ap_int_blocking_n = ap_const_logic_0)) then 
             ap_sub_int_blocking_3 <= ap_const_logic_1;
         else 
             ap_sub_int_blocking_3 <= ap_const_logic_0;
@@ -2868,9 +2870,9 @@ begin
     end process;
 
 
-    ap_sub_str_blocking_0_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_ap_str_blocking_n)
+    ap_sub_str_blocking_0_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_ap_str_blocking_n)
     begin
-        if ((grp_matmul_Pipeline_readA_fu_128_ap_str_blocking_n = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_readA_fu_126_ap_str_blocking_n = ap_const_logic_0)) then 
             ap_sub_str_blocking_0 <= ap_const_logic_1;
         else 
             ap_sub_str_blocking_0 <= ap_const_logic_0;
@@ -2878,9 +2880,9 @@ begin
     end process;
 
 
-    ap_sub_str_blocking_1_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_ap_str_blocking_n)
+    ap_sub_str_blocking_1_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_ap_str_blocking_n)
     begin
-        if ((grp_matmul_Pipeline_readB_fu_136_ap_str_blocking_n = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_readB_fu_134_ap_str_blocking_n = ap_const_logic_0)) then 
             ap_sub_str_blocking_1 <= ap_const_logic_1;
         else 
             ap_sub_str_blocking_1 <= ap_const_logic_0;
@@ -2888,9 +2890,9 @@ begin
     end process;
 
 
-    ap_sub_str_blocking_2_assign_proc : process(grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_str_blocking_n)
+    ap_sub_str_blocking_2_assign_proc : process(grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_str_blocking_n)
     begin
-        if ((grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_str_blocking_n = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_str_blocking_n = ap_const_logic_0)) then 
             ap_sub_str_blocking_2 <= ap_const_logic_1;
         else 
             ap_sub_str_blocking_2 <= ap_const_logic_0;
@@ -2898,9 +2900,9 @@ begin
     end process;
 
 
-    ap_sub_str_blocking_3_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_ap_str_blocking_n)
+    ap_sub_str_blocking_3_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_ap_str_blocking_n)
     begin
-        if ((grp_matmul_Pipeline_writeC_fu_151_ap_str_blocking_n = ap_const_logic_0)) then 
+        if ((grp_matmul_Pipeline_writeC_fu_149_ap_str_blocking_n = ap_const_logic_0)) then 
             ap_sub_str_blocking_3 <= ap_const_logic_1;
         else 
             ap_sub_str_blocking_3 <= ap_const_logic_0;
@@ -2949,284 +2951,284 @@ begin
 
     event_done <= ap_done;
 
-    gmem0_ARADDR_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARADDR, ap_CS_fsm_state72, ap_CS_fsm_state73, sext_ln34_fu_189_p1, ap_block_state2_io)
+    gmem0_ARADDR_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARADDR, ap_CS_fsm_state72, ap_CS_fsm_state73, sext_ln34_fu_187_p1, ap_block_state2_io)
     begin
         if (((ap_const_boolean_0 = ap_block_state2_io) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
-            gmem0_ARADDR <= sext_ln34_fu_189_p1;
+            gmem0_ARADDR <= sext_ln34_fu_187_p1;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_ARADDR <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARADDR;
+            gmem0_ARADDR <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARADDR;
         else 
             gmem0_ARADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    gmem0_ARBURST_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARBURST, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem0_ARBURST_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARBURST, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_ARBURST <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARBURST;
+            gmem0_ARBURST <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARBURST;
         else 
             gmem0_ARBURST <= ap_const_lv2_0;
         end if; 
     end process;
 
 
-    gmem0_ARCACHE_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARCACHE, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem0_ARCACHE_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARCACHE, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_ARCACHE <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARCACHE;
+            gmem0_ARCACHE <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARCACHE;
         else 
             gmem0_ARCACHE <= ap_const_lv4_0;
         end if; 
     end process;
 
 
-    gmem0_ARID_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARID, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem0_ARID_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARID, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_ARID <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARID;
+            gmem0_ARID <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARID;
         else 
             gmem0_ARID <= ap_const_lv1_0;
         end if; 
     end process;
 
 
-    gmem0_ARLEN_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARLEN, ap_CS_fsm_state72, ap_CS_fsm_state73, ap_block_state2_io)
+    gmem0_ARLEN_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARLEN, ap_CS_fsm_state72, ap_CS_fsm_state73, ap_block_state2_io)
     begin
         if (((ap_const_boolean_0 = ap_block_state2_io) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
-            gmem0_ARLEN <= ap_const_lv32_80;
+            gmem0_ARLEN <= ap_const_lv32_40;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_ARLEN <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARLEN;
+            gmem0_ARLEN <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARLEN;
         else 
             gmem0_ARLEN <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    gmem0_ARLOCK_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARLOCK, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem0_ARLOCK_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARLOCK, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_ARLOCK <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARLOCK;
+            gmem0_ARLOCK <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARLOCK;
         else 
             gmem0_ARLOCK <= ap_const_lv2_0;
         end if; 
     end process;
 
 
-    gmem0_ARPROT_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARPROT, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem0_ARPROT_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARPROT, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_ARPROT <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARPROT;
+            gmem0_ARPROT <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARPROT;
         else 
             gmem0_ARPROT <= ap_const_lv3_0;
         end if; 
     end process;
 
 
-    gmem0_ARQOS_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARQOS, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem0_ARQOS_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARQOS, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_ARQOS <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARQOS;
+            gmem0_ARQOS <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARQOS;
         else 
             gmem0_ARQOS <= ap_const_lv4_0;
         end if; 
     end process;
 
 
-    gmem0_ARREGION_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARREGION, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem0_ARREGION_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARREGION, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_ARREGION <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARREGION;
+            gmem0_ARREGION <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARREGION;
         else 
             gmem0_ARREGION <= ap_const_lv4_0;
         end if; 
     end process;
 
 
-    gmem0_ARSIZE_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARSIZE, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem0_ARSIZE_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARSIZE, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_ARSIZE <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARSIZE;
+            gmem0_ARSIZE <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARSIZE;
         else 
             gmem0_ARSIZE <= ap_const_lv3_0;
         end if; 
     end process;
 
 
-    gmem0_ARUSER_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARUSER, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem0_ARUSER_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARUSER, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_ARUSER <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARUSER;
+            gmem0_ARUSER <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARUSER;
         else 
             gmem0_ARUSER <= ap_const_lv1_0;
         end if; 
     end process;
 
 
-    gmem0_ARVALID_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARVALID, ap_CS_fsm_state72, ap_CS_fsm_state73, ap_block_state2_io)
+    gmem0_ARVALID_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARVALID, ap_CS_fsm_state72, ap_CS_fsm_state73, ap_block_state2_io)
     begin
         if (((ap_const_boolean_0 = ap_block_state2_io) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
             gmem0_ARVALID <= ap_const_logic_1;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_ARVALID <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARVALID;
+            gmem0_ARVALID <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_ARVALID;
         else 
             gmem0_ARVALID <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    gmem0_AWADDR_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done, grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWADDR, gmem0_AWREADY, ap_CS_fsm_state76, ap_CS_fsm_state77, sext_ln90_fu_209_p1)
+    gmem0_AWADDR_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_done, grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWADDR, gmem0_AWREADY, ap_CS_fsm_state76, ap_CS_fsm_state77, sext_ln90_fu_207_p1)
     begin
-        if ((not(((gmem0_AWREADY = ap_const_logic_0) or (grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state75))) then 
-            gmem0_AWADDR <= sext_ln90_fu_209_p1;
+        if ((not(((gmem0_AWREADY = ap_const_logic_0) or (grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_done = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state75))) then 
+            gmem0_AWADDR <= sext_ln90_fu_207_p1;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_AWADDR <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWADDR;
+            gmem0_AWADDR <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWADDR;
         else 
             gmem0_AWADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    gmem0_AWBURST_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWBURST, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_AWBURST_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWBURST, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_AWBURST <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWBURST;
+            gmem0_AWBURST <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWBURST;
         else 
             gmem0_AWBURST <= ap_const_lv2_0;
         end if; 
     end process;
 
 
-    gmem0_AWCACHE_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWCACHE, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_AWCACHE_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWCACHE, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_AWCACHE <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWCACHE;
+            gmem0_AWCACHE <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWCACHE;
         else 
             gmem0_AWCACHE <= ap_const_lv4_0;
         end if; 
     end process;
 
 
-    gmem0_AWID_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWID, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_AWID_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWID, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_AWID <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWID;
+            gmem0_AWID <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWID;
         else 
             gmem0_AWID <= ap_const_lv1_0;
         end if; 
     end process;
 
 
-    gmem0_AWLEN_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done, grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWLEN, gmem0_AWREADY, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_AWLEN_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_done, grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWLEN, gmem0_AWREADY, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
-        if ((not(((gmem0_AWREADY = ap_const_logic_0) or (grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state75))) then 
-            gmem0_AWLEN <= ap_const_lv32_80;
+        if ((not(((gmem0_AWREADY = ap_const_logic_0) or (grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_done = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state75))) then 
+            gmem0_AWLEN <= ap_const_lv32_40;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_AWLEN <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWLEN;
+            gmem0_AWLEN <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWLEN;
         else 
             gmem0_AWLEN <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    gmem0_AWLOCK_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWLOCK, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_AWLOCK_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWLOCK, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_AWLOCK <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWLOCK;
+            gmem0_AWLOCK <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWLOCK;
         else 
             gmem0_AWLOCK <= ap_const_lv2_0;
         end if; 
     end process;
 
 
-    gmem0_AWPROT_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWPROT, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_AWPROT_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWPROT, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_AWPROT <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWPROT;
+            gmem0_AWPROT <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWPROT;
         else 
             gmem0_AWPROT <= ap_const_lv3_0;
         end if; 
     end process;
 
 
-    gmem0_AWQOS_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWQOS, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_AWQOS_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWQOS, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_AWQOS <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWQOS;
+            gmem0_AWQOS <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWQOS;
         else 
             gmem0_AWQOS <= ap_const_lv4_0;
         end if; 
     end process;
 
 
-    gmem0_AWREGION_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWREGION, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_AWREGION_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWREGION, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_AWREGION <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWREGION;
+            gmem0_AWREGION <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWREGION;
         else 
             gmem0_AWREGION <= ap_const_lv4_0;
         end if; 
     end process;
 
 
-    gmem0_AWSIZE_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWSIZE, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_AWSIZE_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWSIZE, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_AWSIZE <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWSIZE;
+            gmem0_AWSIZE <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWSIZE;
         else 
             gmem0_AWSIZE <= ap_const_lv3_0;
         end if; 
     end process;
 
 
-    gmem0_AWUSER_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWUSER, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_AWUSER_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWUSER, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_AWUSER <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWUSER;
+            gmem0_AWUSER <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWUSER;
         else 
             gmem0_AWUSER <= ap_const_lv1_0;
         end if; 
     end process;
 
 
-    gmem0_AWVALID_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done, grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWVALID, gmem0_AWREADY, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_AWVALID_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_done, grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWVALID, gmem0_AWREADY, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
-        if ((not(((gmem0_AWREADY = ap_const_logic_0) or (grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state75))) then 
+        if ((not(((gmem0_AWREADY = ap_const_logic_0) or (grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_done = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state75))) then 
             gmem0_AWVALID <= ap_const_logic_1;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_AWVALID <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWVALID;
+            gmem0_AWVALID <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_AWVALID;
         else 
             gmem0_AWVALID <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    gmem0_BREADY_assign_proc : process(ap_CS_fsm_state145, grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_BREADY, gmem0_BVALID, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_BREADY_assign_proc : process(ap_CS_fsm_state145, grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_BREADY, gmem0_BVALID, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
         if (((gmem0_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state145))) then 
             gmem0_BREADY <= ap_const_logic_1;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_BREADY <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_BREADY;
+            gmem0_BREADY <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_BREADY;
         else 
             gmem0_BREADY <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    gmem0_RREADY_assign_proc : process(grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_RREADY, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem0_RREADY_assign_proc : process(grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_RREADY, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem0_RREADY <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_RREADY;
+            gmem0_RREADY <= grp_matmul_Pipeline_readA_fu_126_m_axi_gmem0_RREADY;
         else 
             gmem0_RREADY <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    gmem0_WVALID_assign_proc : process(grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WVALID, ap_CS_fsm_state76, ap_CS_fsm_state77)
+    gmem0_WVALID_assign_proc : process(grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WVALID, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
-            gmem0_WVALID <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WVALID;
+            gmem0_WVALID <= grp_matmul_Pipeline_writeC_fu_149_m_axi_gmem0_WVALID;
         else 
             gmem0_WVALID <= ap_const_logic_0;
         end if; 
@@ -3263,136 +3265,136 @@ begin
     end process;
 
 
-    gmem1_ARADDR_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARADDR, ap_CS_fsm_state72, ap_CS_fsm_state73, sext_ln45_fu_199_p1, ap_block_state2_io)
+    gmem1_ARADDR_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARADDR, ap_CS_fsm_state72, ap_CS_fsm_state73, sext_ln45_fu_197_p1, ap_block_state2_io)
     begin
         if (((ap_const_boolean_0 = ap_block_state2_io) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
-            gmem1_ARADDR <= sext_ln45_fu_199_p1;
+            gmem1_ARADDR <= sext_ln45_fu_197_p1;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_ARADDR <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARADDR;
+            gmem1_ARADDR <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARADDR;
         else 
             gmem1_ARADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    gmem1_ARBURST_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARBURST, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem1_ARBURST_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARBURST, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_ARBURST <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARBURST;
+            gmem1_ARBURST <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARBURST;
         else 
             gmem1_ARBURST <= ap_const_lv2_0;
         end if; 
     end process;
 
 
-    gmem1_ARCACHE_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARCACHE, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem1_ARCACHE_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARCACHE, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_ARCACHE <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARCACHE;
+            gmem1_ARCACHE <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARCACHE;
         else 
             gmem1_ARCACHE <= ap_const_lv4_0;
         end if; 
     end process;
 
 
-    gmem1_ARID_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARID, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem1_ARID_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARID, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_ARID <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARID;
+            gmem1_ARID <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARID;
         else 
             gmem1_ARID <= ap_const_lv1_0;
         end if; 
     end process;
 
 
-    gmem1_ARLEN_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARLEN, ap_CS_fsm_state72, ap_CS_fsm_state73, ap_block_state2_io)
+    gmem1_ARLEN_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARLEN, ap_CS_fsm_state72, ap_CS_fsm_state73, ap_block_state2_io)
     begin
         if (((ap_const_boolean_0 = ap_block_state2_io) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
-            gmem1_ARLEN <= ap_const_lv32_80;
+            gmem1_ARLEN <= ap_const_lv32_40;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_ARLEN <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARLEN;
+            gmem1_ARLEN <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARLEN;
         else 
             gmem1_ARLEN <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    gmem1_ARLOCK_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARLOCK, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem1_ARLOCK_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARLOCK, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_ARLOCK <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARLOCK;
+            gmem1_ARLOCK <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARLOCK;
         else 
             gmem1_ARLOCK <= ap_const_lv2_0;
         end if; 
     end process;
 
 
-    gmem1_ARPROT_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARPROT, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem1_ARPROT_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARPROT, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_ARPROT <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARPROT;
+            gmem1_ARPROT <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARPROT;
         else 
             gmem1_ARPROT <= ap_const_lv3_0;
         end if; 
     end process;
 
 
-    gmem1_ARQOS_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARQOS, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem1_ARQOS_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARQOS, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_ARQOS <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARQOS;
+            gmem1_ARQOS <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARQOS;
         else 
             gmem1_ARQOS <= ap_const_lv4_0;
         end if; 
     end process;
 
 
-    gmem1_ARREGION_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARREGION, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem1_ARREGION_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARREGION, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_ARREGION <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARREGION;
+            gmem1_ARREGION <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARREGION;
         else 
             gmem1_ARREGION <= ap_const_lv4_0;
         end if; 
     end process;
 
 
-    gmem1_ARSIZE_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARSIZE, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem1_ARSIZE_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARSIZE, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_ARSIZE <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARSIZE;
+            gmem1_ARSIZE <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARSIZE;
         else 
             gmem1_ARSIZE <= ap_const_lv3_0;
         end if; 
     end process;
 
 
-    gmem1_ARUSER_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARUSER, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem1_ARUSER_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARUSER, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_ARUSER <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARUSER;
+            gmem1_ARUSER <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARUSER;
         else 
             gmem1_ARUSER <= ap_const_lv1_0;
         end if; 
     end process;
 
 
-    gmem1_ARVALID_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARVALID, ap_CS_fsm_state72, ap_CS_fsm_state73, ap_block_state2_io)
+    gmem1_ARVALID_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARVALID, ap_CS_fsm_state72, ap_CS_fsm_state73, ap_block_state2_io)
     begin
         if (((ap_const_boolean_0 = ap_block_state2_io) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
             gmem1_ARVALID <= ap_const_logic_1;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_ARVALID <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARVALID;
+            gmem1_ARVALID <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_ARVALID;
         else 
             gmem1_ARVALID <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    gmem1_RREADY_assign_proc : process(grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_RREADY, ap_CS_fsm_state72, ap_CS_fsm_state73)
+    gmem1_RREADY_assign_proc : process(grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_RREADY, ap_CS_fsm_state72, ap_CS_fsm_state73)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
-            gmem1_RREADY <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_RREADY;
+            gmem1_RREADY <= grp_matmul_Pipeline_readB_fu_134_m_axi_gmem1_RREADY;
         else 
             gmem1_RREADY <= ap_const_logic_0;
         end if; 
@@ -3408,15 +3410,15 @@ begin
         end if; 
     end process;
 
-    grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_start <= grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_start_reg;
-    grp_matmul_Pipeline_readA_fu_128_ap_start <= grp_matmul_Pipeline_readA_fu_128_ap_start_reg;
-    grp_matmul_Pipeline_readB_fu_136_ap_start <= grp_matmul_Pipeline_readB_fu_136_ap_start_reg;
-    grp_matmul_Pipeline_writeC_fu_151_ap_start <= grp_matmul_Pipeline_writeC_fu_151_ap_start_reg;
-        sext_ln34_fu_189_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln_reg_219),32));
+    grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_start <= grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_start_reg;
+    grp_matmul_Pipeline_readA_fu_126_ap_start <= grp_matmul_Pipeline_readA_fu_126_ap_start_reg;
+    grp_matmul_Pipeline_readB_fu_134_ap_start <= grp_matmul_Pipeline_readB_fu_134_ap_start_reg;
+    grp_matmul_Pipeline_writeC_fu_149_ap_start <= grp_matmul_Pipeline_writeC_fu_149_ap_start_reg;
+        sext_ln34_fu_187_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln_reg_217),32));
 
-        sext_ln45_fu_199_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln1_reg_225),32));
+        sext_ln45_fu_197_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln1_reg_223),32));
 
-        sext_ln90_fu_209_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln4_reg_231),32));
+        sext_ln90_fu_207_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln4_reg_229),32));
 
 
     stall_done_ext_assign_proc : process(ap_ext_blocking_n, ap_ext_blocking_n_reg)

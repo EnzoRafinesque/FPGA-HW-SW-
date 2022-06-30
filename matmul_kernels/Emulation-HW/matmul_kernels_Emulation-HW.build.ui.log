@@ -1,4 +1,4 @@
-2022-06-30T11:11:44.3334700255-11:11:44 **** Incremental Build of configuration Emulation-HW for project matmul_kernels ****
+2022-06-30T11:25:34.03588500255-11:25:34 **** Incremental Build of configuration Emulation-HW for project matmul_kernels ****
 000-make -j8 all 
 000-/tools/Xilinx/Vitis/2021.2/bin/v++ --target hw_emu --compile -I"../src" --config matmul-compile.cfg -o"build/matmul.xo" "../src/krnl_matrixmul.cpp"
 000/matmul_kernels/Emulation-HW0-1-1v++ 60-1603: The supplied option 'hls.memory_port_data_width' is deprecated. The supplied option is replaced by an alternative feature controlled by option ''hls.pre_tcl''. Create a TCL file with vitis_hls TCL commands 'config_interface -m_axi_min_bitwidth <width>'  and 'config_interface -m_axi_max_bitwidth <width>'. Specify the TCL file using '--hls.pre_tcl'.1-WARNING: [v++ 60-1603] The supplied option 'hls.memory_port_data_width' is deprecated. The supplied option is replaced by an alternative feature controlled by option ''hls.pre_tcl''. Create a TCL file with vitis_hls TCL commands 'config_interface -m_axi_min_bitwidth <width>'  and 'config_interface -m_axi_max_bitwidth <width>'. Specify the TCL file using '--hls.pre_tcl'.
@@ -11,9 +11,9 @@
 000-INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
 000-	Reports: /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/reports/matmul
 000-	Log files: /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/logs/matmul
-000-Running Dispatch Server on port: 42341
-000-INFO: [v++ 60-1548] Creating build summary session with primary output /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul.xo.compile_summary, at Thu Jun 30 11:11:58 2022
-000-INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Thu Jun 30 11:11:58 2022
+000-Running Dispatch Server on port: 36529
+000-INFO: [v++ 60-1548] Creating build summary session with primary output /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul.xo.compile_summary, at Thu Jun 30 11:25:48 2022
+000-INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Thu Jun 30 11:25:48 2022
 000-INFO: [v++ 60-895]   Target platform: /tools/Xilinx/Vitis/2021.2/platforms/xilinx_zc706_base_202120_1/xilinx_zc706_base_202120_1.xpfm
 000-INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/tools/Xilinx/Vitis/2021.2/platforms/xilinx_zc706_base_202120_1/hw/hw.xsa'
 000-INFO: [v++ 60-585] Compiling for hardware emulation target
@@ -23,9 +23,9 @@
 000-
 000-===>The following messages were generated while  performing high-level synthesis for kernel: matmul Log file: /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/vitis_hls.log :
 000-INFO: [v++ 204-61] Pipelining loop 'readA'.
-000-INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 18, loop 'readA'
+000-INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'readA'
 000-INFO: [v++ 204-61] Pipelining loop 'readB'.
-000-INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 18, loop 'readB'
+000-INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'readB'
 000-INFO: [v++ 204-61] Pipelining loop 'nopart1_nopart2'.
 000/matmul_kernels/Emulation-HW0-1-1v++ 200-885] The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_1_write_ln82', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:82) of variable 'temp_sum.V[1: ' on array 'C_V' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'C_V'.1-WARNING: [v++ 200-885] The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_1_write_ln82', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:82) of variable 'temp_sum.V[1]' on array 'C_V' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'C_V'.
 000-Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html
@@ -39,7 +39,7 @@
 000-Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html
 000-INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 12, loop 'nopart1_nopart2'
 000-INFO: [v++ 204-61] Pipelining loop 'writeC'.
-000-INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 18, loop 'writeC'
+000-INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'writeC'
 000-INFO: [v++ 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 000-INFO: [v++ 200-789] **** Estimated Fmax: 136.99 MHz
 000-INFO: [v++ 60-594] Finished kernel compilation
@@ -48,8 +48,8 @@
 000-INFO: [v++ 60-586] Created build/matmul.xo
 000-INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
 000-    vitis_analyzer /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul.xo.compile_summary 
-000-INFO: [v++ 60-791] Total elapsed time: 0h 1m 7s
+000-INFO: [v++ 60-791] Total elapsed time: 0h 1m 5s
 000-INFO: [v++ 60-1653] Closing dispatch client.
 00255-
-11:12:54 Build Finished (took 1m:10s.112ms)
+11:26:42 Build Finished (took 1m:8s.180ms)
 
