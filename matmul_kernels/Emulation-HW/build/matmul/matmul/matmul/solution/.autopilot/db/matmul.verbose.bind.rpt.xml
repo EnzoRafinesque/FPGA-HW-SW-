@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'matmul'" level="0">
-<item name = "Date">Thu Jun 30 15:37:43 2022
+<item name = "Date">Thu Jun 30 16:11:08 2022
 </item>
 <item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)</item>
 <item name = "Project">matmul</item>
@@ -24,17 +24,17 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">32923, 32923, 0.329 ms, 0.329 ms, 32924, 32924, no</column>
+<column name="">24731, 24731, 0.247 ms, 0.247 ms, 24732, 24732, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_matmul_Pipeline_readA_fu_128">matmul_Pipeline_readA, 8195, 8195, 81.950 us, 81.950 us, 8195, 8195, no</column>
-<column name="grp_matmul_Pipeline_readB_fu_136">matmul_Pipeline_readB, 8195, 8195, 81.950 us, 81.950 us, 8195, 8195, no</column>
+<column name="grp_matmul_Pipeline_readA_fu_128">matmul_Pipeline_readA, 4099, 4099, 40.990 us, 40.990 us, 4099, 4099, no</column>
+<column name="grp_matmul_Pipeline_readB_fu_136">matmul_Pipeline_readB, 4099, 4099, 40.990 us, 40.990 us, 4099, 4099, no</column>
 <column name="grp_matmul_Pipeline_nopart1_nopart2_fu_144">matmul_Pipeline_nopart1_nopart2, 16389, 16389, 0.164 ms, 0.164 ms, 16389, 16389, no</column>
-<column name="grp_matmul_Pipeline_writeC_fu_151">matmul_Pipeline_writeC, 8195, 8195, 81.950 us, 81.950 us, 8195, 8195, no</column>
+<column name="grp_matmul_Pipeline_writeC_fu_151">matmul_Pipeline_writeC, 4099, 4099, 40.990 us, 40.990 us, 4099, 4099, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

@@ -19,22 +19,22 @@
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>32923</Best-caseLatency>
-            <Average-caseLatency>32923</Average-caseLatency>
-            <Worst-caseLatency>32923</Worst-caseLatency>
-            <Best-caseRealTimeLatency>0.329 ms</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>0.329 ms</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>0.329 ms</Worst-caseRealTimeLatency>
-            <Interval-min>32924</Interval-min>
-            <Interval-max>32924</Interval-max>
+            <Best-caseLatency>24731</Best-caseLatency>
+            <Average-caseLatency>24731</Average-caseLatency>
+            <Worst-caseLatency>24731</Worst-caseLatency>
+            <Best-caseRealTimeLatency>0.247 ms</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>0.247 ms</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>0.247 ms</Worst-caseRealTimeLatency>
+            <Interval-min>24732</Interval-min>
+            <Interval-max>24732</Interval-max>
         </SummaryOfOverallLatency>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <BRAM_18K>19</BRAM_18K>
+            <BRAM_18K>35</BRAM_18K>
             <DSP>32</DSP>
-            <FF>6332</FF>
-            <LUT>6395</LUT>
+            <FF>6347</FF>
+            <LUT>6349</LUT>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -553,7 +553,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>out</Dir>
-            <Bits>64</Bits>
+            <Bits>128</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -565,7 +565,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>out</Dir>
-            <Bits>8</Bits>
+            <Bits>16</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -793,7 +793,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>in</Dir>
-            <Bits>64</Bits>
+            <Bits>128</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -1093,7 +1093,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>out</Dir>
-            <Bits>64</Bits>
+            <Bits>128</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -1105,7 +1105,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>out</Dir>
-            <Bits>8</Bits>
+            <Bits>16</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -1333,7 +1333,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>in</Dir>
-            <Bits>64</Bits>
+            <Bits>128</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -1455,14 +1455,14 @@
                     <ModuleName>matmul_Pipeline_readA</ModuleName>
                     <IsCompInst>true</IsCompInst>
                     <ID>128</ID>
-                    <BindInstances>add_ln34_fu_146_p2 add_ln38_fu_192_p2 add_ln40_fu_230_p2 j_6_fu_269_p2</BindInstances>
+                    <BindInstances>add_ln34_fu_146_p2 add_ln38_fu_192_p2 add_ln40_fu_230_p2 j_6_fu_265_p2</BindInstances>
                 </Instance>
                 <Instance>
                     <InstName>grp_matmul_Pipeline_readB_fu_136</InstName>
                     <ModuleName>matmul_Pipeline_readB</ModuleName>
                     <IsCompInst>true</IsCompInst>
                     <ID>136</ID>
-                    <BindInstances>add_ln45_fu_146_p2 add_ln49_fu_192_p2 add_ln51_fu_230_p2 j_4_fu_269_p2</BindInstances>
+                    <BindInstances>add_ln45_fu_146_p2 add_ln49_fu_192_p2 add_ln51_fu_230_p2 j_4_fu_265_p2</BindInstances>
                 </Instance>
                 <Instance>
                     <InstName>grp_matmul_Pipeline_nopart1_nopart2_fu_144</InstName>
@@ -1476,7 +1476,7 @@
                     <ModuleName>matmul_Pipeline_writeC</ModuleName>
                     <IsCompInst>true</IsCompInst>
                     <ID>151</ID>
-                    <BindInstances>add_ln90_fu_233_p2 add_ln94_fu_255_p2 add_ln96_fu_293_p2 j_2_fu_310_p2</BindInstances>
+                    <BindInstances>add_ln90_fu_187_p2 add_ln94_fu_209_p2 add_ln96_fu_247_p2 j_2_fu_264_p2</BindInstances>
                 </Instance>
             </InstancesList>
             <BindInstances>A_V_U B_V_U C_V_U</BindInstances>
@@ -1495,23 +1495,23 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>8195</Best-caseLatency>
-                    <Average-caseLatency>8195</Average-caseLatency>
-                    <Worst-caseLatency>8195</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>81.950 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>81.950 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>81.950 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>8195</PipelineInitiationInterval>
+                    <Best-caseLatency>4099</Best-caseLatency>
+                    <Average-caseLatency>4099</Average-caseLatency>
+                    <Worst-caseLatency>4099</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>40.990 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>40.990 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>40.990 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>4099</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <readA>
                         <Name>readA</Name>
                         <TripCount>1024</TripCount>
-                        <Latency>8193</Latency>
-                        <AbsoluteTimeLatency>81.930 us</AbsoluteTimeLatency>
-                        <PipelineII>8</PipelineII>
-                        <PipelineDepth>10</PipelineDepth>
+                        <Latency>4097</Latency>
+                        <AbsoluteTimeLatency>40.970 us</AbsoluteTimeLatency>
+                        <PipelineII>4</PipelineII>
+                        <PipelineDepth>6</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
                     </readA>
@@ -1519,10 +1519,10 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>1589</FF>
+                    <FF>1585</FF>
                     <AVAIL_FF>437200</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>291</LUT>
+                    <LUT>267</LUT>
                     <AVAIL_LUT>218600</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1540,7 +1540,7 @@
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="add_ln34_fu_146_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34" URAM="0" VARIABLE="add_ln34"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="add_ln38_fu_192_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:38" URAM="0" VARIABLE="add_ln38"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="add_ln40_fu_230_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40" URAM="0" VARIABLE="add_ln40"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="j_6_fu_269_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34" URAM="0" VARIABLE="j_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="j_6_fu_265_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34" URAM="0" VARIABLE="j_6"/>
             </BindNodes>
         </Module>
         <Module>
@@ -1555,23 +1555,23 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>8195</Best-caseLatency>
-                    <Average-caseLatency>8195</Average-caseLatency>
-                    <Worst-caseLatency>8195</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>81.950 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>81.950 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>81.950 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>8195</PipelineInitiationInterval>
+                    <Best-caseLatency>4099</Best-caseLatency>
+                    <Average-caseLatency>4099</Average-caseLatency>
+                    <Worst-caseLatency>4099</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>40.990 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>40.990 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>40.990 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>4099</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <readB>
                         <Name>readB</Name>
                         <TripCount>1024</TripCount>
-                        <Latency>8193</Latency>
-                        <AbsoluteTimeLatency>81.930 us</AbsoluteTimeLatency>
-                        <PipelineII>8</PipelineII>
-                        <PipelineDepth>10</PipelineDepth>
+                        <Latency>4097</Latency>
+                        <AbsoluteTimeLatency>40.970 us</AbsoluteTimeLatency>
+                        <PipelineII>4</PipelineII>
+                        <PipelineDepth>6</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
                     </readB>
@@ -1579,10 +1579,10 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>1589</FF>
+                    <FF>1585</FF>
                     <AVAIL_FF>437200</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>291</LUT>
+                    <LUT>267</LUT>
                     <AVAIL_LUT>218600</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1600,7 +1600,7 @@
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="add_ln45_fu_146_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45" URAM="0" VARIABLE="add_ln45"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="add_ln49_fu_192_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:49" URAM="0" VARIABLE="add_ln49"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="add_ln51_fu_230_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51" URAM="0" VARIABLE="add_ln51"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="j_4_fu_269_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45" URAM="0" VARIABLE="j_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="j_4_fu_265_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45" URAM="0" VARIABLE="j_4"/>
             </BindNodes>
         </Module>
         <Module>
@@ -1738,23 +1738,23 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>8195</Best-caseLatency>
-                    <Average-caseLatency>8195</Average-caseLatency>
-                    <Worst-caseLatency>8195</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>81.950 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>81.950 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>81.950 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>8195</PipelineInitiationInterval>
+                    <Best-caseLatency>4099</Best-caseLatency>
+                    <Average-caseLatency>4099</Average-caseLatency>
+                    <Worst-caseLatency>4099</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>40.990 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>40.990 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>40.990 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>4099</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <writeC>
                         <Name>writeC</Name>
                         <TripCount>1024</TripCount>
-                        <Latency>8193</Latency>
-                        <AbsoluteTimeLatency>81.930 us</AbsoluteTimeLatency>
-                        <PipelineII>8</PipelineII>
-                        <PipelineDepth>9</PipelineDepth>
+                        <Latency>4097</Latency>
+                        <AbsoluteTimeLatency>40.970 us</AbsoluteTimeLatency>
+                        <PipelineII>4</PipelineII>
+                        <PipelineDepth>5</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
                     </writeC>
@@ -1762,10 +1762,10 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>1032</FF>
+                    <FF>964</FF>
                     <AVAIL_FF>437200</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>846</LUT>
+                    <LUT>806</LUT>
                     <AVAIL_LUT>218600</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1780,10 +1780,10 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="add_ln90_fu_233_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90" URAM="0" VARIABLE="add_ln90"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="add_ln94_fu_255_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:94" URAM="0" VARIABLE="add_ln94"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="add_ln96_fu_293_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96" URAM="0" VARIABLE="add_ln96"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="j_2_fu_310_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90" URAM="0" VARIABLE="j_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="add_ln90_fu_187_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90" URAM="0" VARIABLE="add_ln90"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="add_ln94_fu_209_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:94" URAM="0" VARIABLE="add_ln94"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="add_ln96_fu_247_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96" URAM="0" VARIABLE="add_ln96"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="j_2_fu_264_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90" URAM="0" VARIABLE="j_2"/>
             </BindNodes>
         </Module>
         <Module>
@@ -1795,28 +1795,28 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>32923</Best-caseLatency>
-                    <Average-caseLatency>32923</Average-caseLatency>
-                    <Worst-caseLatency>32923</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.329 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.329 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.329 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>32924</PipelineInitiationInterval>
+                    <Best-caseLatency>24731</Best-caseLatency>
+                    <Average-caseLatency>24731</Average-caseLatency>
+                    <Worst-caseLatency>24731</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.247 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.247 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.247 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>24732</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <BRAM_18K>19</BRAM_18K>
+                    <BRAM_18K>35</BRAM_18K>
                     <AVAIL_BRAM>1090</AVAIL_BRAM>
-                    <UTIL_BRAM>1</UTIL_BRAM>
+                    <UTIL_BRAM>3</UTIL_BRAM>
                     <DSP>32</DSP>
                     <AVAIL_DSP>900</AVAIL_DSP>
                     <UTIL_DSP>3</UTIL_DSP>
-                    <FF>6332</FF>
+                    <FF>6347</FF>
                     <AVAIL_FF>437200</AVAIL_FF>
                     <UTIL_FF>1</UTIL_FF>
-                    <LUT>6395</LUT>
+                    <LUT>6349</LUT>
                     <AVAIL_LUT>218600</AVAIL_LUT>
                     <UTIL_LUT>2</UTIL_LUT>
                     <URAM>0</URAM>
@@ -1835,7 +1835,7 @@
     <UserConfigCommands>
         <config_debug enable="1"/>
         <config_export deadlock_detection="none" format="xo" ipname="matmul"/>
-        <config_interface m_axi_addr64="0" m_axi_auto_max_ports="1" m_axi_conservative_mode="1" m_axi_max_bitwidth="64" m_axi_min_bitwidth="64"/>
+        <config_interface m_axi_addr64="0" m_axi_auto_max_ports="1" m_axi_conservative_mode="1" m_axi_max_bitwidth="128" m_axi_min_bitwidth="128"/>
         <config_rtl kernel_profile="1"/>
     </UserConfigCommands>
     <Args>
@@ -1990,7 +1990,7 @@
                 <port>event_start</port>
             </ports>
         </Interface>
-        <Interface InterfaceName="m_axi_gmem0" type="axi4full" busTypeName="aximm" mode="master" dataWidth="64" addrWidth="32" portPrefix="m_axi_gmem0_" paramPrefix="C_M_AXI_GMEM0_" preferredUsageValue="MEMORY">
+        <Interface InterfaceName="m_axi_gmem0" type="axi4full" busTypeName="aximm" mode="master" dataWidth="128" addrWidth="32" portPrefix="m_axi_gmem0_" paramPrefix="C_M_AXI_GMEM0_" preferredUsageValue="MEMORY">
             <busParams>
                 <busParam busParamName="NUM_READ_OUTSTANDING">16</busParam>
                 <busParam busParamName="NUM_WRITE_OUTSTANDING">16</busParam>
@@ -2051,12 +2051,12 @@
             </ports>
             <constraints>
                 <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" argName="in1"/>
-                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="64" argName="in1"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="128" argName="in1"/>
                 <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" argName="out_r"/>
-                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="64" argName="out_r"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="128" argName="out_r"/>
             </constraints>
         </Interface>
-        <Interface InterfaceName="m_axi_gmem1" type="axi4full" busTypeName="aximm" mode="master" dataWidth="64" addrWidth="32" portPrefix="m_axi_gmem1_" paramPrefix="C_M_AXI_GMEM1_" preferredUsageValue="MEMORY">
+        <Interface InterfaceName="m_axi_gmem1" type="axi4full" busTypeName="aximm" mode="master" dataWidth="128" addrWidth="32" portPrefix="m_axi_gmem1_" paramPrefix="C_M_AXI_GMEM1_" preferredUsageValue="MEMORY">
             <busParams>
                 <busParam busParamName="NUM_READ_OUTSTANDING">16</busParam>
                 <busParam busParamName="NUM_WRITE_OUTSTANDING">16</busParam>
@@ -2117,7 +2117,7 @@
             </ports>
             <constraints>
                 <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" argName="in2"/>
-                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="64" argName="in2"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="128" argName="in2"/>
             </constraints>
         </Interface>
     </Interfaces>
@@ -2126,8 +2126,8 @@
             <item name="M_AXI">
                 <table isCollapsed="0">
                     <keys size="12">Interface, Data Width (SW-&gt;HW), Address Width, Latency, Offset, Register, Max Widen Bitwidth, Max Read Burst Length, Max Write Burst Length, Num Read Outstanding, Num Write Outstanding, Resource Estimate</keys>
-                    <column name="m_axi_gmem0">16 -&gt; 64, 32, 64, slave, 0, 512, 16, 16, 16, 16, BRAM=8</column>
-                    <column name="m_axi_gmem1">16 -&gt; 64, 32, 64, slave, 0, 512, 16, 16, 16, 16, BRAM=8</column>
+                    <column name="m_axi_gmem0">16 -&gt; 128, 32, 64, slave, 0, 512, 16, 16, 16, 16, BRAM=16</column>
+                    <column name="m_axi_gmem1">16 -&gt; 128, 32, 64, slave, 0, 512, 16, 16, 16, 16, BRAM=16</column>
                 </table>
             </item>
             <item name="S_AXILITE Interfaces">
@@ -2194,9 +2194,9 @@
             <item name="Inferred Burst Summary">
                 <table>
                     <keys size="5">HW Interface, Direction, Length, Width, Location</keys>
-                    <column name="m_axi_gmem0">read, 256, 64, /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34:9</column>
-                    <column name="m_axi_gmem1">read, 256, 64, /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45:9</column>
-                    <column name="m_axi_gmem0">write, 256, 64, /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90:9</column>
+                    <column name="m_axi_gmem0">read, 128, 128, /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34:9</column>
+                    <column name="m_axi_gmem1">read, 128, 128, /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45:9</column>
+                    <column name="m_axi_gmem0">write, 128, 128, /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90:9</column>
                 </table>
             </item>
         </section>

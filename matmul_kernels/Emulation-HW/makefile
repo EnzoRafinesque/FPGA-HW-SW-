@@ -41,6 +41,10 @@ clean:
 	-$(RMDIR) $(BUILD_SUBDIRS)
 	-$(RMDIR) .Xil
 
+ifeq ($(MAKECMDGOALS),incremental)
+.PHONY: build/matmul.xo
+endif
+
 .PHONY: incremental
 incremental: all
 

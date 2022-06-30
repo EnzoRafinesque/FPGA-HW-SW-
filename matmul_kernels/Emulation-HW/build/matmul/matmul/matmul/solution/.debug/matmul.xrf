@@ -4,15 +4,15 @@ RTL state condition: (1'b1 == ap_CS_fsm_state1)
 # ST_1
 local trunc_ln <partselect_34> <integer> <> 'partselect' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34>
 trunc_ln /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34
-reg: trunc_ln_reg_219[28:0] lv
+reg: trunc_ln_reg_219[27:0] lv
 
 local trunc_ln1 <partselect_45> <integer> <> 'partselect' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45>
 trunc_ln1 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45
-reg: trunc_ln1_reg_225[28:0] lv
+reg: trunc_ln1_reg_225[27:0] lv
 
 local trunc_ln4 <partselect_90> <integer> <> 'partselect' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90>
 trunc_ln4 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90
-reg: trunc_ln4_reg_231[28:0] lv
+reg: trunc_ln4_reg_231[27:0] lv
 
 
 RTL state condition: (1'b1 == ap_CS_fsm_state73)

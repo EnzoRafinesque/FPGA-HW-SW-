@@ -4,46 +4,30 @@ RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage1)
 # ST_2
 local icmp_ln90 <icmp_90> <integer> <Comparator> 'icmp' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90>
 icmp_ln90 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90
-reg: icmp_ln90_reg_482[0:0] lv
+reg: icmp_ln90_reg_396[0:0] lv
 
 local icmp_ln96 <icmp_96> <integer> <Comparator> 'icmp' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96>
 icmp_ln96 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96
-reg: icmp_ln96_reg_491[0:0] lv
+reg: icmp_ln96_reg_405[0:0] lv
 
 
 RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage2)
 # ST_3
 local C_V_load <load_96> <integer> <ArrayAccess><ArrayLoad><MultiCycle> 'load' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96>
 C_V_load /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96
-reg: C_V_load_reg_507[15:0] lv
+reg: C_V_load_reg_417[15:0] lv
 
 local trunc_ln96_1 <partselect_96> <integer> <> 'partselect' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96>
 trunc_ln96_1 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96
-reg: trunc_ln96_1_reg_512[63:0] lv
+reg: trunc_ln96_1_reg_422[127:0] lv
 
 local trunc_ln96_2 <partselect_96> <integer> <> 'partselect' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96>
 trunc_ln96_2 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96
-reg: trunc_ln96_2_reg_517[63:0] lv
-
-local trunc_ln96_3 <partselect_96> <integer> <> 'partselect' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96>
-trunc_ln96_3 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96
-reg: trunc_ln96_3_reg_522[63:0] lv
-
-local trunc_ln96_4 <partselect_96> <integer> <> 'partselect' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96>
-trunc_ln96_4 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96
-reg: trunc_ln96_4_reg_527[63:0] lv
-
-local trunc_ln96_5 <partselect_96> <integer> <> 'partselect' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96>
-trunc_ln96_5 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96
-reg: trunc_ln96_5_reg_532[63:0] lv
-
-local trunc_ln96_6 <partselect_96> <integer> <> 'partselect' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96>
-trunc_ln96_6 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96
-reg: trunc_ln96_6_reg_537[63:0] lv
+reg: trunc_ln96_2_reg_427[127:0] lv
 
 local tmp_s <partselect_96> <integer> <> 'partselect' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96>
 tmp_s /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96
-reg: tmp_s_reg_542[47:0] lv
+reg: tmp_s_reg_432[111:0] lv
 
 
 End Function 'matmul_Pipeline_writeC'
