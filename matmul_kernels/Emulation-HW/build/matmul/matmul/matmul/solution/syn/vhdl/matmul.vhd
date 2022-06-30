@@ -14,7 +14,7 @@ generic (
     C_M_AXI_GMEM0_ADDR_WIDTH : INTEGER := 32;
     C_M_AXI_GMEM0_ID_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM0_AWUSER_WIDTH : INTEGER := 1;
-    C_M_AXI_GMEM0_DATA_WIDTH : INTEGER := 512;
+    C_M_AXI_GMEM0_DATA_WIDTH : INTEGER := 32;
     C_M_AXI_GMEM0_WUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM0_ARUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM0_RUSER_WIDTH : INTEGER := 1;
@@ -22,7 +22,7 @@ generic (
     C_M_AXI_GMEM1_ADDR_WIDTH : INTEGER := 32;
     C_M_AXI_GMEM1_ID_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM1_AWUSER_WIDTH : INTEGER := 1;
-    C_M_AXI_GMEM1_DATA_WIDTH : INTEGER := 512;
+    C_M_AXI_GMEM1_DATA_WIDTH : INTEGER := 32;
     C_M_AXI_GMEM1_WUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM1_ARUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM1_RUSER_WIDTH : INTEGER := 1;
@@ -161,7 +161,7 @@ end;
 architecture behav of matmul is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "matmul_matmul,hls_ip_2021_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z045-ffg900-2,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=2715,HLS_SYN_TPT=none,HLS_SYN_MEM=119,HLS_SYN_DSP=0,HLS_SYN_FF=6268,HLS_SYN_LUT=6817,HLS_VERSION=2021_2}";
+    "matmul_matmul,hls_ip_2021_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z045-ffg900-2,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=49307,HLS_SYN_TPT=none,HLS_SYN_MEM=11,HLS_SYN_DSP=0,HLS_SYN_FF=6283,HLS_SYN_LUT=6247,HLS_VERSION=2021_2}";
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_logic_1 : STD_LOGIC := '1';
@@ -323,15 +323,13 @@ architecture behav of matmul is
     constant ap_const_lv32_4B : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001011";
     constant ap_const_lv32_4C : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001100";
     constant ap_const_boolean_0 : BOOLEAN := false;
-    constant ap_const_lv32_8 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001000";
+    constant ap_const_lv32_200 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000001000000000";
     constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
     constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
-    constant ap_const_lv32_6 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000110";
+    constant ap_const_lv32_2 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000010";
     constant ap_const_lv32_1F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000011111";
-    constant ap_const_lv512_lc_1 : STD_LOGIC_VECTOR (511 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv9_0 : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
-    constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
 
 attribute shreg_extract : string;
     signal ap_local_deadlock : STD_LOGIC_VECTOR (0 downto 0);
@@ -365,20 +363,20 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal ap_CS_fsm_state145 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state145 : signal is "none";
     signal gmem1_blk_n_AR : STD_LOGIC;
-    signal trunc_ln_reg_219 : STD_LOGIC_VECTOR (25 downto 0);
-    signal trunc_ln1_reg_225 : STD_LOGIC_VECTOR (25 downto 0);
-    signal trunc_ln4_reg_231 : STD_LOGIC_VECTOR (25 downto 0);
-    signal A_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal trunc_ln_reg_219 : STD_LOGIC_VECTOR (29 downto 0);
+    signal trunc_ln1_reg_225 : STD_LOGIC_VECTOR (29 downto 0);
+    signal trunc_ln4_reg_231 : STD_LOGIC_VECTOR (29 downto 0);
+    signal A_V_address0 : STD_LOGIC_VECTOR (9 downto 0);
     signal A_V_ce0 : STD_LOGIC;
     signal A_V_we0 : STD_LOGIC;
     signal A_V_q0 : STD_LOGIC_VECTOR (15 downto 0);
-    signal B_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal B_V_address0 : STD_LOGIC_VECTOR (9 downto 0);
     signal B_V_ce0 : STD_LOGIC;
     signal B_V_we0 : STD_LOGIC;
     signal B_V_q0 : STD_LOGIC_VECTOR (15 downto 0);
     signal B_V_ce1 : STD_LOGIC;
     signal B_V_q1 : STD_LOGIC_VECTOR (15 downto 0);
-    signal C_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal C_V_address0 : STD_LOGIC_VECTOR (9 downto 0);
     signal C_V_ce0 : STD_LOGIC;
     signal C_V_we0 : STD_LOGIC;
     signal C_V_q0 : STD_LOGIC_VECTOR (15 downto 0);
@@ -401,8 +399,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
     signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WVALID : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WDATA : STD_LOGIC_VECTOR (511 downto 0);
-    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WSTRB : STD_LOGIC_VECTOR (63 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
     signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WLAST : STD_LOGIC;
     signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WID : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
@@ -420,7 +418,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_RREADY : STD_LOGIC;
     signal grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_BREADY : STD_LOGIC;
-    signal grp_matmul_Pipeline_readA_fu_128_A_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_readA_fu_128_A_V_address0 : STD_LOGIC_VECTOR (9 downto 0);
     signal grp_matmul_Pipeline_readA_fu_128_A_V_ce0 : STD_LOGIC;
     signal grp_matmul_Pipeline_readA_fu_128_A_V_we0 : STD_LOGIC;
     signal grp_matmul_Pipeline_readA_fu_128_A_V_d0 : STD_LOGIC_VECTOR (15 downto 0);
@@ -444,8 +442,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
     signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WVALID : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WDATA : STD_LOGIC_VECTOR (511 downto 0);
-    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WSTRB : STD_LOGIC_VECTOR (63 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
     signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WLAST : STD_LOGIC;
     signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WID : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WUSER : STD_LOGIC_VECTOR (0 downto 0);
@@ -463,7 +461,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_RREADY : STD_LOGIC;
     signal grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_BREADY : STD_LOGIC;
-    signal grp_matmul_Pipeline_readB_fu_136_B_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_readB_fu_136_B_V_address0 : STD_LOGIC_VECTOR (9 downto 0);
     signal grp_matmul_Pipeline_readB_fu_136_B_V_ce0 : STD_LOGIC;
     signal grp_matmul_Pipeline_readB_fu_136_B_V_we0 : STD_LOGIC;
     signal grp_matmul_Pipeline_readB_fu_136_B_V_d0 : STD_LOGIC_VECTOR (15 downto 0);
@@ -474,19 +472,19 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done : STD_LOGIC;
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_idle : STD_LOGIC;
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_ready : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_address0 : STD_LOGIC_VECTOR (9 downto 0);
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_ce0 : STD_LOGIC;
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_we0 : STD_LOGIC;
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_d0 : STD_LOGIC_VECTOR (15 downto 0);
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_address1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_address1 : STD_LOGIC_VECTOR (9 downto 0);
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_ce1 : STD_LOGIC;
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_we1 : STD_LOGIC;
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_d1 : STD_LOGIC_VECTOR (15 downto 0);
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_A_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_A_V_address0 : STD_LOGIC_VECTOR (9 downto 0);
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_A_V_ce0 : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_address0 : STD_LOGIC_VECTOR (9 downto 0);
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_ce0 : STD_LOGIC;
-    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_address1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_address1 : STD_LOGIC_VECTOR (9 downto 0);
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_B_V_ce1 : STD_LOGIC;
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_ext_blocking_n : STD_LOGIC;
     signal grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_str_blocking_n : STD_LOGIC;
@@ -508,8 +506,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
     signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WVALID : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WDATA : STD_LOGIC_VECTOR (511 downto 0);
-    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WSTRB : STD_LOGIC_VECTOR (63 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
     signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WLAST : STD_LOGIC;
     signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WID : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
@@ -527,7 +525,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_RREADY : STD_LOGIC;
     signal grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_BREADY : STD_LOGIC;
-    signal grp_matmul_Pipeline_writeC_fu_151_C_V_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_matmul_Pipeline_writeC_fu_151_C_V_address0 : STD_LOGIC_VECTOR (9 downto 0);
     signal grp_matmul_Pipeline_writeC_fu_151_C_V_ce0 : STD_LOGIC;
     signal grp_matmul_Pipeline_writeC_fu_151_ap_ext_blocking_n : STD_LOGIC;
     signal grp_matmul_Pipeline_writeC_fu_151_ap_str_blocking_n : STD_LOGIC;
@@ -562,7 +560,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal gmem0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem0_RVALID : STD_LOGIC;
     signal gmem0_RREADY : STD_LOGIC;
-    signal gmem0_RDATA : STD_LOGIC_VECTOR (511 downto 0);
+    signal gmem0_RDATA : STD_LOGIC_VECTOR (31 downto 0);
     signal gmem0_RLAST : STD_LOGIC;
     signal gmem0_RID : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem0_RFIFONUM : STD_LOGIC_VECTOR (8 downto 0);
@@ -590,7 +588,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal gmem1_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem1_RVALID : STD_LOGIC;
     signal gmem1_RREADY : STD_LOGIC;
-    signal gmem1_RDATA : STD_LOGIC_VECTOR (511 downto 0);
+    signal gmem1_RDATA : STD_LOGIC_VECTOR (31 downto 0);
     signal gmem1_RLAST : STD_LOGIC;
     signal gmem1_RID : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem1_RFIFONUM : STD_LOGIC_VECTOR (8 downto 0);
@@ -818,8 +816,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem0_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_WVALID : OUT STD_LOGIC;
         m_axi_gmem0_WREADY : IN STD_LOGIC;
-        m_axi_gmem0_WDATA : OUT STD_LOGIC_VECTOR (511 downto 0);
-        m_axi_gmem0_WSTRB : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem0_WDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem0_WSTRB : OUT STD_LOGIC_VECTOR (3 downto 0);
         m_axi_gmem0_WLAST : OUT STD_LOGIC;
         m_axi_gmem0_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -838,7 +836,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem0_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_RVALID : IN STD_LOGIC;
         m_axi_gmem0_RREADY : OUT STD_LOGIC;
-        m_axi_gmem0_RDATA : IN STD_LOGIC_VECTOR (511 downto 0);
+        m_axi_gmem0_RDATA : IN STD_LOGIC_VECTOR (31 downto 0);
         m_axi_gmem0_RLAST : IN STD_LOGIC;
         m_axi_gmem0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
@@ -849,8 +847,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        sext_ln34 : IN STD_LOGIC_VECTOR (25 downto 0);
-        A_V_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        sext_ln34 : IN STD_LOGIC_VECTOR (29 downto 0);
+        A_V_address0 : OUT STD_LOGIC_VECTOR (9 downto 0);
         A_V_ce0 : OUT STD_LOGIC;
         A_V_we0 : OUT STD_LOGIC;
         A_V_d0 : OUT STD_LOGIC_VECTOR (15 downto 0);
@@ -883,8 +881,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem1_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem1_WVALID : OUT STD_LOGIC;
         m_axi_gmem1_WREADY : IN STD_LOGIC;
-        m_axi_gmem1_WDATA : OUT STD_LOGIC_VECTOR (511 downto 0);
-        m_axi_gmem1_WSTRB : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem1_WDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem1_WSTRB : OUT STD_LOGIC_VECTOR (3 downto 0);
         m_axi_gmem1_WLAST : OUT STD_LOGIC;
         m_axi_gmem1_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem1_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -903,7 +901,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem1_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem1_RVALID : IN STD_LOGIC;
         m_axi_gmem1_RREADY : OUT STD_LOGIC;
-        m_axi_gmem1_RDATA : IN STD_LOGIC_VECTOR (511 downto 0);
+        m_axi_gmem1_RDATA : IN STD_LOGIC_VECTOR (31 downto 0);
         m_axi_gmem1_RLAST : IN STD_LOGIC;
         m_axi_gmem1_RID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem1_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
@@ -914,8 +912,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem1_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem1_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem1_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        sext_ln45 : IN STD_LOGIC_VECTOR (25 downto 0);
-        B_V_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        sext_ln45 : IN STD_LOGIC_VECTOR (29 downto 0);
+        B_V_address0 : OUT STD_LOGIC_VECTOR (9 downto 0);
         B_V_ce0 : OUT STD_LOGIC;
         B_V_we0 : OUT STD_LOGIC;
         B_V_d0 : OUT STD_LOGIC_VECTOR (15 downto 0);
@@ -933,21 +931,21 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         ap_done : OUT STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        C_V_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        C_V_address0 : OUT STD_LOGIC_VECTOR (9 downto 0);
         C_V_ce0 : OUT STD_LOGIC;
         C_V_we0 : OUT STD_LOGIC;
         C_V_d0 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        C_V_address1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        C_V_address1 : OUT STD_LOGIC_VECTOR (9 downto 0);
         C_V_ce1 : OUT STD_LOGIC;
         C_V_we1 : OUT STD_LOGIC;
         C_V_d1 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        A_V_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        A_V_address0 : OUT STD_LOGIC_VECTOR (9 downto 0);
         A_V_ce0 : OUT STD_LOGIC;
         A_V_q0 : IN STD_LOGIC_VECTOR (15 downto 0);
-        B_V_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        B_V_address0 : OUT STD_LOGIC_VECTOR (9 downto 0);
         B_V_ce0 : OUT STD_LOGIC;
         B_V_q0 : IN STD_LOGIC_VECTOR (15 downto 0);
-        B_V_address1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        B_V_address1 : OUT STD_LOGIC_VECTOR (9 downto 0);
         B_V_ce1 : OUT STD_LOGIC;
         B_V_q1 : IN STD_LOGIC_VECTOR (15 downto 0);
         ap_ext_blocking_n : OUT STD_LOGIC;
@@ -979,8 +977,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem0_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_WVALID : OUT STD_LOGIC;
         m_axi_gmem0_WREADY : IN STD_LOGIC;
-        m_axi_gmem0_WDATA : OUT STD_LOGIC_VECTOR (511 downto 0);
-        m_axi_gmem0_WSTRB : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem0_WDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem0_WSTRB : OUT STD_LOGIC_VECTOR (3 downto 0);
         m_axi_gmem0_WLAST : OUT STD_LOGIC;
         m_axi_gmem0_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -999,7 +997,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem0_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_RVALID : IN STD_LOGIC;
         m_axi_gmem0_RREADY : OUT STD_LOGIC;
-        m_axi_gmem0_RDATA : IN STD_LOGIC_VECTOR (511 downto 0);
+        m_axi_gmem0_RDATA : IN STD_LOGIC_VECTOR (31 downto 0);
         m_axi_gmem0_RLAST : IN STD_LOGIC;
         m_axi_gmem0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
@@ -1010,8 +1008,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        sext_ln90 : IN STD_LOGIC_VECTOR (25 downto 0);
-        C_V_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        sext_ln90 : IN STD_LOGIC_VECTOR (29 downto 0);
+        C_V_address0 : OUT STD_LOGIC_VECTOR (9 downto 0);
         C_V_ce0 : OUT STD_LOGIC;
         C_V_q0 : IN STD_LOGIC_VECTOR (15 downto 0);
         ap_ext_blocking_n : OUT STD_LOGIC;
@@ -1028,7 +1026,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        address0 : IN STD_LOGIC_VECTOR (9 downto 0);
         ce0 : IN STD_LOGIC;
         we0 : IN STD_LOGIC;
         d0 : IN STD_LOGIC_VECTOR (15 downto 0);
@@ -1044,12 +1042,12 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        address0 : IN STD_LOGIC_VECTOR (9 downto 0);
         ce0 : IN STD_LOGIC;
         we0 : IN STD_LOGIC;
         d0 : IN STD_LOGIC_VECTOR (15 downto 0);
         q0 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        address1 : IN STD_LOGIC_VECTOR (7 downto 0);
+        address1 : IN STD_LOGIC_VECTOR (9 downto 0);
         ce1 : IN STD_LOGIC;
         q1 : OUT STD_LOGIC_VECTOR (15 downto 0) );
     end component;
@@ -1063,12 +1061,12 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        address0 : IN STD_LOGIC_VECTOR (9 downto 0);
         ce0 : IN STD_LOGIC;
         we0 : IN STD_LOGIC;
         d0 : IN STD_LOGIC_VECTOR (15 downto 0);
         q0 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        address1 : IN STD_LOGIC_VECTOR (7 downto 0);
+        address1 : IN STD_LOGIC_VECTOR (9 downto 0);
         ce1 : IN STD_LOGIC;
         we1 : IN STD_LOGIC;
         d1 : IN STD_LOGIC_VECTOR (15 downto 0) );
@@ -1200,7 +1198,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         I_ARREGION : IN STD_LOGIC_VECTOR (3 downto 0);
         I_RVALID : OUT STD_LOGIC;
         I_RREADY : IN STD_LOGIC;
-        I_RDATA : OUT STD_LOGIC_VECTOR (511 downto 0);
+        I_RDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
         I_RFIFONUM : OUT STD_LOGIC_VECTOR (8 downto 0);
         I_RID : OUT STD_LOGIC_VECTOR (0 downto 0);
         I_RUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -1221,11 +1219,11 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         I_AWREGION : IN STD_LOGIC_VECTOR (3 downto 0);
         I_WVALID : IN STD_LOGIC;
         I_WREADY : OUT STD_LOGIC;
-        I_WDATA : IN STD_LOGIC_VECTOR (511 downto 0);
+        I_WDATA : IN STD_LOGIC_VECTOR (31 downto 0);
         I_WID : IN STD_LOGIC_VECTOR (0 downto 0);
         I_WUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         I_WLAST : IN STD_LOGIC;
-        I_WSTRB : IN STD_LOGIC_VECTOR (63 downto 0);
+        I_WSTRB : IN STD_LOGIC_VECTOR (3 downto 0);
         I_BVALID : OUT STD_LOGIC;
         I_BREADY : IN STD_LOGIC;
         I_BRESP : OUT STD_LOGIC_VECTOR (1 downto 0);
@@ -1320,7 +1318,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         I_ARREGION : IN STD_LOGIC_VECTOR (3 downto 0);
         I_RVALID : OUT STD_LOGIC;
         I_RREADY : IN STD_LOGIC;
-        I_RDATA : OUT STD_LOGIC_VECTOR (511 downto 0);
+        I_RDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
         I_RFIFONUM : OUT STD_LOGIC_VECTOR (8 downto 0);
         I_RID : OUT STD_LOGIC_VECTOR (0 downto 0);
         I_RUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -1341,11 +1339,11 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         I_AWREGION : IN STD_LOGIC_VECTOR (3 downto 0);
         I_WVALID : IN STD_LOGIC;
         I_WREADY : OUT STD_LOGIC;
-        I_WDATA : IN STD_LOGIC_VECTOR (511 downto 0);
+        I_WDATA : IN STD_LOGIC_VECTOR (31 downto 0);
         I_WID : IN STD_LOGIC_VECTOR (0 downto 0);
         I_WUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         I_WLAST : IN STD_LOGIC;
-        I_WSTRB : IN STD_LOGIC_VECTOR (63 downto 0);
+        I_WSTRB : IN STD_LOGIC_VECTOR (3 downto 0);
         I_BVALID : OUT STD_LOGIC;
         I_BREADY : IN STD_LOGIC;
         I_BRESP : OUT STD_LOGIC_VECTOR (1 downto 0);
@@ -1359,8 +1357,8 @@ begin
     A_V_U : component matmul_A_V_RAM_AUTO_1R1W
     generic map (
         DataWidth => 16,
-        AddressRange => 256,
-        AddressWidth => 8)
+        AddressRange => 1024,
+        AddressWidth => 10)
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -1373,8 +1371,8 @@ begin
     B_V_U : component matmul_B_V_RAM_1WNR_AUTO_1R1W
     generic map (
         DataWidth => 16,
-        AddressRange => 256,
-        AddressWidth => 8)
+        AddressRange => 1024,
+        AddressWidth => 10)
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -1390,8 +1388,8 @@ begin
     C_V_U : component matmul_C_V_RAM_AUTO_1R1W
     generic map (
         DataWidth => 16,
-        AddressRange => 256,
-        AddressWidth => 8)
+        AddressRange => 1024,
+        AddressWidth => 10)
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -1603,7 +1601,7 @@ begin
         m_axi_gmem0_ARUSER => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARUSER,
         m_axi_gmem0_RVALID => ap_const_logic_0,
         m_axi_gmem0_RREADY => grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_RREADY,
-        m_axi_gmem0_RDATA => ap_const_lv512_lc_1,
+        m_axi_gmem0_RDATA => ap_const_lv32_0,
         m_axi_gmem0_RLAST => ap_const_logic_0,
         m_axi_gmem0_RID => ap_const_lv1_0,
         m_axi_gmem0_RFIFONUM => ap_const_lv9_0,
@@ -1662,7 +1660,7 @@ begin
     gmem0_m_axi_U : component matmul_gmem0_m_axi
     generic map (
         CONSERVATIVE => 1,
-        USER_DW => 512,
+        USER_DW => 32,
         USER_AW => 32,
         USER_MAXREQS => 69,
         NUM_READ_OUTSTANDING => 16,
@@ -1780,7 +1778,7 @@ begin
     gmem1_m_axi_U : component matmul_gmem1_m_axi
     generic map (
         CONSERVATIVE => 1,
-        USER_DW => 512,
+        USER_DW => 32,
         USER_AW => 32,
         USER_MAXREQS => 69,
         NUM_READ_OUTSTANDING => 16,
@@ -1884,11 +1882,11 @@ begin
         I_AWREGION => ap_const_lv4_0,
         I_WVALID => ap_const_logic_0,
         I_WREADY => gmem1_WREADY,
-        I_WDATA => ap_const_lv512_lc_1,
+        I_WDATA => ap_const_lv32_0,
         I_WID => ap_const_lv1_0,
         I_WUSER => ap_const_lv1_0,
         I_WLAST => ap_const_logic_0,
-        I_WSTRB => ap_const_lv64_0,
+        I_WSTRB => ap_const_lv4_0,
         I_BVALID => gmem1_BVALID,
         I_BREADY => ap_const_logic_0,
         I_BRESP => gmem1_BRESP,
@@ -2036,9 +2034,9 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state1)) then
-                trunc_ln1_reg_225 <= in2(31 downto 6);
-                trunc_ln4_reg_231 <= out_r(31 downto 6);
-                trunc_ln_reg_219 <= in1(31 downto 6);
+                trunc_ln1_reg_225 <= in2(31 downto 2);
+                trunc_ln4_reg_231 <= out_r(31 downto 2);
+                trunc_ln_reg_219 <= in1(31 downto 2);
             end if;
         end if;
     end process;
@@ -2372,7 +2370,7 @@ begin
         elsif ((ap_const_logic_1 = ap_CS_fsm_state73)) then 
             A_V_address0 <= grp_matmul_Pipeline_readA_fu_128_A_V_address0;
         else 
-            A_V_address0 <= "XXXXXXXX";
+            A_V_address0 <= "XXXXXXXXXX";
         end if; 
     end process;
 
@@ -2406,7 +2404,7 @@ begin
         elsif ((ap_const_logic_1 = ap_CS_fsm_state73)) then 
             B_V_address0 <= grp_matmul_Pipeline_readB_fu_136_B_V_address0;
         else 
-            B_V_address0 <= "XXXXXXXX";
+            B_V_address0 <= "XXXXXXXXXX";
         end if; 
     end process;
 
@@ -2450,7 +2448,7 @@ begin
         elsif ((ap_const_logic_1 = ap_CS_fsm_state75)) then 
             C_V_address0 <= grp_matmul_Pipeline_nopart1_nopart2_fu_144_C_V_address0;
         else 
-            C_V_address0 <= "XXXXXXXX";
+            C_V_address0 <= "XXXXXXXXXX";
         end if; 
     end process;
 
@@ -2996,7 +2994,7 @@ begin
     gmem0_ARLEN_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARLEN, ap_CS_fsm_state72, ap_CS_fsm_state73, ap_block_state2_io)
     begin
         if (((ap_const_boolean_0 = ap_block_state2_io) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
-            gmem0_ARLEN <= ap_const_lv32_8;
+            gmem0_ARLEN <= ap_const_lv32_200;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
             gmem0_ARLEN <= grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARLEN;
         else 
@@ -3122,7 +3120,7 @@ begin
     gmem0_AWLEN_assign_proc : process(ap_CS_fsm_state75, grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done, grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWLEN, gmem0_AWREADY, ap_CS_fsm_state76, ap_CS_fsm_state77)
     begin
         if ((not(((gmem0_AWREADY = ap_const_logic_0) or (grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state75))) then 
-            gmem0_AWLEN <= ap_const_lv32_8;
+            gmem0_AWLEN <= ap_const_lv32_200;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state77) or (ap_const_logic_1 = ap_CS_fsm_state76))) then 
             gmem0_AWLEN <= grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWLEN;
         else 
@@ -3310,7 +3308,7 @@ begin
     gmem1_ARLEN_assign_proc : process(ap_CS_fsm_state2, grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARLEN, ap_CS_fsm_state72, ap_CS_fsm_state73, ap_block_state2_io)
     begin
         if (((ap_const_boolean_0 = ap_block_state2_io) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
-            gmem1_ARLEN <= ap_const_lv32_8;
+            gmem1_ARLEN <= ap_const_lv32_200;
         elsif (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state72))) then 
             gmem1_ARLEN <= grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARLEN;
         else 

@@ -6,8 +6,8 @@
 module matmul_B_V_RAM_1WNR_AUTO_1R1W (address0, ce0, d0, we0, q0, address1, ce1, q1,  reset, clk);
 
 parameter DataWidth = 16;
-parameter AddressWidth = 8;
-parameter AddressRange = 256;
+parameter AddressWidth = 10;
+parameter AddressRange = 1024;
 
 input[AddressWidth-1:0] address0;
 input ce0;

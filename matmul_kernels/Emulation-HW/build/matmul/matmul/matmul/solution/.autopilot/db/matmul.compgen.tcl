@@ -1,14 +1,14 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 30
+set ID 46
 set hasByteEnable 0
 set MemName matmul_A_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 16
-set AddrRange 256
-set AddrWd 8
+set AddrRange 1024
+set AddrWd 10
 set impl_style auto
 set TrueReset 0
 set IsROM 0
@@ -83,14 +83,14 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 31
+set ID 47
 set hasByteEnable 0
 set MemName matmul_B_V_RAM_1WNR_AUTO_1R1W
 set CoreName ap_simcore_mem
 set PortList { 2 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 }
 set DataWd 16
-set AddrRange 256
-set AddrWd 8
+set AddrRange 1024
+set AddrWd 10
 set impl_style auto
 set TrueReset 0
 set IsROM 0
@@ -165,14 +165,14 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 32
+set ID 48
 set hasByteEnable 0
 set MemName matmul_C_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
 set PortList { 2 0 }
 set DataWd 16
-set AddrRange 256
-set AddrWd 8
+set AddrRange 1024
+set AddrWd 10
 set impl_style auto
 set TrueReset 0
 set IsROM 0
@@ -311,7 +311,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 33 \
+			id 49 \
 			corename matmul_control_axilite \
 			name matmul_control_s_axi \
 			ports {$port_control} \
@@ -333,7 +333,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 34 \
+    id 50 \
     corename {m_axi} \
     op interface \
     delay_budget 7.3 \ 
@@ -354,7 +354,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 35 \
+    id 51 \
     corename {m_axi} \
     op interface \
     delay_budget 7.3 \ 
