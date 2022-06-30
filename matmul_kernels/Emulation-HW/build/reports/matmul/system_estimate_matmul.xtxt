@@ -1,0 +1,51 @@
+===============================================================================
+Version:    v++ v2021.2 (64-bit)
+Build:      SW Build 3363252 on 2021-10-14-04:41:01
+Copyright:  Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+Created:    Thu Jun 30 11:12:54 2022
+===============================================================================
+
+-------------------------------------------------------------------------------
+Design Name:             matmul
+Target Device:           xilinx.com:xd:xilinx_zc706_base_202120_1:202120.1
+Target Clock:            100.000000MHz
+Total number of kernels: 1
+-------------------------------------------------------------------------------
+
+Kernel Summary
+Kernel Name  Type  Target              OpenCL Library  Compute Units
+-----------  ----  ------------------  --------------  -------------
+matmul       c     fpga0:OCL_REGION_0  matmul          1
+
+
+-------------------------------------------------------------------------------
+OpenCL Binary:     matmul
+Kernels mapped to: clc_region
+
+Timing Information (MHz)
+Compute Unit  Kernel Name  Module Name                      Target Frequency  Estimated Frequency
+------------  -----------  -------------------------------  ----------------  -------------------
+matmul_1      matmul       matmul_Pipeline_readA            100               136.986298
+matmul_1      matmul       matmul_Pipeline_readB            100               136.986298
+matmul_1      matmul       matmul_Pipeline_nopart1_nopart2  100               209.687561
+matmul_1      matmul       matmul_Pipeline_writeC           100               136.986298
+matmul_1      matmul       matmul                           100               136.986298
+
+Latency Information
+Compute Unit  Kernel Name  Module Name                      Start Interval  Best (cycles)  Avg (cycles)  Worst (cycles)  Best (absolute)  Avg (absolute)  Worst (absolute)
+------------  -----------  -------------------------------  --------------  -------------  ------------  --------------  ---------------  --------------  ----------------
+matmul_1      matmul       matmul_Pipeline_readA            4099            4099           4099          4099            40.990 us        40.990 us       40.990 us
+matmul_1      matmul       matmul_Pipeline_readB            4099            4099           4099          4099            40.990 us        40.990 us       40.990 us
+matmul_1      matmul       matmul_Pipeline_nopart1_nopart2  2053            2053           2053          2053            20.530 us        20.530 us       20.530 us
+matmul_1      matmul       matmul_Pipeline_writeC           4099            4099           4099          4099            40.990 us        40.990 us       40.990 us
+matmul_1      matmul       matmul                           10396           10395          10395         10395           0.104 ms         0.104 ms        0.104 ms
+
+Area Information
+Compute Unit  Kernel Name  Module Name                      FF    LUT   DSP  BRAM  URAM
+------------  -----------  -------------------------------  ----  ----  ---  ----  ----
+matmul_1      matmul       matmul_Pipeline_readA            1593  342   0    0     0
+matmul_1      matmul       matmul_Pipeline_readB            1593  342   0    0     0
+matmul_1      matmul       matmul_Pipeline_nopart1_nopart2  319   898   0    0     0
+matmul_1      matmul       matmul_Pipeline_writeC           1070  946   0    0     0
+matmul_1      matmul       matmul                           6002  5277  0    11    0
+-------------------------------------------------------------------------------
