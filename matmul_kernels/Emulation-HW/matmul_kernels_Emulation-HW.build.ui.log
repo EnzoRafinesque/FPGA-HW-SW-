@@ -1,6 +1,6 @@
-2022-06-30T14:28:48.99582600255-14:28:48 **** Incremental Build of configuration Emulation-HW for project matmul_kernels ****
+2022-06-30T15:47:43.26567100255-15:47:43 **** Incremental Build of configuration Emulation-HW for project matmul_kernels ****
 000-make -j8 all 
 000-make: Nothing to be done for 'all'.
 00255-
-14:28:49 Build Finished (took 141ms)
+15:47:43 Build Finished (took 102ms)
 

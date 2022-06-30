@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'matmul'" level="0">
-<item name = "Date">Thu Jun 30 14:15:03 2022
+<item name = "Date">Thu Jun 30 15:37:46 2022
 </item>
 <item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)</item>
 <item name = "Project">matmul</item>
@@ -24,17 +24,17 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">49307, 49307, 0.493 ms, 0.493 ms, 49308, 49308, no</column>
+<column name="">32923, 32923, 0.329 ms, 0.329 ms, 32924, 32924, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_matmul_Pipeline_readA_fu_128">matmul_Pipeline_readA, 16387, 16387, 0.164 ms, 0.164 ms, 16387, 16387, no</column>
-<column name="grp_matmul_Pipeline_readB_fu_136">matmul_Pipeline_readB, 16387, 16387, 0.164 ms, 0.164 ms, 16387, 16387, no</column>
+<column name="grp_matmul_Pipeline_readA_fu_128">matmul_Pipeline_readA, 8195, 8195, 81.950 us, 81.950 us, 8195, 8195, no</column>
+<column name="grp_matmul_Pipeline_readB_fu_136">matmul_Pipeline_readB, 8195, 8195, 81.950 us, 81.950 us, 8195, 8195, no</column>
 <column name="grp_matmul_Pipeline_nopart1_nopart2_fu_144">matmul_Pipeline_nopart1_nopart2, 16389, 16389, 0.164 ms, 0.164 ms, 16389, 16389, no</column>
-<column name="grp_matmul_Pipeline_writeC_fu_151">matmul_Pipeline_writeC, 16387, 16387, 0.164 ms, 0.164 ms, 16387, 16387, no</column>
+<column name="grp_matmul_Pipeline_writeC_fu_151">matmul_Pipeline_writeC, 8195, 8195, 81.950 us, 81.950 us, 8195, 8195, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -53,10 +53,10 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 9, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">8, 32, 6037, 4892, -</column>
+<column name="Instance">16, 32, 6089, 5040, -</column>
 <column name="Memory">3, -, 0, 0, 0</column>
 <column name="Multiplexer">-, -, -, 1346, -</column>
-<column name="Register">-, -, 246, -, -</column>
+<column name="Register">-, -, 243, -, -</column>
 <specialColumn name="Available">1090, 900, 437200, 218600, 0</specialColumn>
 <specialColumn name="Utilization (%)">1, 3, 1, 2, 0</specialColumn>
 </table>
@@ -66,12 +66,12 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 157, 234, 0</column>
-<column name="gmem0_m_axi_U">gmem0_m_axi, 4, 0, 512, 580, 0</column>
-<column name="gmem1_m_axi_U">gmem1_m_axi, 4, 0, 512, 580, 0</column>
+<column name="gmem0_m_axi_U">gmem0_m_axi, 8, 0, 566, 766, 0</column>
+<column name="gmem1_m_axi_U">gmem1_m_axi, 8, 0, 566, 766, 0</column>
 <column name="grp_matmul_Pipeline_nopart1_nopart2_fu_144">matmul_Pipeline_nopart1_nopart2, 0, 32, 590, 1846, 0</column>
-<column name="grp_matmul_Pipeline_readA_fu_128">matmul_Pipeline_readA, 0, 0, 1597, 351, 0</column>
-<column name="grp_matmul_Pipeline_readB_fu_136">matmul_Pipeline_readB, 0, 0, 1597, 351, 0</column>
-<column name="grp_matmul_Pipeline_writeC_fu_151">matmul_Pipeline_writeC, 0, 0, 1072, 950, 0</column>
+<column name="grp_matmul_Pipeline_readA_fu_128">matmul_Pipeline_readA, 0, 0, 1589, 291, 0</column>
+<column name="grp_matmul_Pipeline_readB_fu_136">matmul_Pipeline_readB, 0, 0, 1589, 291, 0</column>
+<column name="grp_matmul_Pipeline_writeC_fu_151">matmul_Pipeline_writeC, 0, 0, 1032, 846, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -176,9 +176,9 @@
 <column name="grp_matmul_Pipeline_readA_fu_128_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_matmul_Pipeline_readB_fu_136_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_matmul_Pipeline_writeC_fu_151_ap_start_reg">1, 0, 1, 0</column>
-<column name="trunc_ln1_reg_225">30, 0, 30, 0</column>
-<column name="trunc_ln4_reg_231">30, 0, 30, 0</column>
-<column name="trunc_ln_reg_219">30, 0, 30, 0</column>
+<column name="trunc_ln1_reg_225">29, 0, 29, 0</column>
+<column name="trunc_ln4_reg_231">29, 0, 29, 0</column>
+<column name="trunc_ln_reg_219">29, 0, 29, 0</column>
 </table>
 </item>
 </section>
@@ -232,8 +232,8 @@
 <column name="m_axi_gmem0_AWUSER">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WVALID">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WREADY">in, 1, m_axi, gmem0, pointer</column>
-<column name="m_axi_gmem0_WDATA">out, 32, m_axi, gmem0, pointer</column>
-<column name="m_axi_gmem0_WSTRB">out, 4, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_WDATA">out, 64, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_WSTRB">out, 8, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WLAST">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WID">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WUSER">out, 1, m_axi, gmem0, pointer</column>
@@ -252,7 +252,7 @@
 <column name="m_axi_gmem0_ARUSER">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RVALID">in, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RREADY">out, 1, m_axi, gmem0, pointer</column>
-<column name="m_axi_gmem0_RDATA">in, 32, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_RDATA">in, 64, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RLAST">in, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RID">in, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RUSER">in, 1, m_axi, gmem0, pointer</column>
@@ -277,8 +277,8 @@
 <column name="m_axi_gmem1_AWUSER">out, 1, m_axi, gmem1, pointer</column>
 <column name="m_axi_gmem1_WVALID">out, 1, m_axi, gmem1, pointer</column>
 <column name="m_axi_gmem1_WREADY">in, 1, m_axi, gmem1, pointer</column>
-<column name="m_axi_gmem1_WDATA">out, 32, m_axi, gmem1, pointer</column>
-<column name="m_axi_gmem1_WSTRB">out, 4, m_axi, gmem1, pointer</column>
+<column name="m_axi_gmem1_WDATA">out, 64, m_axi, gmem1, pointer</column>
+<column name="m_axi_gmem1_WSTRB">out, 8, m_axi, gmem1, pointer</column>
 <column name="m_axi_gmem1_WLAST">out, 1, m_axi, gmem1, pointer</column>
 <column name="m_axi_gmem1_WID">out, 1, m_axi, gmem1, pointer</column>
 <column name="m_axi_gmem1_WUSER">out, 1, m_axi, gmem1, pointer</column>
@@ -297,7 +297,7 @@
 <column name="m_axi_gmem1_ARUSER">out, 1, m_axi, gmem1, pointer</column>
 <column name="m_axi_gmem1_RVALID">in, 1, m_axi, gmem1, pointer</column>
 <column name="m_axi_gmem1_RREADY">out, 1, m_axi, gmem1, pointer</column>
-<column name="m_axi_gmem1_RDATA">in, 32, m_axi, gmem1, pointer</column>
+<column name="m_axi_gmem1_RDATA">in, 64, m_axi, gmem1, pointer</column>
 <column name="m_axi_gmem1_RLAST">in, 1, m_axi, gmem1, pointer</column>
 <column name="m_axi_gmem1_RID">in, 1, m_axi, gmem1, pointer</column>
 <column name="m_axi_gmem1_RUSER">in, 1, m_axi, gmem1, pointer</column>

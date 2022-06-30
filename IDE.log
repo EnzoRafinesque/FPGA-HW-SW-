@@ -242,3 +242,54 @@
 15:36:11 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/summary.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/summary.csv'.
 15:36:11 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/device_trace_0.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/device_trace_0.csv'.
 15:36:11 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/xrt.run_summary' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.run_summary'.
+15:50:47 INFO  : Environment used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to '{XCL_EMULATION_MODE=hw_emu, XILINX_XRT=/usr, LD_LIBRARY_PATH=/mnt/sd-mmcblk0p1/:/tmp:$LD_LIBRARY_PATH, XILINX_VITIS=/mnt/sd-mmcblk0p1/}'.
+15:50:47 INFO  : Add the variable 'XILINX_VITIS_DEBUG_ENV_CUSTOM' in enivronment tab of the launch configuration dialog to prevent the tool from overriding the environment.
+15:50:47 INFO  : Arguments used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to './binary_container_1.xclbin'.
+15:50:47 WARN  : The platform description file '/home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/package/sd_card/platform_desc.txt' required for the launching the application 'matmul' doesn't exist.
+15:50:48 INFO  : Transferred file from '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.ini' to '/mnt/sd-mmcblk0p1/xrt.ini'.
+15:51:20 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/summary.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/summary.csv'.
+15:51:20 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/device_trace_0.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/device_trace_0.csv'.
+15:51:20 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/xrt.run_summary' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.run_summary'.
+15:52:16 INFO  : Stopping the emulator on project 'matmul_system' for configuration 'Emulation-HW'
+15:52:16 INFO  : Stopping QEMU with command 'launch_emulator -kill-pid-file /home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/emulation.pid'
+15:52:17 ERROR : [QEMU Process]: qemu-system-aarch64: terminating on signal 15 from pid 20917 (/bin/kill)
+
+15:52:21 INFO  : Emulator has terminated.
+15:52:46 INFO  : Launching XSCT server: xsct -n  -interactive /home/mdu/Desktop/work_repo/work_prj/temp_xsdb_launch_script.tcl
+15:52:47 INFO  : Platform repository initialization has completed.
+15:52:48 INFO  : Registering command handlers for Vitis TCF services
+15:52:50 INFO  : XSCT server has started successfully.
+15:52:50 INFO  : Successfully done setting XSCT server connection channel  
+15:52:50 INFO  : plnx-install-location is set to ''
+15:52:50 INFO  : Successfully done setting workspace for the tool. 
+15:52:50 INFO  : Successfully done query RDI_DATADIR 
+15:53:04 INFO  : Launching the emulator on project 'matmul_system' for configuration 'Emulation-HW'
+15:53:04 INFO  : Launching QEMU with command '/home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/package/launch_hw_emu.sh -add-env ENABLE_RDWR_DEBUG=true -add-env RDWR_DEBUG_PORT=10100 -pid-file /home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/emulation.pid -graphic-xsim -no-reboot -forward-port 1440 1534'
+15:53:45 ERROR : [QEMU Process]: qemu-system-aarch64: warning: nic ethernet@e000c000 has no peer
+
+15:56:17 INFO  : Emulator has started.
+15:56:17 INFO  : Environment used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to '{XCL_EMULATION_MODE=hw_emu, XILINX_XRT=/usr, LD_LIBRARY_PATH=/mnt/sd-mmcblk0p1/:/tmp:$LD_LIBRARY_PATH, XILINX_VITIS=/mnt/sd-mmcblk0p1/}'.
+15:56:17 INFO  : Add the variable 'XILINX_VITIS_DEBUG_ENV_CUSTOM' in enivronment tab of the launch configuration dialog to prevent the tool from overriding the environment.
+15:56:17 INFO  : Arguments used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to './binary_container_1.xclbin'.
+15:56:17 WARN  : The platform description file '/home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/package/sd_card/platform_desc.txt' required for the launching the application 'matmul' doesn't exist.
+15:56:17 INFO  : Transferred file from '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.ini' to '/mnt/sd-mmcblk0p1/xrt.ini'.
+15:56:47 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/summary.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/summary.csv'.
+15:56:47 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/device_trace_0.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/device_trace_0.csv'.
+15:56:47 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/xrt.run_summary' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.run_summary'.
+16:02:43 ERROR : [QEMU Process]: qemu-system-aarch64: /cosim@0: Disconnected clk=538717398995 ns
+
+
+16:02:53 INFO  : Launching the emulator on project 'matmul_system' for configuration 'Emulation-HW'
+16:02:53 INFO  : Launching QEMU with command '/home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/package/launch_hw_emu.sh -add-env ENABLE_RDWR_DEBUG=true -add-env RDWR_DEBUG_PORT=10100 -pid-file /home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/emulation.pid -graphic-xsim -no-reboot -forward-port 1440 1534'
+16:03:34 ERROR : [QEMU Process]: qemu-system-aarch64:
+16:03:34 ERROR : [QEMU Process]:  warning: nic ethernet@e000c000 has no peer
+
+16:05:53 INFO  : Emulator has started.
+16:05:53 INFO  : Environment used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to '{XCL_EMULATION_MODE=hw_emu, XILINX_XRT=/usr, LD_LIBRARY_PATH=/mnt/sd-mmcblk0p1/:/tmp:$LD_LIBRARY_PATH, XILINX_VITIS=/mnt/sd-mmcblk0p1/}'.
+16:05:53 INFO  : Add the variable 'XILINX_VITIS_DEBUG_ENV_CUSTOM' in enivronment tab of the launch configuration dialog to prevent the tool from overriding the environment.
+16:05:53 INFO  : Arguments used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to './binary_container_1.xclbin'.
+16:05:53 WARN  : The platform description file '/home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/package/sd_card/platform_desc.txt' required for the launching the application 'matmul' doesn't exist.
+16:05:53 INFO  : Transferred file from '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.ini' to '/mnt/sd-mmcblk0p1/xrt.ini'.
+16:06:23 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/summary.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/summary.csv'.
+16:06:23 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/device_trace_0.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/device_trace_0.csv'.
+16:06:23 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/xrt.run_summary' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.run_summary'.

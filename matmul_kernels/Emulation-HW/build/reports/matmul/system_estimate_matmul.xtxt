@@ -2,7 +2,7 @@
 Version:    v++ v2021.2 (64-bit)
 Build:      SW Build 3363252 on 2021-10-14-04:41:01
 Copyright:  Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-Created:    Thu Jun 30 14:15:42 2022
+Created:    Thu Jun 30 15:38:22 2022
 ===============================================================================
 
 -------------------------------------------------------------------------------
@@ -34,18 +34,18 @@ matmul_1      matmul       matmul                           100               13
 Latency Information
 Compute Unit  Kernel Name  Module Name                      Start Interval  Best (cycles)  Avg (cycles)  Worst (cycles)  Best (absolute)  Avg (absolute)  Worst (absolute)
 ------------  -----------  -------------------------------  --------------  -------------  ------------  --------------  ---------------  --------------  ----------------
-matmul_1      matmul       matmul_Pipeline_readA            16387           16387          16387         16387           0.164 ms         0.164 ms        0.164 ms
-matmul_1      matmul       matmul_Pipeline_readB            16387           16387          16387         16387           0.164 ms         0.164 ms        0.164 ms
+matmul_1      matmul       matmul_Pipeline_readA            8195            8195           8195          8195            81.950 us        81.950 us       81.950 us
+matmul_1      matmul       matmul_Pipeline_readB            8195            8195           8195          8195            81.950 us        81.950 us       81.950 us
 matmul_1      matmul       matmul_Pipeline_nopart1_nopart2  16389           16389          16389         16389           0.164 ms         0.164 ms        0.164 ms
-matmul_1      matmul       matmul_Pipeline_writeC           16387           16387          16387         16387           0.164 ms         0.164 ms        0.164 ms
-matmul_1      matmul       matmul                           49308           49307          49307         49307           0.493 ms         0.493 ms        0.493 ms
+matmul_1      matmul       matmul_Pipeline_writeC           8195            8195           8195          8195            81.950 us        81.950 us       81.950 us
+matmul_1      matmul       matmul                           32924           32923          32923         32923           0.329 ms         0.329 ms        0.329 ms
 
 Area Information
 Compute Unit  Kernel Name  Module Name                      FF    LUT   DSP  BRAM  URAM
 ------------  -----------  -------------------------------  ----  ----  ---  ----  ----
-matmul_1      matmul       matmul_Pipeline_readA            1597  351   0    0     0
-matmul_1      matmul       matmul_Pipeline_readB            1597  351   0    0     0
+matmul_1      matmul       matmul_Pipeline_readA            1589  291   0    0     0
+matmul_1      matmul       matmul_Pipeline_readB            1589  291   0    0     0
 matmul_1      matmul       matmul_Pipeline_nopart1_nopart2  590   1846  0    0     0
-matmul_1      matmul       matmul_Pipeline_writeC           1072  950   0    0     0
-matmul_1      matmul       matmul                           6283  6247  0    11    0
+matmul_1      matmul       matmul_Pipeline_writeC           1032  846   0    0     0
+matmul_1      matmul       matmul                           6332  6395  0    19    0
 -------------------------------------------------------------------------------
