@@ -1,7 +1,7 @@
 {
  "session": {
   "name": "Emulation-HW",
-  "uuid": "7552088d-cc2a-424c-bc02-1f8ef15a541a",
+  "uuid": "114c92ba-15ae-4e4a-a8f2-709090a9c6ee",
   "description": "Vitis IDE session Emulation-HW",
   "timestamp": "0",
   "report_file": {
@@ -29,1997 +29,13 @@
   "build_target": "",
   "config_files": []
  },
- "violation_count": 30,
+ "violation_count": 24,
  "waived_count": 0,
  "affirmation_count": 0,
  "violations": {
   "hashmap": {
-   "51": {
-    "id": 51,
-    "severity": "SEV_ADVISORY",
-    "rule_key": "Interface",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "Multiple burst reads of length 64 and bit width 64 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (!%1!)\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "Multiple burst reads of length 64 and bit width 64 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (%REF)\n"
-       },
-       {
-        "ref": {
-         "type": "AXI",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=34",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "Vitis HLS User Guide (UG1399)",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Interface"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "52": {
-    "id": 52,
-    "severity": "SEV_ADVISORY",
-    "rule_key": "Interface",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "Multiple burst reads of length 64 and bit width 64 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (!%1!)\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "Multiple burst reads of length 64 and bit width 64 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (%REF)\n"
-       },
-       {
-        "ref": {
-         "type": "AXI",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=45",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "Vitis HLS User Guide (UG1399)",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Interface"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "53": {
-    "id": 53,
-    "severity": "SEV_ADVISORY",
-    "rule_key": "Interface",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "Multiple burst writes of length 64 and bit width 64 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (!%1!)\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "Multiple burst writes of length 64 and bit width 64 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (%REF)\n"
-       },
-       {
-        "ref": {
-         "type": "AXI",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=90",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "Vitis HLS User Guide (UG1399)",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Interface"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "54": {
-    "id": 54,
-    "severity": "SEV_WARNING",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', !%1!) on port 'gmem0' (!%2!) and bus read operation ('gmem0_addr_read', !%3!) on port 'gmem0' (!%4!).\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', %REF) on port 'gmem0' (%REF) and bus read operation ('gmem0_addr_read', %REF) on port 'gmem0' (%REF).\n"
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "2": "Throughput",
-     "0": "Accelerator",
-     "1": "matmul"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "55": {
-    "id": 55,
-    "severity": "SEV_WARNING",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', !%1!) on port 'gmem0' (!%2!) and bus read operation ('gmem0_addr_read', !%3!) on port 'gmem0' (!%4!).\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', %REF) on port 'gmem0' (%REF) and bus read operation ('gmem0_addr_read', %REF) on port 'gmem0' (%REF).\n"
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Throughput"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "56": {
-    "id": 56,
-    "severity": "SEV_WARNING",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', !%1!) on port 'gmem0' (!%2!) and bus read operation ('gmem0_addr_read', !%3!) on port 'gmem0' (!%4!).\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', %REF) on port 'gmem0' (%REF) and bus read operation ('gmem0_addr_read', %REF) on port 'gmem0' (%REF).\n"
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "2": "Throughput",
-     "0": "Accelerator",
-     "1": "matmul"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "57": {
-    "id": 57,
-    "severity": "SEV_WARNING",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', !%1!) on port 'gmem0' (!%2!) and bus read operation ('gmem0_addr_read', !%3!) on port 'gmem0' (!%4!).\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', %REF) on port 'gmem0' (%REF) and bus read operation ('gmem0_addr_read', %REF) on port 'gmem0' (%REF).\n"
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Throughput"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "58": {
-    "id": 58,
-    "severity": "SEV_WARNING",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', !%1!) on port 'gmem0' (!%2!) and bus read operation ('gmem0_addr_read', !%3!) on port 'gmem0' (!%4!).\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_7', %REF) on port 'gmem0' (%REF) and bus read operation ('gmem0_addr_read', %REF) on port 'gmem0' (%REF).\n"
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=40",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Throughput"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "59": {
-    "id": 59,
-    "severity": "SEV_ADVISORY",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'readA'\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'readA'\n"
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "Vitis HLS User Guide (UG1399)",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "2": "Throughput",
-     "0": "Accelerator",
-     "1": "matmul"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "60": {
-    "id": 60,
-    "severity": "SEV_WARNING",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', !%1!) on port 'gmem1' (!%2!) and bus read operation ('gmem1_addr_read', !%3!) on port 'gmem1' (!%4!).\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', %REF) on port 'gmem1' (%REF) and bus read operation ('gmem1_addr_read', %REF) on port 'gmem1' (%REF).\n"
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "2": "Throughput",
-     "0": "Accelerator",
-     "1": "matmul"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "61": {
-    "id": 61,
-    "severity": "SEV_WARNING",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', !%1!) on port 'gmem1' (!%2!) and bus read operation ('gmem1_addr_read', !%3!) on port 'gmem1' (!%4!).\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', %REF) on port 'gmem1' (%REF) and bus read operation ('gmem1_addr_read', %REF) on port 'gmem1' (%REF).\n"
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Throughput"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "62": {
-    "id": 62,
-    "severity": "SEV_WARNING",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', !%1!) on port 'gmem1' (!%2!) and bus read operation ('gmem1_addr_read', !%3!) on port 'gmem1' (!%4!).\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', %REF) on port 'gmem1' (%REF) and bus read operation ('gmem1_addr_read', %REF) on port 'gmem1' (%REF).\n"
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Throughput"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "63": {
-    "id": 63,
-    "severity": "SEV_WARNING",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', !%1!) on port 'gmem1' (!%2!) and bus read operation ('gmem1_addr_read', !%3!) on port 'gmem1' (!%4!).\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', %REF) on port 'gmem1' (%REF) and bus read operation ('gmem1_addr_read', %REF) on port 'gmem1' (%REF).\n"
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "2": "Throughput",
-     "0": "Accelerator",
-     "1": "matmul"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "64": {
-    "id": 64,
-    "severity": "SEV_WARNING",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', !%1!) on port 'gmem1' (!%2!) and bus read operation ('gmem1_addr_read', !%3!) on port 'gmem1' (!%4!).\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_7', %REF) on port 'gmem1' (%REF) and bus read operation ('gmem1_addr_read', %REF) on port 'gmem1' (%REF).\n"
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=51",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Throughput"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "65": {
-    "id": 65,
-    "severity": "SEV_ADVISORY",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'readB'\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'readB'\n"
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "Vitis HLS User Guide (UG1399)",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Throughput"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "66": {
-    "id": 66,
-    "severity": "SEV_WARNING",
-    "rule_key": "Kernel",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_1_write_ln82', !%1!) of variable 'temp_sum.V[1]' on array 'C_V' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'C_V'.\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_1_write_ln82', %REF) of variable 'temp_sum.V[1]' on array 'C_V' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'C_V'.\n"
-       },
-       {
-        "ref": {
-         "type": "KERNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=82",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-885 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Kernel"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "67": {
-    "id": 67,
+   "94": {
+    "id": 94,
     "severity": "SEV_WARNING",
     "rule_key": "Kernel",
     "examples": {
@@ -2107,8 +123,8 @@
     "impact": "IMPACT_UNKNOWN",
     "group": ""
    },
-   "68": {
-    "id": 68,
+   "95": {
+    "id": 95,
     "severity": "SEV_WARNING",
     "rule_key": "Kernel",
     "examples": {
@@ -2188,16 +204,16 @@
      }
     },
     "categories": {
+     "2": "Kernel",
      "0": "Accelerator",
-     "1": "matmul",
-     "2": "Kernel"
+     "1": "matmul"
     },
     "extended_categories": {},
     "impact": "IMPACT_UNKNOWN",
     "group": ""
    },
-   "69": {
-    "id": 69,
+   "96": {
+    "id": 96,
     "severity": "SEV_WARNING",
     "rule_key": "Kernel",
     "examples": {
@@ -2285,8 +301,8 @@
     "impact": "IMPACT_UNKNOWN",
     "group": ""
    },
-   "70": {
-    "id": 70,
+   "97": {
+    "id": 97,
     "severity": "SEV_WARNING",
     "rule_key": "Kernel",
     "examples": {
@@ -2374,8 +390,8 @@
     "impact": "IMPACT_UNKNOWN",
     "group": ""
    },
-   "71": {
-    "id": 71,
+   "98": {
+    "id": 98,
     "severity": "SEV_ADVISORY",
     "rule_key": "Throughput",
     "examples": {
@@ -2443,8 +459,8 @@
     "impact": "IMPACT_UNKNOWN",
     "group": ""
    },
-   "72": {
-    "id": 72,
+   "99": {
+    "id": 99,
     "severity": "SEV_WARNING",
     "rule_key": "Throughput",
     "examples": {
@@ -2584,16 +600,16 @@
      }
     },
     "categories": {
+     "2": "Throughput",
      "0": "Accelerator",
-     "1": "matmul",
-     "2": "Throughput"
+     "1": "matmul"
     },
     "extended_categories": {},
     "impact": "IMPACT_UNKNOWN",
     "group": ""
    },
-   "73": {
-    "id": 73,
+   "100": {
+    "id": 100,
     "severity": "SEV_WARNING",
     "rule_key": "Throughput",
     "examples": {
@@ -2741,8 +757,8 @@
     "impact": "IMPACT_UNKNOWN",
     "group": ""
    },
-   "74": {
-    "id": 74,
+   "101": {
+    "id": 101,
     "severity": "SEV_WARNING",
     "rule_key": "Throughput",
     "examples": {
@@ -2882,314 +898,16 @@
      }
     },
     "categories": {
+     "2": "Throughput",
      "0": "Accelerator",
-     "1": "matmul",
-     "2": "Throughput"
+     "1": "matmul"
     },
     "extended_categories": {},
     "impact": "IMPACT_UNKNOWN",
     "group": ""
    },
-   "75": {
-    "id": 75,
-    "severity": "SEV_WARNING",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_writeC' (loop 'writeC'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus write operation ('gmem0_addr_write_ln96', !%1!) on port 'gmem0' (!%2!) and bus write operation ('gmem0_addr_write_ln96', !%3!) on port 'gmem0' (!%4!).\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_writeC' (loop 'writeC'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus write operation ('gmem0_addr_write_ln96', %REF) on port 'gmem0' (%REF) and bus write operation ('gmem0_addr_write_ln96', %REF) on port 'gmem0' (%REF).\n"
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=96",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=96",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=96",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=96",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Throughput"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "76": {
-    "id": 76,
-    "severity": "SEV_WARNING",
-    "rule_key": "Throughput",
-    "examples": {
-     "uri": [
-      {
-       "link_text": "Vitis HLS User Guide (UG1399)",
-       "url": {
-        "scheme": "HTTP",
-        "host": "www.xilinx.com",
-        "port": 0,
-        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
-        "query": "",
-        "fragment": "",
-        "media_type": "",
-        "encoding": "",
-        "data": ""
-       },
-       "docgen_filename": ""
-      }
-     ]
-    },
-    "build_target": "",
-    "expects": "",
-    "details": {
-     "text": "The II Violation in module 'matmul_Pipeline_writeC' (loop 'writeC'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between bus write operation ('gmem0_addr_write_ln96', !%1!) on port 'gmem0' (!%2!) and bus write operation ('gmem0_addr_write_ln96', !%3!) on port 'gmem0' (!%4!).\n",
-     "args": {
-      "arg": [
-       {
-        "string_val": "The II Violation in module 'matmul_Pipeline_writeC' (loop 'writeC'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between bus write operation ('gmem0_addr_write_ln96', %REF) on port 'gmem0' (%REF) and bus write operation ('gmem0_addr_write_ln96', %REF) on port 'gmem0' (%REF).\n"
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=96",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=96",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=96",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       },
-       {
-        "ref": {
-         "type": "CHANNEL",
-         "name": "krnl_matrixmul.cpp",
-         "id": 0,
-         "uuid": "",
-         "url": {
-          "scheme": "FILE",
-          "host": "",
-          "port": 0,
-          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
-          "query": "",
-          "fragment": "line=96",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         }
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "resolution": {
-     "text": "!%0!",
-     "args": {
-      "arg": [
-       {
-        "uri": {
-         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
-         "url": {
-          "scheme": "HTTP",
-          "host": "www.xilinx.com",
-          "port": 0,
-          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
-          "query": "",
-          "fragment": "",
-          "media_type": "",
-          "encoding": "",
-          "data": ""
-         },
-         "docgen_filename": ""
-        },
-        "string_val": ""
-       }
-      ]
-     }
-    },
-    "categories": {
-     "0": "Accelerator",
-     "1": "matmul",
-     "2": "Throughput"
-    },
-    "extended_categories": {},
-    "impact": "IMPACT_UNKNOWN",
-    "group": ""
-   },
-   "77": {
-    "id": 77,
+   "102": {
+    "id": 102,
     "severity": "SEV_ADVISORY",
     "rule_key": "Throughput",
     "examples": {
@@ -3214,11 +932,11 @@
     "build_target": "",
     "expects": "",
     "details": {
-     "text": "Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'writeC'\n",
+     "text": "Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'writeC'\n",
      "args": {
       "arg": [
        {
-        "string_val": "Pipelining result : Target II = NA, Final II = 8, Depth = 10, loop 'writeC'\n"
+        "string_val": "Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'writeC'\n"
        }
       ]
      }
@@ -3249,16 +967,16 @@
      }
     },
     "categories": {
-     "2": "Throughput",
      "0": "Accelerator",
-     "1": "matmul"
+     "1": "matmul",
+     "2": "Throughput"
     },
     "extended_categories": {},
     "impact": "IMPACT_UNKNOWN",
     "group": ""
    },
-   "78": {
-    "id": 78,
+   "103": {
+    "id": 103,
     "severity": "SEV_ADVISORY",
     "rule_key": "Interface",
     "examples": {
@@ -3318,16 +1036,16 @@
      }
     },
     "categories": {
+     "2": "Interface",
      "0": "Accelerator",
-     "1": "matmul",
-     "2": "Interface"
+     "1": "matmul"
     },
     "extended_categories": {},
     "impact": "IMPACT_UNKNOWN",
     "group": ""
    },
-   "79": {
-    "id": 79,
+   "104": {
+    "id": 104,
     "severity": "SEV_ADVISORY",
     "rule_key": "Kernel",
     "examples": {
@@ -3395,8 +1113,8 @@
     "impact": "IMPACT_UNKNOWN",
     "group": ""
    },
-   "80": {
-    "id": 80,
+   "105": {
+    "id": 105,
     "severity": "SEV_ADVISORY",
     "rule_key": "Kernel",
     "examples": {
@@ -3463,6 +1181,1394 @@
     "extended_categories": {},
     "impact": "IMPACT_UNKNOWN",
     "group": ""
+   },
+   "82": {
+    "id": 82,
+    "severity": "SEV_ADVISORY",
+    "rule_key": "Interface",
+    "examples": {
+     "uri": [
+      {
+       "link_text": "Vitis HLS User Guide (UG1399)",
+       "url": {
+        "scheme": "HTTP",
+        "host": "www.xilinx.com",
+        "port": 0,
+        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+        "query": "",
+        "fragment": "",
+        "media_type": "",
+        "encoding": "",
+        "data": ""
+       },
+       "docgen_filename": ""
+      }
+     ]
+    },
+    "build_target": "",
+    "expects": "",
+    "details": {
+     "text": "Multiple burst reads of length 32 and bit width 128 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (!%1!)\n",
+     "args": {
+      "arg": [
+       {
+        "string_val": "Multiple burst reads of length 32 and bit width 128 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (%REF)\n"
+       },
+       {
+        "ref": {
+         "type": "AXI",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=34",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "resolution": {
+     "text": "",
+     "args": {
+      "arg": [
+       {
+        "uri": {
+         "link_text": "Vitis HLS User Guide (UG1399)",
+         "url": {
+          "scheme": "HTTP",
+          "host": "www.xilinx.com",
+          "port": 0,
+          "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+          "query": "",
+          "fragment": "",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         },
+         "docgen_filename": ""
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "categories": {
+     "0": "Accelerator",
+     "1": "matmul",
+     "2": "Interface"
+    },
+    "extended_categories": {},
+    "impact": "IMPACT_UNKNOWN",
+    "group": ""
+   },
+   "83": {
+    "id": 83,
+    "severity": "SEV_ADVISORY",
+    "rule_key": "Interface",
+    "examples": {
+     "uri": [
+      {
+       "link_text": "Vitis HLS User Guide (UG1399)",
+       "url": {
+        "scheme": "HTTP",
+        "host": "www.xilinx.com",
+        "port": 0,
+        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+        "query": "",
+        "fragment": "",
+        "media_type": "",
+        "encoding": "",
+        "data": ""
+       },
+       "docgen_filename": ""
+      }
+     ]
+    },
+    "build_target": "",
+    "expects": "",
+    "details": {
+     "text": "Multiple burst reads of length 32 and bit width 128 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (!%1!)\n",
+     "args": {
+      "arg": [
+       {
+        "string_val": "Multiple burst reads of length 32 and bit width 128 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (%REF)\n"
+       },
+       {
+        "ref": {
+         "type": "AXI",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=45",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "resolution": {
+     "text": "",
+     "args": {
+      "arg": [
+       {
+        "uri": {
+         "link_text": "Vitis HLS User Guide (UG1399)",
+         "url": {
+          "scheme": "HTTP",
+          "host": "www.xilinx.com",
+          "port": 0,
+          "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+          "query": "",
+          "fragment": "",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         },
+         "docgen_filename": ""
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "categories": {
+     "0": "Accelerator",
+     "1": "matmul",
+     "2": "Interface"
+    },
+    "extended_categories": {},
+    "impact": "IMPACT_UNKNOWN",
+    "group": ""
+   },
+   "84": {
+    "id": 84,
+    "severity": "SEV_ADVISORY",
+    "rule_key": "Interface",
+    "examples": {
+     "uri": [
+      {
+       "link_text": "Vitis HLS User Guide (UG1399)",
+       "url": {
+        "scheme": "HTTP",
+        "host": "www.xilinx.com",
+        "port": 0,
+        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+        "query": "",
+        "fragment": "",
+        "media_type": "",
+        "encoding": "",
+        "data": ""
+       },
+       "docgen_filename": ""
+      }
+     ]
+    },
+    "build_target": "",
+    "expects": "",
+    "details": {
+     "text": "Multiple burst writes of length 32 and bit width 128 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (!%1!)\n",
+     "args": {
+      "arg": [
+       {
+        "string_val": "Multiple burst writes of length 32 and bit width 128 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (%REF)\n"
+       },
+       {
+        "ref": {
+         "type": "AXI",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=90",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "resolution": {
+     "text": "",
+     "args": {
+      "arg": [
+       {
+        "uri": {
+         "link_text": "Vitis HLS User Guide (UG1399)",
+         "url": {
+          "scheme": "HTTP",
+          "host": "www.xilinx.com",
+          "port": 0,
+          "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+          "query": "",
+          "fragment": "",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         },
+         "docgen_filename": ""
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "categories": {
+     "0": "Accelerator",
+     "1": "matmul",
+     "2": "Interface"
+    },
+    "extended_categories": {},
+    "impact": "IMPACT_UNKNOWN",
+    "group": ""
+   },
+   "85": {
+    "id": 85,
+    "severity": "SEV_WARNING",
+    "rule_key": "Throughput",
+    "examples": {
+     "uri": [
+      {
+       "link_text": "Vitis HLS User Guide (UG1399)",
+       "url": {
+        "scheme": "HTTP",
+        "host": "www.xilinx.com",
+        "port": 0,
+        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+        "query": "",
+        "fragment": "",
+        "media_type": "",
+        "encoding": "",
+        "data": ""
+       },
+       "docgen_filename": ""
+      }
+     ]
+    },
+    "build_target": "",
+    "expects": "",
+    "details": {
+     "text": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', !%1!) on port 'gmem0' (!%2!) and bus read operation ('gmem0_addr_read', !%3!) on port 'gmem0' (!%4!).\n",
+     "args": {
+      "arg": [
+       {
+        "string_val": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', %REF) on port 'gmem0' (%REF) and bus read operation ('gmem0_addr_read', %REF) on port 'gmem0' (%REF).\n"
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=40",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=40",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=40",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=40",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "resolution": {
+     "text": "!%0!",
+     "args": {
+      "arg": [
+       {
+        "uri": {
+         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
+         "url": {
+          "scheme": "HTTP",
+          "host": "www.xilinx.com",
+          "port": 0,
+          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
+          "query": "",
+          "fragment": "",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         },
+         "docgen_filename": ""
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "categories": {
+     "0": "Accelerator",
+     "1": "matmul",
+     "2": "Throughput"
+    },
+    "extended_categories": {},
+    "impact": "IMPACT_UNKNOWN",
+    "group": ""
+   },
+   "86": {
+    "id": 86,
+    "severity": "SEV_WARNING",
+    "rule_key": "Throughput",
+    "examples": {
+     "uri": [
+      {
+       "link_text": "Vitis HLS User Guide (UG1399)",
+       "url": {
+        "scheme": "HTTP",
+        "host": "www.xilinx.com",
+        "port": 0,
+        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+        "query": "",
+        "fragment": "",
+        "media_type": "",
+        "encoding": "",
+        "data": ""
+       },
+       "docgen_filename": ""
+      }
+     ]
+    },
+    "build_target": "",
+    "expects": "",
+    "details": {
+     "text": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', !%1!) on port 'gmem0' (!%2!) and bus read operation ('gmem0_addr_read', !%3!) on port 'gmem0' (!%4!).\n",
+     "args": {
+      "arg": [
+       {
+        "string_val": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', %REF) on port 'gmem0' (%REF) and bus read operation ('gmem0_addr_read', %REF) on port 'gmem0' (%REF).\n"
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=40",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=40",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=40",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=40",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "resolution": {
+     "text": "!%0!",
+     "args": {
+      "arg": [
+       {
+        "uri": {
+         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
+         "url": {
+          "scheme": "HTTP",
+          "host": "www.xilinx.com",
+          "port": 0,
+          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
+          "query": "",
+          "fragment": "",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         },
+         "docgen_filename": ""
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "categories": {
+     "0": "Accelerator",
+     "1": "matmul",
+     "2": "Throughput"
+    },
+    "extended_categories": {},
+    "impact": "IMPACT_UNKNOWN",
+    "group": ""
+   },
+   "87": {
+    "id": 87,
+    "severity": "SEV_WARNING",
+    "rule_key": "Throughput",
+    "examples": {
+     "uri": [
+      {
+       "link_text": "Vitis HLS User Guide (UG1399)",
+       "url": {
+        "scheme": "HTTP",
+        "host": "www.xilinx.com",
+        "port": 0,
+        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+        "query": "",
+        "fragment": "",
+        "media_type": "",
+        "encoding": "",
+        "data": ""
+       },
+       "docgen_filename": ""
+      }
+     ]
+    },
+    "build_target": "",
+    "expects": "",
+    "details": {
+     "text": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', !%1!) on port 'gmem0' (!%2!) and bus read operation ('gmem0_addr_read', !%3!) on port 'gmem0' (!%4!).\n",
+     "args": {
+      "arg": [
+       {
+        "string_val": "The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', %REF) on port 'gmem0' (%REF) and bus read operation ('gmem0_addr_read', %REF) on port 'gmem0' (%REF).\n"
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=40",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=40",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=40",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=40",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "resolution": {
+     "text": "!%0!",
+     "args": {
+      "arg": [
+       {
+        "uri": {
+         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
+         "url": {
+          "scheme": "HTTP",
+          "host": "www.xilinx.com",
+          "port": 0,
+          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
+          "query": "",
+          "fragment": "",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         },
+         "docgen_filename": ""
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "categories": {
+     "2": "Throughput",
+     "0": "Accelerator",
+     "1": "matmul"
+    },
+    "extended_categories": {},
+    "impact": "IMPACT_UNKNOWN",
+    "group": ""
+   },
+   "88": {
+    "id": 88,
+    "severity": "SEV_ADVISORY",
+    "rule_key": "Throughput",
+    "examples": {
+     "uri": [
+      {
+       "link_text": "Vitis HLS User Guide (UG1399)",
+       "url": {
+        "scheme": "HTTP",
+        "host": "www.xilinx.com",
+        "port": 0,
+        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+        "query": "",
+        "fragment": "",
+        "media_type": "",
+        "encoding": "",
+        "data": ""
+       },
+       "docgen_filename": ""
+      }
+     ]
+    },
+    "build_target": "",
+    "expects": "",
+    "details": {
+     "text": "Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'readA'\n",
+     "args": {
+      "arg": [
+       {
+        "string_val": "Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'readA'\n"
+       }
+      ]
+     }
+    },
+    "resolution": {
+     "text": "",
+     "args": {
+      "arg": [
+       {
+        "uri": {
+         "link_text": "Vitis HLS User Guide (UG1399)",
+         "url": {
+          "scheme": "HTTP",
+          "host": "www.xilinx.com",
+          "port": 0,
+          "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+          "query": "",
+          "fragment": "",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         },
+         "docgen_filename": ""
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "categories": {
+     "0": "Accelerator",
+     "1": "matmul",
+     "2": "Throughput"
+    },
+    "extended_categories": {},
+    "impact": "IMPACT_UNKNOWN",
+    "group": ""
+   },
+   "89": {
+    "id": 89,
+    "severity": "SEV_WARNING",
+    "rule_key": "Throughput",
+    "examples": {
+     "uri": [
+      {
+       "link_text": "Vitis HLS User Guide (UG1399)",
+       "url": {
+        "scheme": "HTTP",
+        "host": "www.xilinx.com",
+        "port": 0,
+        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+        "query": "",
+        "fragment": "",
+        "media_type": "",
+        "encoding": "",
+        "data": ""
+       },
+       "docgen_filename": ""
+      }
+     ]
+    },
+    "build_target": "",
+    "expects": "",
+    "details": {
+     "text": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_3', !%1!) on port 'gmem1' (!%2!) and bus read operation ('gmem1_addr_read', !%3!) on port 'gmem1' (!%4!).\n",
+     "args": {
+      "arg": [
+       {
+        "string_val": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_3', %REF) on port 'gmem1' (%REF) and bus read operation ('gmem1_addr_read', %REF) on port 'gmem1' (%REF).\n"
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=51",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=51",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=51",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=51",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "resolution": {
+     "text": "!%0!",
+     "args": {
+      "arg": [
+       {
+        "uri": {
+         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
+         "url": {
+          "scheme": "HTTP",
+          "host": "www.xilinx.com",
+          "port": 0,
+          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
+          "query": "",
+          "fragment": "",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         },
+         "docgen_filename": ""
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "categories": {
+     "2": "Throughput",
+     "0": "Accelerator",
+     "1": "matmul"
+    },
+    "extended_categories": {},
+    "impact": "IMPACT_UNKNOWN",
+    "group": ""
+   },
+   "90": {
+    "id": 90,
+    "severity": "SEV_WARNING",
+    "rule_key": "Throughput",
+    "examples": {
+     "uri": [
+      {
+       "link_text": "Vitis HLS User Guide (UG1399)",
+       "url": {
+        "scheme": "HTTP",
+        "host": "www.xilinx.com",
+        "port": 0,
+        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+        "query": "",
+        "fragment": "",
+        "media_type": "",
+        "encoding": "",
+        "data": ""
+       },
+       "docgen_filename": ""
+      }
+     ]
+    },
+    "build_target": "",
+    "expects": "",
+    "details": {
+     "text": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_3', !%1!) on port 'gmem1' (!%2!) and bus read operation ('gmem1_addr_read', !%3!) on port 'gmem1' (!%4!).\n",
+     "args": {
+      "arg": [
+       {
+        "string_val": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_3', %REF) on port 'gmem1' (%REF) and bus read operation ('gmem1_addr_read', %REF) on port 'gmem1' (%REF).\n"
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=51",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=51",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=51",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=51",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "resolution": {
+     "text": "!%0!",
+     "args": {
+      "arg": [
+       {
+        "uri": {
+         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
+         "url": {
+          "scheme": "HTTP",
+          "host": "www.xilinx.com",
+          "port": 0,
+          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
+          "query": "",
+          "fragment": "",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         },
+         "docgen_filename": ""
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "categories": {
+     "0": "Accelerator",
+     "1": "matmul",
+     "2": "Throughput"
+    },
+    "extended_categories": {},
+    "impact": "IMPACT_UNKNOWN",
+    "group": ""
+   },
+   "91": {
+    "id": 91,
+    "severity": "SEV_WARNING",
+    "rule_key": "Throughput",
+    "examples": {
+     "uri": [
+      {
+       "link_text": "Vitis HLS User Guide (UG1399)",
+       "url": {
+        "scheme": "HTTP",
+        "host": "www.xilinx.com",
+        "port": 0,
+        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+        "query": "",
+        "fragment": "",
+        "media_type": "",
+        "encoding": "",
+        "data": ""
+       },
+       "docgen_filename": ""
+      }
+     ]
+    },
+    "build_target": "",
+    "expects": "",
+    "details": {
+     "text": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_3', !%1!) on port 'gmem1' (!%2!) and bus read operation ('gmem1_addr_read', !%3!) on port 'gmem1' (!%4!).\n",
+     "args": {
+      "arg": [
+       {
+        "string_val": "The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_3', %REF) on port 'gmem1' (%REF) and bus read operation ('gmem1_addr_read', %REF) on port 'gmem1' (%REF).\n"
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=51",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=51",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=51",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       },
+       {
+        "ref": {
+         "type": "CHANNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=51",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "resolution": {
+     "text": "!%0!",
+     "args": {
+      "arg": [
+       {
+        "uri": {
+         "link_text": "See here for more help on vitis_hls 200-880 guidance.",
+         "url": {
+          "scheme": "HTTP",
+          "host": "www.xilinx.com",
+          "port": 0,
+          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html",
+          "query": "",
+          "fragment": "",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         },
+         "docgen_filename": ""
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "categories": {
+     "2": "Throughput",
+     "0": "Accelerator",
+     "1": "matmul"
+    },
+    "extended_categories": {},
+    "impact": "IMPACT_UNKNOWN",
+    "group": ""
+   },
+   "92": {
+    "id": 92,
+    "severity": "SEV_ADVISORY",
+    "rule_key": "Throughput",
+    "examples": {
+     "uri": [
+      {
+       "link_text": "Vitis HLS User Guide (UG1399)",
+       "url": {
+        "scheme": "HTTP",
+        "host": "www.xilinx.com",
+        "port": 0,
+        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+        "query": "",
+        "fragment": "",
+        "media_type": "",
+        "encoding": "",
+        "data": ""
+       },
+       "docgen_filename": ""
+      }
+     ]
+    },
+    "build_target": "",
+    "expects": "",
+    "details": {
+     "text": "Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'readB'\n",
+     "args": {
+      "arg": [
+       {
+        "string_val": "Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'readB'\n"
+       }
+      ]
+     }
+    },
+    "resolution": {
+     "text": "",
+     "args": {
+      "arg": [
+       {
+        "uri": {
+         "link_text": "Vitis HLS User Guide (UG1399)",
+         "url": {
+          "scheme": "HTTP",
+          "host": "www.xilinx.com",
+          "port": 0,
+          "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+          "query": "",
+          "fragment": "",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         },
+         "docgen_filename": ""
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "categories": {
+     "0": "Accelerator",
+     "1": "matmul",
+     "2": "Throughput"
+    },
+    "extended_categories": {},
+    "impact": "IMPACT_UNKNOWN",
+    "group": ""
+   },
+   "93": {
+    "id": 93,
+    "severity": "SEV_WARNING",
+    "rule_key": "Kernel",
+    "examples": {
+     "uri": [
+      {
+       "link_text": "Vitis HLS User Guide (UG1399)",
+       "url": {
+        "scheme": "HTTP",
+        "host": "www.xilinx.com",
+        "port": 0,
+        "path": "/cgi-bin/docs/rdoc?v=2021.2;d=ug1399-vitis-hls.pdf;",
+        "query": "",
+        "fragment": "",
+        "media_type": "",
+        "encoding": "",
+        "data": ""
+       },
+       "docgen_filename": ""
+      }
+     ]
+    },
+    "build_target": "",
+    "expects": "",
+    "details": {
+     "text": "The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_1_write_ln82', !%1!) of variable 'temp_sum.V[1]' on array 'C_V' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'C_V'.\n",
+     "args": {
+      "arg": [
+       {
+        "string_val": "The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_1_write_ln82', %REF) of variable 'temp_sum.V[1]' on array 'C_V' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'C_V'.\n"
+       },
+       {
+        "ref": {
+         "type": "KERNEL",
+         "name": "krnl_matrixmul.cpp",
+         "id": 0,
+         "uuid": "",
+         "url": {
+          "scheme": "FILE",
+          "host": "",
+          "port": 0,
+          "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp",
+          "query": "",
+          "fragment": "line=82",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         }
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "resolution": {
+     "text": "!%0!",
+     "args": {
+      "arg": [
+       {
+        "uri": {
+         "link_text": "See here for more help on vitis_hls 200-885 guidance.",
+         "url": {
+          "scheme": "HTTP",
+          "host": "www.xilinx.com",
+          "port": 0,
+          "path": "/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html",
+          "query": "",
+          "fragment": "",
+          "media_type": "",
+          "encoding": "",
+          "data": ""
+         },
+         "docgen_filename": ""
+        },
+        "string_val": ""
+       }
+      ]
+     }
+    },
+    "categories": {
+     "0": "Accelerator",
+     "1": "matmul",
+     "2": "Kernel"
+    },
+    "extended_categories": {},
+    "impact": "IMPACT_UNKNOWN",
+    "group": ""
    }
   }
  },
@@ -3476,9 +2582,9 @@
     "msg_abbrev": "",
     "msg_id": "0",
     "categories": {
+     "2": "Interface",
      "0": "Accelerator",
-     "1": "Kernel",
-     "2": "Interface"
+     "1": "Kernel"
     },
     "resolution_msg": "",
     "examples": {
@@ -3521,9 +2627,9 @@
     "msg_abbrev": "",
     "msg_id": "0",
     "categories": {
-     "2": "Kernel",
      "0": "Accelerator",
-     "1": "Kernel"
+     "1": "Kernel",
+     "2": "Kernel"
     },
     "resolution_msg": "",
     "examples": {
@@ -3566,9 +2672,9 @@
     "msg_abbrev": "",
     "msg_id": "0",
     "categories": {
-     "2": "Throughput",
      "0": "Accelerator",
-     "1": "Kernel"
+     "1": "Kernel",
+     "2": "Throughput"
     },
     "resolution_msg": "",
     "examples": {
@@ -3595,9 +2701,9 @@
     "expects": "",
     "affirm_msg": "",
     "dynamic_categories": {
-     "2": false,
      "0": false,
-     "1": true
+     "1": true,
+     "2": false
     },
     "extensible_categories": [],
     "impact": "IMPACT_UNKNOWN",

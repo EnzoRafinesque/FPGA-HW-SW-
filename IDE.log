@@ -63,3 +63,27 @@
 11:42:16 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/summary.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/summary.csv'.
 11:42:16 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/device_trace_0.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/device_trace_0.csv'.
 11:42:16 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/xrt.run_summary' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.run_summary'.
+11:53:39 INFO  : Environment used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to '{XCL_EMULATION_MODE=hw_emu, XILINX_XRT=/usr, LD_LIBRARY_PATH=/mnt/sd-mmcblk0p1/:/tmp:$LD_LIBRARY_PATH, XILINX_VITIS=/mnt/sd-mmcblk0p1/}'.
+11:53:39 INFO  : Add the variable 'XILINX_VITIS_DEBUG_ENV_CUSTOM' in enivronment tab of the launch configuration dialog to prevent the tool from overriding the environment.
+11:53:39 INFO  : Arguments used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to './binary_container_1.xclbin'.
+11:53:39 WARN  : The platform description file '/home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/package/sd_card/platform_desc.txt' required for the launching the application 'matmul' doesn't exist.
+11:53:39 INFO  : Transferred file from '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.ini' to '/mnt/sd-mmcblk0p1/xrt.ini'.
+11:53:49 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/summary.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/summary.csv'.
+11:53:49 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/device_trace_0.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/device_trace_0.csv'.
+11:53:49 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/xrt.run_summary' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.run_summary'.
+11:53:59 INFO  : Environment used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to '{XCL_EMULATION_MODE=hw_emu, XILINX_XRT=/usr, LD_LIBRARY_PATH=/mnt/sd-mmcblk0p1/:/tmp:$LD_LIBRARY_PATH, XILINX_VITIS=/mnt/sd-mmcblk0p1/}'.
+11:53:59 INFO  : Add the variable 'XILINX_VITIS_DEBUG_ENV_CUSTOM' in enivronment tab of the launch configuration dialog to prevent the tool from overriding the environment.
+11:53:59 INFO  : Arguments used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to './binary_container_1.xclbin'.
+11:53:59 WARN  : The platform description file '/home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/package/sd_card/platform_desc.txt' required for the launching the application 'matmul' doesn't exist.
+11:53:59 INFO  : Transferred file from '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.ini' to '/mnt/sd-mmcblk0p1/xrt.ini'.
+11:54:08 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/summary.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/summary.csv'.
+11:54:08 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/device_trace_0.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/device_trace_0.csv'.
+11:54:08 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/xrt.run_summary' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.run_summary'.
+11:56:12 INFO  : Environment used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to '{XCL_EMULATION_MODE=hw_emu, XILINX_XRT=/usr, LD_LIBRARY_PATH=/mnt/sd-mmcblk0p1/:/tmp:$LD_LIBRARY_PATH, XILINX_VITIS=/mnt/sd-mmcblk0p1/}'.
+11:56:12 INFO  : Add the variable 'XILINX_VITIS_DEBUG_ENV_CUSTOM' in enivronment tab of the launch configuration dialog to prevent the tool from overriding the environment.
+11:56:12 INFO  : Arguments used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to './binary_container_1.xclbin'.
+11:56:12 WARN  : The platform description file '/home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/package/sd_card/platform_desc.txt' required for the launching the application 'matmul' doesn't exist.
+11:56:12 INFO  : Transferred file from '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.ini' to '/mnt/sd-mmcblk0p1/xrt.ini'.
+11:56:21 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/summary.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/summary.csv'.
+11:56:21 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/device_trace_0.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/device_trace_0.csv'.
+11:56:22 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/xrt.run_summary' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.run_summary'.
