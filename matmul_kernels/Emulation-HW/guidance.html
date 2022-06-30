@@ -3407,7 +3407,7 @@ window.onload = function () { addSorting(); }
 <center><h1>Design Guidance Report</h1></center><center><table class="header" border="0">
 <tr><td><b>Copyright</b></td><td>Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.</td></tr>
 <tr><td><b>Tool Version</b></td><td>xrcserver v.2021.2 (lin64) Build 0 </td></tr>
-<tr><td><b>Date</b></td><td>Thu Jun 30 11:58:48 2022</td></tr>
+<tr><td><b>Date</b></td><td>Thu Jun 30 12:10:30 2022</td></tr>
 <tr><td><b>Host</b></td><td>mdu-virtual-machine running 64-bit Ubuntu 18.04.3 LTS</td></tr>
 <tr><td><b>Command</b></td><td>Vitis IDE session Emulation-HW</td></tr>
 </table></center><br>
@@ -3417,7 +3417,7 @@ window.onload = function () { addSorting(); }
 <tr><td><a href="#CONFIG FILE DETAILS">3 CONFIG FILE DETAILS</a></tr></td>
 </table>
 <a name="REPORT SUMMARY"></a><h1>1 REPORT SUMMARY</h1>
-<pre>Violations found: 18
+<pre>Violations found: 15
 </pre>
 <pre>Rule Specs Violated: 3
 </pre>
@@ -3435,84 +3435,7 @@ window.onload = function () { addSorting(); }
 <th align="left" width="380">Resolution</th>
 </tr>
 <tr>
-<td align="left">112</td>
-<td align="left">Throughput</td>
-<td align="left">warning</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_1', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) and bus read operation ('gmem1_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>) on port 'gmem1' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=51">krnl_matrixmul.cpp</a>).
-</td>
-<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
-</tr>
-<tr>
-<td align="left">113</td>
-<td align="left">Throughput</td>
-<td align="left">advisory</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 2, Depth = 4, loop 'readB'
-</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">114</td>
-<td align="left">Kernel</td>
-<td align="left">warning</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.matmul.Kernel</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_1_write_ln82', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=82">krnl_matrixmul.cpp</a>) of variable 'temp_sum.V[1]' on array 'C_V' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'C_V'.
-</td>
-<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
-</tr>
-<tr>
-<td align="left">115</td>
-<td align="left">Kernel</td>
-<td align="left">warning</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.matmul.Kernel</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_3_write_ln82', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=82">krnl_matrixmul.cpp</a>) of variable 'temp_sum.V[3]' on array 'C_V' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'C_V'.
-</td>
-<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
-</tr>
-<tr>
-<td align="left">116</td>
-<td align="left">Kernel</td>
-<td align="left">warning</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.matmul.Kernel</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_5_write_ln82', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=82">krnl_matrixmul.cpp</a>) of variable 'temp_sum.V[5]' on array 'C_V' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'C_V'.
-</td>
-<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
-</tr>
-<tr>
-<td align="left">117</td>
-<td align="left">Kernel</td>
-<td align="left">warning</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.matmul.Kernel</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_7_write_ln82', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=82">krnl_matrixmul.cpp</a>) of variable 'temp_sum.V[7]' on array 'C_V' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'C_V'.
-</td>
-<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
-</tr>
-<tr>
-<td align="left">118</td>
-<td align="left">Kernel</td>
-<td align="left">warning</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.matmul.Kernel</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_13_write_ln82', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=82">krnl_matrixmul.cpp</a>) of variable 'temp_sum.V[13]' on array 'C_V' due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array 'C_V'.
-</td>
-<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
-</tr>
-<tr>
-<td align="left">119</td>
+<td align="left">136</td>
 <td align="left">Throughput</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
@@ -3523,29 +3446,18 @@ window.onload = function () { addSorting(); }
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">120</td>
-<td align="left">Throughput</td>
-<td align="left">warning</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_writeC' (loop 'writeC'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus write operation ('gmem0_addr_write_ln96', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>) and bus write operation ('gmem0_addr_write_ln96', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=96">krnl_matrixmul.cpp</a>).
-</td>
-<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
-</tr>
-<tr>
-<td align="left">121</td>
+<td align="left">137</td>
 <td align="left">Throughput</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 2, Depth = 4, loop 'writeC'
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 4, loop 'writeC'
 </td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">122</td>
+<td align="left">138</td>
 <td align="left">Interface</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
@@ -3556,7 +3468,7 @@ window.onload = function () { addSorting(); }
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">123</td>
+<td align="left">139</td>
 <td align="left">Kernel</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
@@ -3567,7 +3479,7 @@ window.onload = function () { addSorting(); }
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">124</td>
+<td align="left">140</td>
 <td align="left">Kernel</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
@@ -3578,59 +3490,114 @@ window.onload = function () { addSorting(); }
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">107</td>
+<td align="left">126</td>
 <td align="left">Interface</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Interface Related</td>
 <td align="left">Accelerator.matmul.Interface</td>
-<td align="left">Multiple burst reads of length 16 and bit width 256 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=34">krnl_matrixmul.cpp</a>)
+<td align="left">Multiple burst reads of length 8 and bit width 512 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=34">krnl_matrixmul.cpp</a>)
 </td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">108</td>
+<td align="left">127</td>
 <td align="left">Interface</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Interface Related</td>
 <td align="left">Accelerator.matmul.Interface</td>
-<td align="left">Multiple burst reads of length 16 and bit width 256 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=45">krnl_matrixmul.cpp</a>)
+<td align="left">Multiple burst reads of length 8 and bit width 512 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=45">krnl_matrixmul.cpp</a>)
 </td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">109</td>
+<td align="left">128</td>
 <td align="left">Interface</td>
 <td align="left">advisory</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Interface Related</td>
 <td align="left">Accelerator.matmul.Interface</td>
-<td align="left">Multiple burst writes of length 16 and bit width 256 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=90">krnl_matrixmul.cpp</a>)
+<td align="left">Multiple burst writes of length 8 and bit width 512 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=90">krnl_matrixmul.cpp</a>)
 </td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">110</td>
+<td align="left">129</td>
 <td align="left">Throughput</td>
+<td align="left">advisory</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.matmul.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'readA'
+</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">130</td>
+<td align="left">Throughput</td>
+<td align="left">advisory</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.matmul.Throughput</td>
+<td align="left">Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'readB'
+</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">131</td>
+<td align="left">Kernel</td>
 <td align="left">warning</td>
 <td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_1', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) and bus read operation ('gmem0_addr_read', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>) on port 'gmem0' (<a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=40">krnl_matrixmul.cpp</a>).
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.matmul.Kernel</td>
+<td align="left">The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_1_write_ln82', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=82">krnl_matrixmul.cpp</a>) of variable 'temp_sum.V[1]' on array 'C_V' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'C_V'.
 </td>
-<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html">See here for more help on vitis_hls 200-880 guidance.</a></td>
+<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
 </tr>
 <tr>
-<td align="left">111</td>
-<td align="left">Throughput</td>
-<td align="left">advisory</td>
+<td align="left">132</td>
+<td align="left">Kernel</td>
+<td align="left">warning</td>
 <td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.matmul.Throughput</td>
-<td align="left">Pipelining result : Target II = NA, Final II = 2, Depth = 4, loop 'readA'
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.matmul.Kernel</td>
+<td align="left">The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_3_write_ln82', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=82">krnl_matrixmul.cpp</a>) of variable 'temp_sum.V[3]' on array 'C_V' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'C_V'.
 </td>
-<td align="left"></td>
+<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
+</tr>
+<tr>
+<td align="left">133</td>
+<td align="left">Kernel</td>
+<td align="left">warning</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.matmul.Kernel</td>
+<td align="left">The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_5_write_ln82', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=82">krnl_matrixmul.cpp</a>) of variable 'temp_sum.V[5]' on array 'C_V' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'C_V'.
+</td>
+<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
+</tr>
+<tr>
+<td align="left">134</td>
+<td align="left">Kernel</td>
+<td align="left">warning</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.matmul.Kernel</td>
+<td align="left">The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_7_write_ln82', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=82">krnl_matrixmul.cpp</a>) of variable 'temp_sum.V[7]' on array 'C_V' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'C_V'.
+</td>
+<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
+</tr>
+<tr>
+<td align="left">135</td>
+<td align="left">Kernel</td>
+<td align="left">warning</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.matmul.Kernel</td>
+<td align="left">The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'store' operation ('C_V_addr_13_write_ln82', <a href="file:///home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp#line=82">krnl_matrixmul.cpp</a>) of variable 'temp_sum.V[13]' on array 'C_V' due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array 'C_V'.
+</td>
+<td align="left"><a href="http://www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html">See here for more help on vitis_hls 200-885 guidance.</a></td>
 </tr>
 </table>
 <br>

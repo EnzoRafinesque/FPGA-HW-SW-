@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'matmul_Pipeline_writeC'" level="0">
-<item name = "Date">Thu Jun 30 11:58:07 2022
+<item name = "Date">Thu Jun 30 12:09:46 2022
 </item>
 <item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)</item>
 <item name = "Project">matmul</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">515, 515, 5.150 us, 5.150 us, 515, 515, no</column>
+<column name="">259, 259, 2.590 us, 2.590 us, 259, 259, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- writeC">513, 513, 3, 2, 1, 256, yes</column>
+<column name="- writeC">257, 257, 3, 1, 1, 256, yes</column>
 </table>
 </item>
 </section>
