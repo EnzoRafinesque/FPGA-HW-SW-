@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xd:addressMap xmlns:xd="http://www.xilinx.com/xd">
-  <xd:addressRange xd:componentRef="axi_vip_0" xd:addressSpace="Master_AXI" xd:segment="SEG_ps7_HP0_DDR_LOWOCM" xd:slaveRef="ps7" xd:slaveInterface="S_AXI_HP0" xd:slaveSegment="HP0_DDR_LOWOCM" xd:baseAddr="0x00000000" xd:range="0x40000000"/>
-  <xd:addressRange xd:componentRef="matmul_1" xd:addressSpace="Data_m_axi_gmem0" xd:segment="SEG_ps7_HP0_DDR_LOWOCM" xd:slaveRef="ps7" xd:slaveInterface="S_AXI_HP0" xd:slaveSegment="HP0_DDR_LOWOCM" xd:baseAddr="0x00000000" xd:range="0x40000000"/>
-  <xd:addressRange xd:componentRef="matmul_1" xd:addressSpace="Data_m_axi_gmem1" xd:segment="SEG_ps7_HP0_DDR_LOWOCM" xd:slaveRef="ps7" xd:slaveInterface="S_AXI_HP0" xd:slaveSegment="HP0_DDR_LOWOCM" xd:baseAddr="0x00000000" xd:range="0x40000000"/>
-  <xd:addressRange xd:componentRef="ps7" xd:addressSpace="Data" xd:segment="SEG_axi_intc_0_Reg" xd:slaveRef="axi_intc_0" xd:slaveInterface="s_axi" xd:slaveSegment="Reg" xd:baseAddr="0x70000000" xd:range="0x10000"/>
-  <xd:addressRange xd:componentRef="ps7" xd:addressSpace="Data" xd:segment="SEG_matmul_1_Reg" xd:slaveRef="matmul_1" xd:slaveInterface="s_axi_control" xd:slaveSegment="Reg" xd:baseAddr="0x80000000" xd:range="0x10000"/>
-</xd:addressMap>

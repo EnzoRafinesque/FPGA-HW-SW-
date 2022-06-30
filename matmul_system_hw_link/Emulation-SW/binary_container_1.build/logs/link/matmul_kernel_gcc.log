@@ -1,7 +1,0 @@
-In file included from /tools/Xilinx/Vitis_HLS/2021.2/bin/../include/etc/ap_private.h:98,
-                 from /tools/Xilinx/Vitis_HLS/2021.2/bin/../include/ap_common.h:658,
-                 from /tools/Xilinx/Vitis_HLS/2021.2/bin/../include/ap_fixed.h:55,
-                 from /home/mdu/Desktop/first_proj/xilinx_zc706_base/vitis/matmul_system_hw_link/Emulation-SW/binary_container_1.build/link/int/xo/matmul/matmul/cpu_sources/krnl_matrixmul.cpp:3:
-/tools/Xilinx/Vitis_HLS/2021.2/bin/../include/hls_half.h:66:2: warning: #warning "Xilinx Floating Point Operator IP core does not provide simulation models for ARM architecture.  Automatically defining HLS_NO_XIL_FPO_LIB in order to avoid this library dependency, although bit-accurate simulation of some functions is no longer possible.  You can make this warning go away by adding this define yourself before including any other files." [-Wcpp]
-   66 | #warning "Xilinx Floating Point Operator IP core does not provide simulation models for ARM architecture.  Automatically defining HLS_NO_XIL_FPO_LIB in order to avoid this library dependency, although bit-accurate simulation of some functions is no longer possible.  You can make this warning go away by adding this define yourself before including any other files."
-      |  ^~~~~~~
