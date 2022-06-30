@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'matmul_Pipeline_readA'" level="0">
-<item name = "Date">Thu Jun 30 11:44:58 2022
+<item name = "Date">Thu Jun 30 11:58:10 2022
 </item>
 <item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)</item>
 <item name = "Project">matmul</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1027, 1027, 10.270 us, 10.270 us, 1027, 1027, no</column>
+<column name="">515, 515, 5.150 us, 5.150 us, 515, 515, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- readA">1025, 1025, 6, 4, 1, 256, yes</column>
+<column name="- readA">513, 513, 4, 2, 1, 256, yes</column>
 </table>
 </item>
 </section>
@@ -48,12 +48,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 129, -</column>
+<column name="Expression">-, -, 0, 125, -</column>
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, -, -, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, -, 129, -</column>
-<column name="Register">-, -, 1581, -, -</column>
+<column name="Multiplexer">-, -, -, 112, -</column>
+<column name="Register">-, -, 1579, -, -</column>
 <specialColumn name="Available">1090, 900, 437200, 218600, 0</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
@@ -81,19 +81,15 @@
 <column name="add_ln34_fu_148_p2">+, 0, 0, 9, 9, 1</column>
 <column name="add_ln38_fu_194_p2">+, 0, 0, 32, 32, 1</column>
 <column name="add_ln40_fu_232_p2">+, 0, 0, 8, 8, 8</column>
-<column name="j_6_fu_267_p2">+, 0, 0, 9, 9, 1</column>
+<column name="j_6_fu_265_p2">+, 0, 0, 9, 9, 1</column>
 <column name="ap_block_pp0_stage0_11001">and, 0, 0, 1, 1, 1</column>
 <column name="ap_block_pp0_stage1_11001">and, 0, 0, 1, 1, 1</column>
-<column name="ap_block_pp0_stage2_11001">and, 0, 0, 1, 1, 1</column>
-<column name="ap_block_pp0_stage3_11001">and, 0, 0, 1, 1, 1</column>
 <column name="ap_block_state2_pp0_stage1_iter0">and, 0, 0, 1, 1, 1</column>
-<column name="ap_block_state3_pp0_stage2_iter0">and, 0, 0, 1, 1, 1</column>
-<column name="ap_block_state4_pp0_stage3_iter0">and, 0, 0, 1, 1, 1</column>
-<column name="ap_block_state5_pp0_stage0_iter1">and, 0, 0, 1, 1, 1</column>
+<column name="ap_block_state3_pp0_stage0_iter1">and, 0, 0, 1, 1, 1</column>
 <column name="ap_ext_blocking_cur_n">and, 0, 0, 2, 1, 0</column>
 <column name="ap_ext_blocking_n">and, 0, 0, 2, 1, 2</column>
 <column name="ap_int_blocking_n">and, 0, 0, 2, 2, 2</column>
-<column name="ap_predicate_op32_read_state2">and, 0, 0, 1, 1, 1</column>
+<column name="ap_predicate_op30_read_state2">and, 0, 0, 1, 1, 1</column>
 <column name="ap_str_blocking_n">and, 0, 0, 2, 2, 2</column>
 <column name="icmp_ln34_fu_142_p2">icmp, 0, 0, 5, 9, 10</column>
 <column name="icmp_ln36_fu_188_p2">icmp, 0, 0, 4, 9, 5</column>
@@ -105,10 +101,9 @@
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">21, 5, 1, 5</column>
+<column name="ap_NS_fsm">13, 3, 1, 3</column>
 <column name="ap_done_int">9, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter0">9, 2, 1, 2</column>
-<column name="ap_enable_reg_pp0_iter0_reg">9, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
 <column name="ap_phi_mux_empty_29_phi_fu_109_p4">9, 2, 512, 1024</column>
 <column name="ap_phi_reg_pp0_iter1_empty_29_reg_106">9, 2, 512, 1024</column>
@@ -122,20 +117,18 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">4, 0, 4, 0</column>
+<column name="ap_CS_fsm">2, 0, 2, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter0_reg">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
 <column name="ap_phi_reg_pp0_iter1_empty_29_reg_106">512, 0, 512, 0</column>
-<column name="gmem0_addr_read_1_reg_339">128, 0, 128, 0</column>
-<column name="gmem0_addr_read_2_reg_344">128, 0, 128, 0</column>
-<column name="gmem0_addr_read_3_reg_354">128, 0, 128, 0</column>
-<column name="gmem0_addr_read_reg_334">128, 0, 128, 0</column>
+<column name="gmem0_addr_read_1_reg_342">256, 0, 256, 0</column>
+<column name="gmem0_addr_read_reg_332">256, 0, 256, 0</column>
 <column name="i_fu_74">32, 0, 32, 0</column>
-<column name="icmp_ln34_reg_321">1, 0, 1, 0</column>
-<column name="icmp_ln34_reg_321_pp0_iter1_reg">1, 0, 1, 0</column>
-<column name="icmp_ln40_reg_325">1, 0, 1, 0</column>
-<column name="icmp_ln40_reg_325_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="icmp_ln34_reg_319">1, 0, 1, 0</column>
+<column name="icmp_ln34_reg_319_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="icmp_ln40_reg_323">1, 0, 1, 0</column>
+<column name="icmp_ln40_reg_323_pp0_iter1_reg">1, 0, 1, 0</column>
 <column name="itr_fu_78">9, 0, 9, 0</column>
 <column name="j_fu_70">9, 0, 9, 0</column>
 <column name="shiftreg4_fu_66">496, 0, 496, 0</column>
@@ -172,8 +165,8 @@
 <column name="m_axi_gmem0_AWUSER">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WVALID">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WREADY">in, 1, m_axi, gmem0, pointer</column>
-<column name="m_axi_gmem0_WDATA">out, 128, m_axi, gmem0, pointer</column>
-<column name="m_axi_gmem0_WSTRB">out, 16, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_WDATA">out, 256, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_WSTRB">out, 32, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WLAST">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WID">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_WUSER">out, 1, m_axi, gmem0, pointer</column>
@@ -192,7 +185,7 @@
 <column name="m_axi_gmem0_ARUSER">out, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RVALID">in, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RREADY">out, 1, m_axi, gmem0, pointer</column>
-<column name="m_axi_gmem0_RDATA">in, 128, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_RDATA">in, 256, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RLAST">in, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RID">in, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_RFIFONUM">in, 9, m_axi, gmem0, pointer</column>
@@ -203,7 +196,7 @@
 <column name="m_axi_gmem0_BRESP">in, 2, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_BID">in, 1, m_axi, gmem0, pointer</column>
 <column name="m_axi_gmem0_BUSER">in, 1, m_axi, gmem0, pointer</column>
-<column name="sext_ln34">in, 28, ap_none, sext_ln34, scalar</column>
+<column name="sext_ln34">in, 27, ap_none, sext_ln34, scalar</column>
 <column name="A_V_address0">out, 8, ap_memory, A_V, array</column>
 <column name="A_V_ce0">out, 1, ap_memory, A_V, array</column>
 <column name="A_V_we0">out, 1, ap_memory, A_V, array</column>
