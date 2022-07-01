@@ -70,14 +70,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 40 \
+    id 72 \
     name C_V \
     reset_level 1 \
     sync_rst true \
     dir O \
     corename C_V \
     op interface \
-    ports { C_V_address0 { O 10 vector } C_V_ce0 { O 1 bit } C_V_we0 { O 1 bit } C_V_d0 { O 16 vector } C_V_address1 { O 10 vector } C_V_ce1 { O 1 bit } C_V_we1 { O 1 bit } C_V_d1 { O 16 vector } } \
+    ports { C_V_address0 { O 12 vector } C_V_ce0 { O 1 bit } C_V_we0 { O 1 bit } C_V_d0 { O 16 vector } C_V_address1 { O 12 vector } C_V_ce1 { O 1 bit } C_V_we1 { O 1 bit } C_V_d1 { O 16 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'C_V'"
@@ -89,14 +89,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 41 \
+    id 73 \
     name A_V \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename A_V \
     op interface \
-    ports { A_V_address0 { O 10 vector } A_V_ce0 { O 1 bit } A_V_q0 { I 16 vector } } \
+    ports { A_V_address0 { O 12 vector } A_V_ce0 { O 1 bit } A_V_q0 { I 16 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'A_V'"
@@ -108,14 +108,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 42 \
+    id 74 \
     name B_V \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename B_V \
     op interface \
-    ports { B_V_address0 { O 10 vector } B_V_ce0 { O 1 bit } B_V_q0 { I 16 vector } B_V_address1 { O 10 vector } B_V_ce1 { O 1 bit } B_V_q1 { I 16 vector } } \
+    ports { B_V_address0 { O 12 vector } B_V_ce0 { O 1 bit } B_V_q0 { I 16 vector } B_V_address1 { O 12 vector } B_V_ce1 { O 1 bit } B_V_q1 { I 16 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'B_V'"

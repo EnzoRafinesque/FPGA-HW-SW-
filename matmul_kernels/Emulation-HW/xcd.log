@@ -258,3 +258,143 @@ Thu Jun 30 16:25:45 2022: SESSION_MGR: closing session for UUID 'ef4b7e80-40c3-4
 Thu Jun 30 16:25:45 2022: KERNEL_SVC: closing session for UUID 'ef4b7e80-40c3-4526-9b14-f9cb5dc3848c' with name 'matmul'
 Thu Jun 30 16:25:45 2022: GUIDANCE_SMGR: closing session for UUID 'ef4b7e80-40c3-4526-9b14-f9cb5dc3848c' with name 'matmul'
 Thu Jun 30 16:25:45 2022: SYSTEM_DIAGRAM: closing session for UUID 'ef4b7e80-40c3-4526-9b14-f9cb5dc3848c' with name 'matmul'
+Fri Jul  1 09:29:42 2022: Running xcd server. This server was built by gradle.
+Fri Jul  1 09:29:42 2022: Server was asked to start on port: '34655'
+Fri Jul  1 09:29:42 2022: Server is using token UUID: '99099105-0857-4c39-8156-3f9724c89525'
+Fri Jul  1 09:29:42 2022: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Fri Jul  1 09:29:42 2022: Attempting to start server on port '34655'
+Fri Jul  1 09:29:42 2022: XCD main fifo: created main fifo '/tmp/xcdmain99099105-0857-4c39-8156-3f9724c89525', fd read = 14
+Fri Jul  1 09:29:42 2022: Running Dispatch Server
+Fri Jul  1 09:29:42 2022: Version 2.2.0
+Fri Jul  1 09:29:50 2022: Dispatch Server: Accepted socket connection from client
+Fri Jul  1 09:29:50 2022: Starting Socket connection
+Fri Jul  1 09:29:50 2022: EXCHANGE_TOKEN received, server token: 99099105-0857-4c39-8156-3f9724c89525, passed token: 99099105-0857-4c39-8156-3f9724c89525
+Fri Jul  1 09:29:52 2022: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Fri Jul  1 09:29:52 2022: SESSION_MGR: creating session with session uuid: '3e66fe51-1250-4805-b3e2-ec5d447786ef' and name 'matmul'
+Fri Jul  1 09:29:52 2022: KERNEL_SVC: creating session with uuid: '3e66fe51-1250-4805-b3e2-ec5d447786ef' and name 'matmul'
+Fri Jul  1 09:29:52 2022: GUIDANCE_SMGR: creating guidance session with uuid: '3e66fe51-1250-4805-b3e2-ec5d447786ef' and name 'matmul'
+Fri Jul  1 09:29:52 2022: SYSTEM_DIAGRAM: creating session with uuid: '3e66fe51-1250-4805-b3e2-ec5d447786ef' and name 'matmul'
+Fri Jul  1 09:30:51 2022: SESSION_MGR: closing session for UUID '3e66fe51-1250-4805-b3e2-ec5d447786ef' with name 'matmul'
+Fri Jul  1 09:30:51 2022: KERNEL_SVC: closing session for UUID '3e66fe51-1250-4805-b3e2-ec5d447786ef' with name 'matmul'
+Fri Jul  1 09:30:51 2022: GUIDANCE_SMGR: closing session for UUID '3e66fe51-1250-4805-b3e2-ec5d447786ef' with name 'matmul'
+Fri Jul  1 09:30:51 2022: SYSTEM_DIAGRAM: closing session for UUID '3e66fe51-1250-4805-b3e2-ec5d447786ef' with name 'matmul'
+Fri Jul  1 09:48:11 2022: Running xcd server. This server was built by gradle.
+Fri Jul  1 09:48:11 2022: Server was asked to start on port: '33717'
+Fri Jul  1 09:48:11 2022: Server is using token UUID: 'e0bfc168-6376-4dc8-bae8-5cec29213fd4'
+Fri Jul  1 09:48:11 2022: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Fri Jul  1 09:48:11 2022: Attempting to start server on port '33717'
+Fri Jul  1 09:48:11 2022: XCD main fifo: created main fifo '/tmp/xcdmaine0bfc168-6376-4dc8-bae8-5cec29213fd4', fd read = 14
+Fri Jul  1 09:48:11 2022: Running Dispatch Server
+Fri Jul  1 09:48:11 2022: Version 2.2.0
+Fri Jul  1 09:48:20 2022: Dispatch Server: Accepted socket connection from client
+Fri Jul  1 09:48:20 2022: Starting Socket connection
+Fri Jul  1 09:48:20 2022: EXCHANGE_TOKEN received, server token: e0bfc168-6376-4dc8-bae8-5cec29213fd4, passed token: e0bfc168-6376-4dc8-bae8-5cec29213fd4
+Fri Jul  1 09:48:21 2022: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Fri Jul  1 09:48:21 2022: SESSION_MGR: creating session with session uuid: '77f3a368-2e8e-492f-9442-f8d612925620' and name 'matmul'
+Fri Jul  1 09:48:21 2022: KERNEL_SVC: creating session with uuid: '77f3a368-2e8e-492f-9442-f8d612925620' and name 'matmul'
+Fri Jul  1 09:48:21 2022: GUIDANCE_SMGR: creating guidance session with uuid: '77f3a368-2e8e-492f-9442-f8d612925620' and name 'matmul'
+Fri Jul  1 09:48:21 2022: SYSTEM_DIAGRAM: creating session with uuid: '77f3a368-2e8e-492f-9442-f8d612925620' and name 'matmul'
+Fri Jul  1 09:49:24 2022: SESSION_MGR: closing session for UUID '77f3a368-2e8e-492f-9442-f8d612925620' with name 'matmul'
+Fri Jul  1 09:49:24 2022: KERNEL_SVC: closing session for UUID '77f3a368-2e8e-492f-9442-f8d612925620' with name 'matmul'
+Fri Jul  1 09:49:24 2022: GUIDANCE_SMGR: closing session for UUID '77f3a368-2e8e-492f-9442-f8d612925620' with name 'matmul'
+Fri Jul  1 09:49:24 2022: SYSTEM_DIAGRAM: closing session for UUID '77f3a368-2e8e-492f-9442-f8d612925620' with name 'matmul'
+Fri Jul  1 10:04:09 2022: Running xcd server. This server was built by gradle.
+Fri Jul  1 10:04:09 2022: Server was asked to start on port: '36867'
+Fri Jul  1 10:04:09 2022: Server is using token UUID: 'f0a20cff-8724-413e-9ebf-3ee05b007a40'
+Fri Jul  1 10:04:09 2022: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Fri Jul  1 10:04:09 2022: Attempting to start server on port '36867'
+Fri Jul  1 10:04:09 2022: XCD main fifo: created main fifo '/tmp/xcdmainf0a20cff-8724-413e-9ebf-3ee05b007a40', fd read = 14
+Fri Jul  1 10:04:09 2022: Running Dispatch Server
+Fri Jul  1 10:04:09 2022: Version 2.2.0
+Fri Jul  1 10:04:18 2022: Dispatch Server: Accepted socket connection from client
+Fri Jul  1 10:04:18 2022: Starting Socket connection
+Fri Jul  1 10:04:18 2022: EXCHANGE_TOKEN received, server token: f0a20cff-8724-413e-9ebf-3ee05b007a40, passed token: f0a20cff-8724-413e-9ebf-3ee05b007a40
+Fri Jul  1 10:04:20 2022: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Fri Jul  1 10:04:20 2022: SESSION_MGR: creating session with session uuid: '9e4b9f17-f8c7-4204-b546-7211da67483d' and name 'matmul'
+Fri Jul  1 10:04:20 2022: KERNEL_SVC: creating session with uuid: '9e4b9f17-f8c7-4204-b546-7211da67483d' and name 'matmul'
+Fri Jul  1 10:04:20 2022: GUIDANCE_SMGR: creating guidance session with uuid: '9e4b9f17-f8c7-4204-b546-7211da67483d' and name 'matmul'
+Fri Jul  1 10:04:20 2022: SYSTEM_DIAGRAM: creating session with uuid: '9e4b9f17-f8c7-4204-b546-7211da67483d' and name 'matmul'
+Fri Jul  1 10:05:25 2022: SESSION_MGR: closing session for UUID '9e4b9f17-f8c7-4204-b546-7211da67483d' with name 'matmul'
+Fri Jul  1 10:05:25 2022: KERNEL_SVC: closing session for UUID '9e4b9f17-f8c7-4204-b546-7211da67483d' with name 'matmul'
+Fri Jul  1 10:05:25 2022: GUIDANCE_SMGR: closing session for UUID '9e4b9f17-f8c7-4204-b546-7211da67483d' with name 'matmul'
+Fri Jul  1 10:05:25 2022: SYSTEM_DIAGRAM: closing session for UUID '9e4b9f17-f8c7-4204-b546-7211da67483d' with name 'matmul'
+Fri Jul  1 10:38:53 2022: Running xcd server. This server was built by gradle.
+Fri Jul  1 10:38:53 2022: Server was asked to start on port: '39333'
+Fri Jul  1 10:38:53 2022: Server is using token UUID: 'e7eda48c-0b8b-4e93-a330-4d6bec241f1f'
+Fri Jul  1 10:38:53 2022: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Fri Jul  1 10:38:53 2022: Attempting to start server on port '39333'
+Fri Jul  1 10:38:53 2022: XCD main fifo: created main fifo '/tmp/xcdmaine7eda48c-0b8b-4e93-a330-4d6bec241f1f', fd read = 14
+Fri Jul  1 10:38:53 2022: Running Dispatch Server
+Fri Jul  1 10:38:53 2022: Version 2.2.0
+Fri Jul  1 10:39:01 2022: Dispatch Server: Accepted socket connection from client
+Fri Jul  1 10:39:01 2022: Starting Socket connection
+Fri Jul  1 10:39:01 2022: EXCHANGE_TOKEN received, server token: e7eda48c-0b8b-4e93-a330-4d6bec241f1f, passed token: e7eda48c-0b8b-4e93-a330-4d6bec241f1f
+Fri Jul  1 10:39:03 2022: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Fri Jul  1 10:39:03 2022: SESSION_MGR: creating session with session uuid: 'b0f495c6-139d-4701-ae25-9ecf3e5d2530' and name 'matmul'
+Fri Jul  1 10:39:03 2022: KERNEL_SVC: creating session with uuid: 'b0f495c6-139d-4701-ae25-9ecf3e5d2530' and name 'matmul'
+Fri Jul  1 10:39:03 2022: GUIDANCE_SMGR: creating guidance session with uuid: 'b0f495c6-139d-4701-ae25-9ecf3e5d2530' and name 'matmul'
+Fri Jul  1 10:39:03 2022: SYSTEM_DIAGRAM: creating session with uuid: 'b0f495c6-139d-4701-ae25-9ecf3e5d2530' and name 'matmul'
+Fri Jul  1 10:40:05 2022: SESSION_MGR: closing session for UUID 'b0f495c6-139d-4701-ae25-9ecf3e5d2530' with name 'matmul'
+Fri Jul  1 10:40:05 2022: KERNEL_SVC: closing session for UUID 'b0f495c6-139d-4701-ae25-9ecf3e5d2530' with name 'matmul'
+Fri Jul  1 10:40:05 2022: GUIDANCE_SMGR: closing session for UUID 'b0f495c6-139d-4701-ae25-9ecf3e5d2530' with name 'matmul'
+Fri Jul  1 10:40:05 2022: SYSTEM_DIAGRAM: closing session for UUID 'b0f495c6-139d-4701-ae25-9ecf3e5d2530' with name 'matmul'
+Fri Jul  1 11:19:26 2022: Running xcd server. This server was built by gradle.
+Fri Jul  1 11:19:26 2022: Server was asked to start on port: '38299'
+Fri Jul  1 11:19:26 2022: Server is using token UUID: '7710fb4b-b98b-4dae-8f19-885e3633d721'
+Fri Jul  1 11:19:26 2022: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Fri Jul  1 11:19:26 2022: Attempting to start server on port '38299'
+Fri Jul  1 11:19:26 2022: XCD main fifo: created main fifo '/tmp/xcdmain7710fb4b-b98b-4dae-8f19-885e3633d721', fd read = 14
+Fri Jul  1 11:19:26 2022: Running Dispatch Server
+Fri Jul  1 11:19:26 2022: Version 2.2.0
+Fri Jul  1 11:19:34 2022: Dispatch Server: Accepted socket connection from client
+Fri Jul  1 11:19:34 2022: Starting Socket connection
+Fri Jul  1 11:19:34 2022: EXCHANGE_TOKEN received, server token: 7710fb4b-b98b-4dae-8f19-885e3633d721, passed token: 7710fb4b-b98b-4dae-8f19-885e3633d721
+Fri Jul  1 11:19:36 2022: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Fri Jul  1 11:19:36 2022: SESSION_MGR: creating session with session uuid: '336e759c-68c8-4fd5-8c36-238079f0c3d9' and name 'matmul'
+Fri Jul  1 11:19:36 2022: KERNEL_SVC: creating session with uuid: '336e759c-68c8-4fd5-8c36-238079f0c3d9' and name 'matmul'
+Fri Jul  1 11:19:36 2022: GUIDANCE_SMGR: creating guidance session with uuid: '336e759c-68c8-4fd5-8c36-238079f0c3d9' and name 'matmul'
+Fri Jul  1 11:19:36 2022: SYSTEM_DIAGRAM: creating session with uuid: '336e759c-68c8-4fd5-8c36-238079f0c3d9' and name 'matmul'
+Fri Jul  1 11:20:49 2022: SESSION_MGR: closing session for UUID '336e759c-68c8-4fd5-8c36-238079f0c3d9' with name 'matmul'
+Fri Jul  1 11:20:49 2022: KERNEL_SVC: closing session for UUID '336e759c-68c8-4fd5-8c36-238079f0c3d9' with name 'matmul'
+Fri Jul  1 11:20:49 2022: GUIDANCE_SMGR: closing session for UUID '336e759c-68c8-4fd5-8c36-238079f0c3d9' with name 'matmul'
+Fri Jul  1 11:20:49 2022: SYSTEM_DIAGRAM: closing session for UUID '336e759c-68c8-4fd5-8c36-238079f0c3d9' with name 'matmul'
+Fri Jul  1 13:30:46 2022: Running xcd server. This server was built by gradle.
+Fri Jul  1 13:30:46 2022: Server was asked to start on port: '42681'
+Fri Jul  1 13:30:46 2022: Server is using token UUID: 'ead712bf-424e-49be-b44b-a9a416d86cc7'
+Fri Jul  1 13:30:46 2022: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Fri Jul  1 13:30:46 2022: Attempting to start server on port '42681'
+Fri Jul  1 13:30:46 2022: XCD main fifo: created main fifo '/tmp/xcdmainead712bf-424e-49be-b44b-a9a416d86cc7', fd read = 14
+Fri Jul  1 13:30:46 2022: Running Dispatch Server
+Fri Jul  1 13:30:46 2022: Version 2.2.0
+Fri Jul  1 13:30:54 2022: Dispatch Server: Accepted socket connection from client
+Fri Jul  1 13:30:54 2022: Starting Socket connection
+Fri Jul  1 13:30:54 2022: EXCHANGE_TOKEN received, server token: ead712bf-424e-49be-b44b-a9a416d86cc7, passed token: ead712bf-424e-49be-b44b-a9a416d86cc7
+Fri Jul  1 13:30:56 2022: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Fri Jul  1 13:30:56 2022: SESSION_MGR: creating session with session uuid: '48d4e078-f14f-4247-a2ae-47b6f6e09f01' and name 'matmul'
+Fri Jul  1 13:30:56 2022: KERNEL_SVC: creating session with uuid: '48d4e078-f14f-4247-a2ae-47b6f6e09f01' and name 'matmul'
+Fri Jul  1 13:30:56 2022: GUIDANCE_SMGR: creating guidance session with uuid: '48d4e078-f14f-4247-a2ae-47b6f6e09f01' and name 'matmul'
+Fri Jul  1 13:30:56 2022: SYSTEM_DIAGRAM: creating session with uuid: '48d4e078-f14f-4247-a2ae-47b6f6e09f01' and name 'matmul'
+Fri Jul  1 13:31:54 2022: SESSION_MGR: closing session for UUID '48d4e078-f14f-4247-a2ae-47b6f6e09f01' with name 'matmul'
+Fri Jul  1 13:31:54 2022: KERNEL_SVC: closing session for UUID '48d4e078-f14f-4247-a2ae-47b6f6e09f01' with name 'matmul'
+Fri Jul  1 13:31:54 2022: GUIDANCE_SMGR: closing session for UUID '48d4e078-f14f-4247-a2ae-47b6f6e09f01' with name 'matmul'
+Fri Jul  1 13:31:54 2022: SYSTEM_DIAGRAM: closing session for UUID '48d4e078-f14f-4247-a2ae-47b6f6e09f01' with name 'matmul'
+Fri Jul  1 14:52:17 2022: Running xcd server. This server was built by gradle.
+Fri Jul  1 14:52:17 2022: Server was asked to start on port: '42321'
+Fri Jul  1 14:52:17 2022: Server is using token UUID: '6c0bc97c-77c7-43fa-8404-21099144ae84'
+Fri Jul  1 14:52:17 2022: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Fri Jul  1 14:52:17 2022: Attempting to start server on port '42321'
+Fri Jul  1 14:52:17 2022: XCD main fifo: created main fifo '/tmp/xcdmain6c0bc97c-77c7-43fa-8404-21099144ae84', fd read = 13
+Fri Jul  1 14:52:17 2022: Running Dispatch Server
+Fri Jul  1 14:52:17 2022: Version 2.2.0
+Fri Jul  1 14:52:25 2022: Dispatch Server: Accepted socket connection from client
+Fri Jul  1 14:52:25 2022: Starting Socket connection
+Fri Jul  1 14:52:25 2022: EXCHANGE_TOKEN received, server token: 6c0bc97c-77c7-43fa-8404-21099144ae84, passed token: 6c0bc97c-77c7-43fa-8404-21099144ae84
+Fri Jul  1 14:52:27 2022: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Fri Jul  1 14:52:27 2022: SESSION_MGR: creating session with session uuid: '7622db6e-4441-4dc0-a9db-3178ca9b9a15' and name 'matmul'
+Fri Jul  1 14:52:27 2022: KERNEL_SVC: creating session with uuid: '7622db6e-4441-4dc0-a9db-3178ca9b9a15' and name 'matmul'
+Fri Jul  1 14:52:27 2022: GUIDANCE_SMGR: creating guidance session with uuid: '7622db6e-4441-4dc0-a9db-3178ca9b9a15' and name 'matmul'
+Fri Jul  1 14:52:27 2022: SYSTEM_DIAGRAM: creating session with uuid: '7622db6e-4441-4dc0-a9db-3178ca9b9a15' and name 'matmul'
+Fri Jul  1 14:53:40 2022: SESSION_MGR: closing session for UUID '7622db6e-4441-4dc0-a9db-3178ca9b9a15' with name 'matmul'
+Fri Jul  1 14:53:40 2022: KERNEL_SVC: closing session for UUID '7622db6e-4441-4dc0-a9db-3178ca9b9a15' with name 'matmul'
+Fri Jul  1 14:53:40 2022: GUIDANCE_SMGR: closing session for UUID '7622db6e-4441-4dc0-a9db-3178ca9b9a15' with name 'matmul'
+Fri Jul  1 14:53:40 2022: SYSTEM_DIAGRAM: closing session for UUID '7622db6e-4441-4dc0-a9db-3178ca9b9a15' with name 'matmul'

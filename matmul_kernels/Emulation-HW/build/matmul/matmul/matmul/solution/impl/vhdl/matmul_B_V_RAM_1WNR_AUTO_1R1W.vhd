@@ -10,8 +10,8 @@ use ieee.std_logic_unsigned.all;
 entity matmul_B_V_RAM_1WNR_AUTO_1R1W is 
     generic(
             DataWidth     : integer := 16; 
-            AddressWidth     : integer := 10; 
-            AddressRange    : integer := 1024
+            AddressWidth     : integer := 12; 
+            AddressRange    : integer := 4096
     ); 
     port (
           address0     : in std_logic_vector(AddressWidth-1 downto 0); 

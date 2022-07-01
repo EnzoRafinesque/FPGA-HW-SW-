@@ -4,37 +4,37 @@ RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
 # ST_1
 local icmp_ln68 <icmp_68> <integer> <Comparator> 'icmp' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68>
 icmp_ln68 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68
-reg: icmp_ln68_reg_2775[0:0] lv
+reg: icmp_ln68_reg_5303[0:0] lv
 
 local empty_31 <trunc_68> <integer> <> 'trunc' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68>
 empty_31 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68
-reg: empty_31_reg_2779[4:0] lv
+reg: empty_31_reg_5307[5:0] lv
 
 local cmp59 <icmp_68> <integer> <Comparator> 'icmp' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68>
 cmp59 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68
-reg: cmp59_reg_2784[0:0] lv
+reg: cmp59_reg_5312[0:0] lv
 
-local tmp_35 <> <integer> <> 'bitconcatenate' <>
-tmp_35 /tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:232
-reg: tmp_35_reg_2825[9:0] lv
+local tmp_67 <> <integer> <> 'bitconcatenate' <>
+tmp_67 /tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:232
+reg: tmp_67_reg_5385[11:0] lv
 
 local cmp72 <icmp_68> <integer> <Comparator> 'icmp' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68>
 cmp72 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68
-reg: cmp72_reg_2869[0:0] lv
+reg: cmp72_reg_5461[0:0] lv
 
 
 RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage1)
 # ST_2
 local A_V_load <load_68> <integer> <ArrayAccess><ArrayLoad><MultiCycle> 'load' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68>
 A_V_load /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68
-reg: A_V_load_reg_2883[15:0] lv
+reg: A_V_load_reg_5475[15:0] lv
 
 
 RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage4)
 # ST_5
-local tmp_7 <bitconcatenate_68> <integer> <> 'bitconcatenate' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68>
-tmp_7 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68
-reg: tmp_7_reg_2949[9:0] lv
+local tmp_5 <bitconcatenate_68> <integer> <> 'bitconcatenate' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68>
+tmp_5 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68
+reg: tmp_5_reg_5573[11:0] lv
 
 
 End Function 'matmul_Pipeline_nopart1_nopart2'

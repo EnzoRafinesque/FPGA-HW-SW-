@@ -19,22 +19,22 @@
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>20635</Best-caseLatency>
-            <Average-caseLatency>20635</Average-caseLatency>
-            <Worst-caseLatency>20635</Worst-caseLatency>
-            <Best-caseRealTimeLatency>0.206 ms</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>0.206 ms</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>0.206 ms</Worst-caseRealTimeLatency>
-            <Interval-min>20636</Interval-min>
-            <Interval-max>20636</Interval-max>
+            <Best-caseLatency>262299</Best-caseLatency>
+            <Average-caseLatency>262299</Average-caseLatency>
+            <Worst-caseLatency>262299</Worst-caseLatency>
+            <Best-caseRealTimeLatency>2.623 ms</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>2.623 ms</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>2.623 ms</Worst-caseRealTimeLatency>
+            <Interval-min>262300</Interval-min>
+            <Interval-max>262300</Interval-max>
         </SummaryOfOverallLatency>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <BRAM_18K>63</BRAM_18K>
-            <DSP>32</DSP>
-            <FF>6747</FF>
-            <LUT>6819</LUT>
+            <BRAM_18K>20</BRAM_18K>
+            <DSP>64</DSP>
+            <FF>6828</FF>
+            <LUT>8158</LUT>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -553,7 +553,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>out</Dir>
-            <Bits>256</Bits>
+            <Bits>32</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -565,7 +565,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>out</Dir>
-            <Bits>32</Bits>
+            <Bits>4</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -793,7 +793,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>in</Dir>
-            <Bits>256</Bits>
+            <Bits>32</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -1093,7 +1093,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>out</Dir>
-            <Bits>256</Bits>
+            <Bits>32</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -1105,7 +1105,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>out</Dir>
-            <Bits>32</Bits>
+            <Bits>4</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -1333,7 +1333,7 @@
             <IOProtocol>m_axi</IOProtocol>
             <IOConfig/>
             <Dir>in</Dir>
-            <Bits>256</Bits>
+            <Bits>32</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -1451,32 +1451,32 @@
             <ModuleName>matmul</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_matmul_Pipeline_readA_fu_126</InstName>
+                    <InstName>grp_matmul_Pipeline_readA_fu_128</InstName>
                     <ModuleName>matmul_Pipeline_readA</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>126</ID>
-                    <BindInstances>add_ln34_fu_146_p2 add_ln38_fu_192_p2 add_ln40_fu_230_p2 j_6_fu_263_p2</BindInstances>
+                    <ID>128</ID>
+                    <BindInstances>add_ln34_fu_148_p2 add_ln38_fu_194_p2 add_ln40_fu_232_p2 j_6_fu_279_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_matmul_Pipeline_readB_fu_134</InstName>
+                    <InstName>grp_matmul_Pipeline_readB_fu_136</InstName>
                     <ModuleName>matmul_Pipeline_readB</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>134</ID>
-                    <BindInstances>add_ln45_fu_146_p2 add_ln49_fu_192_p2 add_ln51_fu_230_p2 j_4_fu_263_p2</BindInstances>
+                    <ID>136</ID>
+                    <BindInstances>add_ln45_fu_148_p2 add_ln49_fu_194_p2 add_ln51_fu_232_p2 j_4_fu_279_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_matmul_Pipeline_nopart1_nopart2_fu_142</InstName>
+                    <InstName>grp_matmul_Pipeline_nopart1_nopart2_fu_144</InstName>
                     <ModuleName>matmul_Pipeline_nopart1_nopart2</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>142</ID>
-                    <BindInstances>add_ln68_1_fu_835_p2 add_ln68_fu_847_p2 mac_muladd_16s_16s_16ns_16_4_1_U7 mac_muladd_16s_16s_16ns_16_4_1_U7 mac_muladd_16s_16s_16ns_16_4_1_U8 mac_muladd_16s_16s_16ns_16_4_1_U8 mac_muladd_16s_16s_16ns_16_4_1_U9 mac_muladd_16s_16s_16ns_16_4_1_U9 mac_muladd_16s_16s_16ns_16_4_1_U10 mac_muladd_16s_16s_16ns_16_4_1_U10 mac_muladd_16s_16s_16ns_16_4_1_U11 mac_muladd_16s_16s_16ns_16_4_1_U11 mac_muladd_16s_16s_16ns_16_4_1_U12 mac_muladd_16s_16s_16ns_16_4_1_U12 mac_muladd_16s_16s_16ns_16_4_1_U13 mac_muladd_16s_16s_16ns_16_4_1_U13 mac_muladd_16s_16s_16ns_16_4_1_U14 mac_muladd_16s_16s_16ns_16_4_1_U14 mac_muladd_16s_16s_16ns_16_4_1_U15 mac_muladd_16s_16s_16ns_16_4_1_U15 mac_muladd_16s_16s_16ns_16_4_1_U16 mac_muladd_16s_16s_16ns_16_4_1_U16 mac_muladd_16s_16s_16ns_16_4_1_U17 mac_muladd_16s_16s_16ns_16_4_1_U17 mac_muladd_16s_16s_16ns_16_4_1_U18 mac_muladd_16s_16s_16ns_16_4_1_U18 mac_muladd_16s_16s_16ns_16_4_1_U19 mac_muladd_16s_16s_16ns_16_4_1_U19 mac_muladd_16s_16s_16ns_16_4_1_U20 mac_muladd_16s_16s_16ns_16_4_1_U20 mac_muladd_16s_16s_16ns_16_4_1_U21 mac_muladd_16s_16s_16ns_16_4_1_U21 mac_muladd_16s_16s_16ns_16_4_1_U22 mac_muladd_16s_16s_16ns_16_4_1_U22 mac_muladd_16s_16s_16ns_16_4_1_U23 mac_muladd_16s_16s_16ns_16_4_1_U23 mac_muladd_16s_16s_16ns_16_4_1_U24 mac_muladd_16s_16s_16ns_16_4_1_U24 mac_muladd_16s_16s_16ns_16_4_1_U25 mac_muladd_16s_16s_16ns_16_4_1_U25 mac_muladd_16s_16s_16ns_16_4_1_U26 mac_muladd_16s_16s_16ns_16_4_1_U26 mac_muladd_16s_16s_16ns_16_4_1_U27 mac_muladd_16s_16s_16ns_16_4_1_U27 mac_muladd_16s_16s_16ns_16_4_1_U28 mac_muladd_16s_16s_16ns_16_4_1_U28 mac_muladd_16s_16s_16ns_16_4_1_U29 mac_muladd_16s_16s_16ns_16_4_1_U29 mac_muladd_16s_16s_16ns_16_4_1_U30 mac_muladd_16s_16s_16ns_16_4_1_U30 mac_muladd_16s_16s_16ns_16_4_1_U31 mac_muladd_16s_16s_16ns_16_4_1_U31 mac_muladd_16s_16s_16ns_16_4_1_U32 mac_muladd_16s_16s_16ns_16_4_1_U32 mac_muladd_16s_16s_16ns_16_4_1_U33 mac_muladd_16s_16s_16ns_16_4_1_U33 mac_muladd_16s_16s_16ns_16_4_1_U34 mac_muladd_16s_16s_16ns_16_4_1_U34 mac_muladd_16s_16s_16ns_16_4_1_U35 mac_muladd_16s_16s_16ns_16_4_1_U35 mac_muladd_16s_16s_16ns_16_4_1_U36 mac_muladd_16s_16s_16ns_16_4_1_U36 mac_muladd_16s_16s_16ns_16_4_1_U37 mac_muladd_16s_16s_16ns_16_4_1_U37 mac_muladd_16s_16s_16ns_16_4_1_U38 mac_muladd_16s_16s_16ns_16_4_1_U38 add_ln72_fu_936_p2</BindInstances>
+                    <ID>144</ID>
+                    <BindInstances>add_ln68_1_fu_1539_p2 add_ln68_fu_1551_p2 mac_muladd_16s_16s_16ns_16_4_1_U7 mac_muladd_16s_16s_16ns_16_4_1_U7 mac_muladd_16s_16s_16ns_16_4_1_U8 mac_muladd_16s_16s_16ns_16_4_1_U8 mac_muladd_16s_16s_16ns_16_4_1_U9 mac_muladd_16s_16s_16ns_16_4_1_U9 mac_muladd_16s_16s_16ns_16_4_1_U10 mac_muladd_16s_16s_16ns_16_4_1_U10 mac_muladd_16s_16s_16ns_16_4_1_U11 mac_muladd_16s_16s_16ns_16_4_1_U11 mac_muladd_16s_16s_16ns_16_4_1_U12 mac_muladd_16s_16s_16ns_16_4_1_U12 mac_muladd_16s_16s_16ns_16_4_1_U13 mac_muladd_16s_16s_16ns_16_4_1_U13 mac_muladd_16s_16s_16ns_16_4_1_U14 mac_muladd_16s_16s_16ns_16_4_1_U14 mac_muladd_16s_16s_16ns_16_4_1_U15 mac_muladd_16s_16s_16ns_16_4_1_U15 mac_muladd_16s_16s_16ns_16_4_1_U16 mac_muladd_16s_16s_16ns_16_4_1_U16 mac_muladd_16s_16s_16ns_16_4_1_U17 mac_muladd_16s_16s_16ns_16_4_1_U17 mac_muladd_16s_16s_16ns_16_4_1_U18 mac_muladd_16s_16s_16ns_16_4_1_U18 mac_muladd_16s_16s_16ns_16_4_1_U19 mac_muladd_16s_16s_16ns_16_4_1_U19 mac_muladd_16s_16s_16ns_16_4_1_U20 mac_muladd_16s_16s_16ns_16_4_1_U20 mac_muladd_16s_16s_16ns_16_4_1_U21 mac_muladd_16s_16s_16ns_16_4_1_U21 mac_muladd_16s_16s_16ns_16_4_1_U22 mac_muladd_16s_16s_16ns_16_4_1_U22 mac_muladd_16s_16s_16ns_16_4_1_U23 mac_muladd_16s_16s_16ns_16_4_1_U23 mac_muladd_16s_16s_16ns_16_4_1_U24 mac_muladd_16s_16s_16ns_16_4_1_U24 mac_muladd_16s_16s_16ns_16_4_1_U25 mac_muladd_16s_16s_16ns_16_4_1_U25 mac_muladd_16s_16s_16ns_16_4_1_U26 mac_muladd_16s_16s_16ns_16_4_1_U26 mac_muladd_16s_16s_16ns_16_4_1_U27 mac_muladd_16s_16s_16ns_16_4_1_U27 mac_muladd_16s_16s_16ns_16_4_1_U28 mac_muladd_16s_16s_16ns_16_4_1_U28 mac_muladd_16s_16s_16ns_16_4_1_U29 mac_muladd_16s_16s_16ns_16_4_1_U29 mac_muladd_16s_16s_16ns_16_4_1_U30 mac_muladd_16s_16s_16ns_16_4_1_U30 mac_muladd_16s_16s_16ns_16_4_1_U31 mac_muladd_16s_16s_16ns_16_4_1_U31 mac_muladd_16s_16s_16ns_16_4_1_U32 mac_muladd_16s_16s_16ns_16_4_1_U32 mac_muladd_16s_16s_16ns_16_4_1_U33 mac_muladd_16s_16s_16ns_16_4_1_U33 mac_muladd_16s_16s_16ns_16_4_1_U34 mac_muladd_16s_16s_16ns_16_4_1_U34 mac_muladd_16s_16s_16ns_16_4_1_U35 mac_muladd_16s_16s_16ns_16_4_1_U35 mac_muladd_16s_16s_16ns_16_4_1_U36 mac_muladd_16s_16s_16ns_16_4_1_U36 mac_muladd_16s_16s_16ns_16_4_1_U37 mac_muladd_16s_16s_16ns_16_4_1_U37 mac_muladd_16s_16s_16ns_16_4_1_U38 mac_muladd_16s_16s_16ns_16_4_1_U38 mac_muladd_16s_16s_16ns_16_4_1_U39 mac_muladd_16s_16s_16ns_16_4_1_U39 mac_muladd_16s_16s_16ns_16_4_1_U40 mac_muladd_16s_16s_16ns_16_4_1_U40 mac_muladd_16s_16s_16ns_16_4_1_U41 mac_muladd_16s_16s_16ns_16_4_1_U41 mac_muladd_16s_16s_16ns_16_4_1_U42 mac_muladd_16s_16s_16ns_16_4_1_U42 mac_muladd_16s_16s_16ns_16_4_1_U43 mac_muladd_16s_16s_16ns_16_4_1_U43 mac_muladd_16s_16s_16ns_16_4_1_U44 mac_muladd_16s_16s_16ns_16_4_1_U44 mac_muladd_16s_16s_16ns_16_4_1_U45 mac_muladd_16s_16s_16ns_16_4_1_U45 mac_muladd_16s_16s_16ns_16_4_1_U46 mac_muladd_16s_16s_16ns_16_4_1_U46 mac_muladd_16s_16s_16ns_16_4_1_U47 mac_muladd_16s_16s_16ns_16_4_1_U47 mac_muladd_16s_16s_16ns_16_4_1_U48 mac_muladd_16s_16s_16ns_16_4_1_U48 mac_muladd_16s_16s_16ns_16_4_1_U49 mac_muladd_16s_16s_16ns_16_4_1_U49 mac_muladd_16s_16s_16ns_16_4_1_U50 mac_muladd_16s_16s_16ns_16_4_1_U50 mac_muladd_16s_16s_16ns_16_4_1_U51 mac_muladd_16s_16s_16ns_16_4_1_U51 mac_muladd_16s_16s_16ns_16_4_1_U52 mac_muladd_16s_16s_16ns_16_4_1_U52 mac_muladd_16s_16s_16ns_16_4_1_U53 mac_muladd_16s_16s_16ns_16_4_1_U53 mac_muladd_16s_16s_16ns_16_4_1_U54 mac_muladd_16s_16s_16ns_16_4_1_U54 mac_muladd_16s_16s_16ns_16_4_1_U55 mac_muladd_16s_16s_16ns_16_4_1_U55 mac_muladd_16s_16s_16ns_16_4_1_U56 mac_muladd_16s_16s_16ns_16_4_1_U56 mac_muladd_16s_16s_16ns_16_4_1_U57 mac_muladd_16s_16s_16ns_16_4_1_U57 mac_muladd_16s_16s_16ns_16_4_1_U58 mac_muladd_16s_16s_16ns_16_4_1_U58 mac_muladd_16s_16s_16ns_16_4_1_U59 mac_muladd_16s_16s_16ns_16_4_1_U59 mac_muladd_16s_16s_16ns_16_4_1_U60 mac_muladd_16s_16s_16ns_16_4_1_U60 mac_muladd_16s_16s_16ns_16_4_1_U61 mac_muladd_16s_16s_16ns_16_4_1_U61 mac_muladd_16s_16s_16ns_16_4_1_U62 mac_muladd_16s_16s_16ns_16_4_1_U62 mac_muladd_16s_16s_16ns_16_4_1_U63 mac_muladd_16s_16s_16ns_16_4_1_U63 mac_muladd_16s_16s_16ns_16_4_1_U64 mac_muladd_16s_16s_16ns_16_4_1_U64 mac_muladd_16s_16s_16ns_16_4_1_U65 mac_muladd_16s_16s_16ns_16_4_1_U65 mac_muladd_16s_16s_16ns_16_4_1_U66 mac_muladd_16s_16s_16ns_16_4_1_U66 mac_muladd_16s_16s_16ns_16_4_1_U67 mac_muladd_16s_16s_16ns_16_4_1_U67 mac_muladd_16s_16s_16ns_16_4_1_U68 mac_muladd_16s_16s_16ns_16_4_1_U68 mac_muladd_16s_16s_16ns_16_4_1_U69 mac_muladd_16s_16s_16ns_16_4_1_U69 mac_muladd_16s_16s_16ns_16_4_1_U70 mac_muladd_16s_16s_16ns_16_4_1_U70 add_ln72_fu_1640_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_matmul_Pipeline_writeC_fu_149</InstName>
+                    <InstName>grp_matmul_Pipeline_writeC_fu_151</InstName>
                     <ModuleName>matmul_Pipeline_writeC</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>149</ID>
-                    <BindInstances>add_ln90_fu_159_p2 add_ln94_fu_181_p2 add_ln96_fu_219_p2 j_2_fu_236_p2</BindInstances>
+                    <ID>151</ID>
+                    <BindInstances>add_ln90_fu_327_p2 add_ln94_fu_349_p2 add_ln96_fu_387_p2 j_2_fu_404_p2</BindInstances>
                 </Instance>
             </InstancesList>
             <BindInstances>A_V_U B_V_U C_V_U</BindInstances>
@@ -1495,23 +1495,23 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>2051</Best-caseLatency>
-                    <Average-caseLatency>2051</Average-caseLatency>
-                    <Worst-caseLatency>2051</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>20.510 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>20.510 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>20.510 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>2051</PipelineInitiationInterval>
+                    <Best-caseLatency>65539</Best-caseLatency>
+                    <Average-caseLatency>65539</Average-caseLatency>
+                    <Worst-caseLatency>65539</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.655 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.655 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.655 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>65539</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <readA>
                         <Name>readA</Name>
-                        <TripCount>1024</TripCount>
-                        <Latency>2049</Latency>
-                        <AbsoluteTimeLatency>20.490 us</AbsoluteTimeLatency>
-                        <PipelineII>2</PipelineII>
-                        <PipelineDepth>4</PipelineDepth>
+                        <TripCount>4096</TripCount>
+                        <Latency>65537</Latency>
+                        <AbsoluteTimeLatency>0.655 ms</AbsoluteTimeLatency>
+                        <PipelineII>16</PipelineII>
+                        <PipelineDepth>18</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
                     </readA>
@@ -1519,10 +1519,10 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>1583</FF>
+                    <FF>1601</FF>
                     <AVAIL_FF>437200</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>246</LUT>
+                    <LUT>360</LUT>
                     <AVAIL_LUT>218600</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1537,10 +1537,10 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="add_ln34_fu_146_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34" URAM="0" VARIABLE="add_ln34"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="add_ln38_fu_192_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:38" URAM="0" VARIABLE="add_ln38"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="add_ln40_fu_230_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40" URAM="0" VARIABLE="add_ln40"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="j_6_fu_263_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34" URAM="0" VARIABLE="j_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="add_ln34_fu_148_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34" URAM="0" VARIABLE="add_ln34"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="add_ln38_fu_194_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:38" URAM="0" VARIABLE="add_ln38"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="add_ln40_fu_232_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40" URAM="0" VARIABLE="add_ln40"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readA" OPTYPE="add" PRAGMA="" RTLNAME="j_6_fu_279_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34" URAM="0" VARIABLE="j_6"/>
             </BindNodes>
         </Module>
         <Module>
@@ -1555,23 +1555,23 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>2051</Best-caseLatency>
-                    <Average-caseLatency>2051</Average-caseLatency>
-                    <Worst-caseLatency>2051</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>20.510 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>20.510 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>20.510 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>2051</PipelineInitiationInterval>
+                    <Best-caseLatency>65539</Best-caseLatency>
+                    <Average-caseLatency>65539</Average-caseLatency>
+                    <Worst-caseLatency>65539</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.655 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.655 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.655 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>65539</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <readB>
                         <Name>readB</Name>
-                        <TripCount>1024</TripCount>
-                        <Latency>2049</Latency>
-                        <AbsoluteTimeLatency>20.490 us</AbsoluteTimeLatency>
-                        <PipelineII>2</PipelineII>
-                        <PipelineDepth>4</PipelineDepth>
+                        <TripCount>4096</TripCount>
+                        <Latency>65537</Latency>
+                        <AbsoluteTimeLatency>0.655 ms</AbsoluteTimeLatency>
+                        <PipelineII>16</PipelineII>
+                        <PipelineDepth>18</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
                     </readB>
@@ -1579,10 +1579,10 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>1583</FF>
+                    <FF>1601</FF>
                     <AVAIL_FF>437200</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>246</LUT>
+                    <LUT>360</LUT>
                     <AVAIL_LUT>218600</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1597,10 +1597,10 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="add_ln45_fu_146_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45" URAM="0" VARIABLE="add_ln45"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="add_ln49_fu_192_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:49" URAM="0" VARIABLE="add_ln49"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="add_ln51_fu_230_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51" URAM="0" VARIABLE="add_ln51"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="j_4_fu_263_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45" URAM="0" VARIABLE="j_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="add_ln45_fu_148_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45" URAM="0" VARIABLE="add_ln45"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="add_ln49_fu_194_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:49" URAM="0" VARIABLE="add_ln49"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="add_ln51_fu_232_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51" URAM="0" VARIABLE="add_ln51"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="readB" OPTYPE="add" PRAGMA="" RTLNAME="j_4_fu_279_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45" URAM="0" VARIABLE="j_4"/>
             </BindNodes>
         </Module>
         <Module>
@@ -1612,26 +1612,26 @@
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>5.025</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>4.895</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>16389</Best-caseLatency>
-                    <Average-caseLatency>16389</Average-caseLatency>
-                    <Worst-caseLatency>16389</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.164 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.164 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.164 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>16389</PipelineInitiationInterval>
+                    <Best-caseLatency>131077</Best-caseLatency>
+                    <Average-caseLatency>131077</Average-caseLatency>
+                    <Worst-caseLatency>131077</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>1.311 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.311 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>1.311 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>131077</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <nopart1_nopart2>
                         <Name>nopart1_nopart2</Name>
-                        <TripCount>1024</TripCount>
-                        <Latency>16387</Latency>
-                        <AbsoluteTimeLatency>0.164 ms</AbsoluteTimeLatency>
-                        <PipelineII>16</PipelineII>
-                        <PipelineDepth>20</PipelineDepth>
+                        <TripCount>4096</TripCount>
+                        <Latency>131075</Latency>
+                        <AbsoluteTimeLatency>1.311 ms</AbsoluteTimeLatency>
+                        <PipelineII>32</PipelineII>
+                        <PipelineDepth>36</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
                     </nopart1_nopart2>
@@ -1639,15 +1639,15 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <DSP>32</DSP>
+                    <DSP>64</DSP>
                     <AVAIL_DSP>900</AVAIL_DSP>
-                    <UTIL_DSP>3</UTIL_DSP>
-                    <FF>590</FF>
+                    <UTIL_DSP>7</UTIL_DSP>
+                    <FF>1125</FF>
                     <AVAIL_FF>437200</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>1846</LUT>
+                    <LUT>3734</LUT>
                     <AVAIL_LUT>218600</AVAIL_LUT>
-                    <UTIL_LUT>~0</UTIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>1090</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -1657,8 +1657,8 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln68_1_fu_835_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68" URAM="0" VARIABLE="add_ln68_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln68_fu_847_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68" URAM="0" VARIABLE="add_ln68"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln68_1_fu_1539_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68" URAM="0" VARIABLE="add_ln68_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln68_fu_1551_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68" URAM="0" VARIABLE="add_ln68"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U7" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U7" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_0"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U8" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_1"/>
@@ -1723,7 +1723,71 @@
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U37" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_30"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U38" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_31"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U38" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_31"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln72_fu_936_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:72" URAM="0" VARIABLE="add_ln72"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U39" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_32"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U39" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_32"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U40" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_33"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U40" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_33"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U41" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_34"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U41" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_34"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U42" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_35"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U42" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_35"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U43" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_36"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U43" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_36"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U44" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_37"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U44" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_37"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U45" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_38"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U45" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_38"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U46" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_39"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U46" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_39"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U47" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_40"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U47" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_40"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U48" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_41"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U48" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_41"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U49" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_42"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U49" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_42"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U50" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_43"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U50" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_43"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U51" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_44"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U51" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_44"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U52" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_45"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U52" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_45"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U53" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_46"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U53" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_46"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U54" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_47"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U54" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_47"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U55" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_48"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U55" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_48"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U56" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_49"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U56" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_49"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U57" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_50"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U57" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_50"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U58" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_51"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U58" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_51"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U59" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_52"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U59" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_52"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U60" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_53"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U60" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_53"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U61" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_54"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U61" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_54"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U62" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_55"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U62" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_55"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U63" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_56"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U63" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_56"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U64" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_57"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U64" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_57"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U65" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_58"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U65" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_58"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U66" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_59"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U66" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_59"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U67" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_60"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U67" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_60"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U68" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_61"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U68" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_61"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U69" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_62"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U69" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_62"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="mul" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U70" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="mul_ln885_63"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="1" ID="" IMPL="dsp" LATENCY="3" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="mac_muladd_16s_16s_16ns_16_4_1_U70" SOURCE="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:885" URAM="0" VARIABLE="temp_sum_V_63"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="nopart1_nopart2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln72_fu_1640_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:72" URAM="0" VARIABLE="add_ln72"/>
             </BindNodes>
         </Module>
         <Module>
@@ -1738,23 +1802,23 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>2051</Best-caseLatency>
-                    <Average-caseLatency>2051</Average-caseLatency>
-                    <Worst-caseLatency>2051</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>20.510 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>20.510 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>20.510 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>2051</PipelineInitiationInterval>
+                    <Best-caseLatency>65539</Best-caseLatency>
+                    <Average-caseLatency>65539</Average-caseLatency>
+                    <Worst-caseLatency>65539</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.655 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.655 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.655 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>65539</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <writeC>
                         <Name>writeC</Name>
-                        <TripCount>1024</TripCount>
-                        <Latency>2049</Latency>
-                        <AbsoluteTimeLatency>20.490 us</AbsoluteTimeLatency>
-                        <PipelineII>2</PipelineII>
-                        <PipelineDepth>3</PipelineDepth>
+                        <TripCount>4096</TripCount>
+                        <Latency>65537</Latency>
+                        <AbsoluteTimeLatency>0.655 ms</AbsoluteTimeLatency>
+                        <PipelineII>16</PipelineII>
+                        <PipelineDepth>17</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
                     </writeC>
@@ -1762,10 +1826,10 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>835</FF>
+                    <FF>1074</FF>
                     <AVAIL_FF>437200</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>788</LUT>
+                    <LUT>955</LUT>
                     <AVAIL_LUT>218600</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1780,10 +1844,10 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="add_ln90_fu_159_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90" URAM="0" VARIABLE="add_ln90"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="add_ln94_fu_181_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:94" URAM="0" VARIABLE="add_ln94"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="add_ln96_fu_219_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96" URAM="0" VARIABLE="add_ln96"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="j_2_fu_236_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90" URAM="0" VARIABLE="j_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="add_ln90_fu_327_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90" URAM="0" VARIABLE="add_ln90"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="add_ln94_fu_349_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:94" URAM="0" VARIABLE="add_ln94"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="add_ln96_fu_387_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96" URAM="0" VARIABLE="add_ln96"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="writeC" OPTYPE="add" PRAGMA="" RTLNAME="j_2_fu_404_p2" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90" URAM="0" VARIABLE="j_2"/>
             </BindNodes>
         </Module>
         <Module>
@@ -1795,28 +1859,28 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>20635</Best-caseLatency>
-                    <Average-caseLatency>20635</Average-caseLatency>
-                    <Worst-caseLatency>20635</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.206 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.206 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.206 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>20636</PipelineInitiationInterval>
+                    <Best-caseLatency>262299</Best-caseLatency>
+                    <Average-caseLatency>262299</Average-caseLatency>
+                    <Worst-caseLatency>262299</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>2.623 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>2.623 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>2.623 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>262300</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <BRAM_18K>63</BRAM_18K>
+                    <BRAM_18K>20</BRAM_18K>
                     <AVAIL_BRAM>1090</AVAIL_BRAM>
-                    <UTIL_BRAM>5</UTIL_BRAM>
-                    <DSP>32</DSP>
+                    <UTIL_BRAM>1</UTIL_BRAM>
+                    <DSP>64</DSP>
                     <AVAIL_DSP>900</AVAIL_DSP>
-                    <UTIL_DSP>3</UTIL_DSP>
-                    <FF>6747</FF>
+                    <UTIL_DSP>7</UTIL_DSP>
+                    <FF>6828</FF>
                     <AVAIL_FF>437200</AVAIL_FF>
                     <UTIL_FF>1</UTIL_FF>
-                    <LUT>6819</LUT>
+                    <LUT>8158</LUT>
                     <AVAIL_LUT>218600</AVAIL_LUT>
                     <UTIL_LUT>3</UTIL_LUT>
                     <URAM>0</URAM>
@@ -1825,9 +1889,9 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="A_V_U" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:26" URAM="0" VARIABLE="A_V"/>
-                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="B_V_U" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:27" URAM="0" VARIABLE="B_V"/>
-                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="C_V_U" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:28" URAM="0" VARIABLE="C_V"/>
+                <BindNode BINDTYPE="storage" BRAM="4" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="A_V_U" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:26" URAM="0" VARIABLE="A_V"/>
+                <BindNode BINDTYPE="storage" BRAM="4" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="B_V_U" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:27" URAM="0" VARIABLE="B_V"/>
+                <BindNode BINDTYPE="storage" BRAM="4" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="C_V_U" SOURCE="/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:28" URAM="0" VARIABLE="C_V"/>
             </BindNodes>
         </Module>
     </ModuleInformation>
@@ -1835,7 +1899,7 @@
     <UserConfigCommands>
         <config_debug enable="1"/>
         <config_export deadlock_detection="none" format="xo" ipname="matmul"/>
-        <config_interface m_axi_addr64="0" m_axi_auto_max_ports="1" m_axi_conservative_mode="1" m_axi_max_bitwidth="256" m_axi_min_bitwidth="256"/>
+        <config_interface m_axi_addr64="0" m_axi_auto_max_ports="1" m_axi_conservative_mode="1" m_axi_max_bitwidth="32" m_axi_min_bitwidth="32"/>
         <config_rtl kernel_profile="1"/>
     </UserConfigCommands>
     <Args>
@@ -1990,7 +2054,7 @@
                 <port>event_start</port>
             </ports>
         </Interface>
-        <Interface InterfaceName="m_axi_gmem0" type="axi4full" busTypeName="aximm" mode="master" dataWidth="256" addrWidth="32" portPrefix="m_axi_gmem0_" paramPrefix="C_M_AXI_GMEM0_" preferredUsageValue="MEMORY">
+        <Interface InterfaceName="m_axi_gmem0" type="axi4full" busTypeName="aximm" mode="master" dataWidth="32" addrWidth="32" portPrefix="m_axi_gmem0_" paramPrefix="C_M_AXI_GMEM0_" preferredUsageValue="MEMORY">
             <busParams>
                 <busParam busParamName="NUM_READ_OUTSTANDING">16</busParam>
                 <busParam busParamName="NUM_WRITE_OUTSTANDING">16</busParam>
@@ -2051,12 +2115,12 @@
             </ports>
             <constraints>
                 <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" argName="in1"/>
-                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="256" argName="in1"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="32" argName="in1"/>
                 <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" argName="out_r"/>
-                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="256" argName="out_r"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="32" argName="out_r"/>
             </constraints>
         </Interface>
-        <Interface InterfaceName="m_axi_gmem1" type="axi4full" busTypeName="aximm" mode="master" dataWidth="256" addrWidth="32" portPrefix="m_axi_gmem1_" paramPrefix="C_M_AXI_GMEM1_" preferredUsageValue="MEMORY">
+        <Interface InterfaceName="m_axi_gmem1" type="axi4full" busTypeName="aximm" mode="master" dataWidth="32" addrWidth="32" portPrefix="m_axi_gmem1_" paramPrefix="C_M_AXI_GMEM1_" preferredUsageValue="MEMORY">
             <busParams>
                 <busParam busParamName="NUM_READ_OUTSTANDING">16</busParam>
                 <busParam busParamName="NUM_WRITE_OUTSTANDING">16</busParam>
@@ -2117,7 +2181,7 @@
             </ports>
             <constraints>
                 <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="64" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512" argName="in2"/>
-                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="256" argName="in2"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="32" argName="in2"/>
             </constraints>
         </Interface>
     </Interfaces>
@@ -2126,8 +2190,8 @@
             <item name="M_AXI">
                 <table isCollapsed="0">
                     <keys size="12">Interface, Data Width (SW-&gt;HW), Address Width, Latency, Offset, Register, Max Widen Bitwidth, Max Read Burst Length, Max Write Burst Length, Num Read Outstanding, Num Write Outstanding, Resource Estimate</keys>
-                    <column name="m_axi_gmem0">16 -&gt; 256, 32, 64, slave, 0, 512, 16, 16, 16, 16, BRAM=30</column>
-                    <column name="m_axi_gmem1">16 -&gt; 256, 32, 64, slave, 0, 512, 16, 16, 16, 16, BRAM=30</column>
+                    <column name="m_axi_gmem0">16 -&gt; 32, 32, 64, slave, 0, 512, 16, 16, 16, 16, BRAM=4</column>
+                    <column name="m_axi_gmem1">16 -&gt; 32, 32, 64, slave, 0, 512, 16, 16, 16, 16, BRAM=4</column>
                 </table>
             </item>
             <item name="S_AXILITE Interfaces">
@@ -2194,9 +2258,9 @@
             <item name="Inferred Burst Summary">
                 <table>
                     <keys size="5">HW Interface, Direction, Length, Width, Location</keys>
-                    <column name="m_axi_gmem0">read, 64, 256, /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34:9</column>
-                    <column name="m_axi_gmem1">read, 64, 256, /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45:9</column>
-                    <column name="m_axi_gmem0">write, 64, 256, /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90:9</column>
+                    <column name="m_axi_gmem0">read, 2048, 32, /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34:9</column>
+                    <column name="m_axi_gmem1">read, 2048, 32, /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45:9</column>
+                    <column name="m_axi_gmem0">write, 2048, 32, /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90:9</column>
                 </table>
             </item>
         </section>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'matmul_Pipeline_readA'" level="0">
-<item name = "Date">Thu Jun 30 16:25:08 2022
+<item name = "Date">Fri Jul  1 14:52:51 2022
 </item>
 <item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)</item>
 <item name = "Project">matmul</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">2051, 2051, 20.510 us, 20.510 us, 2051, 2051, no</column>
+<column name="">65539, 65539, 0.655 ms, 0.655 ms, 65539, 65539, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- readA">2049, 2049, 4, 2, 1, 1024, yes</column>
+<column name="- readA">65537, 65537, 18, 16, 1, 4096, yes</column>
 </table>
 </item>
 </section>

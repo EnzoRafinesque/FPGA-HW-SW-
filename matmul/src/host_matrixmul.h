@@ -30,7 +30,7 @@ struct aligned_allocator {
 
 typedef ap_int<16> data_t;
 //typedef int data_t;
-#define MAX_DIM_SIZE 32
+#define MAX_DIM_SIZE 64
 
 #define HW_TOP_NAME "matmul"
 //#define HW_TOP_NAME "matmul_opt_1"

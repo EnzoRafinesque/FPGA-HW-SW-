@@ -6006,7 +6006,7 @@ typedef ap_int<16> data_t;
 
 
 
-const int c_dim = 32;
+const int c_dim = 64;
 
 extern "C" {
 

@@ -5,5 +5,5 @@
 typedef ap_int<16> data_t;
 
 
-#define MAX_DIM_SIZE 32
+#define MAX_DIM_SIZE 64
 

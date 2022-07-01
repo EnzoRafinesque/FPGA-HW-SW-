@@ -34,10 +34,10 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058357072</coreId>
+              <coreId>2553925216</coreId>
               <rtlModuleName/>
             </Obj>
-            <bitwidth>256</bitwidth>
+            <bitwidth>32</bitwidth>
           </Value>
           <direction>2</direction>
           <if_type>4</if_type>
@@ -70,10 +70,10 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058225840</coreId>
+              <coreId>0</coreId>
               <rtlModuleName/>
             </Obj>
-            <bitwidth>256</bitwidth>
+            <bitwidth>32</bitwidth>
           </Value>
           <direction>0</direction>
           <if_type>4</if_type>
@@ -106,7 +106,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1054844592</coreId>
+              <coreId>1869900659</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -142,7 +142,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058254640</coreId>
+              <coreId>1747918892</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -178,7 +178,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058464192</coreId>
+              <coreId>2746332384</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -360,7 +360,7 @@
               <implIndex>auto</implIndex>
               <coreName>RAM</coreName>
               <isStorage>1</isStorage>
-              <storageDepth>1024</storageDepth>
+              <storageDepth>4096</storageDepth>
               <coreId>82</coreId>
               <rtlModuleName>matmul_A_V_RAM_AUTO_1R1W</rtlModuleName>
             </Obj>
@@ -416,7 +416,7 @@
               <implIndex>auto</implIndex>
               <coreName>RAM_1WnR</coreName>
               <isStorage>1</isStorage>
-              <storageDepth>1024</storageDepth>
+              <storageDepth>4096</storageDepth>
               <coreId>83</coreId>
               <rtlModuleName>matmul_B_V_RAM_1WNR_AUTO_1R1W</rtlModuleName>
             </Obj>
@@ -472,7 +472,7 @@
               <implIndex>auto</implIndex>
               <coreName>RAM</coreName>
               <isStorage>1</isStorage>
-              <storageDepth>1024</storageDepth>
+              <storageDepth>4096</storageDepth>
               <coreId>82</coreId>
               <rtlModuleName>matmul_C_V_RAM_AUTO_1R1W</rtlModuleName>
             </Obj>
@@ -522,7 +522,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>trunc_ln_reg_217</rtlName>
+              <rtlName>trunc_ln_reg_219</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -532,7 +532,7 @@
               <coreId>0</coreId>
               <rtlModuleName/>
             </Obj>
-            <bitwidth>27</bitwidth>
+            <bitwidth>30</bitwidth>
           </Value>
           <oprand_edges>
             <count>4</count>
@@ -581,7 +581,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>sext_ln34_fu_187_p1</rtlName>
+              <rtlName>sext_ln34_fu_189_p1</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -644,10 +644,10 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>0</coreId>
+              <coreId>1919907584</coreId>
               <rtlModuleName/>
             </Obj>
-            <bitwidth>256</bitwidth>
+            <bitwidth>32</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -752,14 +752,14 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>grp_matmul_Pipeline_readA_fu_126</rtlName>
+              <rtlName>grp_matmul_Pipeline_readA_fu_128</rtlName>
               <control/>
               <opType/>
               <implIndex/>
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>0</coreId>
+              <coreId>2554508832</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -771,7 +771,7 @@
             <item>72</item>
             <item>73</item>
             <item>74</item>
-            <item>316</item>
+            <item>317</item>
           </oprand_edges>
           <opcode>call</opcode>
           <m_Display>0</m_Display>
@@ -812,7 +812,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>trunc_ln1_reg_223</rtlName>
+              <rtlName>trunc_ln1_reg_225</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -822,7 +822,7 @@
               <coreId>0</coreId>
               <rtlModuleName/>
             </Obj>
-            <bitwidth>27</bitwidth>
+            <bitwidth>30</bitwidth>
           </Value>
           <oprand_edges>
             <count>4</count>
@@ -871,14 +871,14 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>sext_ln45_fu_197_p1</rtlName>
+              <rtlName>sext_ln45_fu_199_p1</rtlName>
               <control/>
               <opType/>
               <implIndex/>
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058760160</coreId>
+              <coreId>1819113532</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -934,10 +934,10 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058753616</coreId>
+              <coreId>0</coreId>
               <rtlModuleName/>
             </Obj>
-            <bitwidth>256</bitwidth>
+            <bitwidth>32</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -1042,14 +1042,14 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>grp_matmul_Pipeline_readB_fu_134</rtlName>
+              <rtlName>grp_matmul_Pipeline_readB_fu_136</rtlName>
               <control/>
               <opType/>
               <implIndex/>
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>176</coreId>
+              <coreId>954</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -1061,7 +1061,7 @@
             <item>87</item>
             <item>88</item>
             <item>89</item>
-            <item>314</item>
+            <item>315</item>
           </oprand_edges>
           <opcode>call</opcode>
           <m_Display>0</m_Display>
@@ -1088,14 +1088,14 @@
                 <item_version>0</item_version>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>grp_matmul_Pipeline_nopart1_nopart2_fu_142</rtlName>
+              <rtlName>grp_matmul_Pipeline_nopart1_nopart2_fu_144</rtlName>
               <control/>
               <opType/>
               <implIndex/>
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058765432</coreId>
+              <coreId>176</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -1107,9 +1107,9 @@
             <item>92</item>
             <item>93</item>
             <item>94</item>
-            <item>310</item>
             <item>311</item>
-            <item>317</item>
+            <item>312</item>
+            <item>318</item>
           </oprand_edges>
           <opcode>call</opcode>
           <m_Display>0</m_Display>
@@ -1150,7 +1150,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>trunc_ln4_reg_229</rtlName>
+              <rtlName>trunc_ln4_reg_231</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -1160,7 +1160,7 @@
               <coreId>0</coreId>
               <rtlModuleName/>
             </Obj>
-            <bitwidth>27</bitwidth>
+            <bitwidth>30</bitwidth>
           </Value>
           <oprand_edges>
             <count>4</count>
@@ -1209,14 +1209,14 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>sext_ln90_fu_207_p1</rtlName>
+              <rtlName>sext_ln90_fu_209_p1</rtlName>
               <control/>
               <opType/>
               <implIndex/>
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058767336</coreId>
+              <coreId>0</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -1272,10 +1272,10 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058687984</coreId>
+              <coreId>2554532888</coreId>
               <rtlModuleName/>
             </Obj>
-            <bitwidth>256</bitwidth>
+            <bitwidth>32</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -1340,7 +1340,7 @@
             <item>103</item>
             <item>104</item>
             <item>105</item>
-            <item>315</item>
+            <item>316</item>
           </oprand_edges>
           <opcode>writereq</opcode>
           <m_Display>0</m_Display>
@@ -1381,7 +1381,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>grp_matmul_Pipeline_writeC_fu_149</rtlName>
+              <rtlName>grp_matmul_Pipeline_writeC_fu_151</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -1400,9 +1400,9 @@
             <item>108</item>
             <item>109</item>
             <item>110</item>
-            <item>309</item>
-            <item>313</item>
-            <item>318</item>
+            <item>310</item>
+            <item>314</item>
+            <item>319</item>
           </oprand_edges>
           <opcode>call</opcode>
           <m_Display>0</m_Display>
@@ -1460,7 +1460,7 @@
             <item_version>0</item_version>
             <item>112</item>
             <item>113</item>
-            <item>312</item>
+            <item>313</item>
           </oprand_edges>
           <opcode>writeresp</opcode>
           <m_Display>0</m_Display>
@@ -1553,7 +1553,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>0</coreId>
+              <coreId>1819113532</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -1584,13 +1584,13 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058687984</coreId>
+              <coreId>0</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>32</bitwidth>
           </Value>
           <const_type>0</const_type>
-          <content>5</content>
+          <content>2</content>
         </item>
         <item class_id_reference="16" object_id="_32">
           <Value>
@@ -1615,7 +1615,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>0</coreId>
+              <coreId>176</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -1646,13 +1646,13 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058694752</coreId>
+              <coreId>0</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>32</bitwidth>
           </Value>
           <const_type>0</const_type>
-          <content>64</content>
+          <content>2048</content>
         </item>
         <item class_id_reference="16" object_id="_34">
           <Value>
@@ -1677,7 +1677,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>0</coreId>
+              <coreId>2554444144</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -1708,7 +1708,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058696128</coreId>
+              <coreId>2554444720</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -1739,7 +1739,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058696776</coreId>
+              <coreId>0</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -1770,7 +1770,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1058698192</coreId>
+              <coreId>2554447312</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -1804,7 +1804,7 @@
             <coreName/>
             <isStorage>0</isStorage>
             <storageDepth>0</storageDepth>
-            <coreId>508</coreId>
+            <coreId>1730619424</coreId>
             <rtlModuleName/>
           </Obj>
           <node_objs>
@@ -2170,70 +2170,70 @@
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_86">
-          <id>309</id>
+          <id>310</id>
           <edge_type>4</edge_type>
           <source_obj>35</source_obj>
           <sink_obj>40</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_87">
-          <id>310</id>
+          <id>311</id>
           <edge_type>4</edge_type>
           <source_obj>34</source_obj>
           <sink_obj>35</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_88">
-          <id>311</id>
+          <id>312</id>
           <edge_type>4</edge_type>
           <source_obj>29</source_obj>
           <sink_obj>35</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_89">
-          <id>312</id>
+          <id>313</id>
           <edge_type>4</edge_type>
           <source_obj>40</source_obj>
           <sink_obj>41</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_90">
-          <id>313</id>
+          <id>314</id>
           <edge_type>4</edge_type>
           <source_obj>39</source_obj>
           <sink_obj>40</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_91">
-          <id>314</id>
+          <id>315</id>
           <edge_type>4</edge_type>
           <source_obj>33</source_obj>
           <sink_obj>34</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_92">
-          <id>315</id>
+          <id>316</id>
           <edge_type>4</edge_type>
           <source_obj>29</source_obj>
           <sink_obj>39</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_93">
-          <id>316</id>
+          <id>317</id>
           <edge_type>4</edge_type>
           <source_obj>28</source_obj>
           <sink_obj>29</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_94">
-          <id>317</id>
+          <id>318</id>
           <edge_type>4</edge_type>
           <source_obj>29</source_obj>
           <sink_obj>35</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_95">
-          <id>318</id>
+          <id>319</id>
           <edge_type>4</edge_type>
           <source_obj>35</source_obj>
           <sink_obj>40</sink_obj>
@@ -2262,8 +2262,8 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>20635</mMinLatency>
-        <mMaxLatency>20635</mMaxLatency>
+        <mMinLatency>262299</mMinLatency>
+        <mMaxLatency>262299</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
@@ -6713,15 +6713,15 @@
             <item_version>0</item_version>
             <item>
               <first>BRAM</first>
-              <second>30</second>
+              <second>4</second>
             </item>
             <item>
               <first>FF</first>
-              <second>881</second>
+              <second>512</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>1052</second>
+              <second>580</second>
             </item>
           </second>
         </item>
@@ -6732,79 +6732,79 @@
             <item_version>0</item_version>
             <item>
               <first>BRAM</first>
-              <second>30</second>
+              <second>4</second>
             </item>
             <item>
               <first>FF</first>
-              <second>881</second>
+              <second>512</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>1052</second>
+              <second>580</second>
             </item>
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_nopart1_nopart2_fu_142 (matmul_Pipeline_nopart1_nopart2)</first>
+          <first>grp_matmul_Pipeline_nopart1_nopart2_fu_144 (matmul_Pipeline_nopart1_nopart2)</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
             <item>
               <first>DSP</first>
-              <second>32</second>
+              <second>64</second>
             </item>
             <item>
               <first>FF</first>
-              <second>590</second>
+              <second>1125</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>1846</second>
+              <second>3734</second>
             </item>
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_readA_fu_126 (matmul_Pipeline_readA)</first>
+          <first>grp_matmul_Pipeline_readA_fu_128 (matmul_Pipeline_readA)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>
             <item>
               <first>FF</first>
-              <second>1583</second>
+              <second>1601</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>246</second>
+              <second>360</second>
             </item>
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_readB_fu_134 (matmul_Pipeline_readB)</first>
+          <first>grp_matmul_Pipeline_readB_fu_136 (matmul_Pipeline_readB)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>
             <item>
               <first>FF</first>
-              <second>1583</second>
+              <second>1601</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>246</second>
+              <second>360</second>
             </item>
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_writeC_fu_149 (matmul_Pipeline_writeC)</first>
+          <first>grp_matmul_Pipeline_writeC_fu_151 (matmul_Pipeline_writeC)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>
             <item>
               <first>FF</first>
-              <second>835</second>
+              <second>1074</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>788</second>
+              <second>955</second>
             </item>
           </second>
         </item>
@@ -6988,7 +6988,7 @@
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
-              <second>1024</second>
+              <second>4096</second>
             </item>
             <item>
               <first>(1Bits)</first>
@@ -7000,11 +7000,11 @@
             </item>
             <item>
               <first>(3W*Bits*Banks)</first>
-              <second>16384</second>
+              <second>65536</second>
             </item>
             <item>
               <first>BRAM</first>
-              <second>1</second>
+              <second>4</second>
             </item>
             <item>
               <first>FF</first>
@@ -7027,7 +7027,7 @@
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
-              <second>1024</second>
+              <second>4096</second>
             </item>
             <item>
               <first>(1Bits)</first>
@@ -7039,11 +7039,11 @@
             </item>
             <item>
               <first>(3W*Bits*Banks)</first>
-              <second>16384</second>
+              <second>65536</second>
             </item>
             <item>
               <first>BRAM</first>
-              <second>1</second>
+              <second>4</second>
             </item>
             <item>
               <first>FF</first>
@@ -7066,7 +7066,7 @@
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
-              <second>1024</second>
+              <second>4096</second>
             </item>
             <item>
               <first>(1Bits)</first>
@@ -7078,11 +7078,11 @@
             </item>
             <item>
               <first>(3W*Bits*Banks)</first>
-              <second>16384</second>
+              <second>65536</second>
             </item>
             <item>
               <first>BRAM</first>
-              <second>1</second>
+              <second>4</second>
             </item>
             <item>
               <first>FF</first>
@@ -7113,11 +7113,11 @@
             </item>
             <item>
               <first>(1Bits)</first>
-              <second>10</second>
+              <second>12</second>
             </item>
             <item>
               <first>(2Count)</first>
-              <second>30</second>
+              <second>36</second>
             </item>
             <item>
               <first>LUT</first>
@@ -7182,11 +7182,11 @@
             </item>
             <item>
               <first>(1Bits)</first>
-              <second>10</second>
+              <second>12</second>
             </item>
             <item>
               <first>(2Count)</first>
-              <second>30</second>
+              <second>36</second>
             </item>
             <item>
               <first>LUT</first>
@@ -7274,11 +7274,11 @@
             </item>
             <item>
               <first>(1Bits)</first>
-              <second>10</second>
+              <second>12</second>
             </item>
             <item>
               <first>(2Count)</first>
-              <second>30</second>
+              <second>36</second>
             </item>
             <item>
               <first>LUT</first>
@@ -8593,7 +8593,7 @@
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_nopart1_nopart2_fu_142_ap_start_reg</first>
+          <first>grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -8612,7 +8612,7 @@
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_readA_fu_126_ap_start_reg</first>
+          <first>grp_matmul_Pipeline_readA_fu_128_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -8631,7 +8631,7 @@
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_readB_fu_134_ap_start_reg</first>
+          <first>grp_matmul_Pipeline_readB_fu_136_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -8650,7 +8650,7 @@
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_writeC_fu_149_ap_start_reg</first>
+          <first>grp_matmul_Pipeline_writeC_fu_151_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -8669,13 +8669,13 @@
           </second>
         </item>
         <item>
-          <first>trunc_ln1_reg_223</first>
+          <first>trunc_ln1_reg_225</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>27</second>
+              <second>30</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -8683,18 +8683,18 @@
             </item>
             <item>
               <first>FF</first>
-              <second>27</second>
+              <second>30</second>
             </item>
           </second>
         </item>
         <item>
-          <first>trunc_ln4_reg_229</first>
+          <first>trunc_ln4_reg_231</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>27</second>
+              <second>30</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -8702,18 +8702,18 @@
             </item>
             <item>
               <first>FF</first>
-              <second>27</second>
+              <second>30</second>
             </item>
           </second>
         </item>
         <item>
-          <first>trunc_ln_reg_217</first>
+          <first>trunc_ln_reg_219</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>27</second>
+              <second>30</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -8721,7 +8721,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>27</second>
+              <second>30</second>
             </item>
           </second>
         </item>
@@ -8751,28 +8751,28 @@
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_nopart1_nopart2_fu_142</first>
+          <first>grp_matmul_Pipeline_nopart1_nopart2_fu_144</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_readA_fu_126</first>
+          <first>grp_matmul_Pipeline_readA_fu_128</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_readB_fu_134</first>
+          <first>grp_matmul_Pipeline_readB_fu_136</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_writeC_fu_149</first>
+          <first>grp_matmul_Pipeline_writeC_fu_151</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -8783,7 +8783,7 @@
         <count>4</count>
         <item_version>0</item_version>
         <item class_id="40" tracking_level="0" version="0">
-          <first>grp_matmul_Pipeline_nopart1_nopart2_fu_142 (matmul_Pipeline_nopart1_nopart2)</first>
+          <first>grp_matmul_Pipeline_nopart1_nopart2_fu_144 (matmul_Pipeline_nopart1_nopart2)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8791,7 +8791,7 @@
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_readA_fu_126 (matmul_Pipeline_readA)</first>
+          <first>grp_matmul_Pipeline_readA_fu_128 (matmul_Pipeline_readA)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8799,7 +8799,7 @@
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_readB_fu_134 (matmul_Pipeline_readB)</first>
+          <first>grp_matmul_Pipeline_readB_fu_136 (matmul_Pipeline_readB)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8807,7 +8807,7 @@
           </second>
         </item>
         <item>
-          <first>grp_matmul_Pipeline_writeC_fu_149 (matmul_Pipeline_writeC)</first>
+          <first>grp_matmul_Pipeline_writeC_fu_151 (matmul_Pipeline_writeC)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -9043,7 +9043,7 @@
       <count>22</count>
       <item_version>0</item_version>
       <item class_id="49" tracking_level="0" version="0">
-        <first>74</first>
+        <first>76</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9051,7 +9051,7 @@
         </second>
       </item>
       <item>
-        <first>78</first>
+        <first>80</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9059,7 +9059,7 @@
         </second>
       </item>
       <item>
-        <first>82</first>
+        <first>84</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9067,7 +9067,7 @@
         </second>
       </item>
       <item>
-        <first>86</first>
+        <first>88</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9075,7 +9075,7 @@
         </second>
       </item>
       <item>
-        <first>92</first>
+        <first>94</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9083,7 +9083,7 @@
         </second>
       </item>
       <item>
-        <first>98</first>
+        <first>100</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9091,7 +9091,7 @@
         </second>
       </item>
       <item>
-        <first>104</first>
+        <first>106</first>
         <second>
           <count>70</count>
           <item_version>0</item_version>
@@ -9168,7 +9168,7 @@
         </second>
       </item>
       <item>
-        <first>111</first>
+        <first>113</first>
         <second>
           <count>70</count>
           <item_version>0</item_version>
@@ -9245,7 +9245,7 @@
         </second>
       </item>
       <item>
-        <first>118</first>
+        <first>120</first>
         <second>
           <count>69</count>
           <item_version>0</item_version>
@@ -9321,7 +9321,7 @@
         </second>
       </item>
       <item>
-        <first>126</first>
+        <first>128</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -9330,7 +9330,7 @@
         </second>
       </item>
       <item>
-        <first>134</first>
+        <first>136</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -9339,7 +9339,7 @@
         </second>
       </item>
       <item>
-        <first>142</first>
+        <first>144</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -9348,7 +9348,7 @@
         </second>
       </item>
       <item>
-        <first>149</first>
+        <first>151</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -9357,7 +9357,7 @@
         </second>
       </item>
       <item>
-        <first>157</first>
+        <first>159</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9365,7 +9365,7 @@
         </second>
       </item>
       <item>
-        <first>167</first>
+        <first>169</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9373,7 +9373,7 @@
         </second>
       </item>
       <item>
-        <first>177</first>
+        <first>179</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9381,7 +9381,7 @@
         </second>
       </item>
       <item>
-        <first>187</first>
+        <first>189</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9389,7 +9389,7 @@
         </second>
       </item>
       <item>
-        <first>190</first>
+        <first>192</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9397,7 +9397,7 @@
         </second>
       </item>
       <item>
-        <first>197</first>
+        <first>199</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9405,7 +9405,7 @@
         </second>
       </item>
       <item>
-        <first>200</first>
+        <first>202</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9413,7 +9413,7 @@
         </second>
       </item>
       <item>
-        <first>207</first>
+        <first>209</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9421,7 +9421,7 @@
         </second>
       </item>
       <item>
-        <first>210</first>
+        <first>212</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9433,7 +9433,7 @@
       <count>12</count>
       <item_version>0</item_version>
       <item class_id="52" tracking_level="0" version="0">
-        <first>A_V_alloca_fu_74</first>
+        <first>A_V_alloca_fu_76</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9441,7 +9441,7 @@
         </second>
       </item>
       <item>
-        <first>B_V_alloca_fu_78</first>
+        <first>B_V_alloca_fu_80</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9449,7 +9449,7 @@
         </second>
       </item>
       <item>
-        <first>C_V_alloca_fu_82</first>
+        <first>C_V_alloca_fu_84</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9457,7 +9457,7 @@
         </second>
       </item>
       <item>
-        <first>gmem0_addr_1_fu_210</first>
+        <first>gmem0_addr_1_fu_212</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9465,7 +9465,7 @@
         </second>
       </item>
       <item>
-        <first>gmem0_addr_fu_190</first>
+        <first>gmem0_addr_fu_192</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9473,7 +9473,7 @@
         </second>
       </item>
       <item>
-        <first>gmem1_addr_fu_200</first>
+        <first>gmem1_addr_fu_202</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9481,7 +9481,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln34_fu_187</first>
+        <first>sext_ln34_fu_189</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9489,7 +9489,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln45_fu_197</first>
+        <first>sext_ln45_fu_199</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9497,7 +9497,7 @@
         </second>
       </item>
       <item>
-        <first>sext_ln90_fu_207</first>
+        <first>sext_ln90_fu_209</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9505,7 +9505,7 @@
         </second>
       </item>
       <item>
-        <first>trunc_ln1_fu_167</first>
+        <first>trunc_ln1_fu_169</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9513,7 +9513,7 @@
         </second>
       </item>
       <item>
-        <first>trunc_ln4_fu_177</first>
+        <first>trunc_ln4_fu_179</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9521,7 +9521,7 @@
         </second>
       </item>
       <item>
-        <first>trunc_ln_fu_157</first>
+        <first>trunc_ln_fu_159</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9533,7 +9533,7 @@
       <count>4</count>
       <item_version>0</item_version>
       <item>
-        <first>grp_matmul_Pipeline_nopart1_nopart2_fu_142</first>
+        <first>grp_matmul_Pipeline_nopart1_nopart2_fu_144</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -9542,7 +9542,7 @@
         </second>
       </item>
       <item>
-        <first>grp_matmul_Pipeline_readA_fu_126</first>
+        <first>grp_matmul_Pipeline_readA_fu_128</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -9551,7 +9551,7 @@
         </second>
       </item>
       <item>
-        <first>grp_matmul_Pipeline_readB_fu_134</first>
+        <first>grp_matmul_Pipeline_readB_fu_136</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -9560,7 +9560,7 @@
         </second>
       </item>
       <item>
-        <first>grp_matmul_Pipeline_writeC_fu_149</first>
+        <first>grp_matmul_Pipeline_writeC_fu_151</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -9573,7 +9573,7 @@
       <count>6</count>
       <item_version>0</item_version>
       <item>
-        <first>grp_readreq_fu_104</first>
+        <first>grp_readreq_fu_106</first>
         <second>
           <count>70</count>
           <item_version>0</item_version>
@@ -9650,7 +9650,7 @@
         </second>
       </item>
       <item>
-        <first>grp_readreq_fu_111</first>
+        <first>grp_readreq_fu_113</first>
         <second>
           <count>70</count>
           <item_version>0</item_version>
@@ -9727,7 +9727,7 @@
         </second>
       </item>
       <item>
-        <first>grp_writeresp_fu_118</first>
+        <first>grp_writeresp_fu_120</first>
         <second>
           <count>69</count>
           <item_version>0</item_version>
@@ -9803,7 +9803,7 @@
         </second>
       </item>
       <item>
-        <first>in1_read_read_fu_98</first>
+        <first>in1_read_read_fu_100</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9811,7 +9811,7 @@
         </second>
       </item>
       <item>
-        <first>in2_read_read_fu_92</first>
+        <first>in2_read_read_fu_94</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9819,7 +9819,7 @@
         </second>
       </item>
       <item>
-        <first>out_r_read_read_fu_86</first>
+        <first>out_r_read_read_fu_88</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9839,7 +9839,7 @@
       <count>6</count>
       <item_version>0</item_version>
       <item>
-        <first>217</first>
+        <first>219</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9847,7 +9847,7 @@
         </second>
       </item>
       <item>
-        <first>223</first>
+        <first>225</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9855,7 +9855,7 @@
         </second>
       </item>
       <item>
-        <first>229</first>
+        <first>231</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9863,7 +9863,7 @@
         </second>
       </item>
       <item>
-        <first>235</first>
+        <first>237</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9871,7 +9871,7 @@
         </second>
       </item>
       <item>
-        <first>240</first>
+        <first>242</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9879,7 +9879,7 @@
         </second>
       </item>
       <item>
-        <first>245</first>
+        <first>247</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9891,7 +9891,7 @@
       <count>6</count>
       <item_version>0</item_version>
       <item>
-        <first>gmem0_addr_1_reg_245</first>
+        <first>gmem0_addr_1_reg_247</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9899,7 +9899,7 @@
         </second>
       </item>
       <item>
-        <first>gmem0_addr_reg_235</first>
+        <first>gmem0_addr_reg_237</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9907,7 +9907,7 @@
         </second>
       </item>
       <item>
-        <first>gmem1_addr_reg_240</first>
+        <first>gmem1_addr_reg_242</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9915,7 +9915,7 @@
         </second>
       </item>
       <item>
-        <first>trunc_ln1_reg_223</first>
+        <first>trunc_ln1_reg_225</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9923,7 +9923,7 @@
         </second>
       </item>
       <item>
-        <first>trunc_ln4_reg_229</first>
+        <first>trunc_ln4_reg_231</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9931,7 +9931,7 @@
         </second>
       </item>
       <item>
-        <first>trunc_ln_reg_217</first>
+        <first>trunc_ln_reg_219</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

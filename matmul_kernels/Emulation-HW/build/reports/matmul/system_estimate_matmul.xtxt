@@ -2,7 +2,7 @@
 Version:    v++ v2021.2 (64-bit)
 Build:      SW Build 3363252 on 2021-10-14-04:41:01
 Copyright:  Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-Created:    Thu Jun 30 16:25:45 2022
+Created:    Fri Jul  1 14:53:40 2022
 ===============================================================================
 
 -------------------------------------------------------------------------------
@@ -27,25 +27,25 @@ Compute Unit  Kernel Name  Module Name                      Target Frequency  Es
 ------------  -----------  -------------------------------  ----------------  -------------------
 matmul_1      matmul       matmul_Pipeline_readA            100               136.986298
 matmul_1      matmul       matmul_Pipeline_readB            100               136.986298
-matmul_1      matmul       matmul_Pipeline_nopart1_nopart2  100               199.004974
+matmul_1      matmul       matmul_Pipeline_nopart1_nopart2  100               204.2901
 matmul_1      matmul       matmul_Pipeline_writeC           100               136.986298
 matmul_1      matmul       matmul                           100               136.986298
 
 Latency Information
 Compute Unit  Kernel Name  Module Name                      Start Interval  Best (cycles)  Avg (cycles)  Worst (cycles)  Best (absolute)  Avg (absolute)  Worst (absolute)
 ------------  -----------  -------------------------------  --------------  -------------  ------------  --------------  ---------------  --------------  ----------------
-matmul_1      matmul       matmul_Pipeline_readA            2051            2051           2051          2051            20.510 us        20.510 us       20.510 us
-matmul_1      matmul       matmul_Pipeline_readB            2051            2051           2051          2051            20.510 us        20.510 us       20.510 us
-matmul_1      matmul       matmul_Pipeline_nopart1_nopart2  16389           16389          16389         16389           0.164 ms         0.164 ms        0.164 ms
-matmul_1      matmul       matmul_Pipeline_writeC           2051            2051           2051          2051            20.510 us        20.510 us       20.510 us
-matmul_1      matmul       matmul                           20636           20635          20635         20635           0.206 ms         0.206 ms        0.206 ms
+matmul_1      matmul       matmul_Pipeline_readA            65539           65539          65539         65539           0.655 ms         0.655 ms        0.655 ms
+matmul_1      matmul       matmul_Pipeline_readB            65539           65539          65539         65539           0.655 ms         0.655 ms        0.655 ms
+matmul_1      matmul       matmul_Pipeline_nopart1_nopart2  131077          131077         131077        131077          1.311 ms         1.311 ms        1.311 ms
+matmul_1      matmul       matmul_Pipeline_writeC           65539           65539          65539         65539           0.655 ms         0.655 ms        0.655 ms
+matmul_1      matmul       matmul                           262300          262299         262299        262299          2.623 ms         2.623 ms        2.623 ms
 
 Area Information
 Compute Unit  Kernel Name  Module Name                      FF    LUT   DSP  BRAM  URAM
 ------------  -----------  -------------------------------  ----  ----  ---  ----  ----
-matmul_1      matmul       matmul_Pipeline_readA            1583  246   0    0     0
-matmul_1      matmul       matmul_Pipeline_readB            1583  246   0    0     0
-matmul_1      matmul       matmul_Pipeline_nopart1_nopart2  590   1846  0    0     0
-matmul_1      matmul       matmul_Pipeline_writeC           835   788   0    0     0
-matmul_1      matmul       matmul                           6747  6819  0    63    0
+matmul_1      matmul       matmul_Pipeline_readA            1601  360   0    0     0
+matmul_1      matmul       matmul_Pipeline_readB            1601  360   0    0     0
+matmul_1      matmul       matmul_Pipeline_nopart1_nopart2  1125  3734  0    0     0
+matmul_1      matmul       matmul_Pipeline_writeC           1074  955   0    0     0
+matmul_1      matmul       matmul                           6828  8158  0    20    0
 -------------------------------------------------------------------------------
