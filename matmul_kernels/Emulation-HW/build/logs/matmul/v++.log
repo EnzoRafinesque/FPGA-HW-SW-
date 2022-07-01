@@ -1,8 +1,8 @@
 INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
 	Reports: /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/reports/matmul
 	Log files: /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/logs/matmul
-INFO: [v++ 60-1548] Creating build summary session with primary output /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul.xo.compile_summary, at Thu Jun 30 16:10:44 2022
-INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Thu Jun 30 16:10:44 2022
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul.xo.compile_summary, at Thu Jun 30 16:24:48 2022
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Thu Jun 30 16:24:48 2022
 INFO: [v++ 60-895]   Target platform: /tools/Xilinx/Vitis/2021.2/platforms/xilinx_zc706_base_202120_1/xilinx_zc706_base_202120_1.xpfm
 INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/tools/Xilinx/Vitis/2021.2/platforms/xilinx_zc706_base_202120_1/hw/hw.xsa'
 INFO: [v++ 60-585] Compiling for hardware emulation target
@@ -13,9 +13,9 @@ WARNING: [v++ 60-2440] The option 'hls.memory_port_data_width' is being deprecat
 
 ===>The following messages were generated while  performing high-level synthesis for kernel: matmul Log file: /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/vitis_hls.log :
 INFO: [v++ 204-61] Pipelining loop 'readA'.
-INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'readA'
+INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 4, loop 'readA'
 INFO: [v++ 204-61] Pipelining loop 'readB'.
-INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'readB'
+INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 4, loop 'readB'
 INFO: [v++ 204-61] Pipelining loop 'nopart1_nopart2'.
 WARNING: [v++ 200-885] The II Violation in module 'matmul_Pipeline_nopart1_nopart2' (loop 'nopart1_nopart2'): Unable to schedule 'load' operation ('B_V_load_16') on array 'B_V' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'B_V'.
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html
@@ -31,7 +31,7 @@ WARNING: [v++ 200-885] The II Violation in module 'matmul_Pipeline_nopart1_nopar
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html
 INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 20, loop 'nopart1_nopart2'
 INFO: [v++ 204-61] Pipelining loop 'writeC'.
-INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'writeC'
+INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 4, loop 'writeC'
 INFO: [v++ 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [v++ 200-789] **** Estimated Fmax: 136.99 MHz
 INFO: [v++ 60-594] Finished kernel compilation
@@ -40,4 +40,4 @@ INFO: [v++ 60-1092] Generated system estimate report: /home/mdu/Desktop/work_rep
 INFO: [v++ 60-586] Created build/matmul.xo
 INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
     vitis_analyzer /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul.xo.compile_summary 
-INFO: [v++ 60-791] Total elapsed time: 0h 1m 8s
+INFO: [v++ 60-791] Total elapsed time: 0h 1m 9s

@@ -313,3 +313,37 @@
 16:23:55 ERROR : [QEMU Process]: /cosim@0: Disconnected clk=252258523764 ns
 
 
+16:33:42 INFO  : Launching the emulator on project 'matmul_system' for configuration 'Emulation-HW'
+16:33:42 INFO  : Launching QEMU with command '/home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/package/launch_hw_emu.sh -add-env ENABLE_RDWR_DEBUG=true -add-env RDWR_DEBUG_PORT=10100 -pid-file /home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/emulation.pid -graphic-xsim -no-reboot -forward-port 1440 1534'
+16:34:23 ERROR : [QEMU Process]: qemu-system-aarch64: warning: nic ethernet@e000c000 has no peer
+
+16:44:37 INFO  : Emulator has started.
+16:44:37 INFO  : Environment used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to '{XCL_EMULATION_MODE=hw_emu, XILINX_XRT=/usr, LD_LIBRARY_PATH=/mnt/sd-mmcblk0p1/:/tmp:$LD_LIBRARY_PATH, XILINX_VITIS=/mnt/sd-mmcblk0p1/}'.
+16:44:37 INFO  : Add the variable 'XILINX_VITIS_DEBUG_ENV_CUSTOM' in enivronment tab of the launch configuration dialog to prevent the tool from overriding the environment.
+16:44:37 INFO  : Arguments used by launch configuration 'SystemDebugger_matmul_system_matmul' is updated to './binary_container_1.xclbin'.
+16:44:37 WARN  : The platform description file '/home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/package/sd_card/platform_desc.txt' required for the launching the application 'matmul' doesn't exist.
+16:44:37 INFO  : Transferred file from '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.ini' to '/mnt/sd-mmcblk0p1/xrt.ini'.
+16:45:01 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/summary.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/summary.csv'.
+16:45:01 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/device_trace_0.csv' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/device_trace_0.csv'.
+16:45:01 INFO  : Transferred file from '/mnt/sd-mmcblk0p1/xrt.run_summary' to '/home/mdu/Desktop/work_repo/work_prj/matmul/Emulation-HW/SystemDebugger_matmul_system_matmul/xrt.run_summary'.
+20:53:34 ERROR : [QEMU Process]: WDB FATAL ERROR: failed to add file block (WdbFileBlockManager) for the following reason: 
+20:53:34 ERROR : [QEMU Process]: No space left on device
+
+20:53:35 ERROR : [QEMU Process]: qemu-system-aarch64: /cosim@0: Disconnected clk=15551694894993 ns
+
+
+20:53:45 ERROR : [QEMU Process]: Traceback (most recent call last):
+  File "/tools/Xilinx/Vitis/2021.2/bin/launch_emulator.py", line 2177, in <module>
+    post_operations(pl_sim_dir, log_dir, args.platform_name, envdict)
+  File "/tools/Xilinx/Vitis/2021.2/bin/launch_emulator.py", line 599, in post_operations
+    shutil.copy(name, os.path.join(log_dir, "%s.wdb"%platform_name) )   
+  File "/tools/Xilinx/Vitis/2021.2/tps/lnx64/python-3.8.3/lib/python3.8/shutil.py", line 415, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/tools/Xilinx/Vitis/2021.2/tps/lnx64/python-3.8.3/lib/python3.8/shutil.py", line 272, in copyfile
+    _fastcopy_sendfile(fsrc, fdst)
+  File "/tools/Xilinx/Vitis/2021.2/tps/lnx64/python-3.8.3/lib/python3.8/shutil.py", line 163, in _fastcopy_sendfile
+    raise err from None
+  File "/tools/Xilinx/Vitis/2021.2/tps/lnx64/python-3.8.3/lib/python3.8/shutil.py", line 149, in _fastcopy_sendfile
+    sent = os.sendfile(outfd, infd, offset, blocksize)
+OSError: [Errno 28] No space left on device: 'xilinx_zc706_base_wrapper_behav.wdb' -> '/home/mdu/Desktop/work_repo/work_prj/matmul_system/Emulation-HW/package/xilinx_zc706_base_202120_1.wdb'
+
