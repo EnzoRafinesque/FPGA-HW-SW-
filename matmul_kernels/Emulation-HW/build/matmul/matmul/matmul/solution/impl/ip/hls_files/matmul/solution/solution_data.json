@@ -92,8 +92,8 @@
       "config_interface -m_axi_conservative_mode=1",
       "config_interface -m_axi_addr64=0",
       "config_interface -m_axi_auto_max_ports=1",
-      "config_interface -m_axi_min_bitwidth=128",
-      "config_interface -m_axi_max_bitwidth=128",
+      "config_interface -m_axi_min_bitwidth=512",
+      "config_interface -m_axi_max_bitwidth=512",
       "config_rtl -register_reset_num=3",
       "config_rtl -kernel_profile=1",
       "config_dataflow -strict_mode=warning",
@@ -112,8 +112,8 @@
     "ClockPeriod": "10",
     "Uncertainty": "2.7",
     "IsCombinational": "0",
-    "II": "163996",
-    "Latency": "163995"
+    "II": "139420",
+    "Latency": "139419"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
   "Ipx": {
@@ -527,7 +527,7 @@
       "type": "axi4full",
       "busTypeName": "aximm",
       "mode": "master",
-      "dataWidth": "128",
+      "dataWidth": "512",
       "addrWidth": "32",
       "portPrefix": "m_axi_gmem0_",
       "paramPrefix": "C_M_AXI_GMEM0_",
@@ -608,7 +608,7 @@
         {
           "constraint_type": "bitwidth",
           "orig_bitwidth": "16",
-          "final_bitwidth": "128",
+          "final_bitwidth": "512",
           "argName": "in1"
         },
         {
@@ -627,7 +627,7 @@
         {
           "constraint_type": "bitwidth",
           "orig_bitwidth": "16",
-          "final_bitwidth": "128",
+          "final_bitwidth": "512",
           "argName": "out_r"
         }
       ]
@@ -636,7 +636,7 @@
       "type": "axi4full",
       "busTypeName": "aximm",
       "mode": "master",
-      "dataWidth": "128",
+      "dataWidth": "512",
       "addrWidth": "32",
       "portPrefix": "m_axi_gmem1_",
       "paramPrefix": "C_M_AXI_GMEM1_",
@@ -717,7 +717,7 @@
         {
           "constraint_type": "bitwidth",
           "orig_bitwidth": "16",
-          "final_bitwidth": "128",
+          "final_bitwidth": "512",
           "argName": "in2"
         }
       ]
@@ -911,11 +911,11 @@
     },
     "m_axi_gmem0_WDATA": {
       "dir": "out",
-      "width": "128"
+      "width": "512"
     },
     "m_axi_gmem0_WSTRB": {
       "dir": "out",
-      "width": "16"
+      "width": "64"
     },
     "m_axi_gmem0_WLAST": {
       "dir": "out",
@@ -995,7 +995,7 @@
     },
     "m_axi_gmem0_RDATA": {
       "dir": "in",
-      "width": "128"
+      "width": "512"
     },
     "m_axi_gmem0_RLAST": {
       "dir": "in",
@@ -1101,11 +1101,11 @@
     },
     "m_axi_gmem1_WDATA": {
       "dir": "out",
-      "width": "128"
+      "width": "512"
     },
     "m_axi_gmem1_WSTRB": {
       "dir": "out",
-      "width": "16"
+      "width": "64"
     },
     "m_axi_gmem1_WLAST": {
       "dir": "out",
@@ -1185,7 +1185,7 @@
     },
     "m_axi_gmem1_RDATA": {
       "dir": "in",
-      "width": "128"
+      "width": "512"
     },
     "m_axi_gmem1_RLAST": {
       "dir": "in",
@@ -1290,10 +1290,10 @@
     "Metrics": {
       "matmul_Pipeline_readA": {
         "Latency": {
-          "LatencyBest": "16387",
-          "LatencyAvg": "16387",
-          "LatencyWorst": "16387",
-          "PipelineII": "16387",
+          "LatencyBest": "4099",
+          "LatencyAvg": "4099",
+          "LatencyWorst": "4099",
+          "PipelineII": "4099",
           "PipelineDepth": "",
           "PipelineType": "no"
         },
@@ -1305,15 +1305,15 @@
         "Loops": [{
             "Name": "readA",
             "TripCount": "4096",
-            "Latency": "16385",
-            "PipelineII": "4",
-            "PipelineDepth": "6"
+            "Latency": "4097",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
           }],
         "Area": {
-          "FF": "1589",
+          "FF": "1075",
           "AVAIL_FF": "437200",
           "UTIL_FF": "~0",
-          "LUT": "276",
+          "LUT": "226",
           "AVAIL_LUT": "218600",
           "UTIL_LUT": "~0",
           "BRAM_18K": "0",
@@ -1329,10 +1329,10 @@
       },
       "matmul_Pipeline_readB": {
         "Latency": {
-          "LatencyBest": "16387",
-          "LatencyAvg": "16387",
-          "LatencyWorst": "16387",
-          "PipelineII": "16387",
+          "LatencyBest": "4099",
+          "LatencyAvg": "4099",
+          "LatencyWorst": "4099",
+          "PipelineII": "4099",
           "PipelineDepth": "",
           "PipelineType": "no"
         },
@@ -1344,15 +1344,15 @@
         "Loops": [{
             "Name": "readB",
             "TripCount": "4096",
-            "Latency": "16385",
-            "PipelineII": "4",
-            "PipelineDepth": "6"
+            "Latency": "4097",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
           }],
         "Area": {
-          "FF": "1589",
+          "FF": "1075",
           "AVAIL_FF": "437200",
           "UTIL_FF": "~0",
-          "LUT": "276",
+          "LUT": "226",
           "AVAIL_LUT": "218600",
           "UTIL_LUT": "~0",
           "BRAM_18K": "0",
@@ -1407,10 +1407,10 @@
       },
       "matmul_Pipeline_writeC": {
         "Latency": {
-          "LatencyBest": "16387",
-          "LatencyAvg": "16387",
-          "LatencyWorst": "16387",
-          "PipelineII": "16387",
+          "LatencyBest": "4099",
+          "LatencyAvg": "4099",
+          "LatencyWorst": "4099",
+          "PipelineII": "4099",
           "PipelineDepth": "",
           "PipelineType": "no"
         },
@@ -1422,15 +1422,15 @@
         "Loops": [{
             "Name": "writeC",
             "TripCount": "4096",
-            "Latency": "16385",
-            "PipelineII": "4",
-            "PipelineDepth": "5"
+            "Latency": "4097",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
           }],
         "Area": {
-          "FF": "966",
+          "FF": "598",
           "AVAIL_FF": "437200",
           "UTIL_FF": "~0",
-          "LUT": "811",
+          "LUT": "753",
           "AVAIL_LUT": "218600",
           "UTIL_LUT": "~0",
           "BRAM_18K": "0",
@@ -1446,10 +1446,10 @@
       },
       "matmul": {
         "Latency": {
-          "LatencyBest": "163995",
-          "LatencyAvg": "163995",
-          "LatencyWorst": "163995",
-          "PipelineII": "163996",
+          "LatencyBest": "139419",
+          "LatencyAvg": "139419",
+          "LatencyWorst": "139419",
+          "PipelineII": "139420",
           "PipelineDepth": "",
           "PipelineType": "no"
         },
@@ -1459,18 +1459,18 @@
           "Estimate": "7.300"
         },
         "Area": {
-          "BRAM_18K": "44",
+          "BRAM_18K": "128",
           "AVAIL_BRAM": "1090",
-          "UTIL_BRAM": "4",
+          "UTIL_BRAM": "11",
           "DSP": "64",
           "AVAIL_DSP": "900",
           "UTIL_DSP": "7",
-          "FF": "6892",
+          "FF": "7094",
           "AVAIL_FF": "437200",
           "UTIL_FF": "1",
-          "LUT": "8260",
+          "LUT": "9698",
           "AVAIL_LUT": "218600",
-          "UTIL_LUT": "3",
+          "UTIL_LUT": "4",
           "URAM": "0",
           "AVAIL_URAM": "0",
           "UTIL_URAM": "0"
@@ -1481,7 +1481,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2022-07-01 15:29:01 CEST",
+    "Time": "2022-07-01 15:57:56 CEST",
     "ToolName": "vitis_hls",
     "ToolVersion": "2021.2"
   }

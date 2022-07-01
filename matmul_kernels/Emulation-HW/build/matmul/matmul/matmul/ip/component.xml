@@ -1567,7 +1567,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>80f64497</spirit:value>
+            <spirit:value>5e1786b6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1583,7 +1583,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c176e699</spirit:value>
+            <spirit:value>c824823f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1599,7 +1599,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ba79ff52</spirit:value>
+            <spirit:value>8a32faa0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1615,7 +1615,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e8d7afd4</spirit:value>
+            <spirit:value>66ae1f22</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2346,7 +2346,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_GMEM0_DATA_WIDTH&apos;)) - 1)">127</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_GMEM0_DATA_WIDTH&apos;)) - 1)">511</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2363,7 +2363,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_GMEM0_DATA_WIDTH&apos;)) div 8) - 1)">15</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_GMEM0_DATA_WIDTH&apos;)) div 8) - 1)">63</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2788,7 +2788,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_GMEM0_DATA_WIDTH&apos;)) - 1)">127</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_GMEM0_DATA_WIDTH&apos;)) - 1)">511</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3139,7 +3139,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_GMEM1_DATA_WIDTH&apos;)) - 1)">127</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_GMEM1_DATA_WIDTH&apos;)) - 1)">511</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3156,7 +3156,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_GMEM1_DATA_WIDTH&apos;)) div 8) - 1)">15</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_GMEM1_DATA_WIDTH&apos;)) div 8) - 1)">63</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3581,7 +3581,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_GMEM1_DATA_WIDTH&apos;)) - 1)">127</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_GMEM1_DATA_WIDTH&apos;)) - 1)">511</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3703,7 +3703,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXI_GMEM0_DATA_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_GMEM0_DATA_WIDTH">128</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_GMEM0_DATA_WIDTH">512</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXI_GMEM0_AWUSER_WIDTH</spirit:name>
@@ -3796,7 +3796,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXI_GMEM1_DATA_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_GMEM1_DATA_WIDTH">128</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_GMEM1_DATA_WIDTH">512</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXI_GMEM1_AWUSER_WIDTH</spirit:name>
@@ -4072,7 +4072,7 @@
       <spirit:file>
         <spirit:name>hdl/vhdl/matmul.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_f6ffdbc6</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_fc6ba508</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -4232,7 +4232,7 @@
     <spirit:parameter>
       <spirit:name>C_M_AXI_GMEM0_DATA_WIDTH</spirit:name>
       <spirit:displayName>Data width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_GMEM0_DATA_WIDTH" spirit:choiceRef="choice_list_40181835" spirit:order="4" spirit:configGroups="1 m axi gmem0 (AXI4 Master Interface)">128</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_GMEM0_DATA_WIDTH" spirit:choiceRef="choice_list_40181835" spirit:order="4" spirit:configGroups="1 m axi gmem0 (AXI4 Master Interface)">512</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_M_AXI_GMEM0_ENABLE_USER_PORTS</spirit:name>
@@ -4341,7 +4341,7 @@
     <spirit:parameter>
       <spirit:name>C_M_AXI_GMEM1_DATA_WIDTH</spirit:name>
       <spirit:displayName>Data width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_GMEM1_DATA_WIDTH" spirit:choiceRef="choice_list_40181835" spirit:order="16" spirit:configGroups="1 m axi gmem1 (AXI4 Master Interface)">128</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_GMEM1_DATA_WIDTH" spirit:choiceRef="choice_list_40181835" spirit:order="16" spirit:configGroups="1 m axi gmem1 (AXI4 Master Interface)">512</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_M_AXI_GMEM1_ENABLE_USER_PORTS</spirit:name>
@@ -4448,7 +4448,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="29">163995</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="29">139419</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -4465,8 +4465,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Matmul</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2112573869</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2022-07-01T13:29:23Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2112573897</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2022-07-01T13:58:19Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -4477,10 +4477,10 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="d640e5fd"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="fa5d1810"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="5998a74f"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="180d828d"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="f091aaf5"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="b7b967d6"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="151cab4c"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="430e1ffa"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="276d0a7c"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="0a35275b"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="ab2de4cd"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'matmul_Pipeline_writeC'
 ================================================================
-* Date:           Fri Jul  1 15:28:49 2022
+* Date:           Fri Jul  1 15:57:44 2022
 
 * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
 * Project:        matmul
@@ -25,12 +25,12 @@
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+----------+-------+-------+---------+
-    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
-    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
-    +---------+---------+----------+----------+-------+-------+---------+
-    |    16387|    16387|  0.164 ms|  0.164 ms|  16387|  16387|       no|
-    +---------+---------+----------+----------+-------+-------+---------+
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     4099|     4099|  40.990 us|  40.990 us|  4099|  4099|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
 
     + Detail: 
         * Instance: 
@@ -41,7 +41,7 @@
         |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +----------+---------+---------+----------+-----------+-----------+------+----------+
-        |- writeC  |    16385|    16385|         5|          4|          1|  4096|       yes|
+        |- writeC  |     4097|     4097|         3|          1|          1|  4096|       yes|
         +----------+---------+---------+----------+-----------+-----------+------+----------+
 
 ============================================================
@@ -67,98 +67,85 @@ HasImplIP: 0
 IsGatedGlobalClock: 0
 
 + Individual pipeline summary: 
-  * Pipeline-0: initiation interval (II) = 4, depth = 6
+  * Pipeline-0: initiation interval (II) = 1, depth = 4
 
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 6
+* Number of FSM states : 4
 * Pipeline : 1
-  Pipeline-0 : II = 4, D = 6, States = { 1 2 3 4 5 6 }
+  Pipeline-0 : II = 1, D = 4, States = { 1 2 3 4 }
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
 1 --> 2 
 2 --> 3 
 3 --> 4 
-4 --> 5 
-5 --> 6 
-6 --> 
+4 --> 
 
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 1.29>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%phi_ln96 = alloca i32 1"   --->   Operation 8 'alloca' 'phi_ln96' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 9 'alloca' 'i' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%j = alloca i32 1"   --->   Operation 10 'alloca' 'j' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%itr = alloca i32 1"   --->   Operation 11 'alloca' 'itr' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%sext_ln90_read = read i28 @_ssdm_op_Read.ap_auto.i28, i28 %sext_ln90"   --->   Operation 12 'read' 'sext_ln90_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%sext_ln90_cast = sext i28 %sext_ln90_read"   --->   Operation 13 'sext' 'sext_ln90_cast' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %gmem0, void @empty_2, i32 0, i32 0, void @empty_3, i32 64, i32 0, void @empty_4, void @empty_5, void @empty_3, i32 16, i32 16, i32 16, i32 16, void @empty_3, void @empty_3"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 15 [1/1] (1.29ns)   --->   "%store_ln0 = store i13 0, i13 %itr"   --->   Operation 15 'store' 'store_ln0' <Predicate = true> <Delay = 1.29>
-ST_1 : Operation 16 [1/1] (1.29ns)   --->   "%store_ln0 = store i32 0, i32 %j"   --->   Operation 16 'store' 'store_ln0' <Predicate = true> <Delay = 1.29>
-ST_1 : Operation 17 [1/1] (1.29ns)   --->   "%store_ln0 = store i32 0, i32 %i"   --->   Operation 17 'store' 'store_ln0' <Predicate = true> <Delay = 1.29>
-ST_1 : Operation 18 [1/1] (1.29ns)   --->   "%store_ln0 = store i496 0, i496 %phi_ln96"   --->   Operation 18 'store' 'store_ln0' <Predicate = true> <Delay = 1.29>
-ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 19 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%phi_ln96 = alloca i32 1"   --->   Operation 6 'alloca' 'phi_ln96' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 7 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%j = alloca i32 1"   --->   Operation 8 'alloca' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%itr = alloca i32 1"   --->   Operation 9 'alloca' 'itr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%sext_ln90_read = read i26 @_ssdm_op_Read.ap_auto.i26, i26 %sext_ln90"   --->   Operation 10 'read' 'sext_ln90_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%sext_ln90_cast = sext i26 %sext_ln90_read"   --->   Operation 11 'sext' 'sext_ln90_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem0, void @empty_2, i32 0, i32 0, void @empty_3, i32 64, i32 0, void @empty_4, void @empty_5, void @empty_3, i32 16, i32 16, i32 16, i32 16, void @empty_3, void @empty_3"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (1.29ns)   --->   "%store_ln0 = store i13 0, i13 %itr"   --->   Operation 13 'store' 'store_ln0' <Predicate = true> <Delay = 1.29>
+ST_1 : Operation 14 [1/1] (1.29ns)   --->   "%store_ln0 = store i32 0, i32 %j"   --->   Operation 14 'store' 'store_ln0' <Predicate = true> <Delay = 1.29>
+ST_1 : Operation 15 [1/1] (1.29ns)   --->   "%store_ln0 = store i32 0, i32 %i"   --->   Operation 15 'store' 'store_ln0' <Predicate = true> <Delay = 1.29>
+ST_1 : Operation 16 [1/1] (1.29ns)   --->   "%store_ln0 = store i496 0, i496 %phi_ln96"   --->   Operation 16 'store' 'store_ln0' <Predicate = true> <Delay = 1.29>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 17 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 
 State 2 <SV = 1> <Delay = 6.98>
-ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%itr_1 = load i13 %itr"   --->   Operation 20 'load' 'itr_1' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 21 [1/1] (1.90ns)   --->   "%icmp_ln90 = icmp_eq  i13 %itr_1, i13 4096" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 21 'icmp' 'icmp_ln90' <Predicate = true> <Delay = 1.90> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 22 [1/1] (1.53ns)   --->   "%add_ln90 = add i13 %itr_1, i13 1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 22 'add' 'add_ln90' <Predicate = true> <Delay = 1.53> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln90 = br i1 %icmp_ln90, void %.split, void %.exitStub" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 23 'br' 'br_ln90' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%i_load = load i32 %i" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:94]   --->   Operation 24 'load' 'i_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
-ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%j_load = load i32 %j" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92]   --->   Operation 25 'load' 'j_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
-ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%empty_26 = trunc i13 %itr_1"   --->   Operation 26 'trunc' 'empty_26' <Predicate = (!icmp_ln90)> <Delay = 0.00>
-ST_2 : Operation 27 [1/1] (1.96ns)   --->   "%icmp_ln92 = icmp_eq  i32 %j_load, i32 64" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92]   --->   Operation 27 'icmp' 'icmp_ln92' <Predicate = (!icmp_ln90)> <Delay = 1.96> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 28 [1/1] (1.89ns)   --->   "%add_ln94 = add i32 %i_load, i32 1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:94]   --->   Operation 28 'add' 'add_ln94' <Predicate = (!icmp_ln90)> <Delay = 1.89> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 29 [1/1] (0.70ns)   --->   "%i_1 = select i1 %icmp_ln92, i32 %add_ln94, i32 %i_load" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92]   --->   Operation 29 'select' 'i_1' <Predicate = (!icmp_ln90)> <Delay = 0.70> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.45> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%trunc_ln96 = trunc i32 %i_1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 30 'trunc' 'trunc_ln96' <Predicate = (!icmp_ln90)> <Delay = 0.00>
-ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%tmp_136_cast = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i6.i6, i6 %trunc_ln96, i6 0" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92]   --->   Operation 31 'bitconcatenate' 'tmp_136_cast' <Predicate = (!icmp_ln90)> <Delay = 0.00>
-ST_2 : Operation 32 [1/1] (0.70ns)   --->   "%j_1 = select i1 %icmp_ln92, i32 0, i32 %j_load" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92]   --->   Operation 32 'select' 'j_1' <Predicate = (!icmp_ln90)> <Delay = 0.70> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.45> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%trunc_ln96_4 = trunc i32 %j_1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 33 'trunc' 'trunc_ln96_4' <Predicate = (!icmp_ln90)> <Delay = 0.00>
-ST_2 : Operation 34 [1/1] (1.54ns)   --->   "%add_ln96 = add i12 %tmp_136_cast, i12 %trunc_ln96_4" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 34 'add' 'add_ln96' <Predicate = (!icmp_ln90)> <Delay = 1.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%zext_ln96 = zext i12 %add_ln96" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 35 'zext' 'zext_ln96' <Predicate = (!icmp_ln90)> <Delay = 0.00>
-ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%C_V_addr = getelementptr i16 %C_V, i32 0, i32 %zext_ln96" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 36 'getelementptr' 'C_V_addr' <Predicate = (!icmp_ln90)> <Delay = 0.00>
-ST_2 : Operation 37 [2/2] (2.77ns)   --->   "%C_V_load = load i12 %C_V_addr" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 37 'load' 'C_V_load' <Predicate = (!icmp_ln90)> <Delay = 2.77> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4096> <RAM>
-ST_2 : Operation 38 [1/1] (0.97ns)   --->   "%icmp_ln96 = icmp_eq  i5 %empty_26, i5 31" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 38 'icmp' 'icmp_ln96' <Predicate = (!icmp_ln90)> <Delay = 0.97> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%br_ln96 = br i1 %icmp_ln96, void %.split._crit_edge, void" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 39 'br' 'br_ln96' <Predicate = (!icmp_ln90)> <Delay = 0.00>
-ST_2 : Operation 40 [1/1] (1.89ns)   --->   "%j_2 = add i32 %j_1, i32 1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 40 'add' 'j_2' <Predicate = (!icmp_ln90)> <Delay = 1.89> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 41 [1/1] (1.29ns)   --->   "%store_ln90 = store i13 %add_ln90, i13 %itr" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 41 'store' 'store_ln90' <Predicate = (!icmp_ln90)> <Delay = 1.29>
-ST_2 : Operation 42 [1/1] (1.29ns)   --->   "%store_ln90 = store i32 %j_2, i32 %j" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 42 'store' 'store_ln90' <Predicate = (!icmp_ln90)> <Delay = 1.29>
-ST_2 : Operation 43 [1/1] (1.29ns)   --->   "%store_ln92 = store i32 %i_1, i32 %i" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92]   --->   Operation 43 'store' 'store_ln92' <Predicate = (!icmp_ln90)> <Delay = 1.29>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%itr_1 = load i13 %itr"   --->   Operation 18 'load' 'itr_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (1.90ns)   --->   "%icmp_ln90 = icmp_eq  i13 %itr_1, i13 4096" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 19 'icmp' 'icmp_ln90' <Predicate = true> <Delay = 1.90> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (1.53ns)   --->   "%add_ln90 = add i13 %itr_1, i13 1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 20 'add' 'add_ln90' <Predicate = true> <Delay = 1.53> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%br_ln90 = br i1 %icmp_ln90, void %.split, void %.exitStub" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 21 'br' 'br_ln90' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%i_load = load i32 %i" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:94]   --->   Operation 22 'load' 'i_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%j_load = load i32 %j" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92]   --->   Operation 23 'load' 'j_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%empty_26 = trunc i13 %itr_1"   --->   Operation 24 'trunc' 'empty_26' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (1.96ns)   --->   "%icmp_ln92 = icmp_eq  i32 %j_load, i32 64" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92]   --->   Operation 25 'icmp' 'icmp_ln92' <Predicate = (!icmp_ln90)> <Delay = 1.96> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (1.89ns)   --->   "%add_ln94 = add i32 %i_load, i32 1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:94]   --->   Operation 26 'add' 'add_ln94' <Predicate = (!icmp_ln90)> <Delay = 1.89> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (0.70ns)   --->   "%i_1 = select i1 %icmp_ln92, i32 %add_ln94, i32 %i_load" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92]   --->   Operation 27 'select' 'i_1' <Predicate = (!icmp_ln90)> <Delay = 0.70> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.45> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%trunc_ln96 = trunc i32 %i_1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 28 'trunc' 'trunc_ln96' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_136_cast = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i6.i6, i6 %trunc_ln96, i6 0" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92]   --->   Operation 29 'bitconcatenate' 'tmp_136_cast' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.70ns)   --->   "%j_1 = select i1 %icmp_ln92, i32 0, i32 %j_load" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92]   --->   Operation 30 'select' 'j_1' <Predicate = (!icmp_ln90)> <Delay = 0.70> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.45> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%trunc_ln96_1 = trunc i32 %j_1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 31 'trunc' 'trunc_ln96_1' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (1.54ns)   --->   "%add_ln96 = add i12 %tmp_136_cast, i12 %trunc_ln96_1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 32 'add' 'add_ln96' <Predicate = (!icmp_ln90)> <Delay = 1.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%zext_ln96 = zext i12 %add_ln96" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 33 'zext' 'zext_ln96' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%C_V_addr = getelementptr i16 %C_V, i32 0, i32 %zext_ln96" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 34 'getelementptr' 'C_V_addr' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_2 : Operation 35 [2/2] (2.77ns)   --->   "%C_V_load = load i12 %C_V_addr" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 35 'load' 'C_V_load' <Predicate = (!icmp_ln90)> <Delay = 2.77> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4096> <RAM>
+ST_2 : Operation 36 [1/1] (0.97ns)   --->   "%icmp_ln96 = icmp_eq  i5 %empty_26, i5 31" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 36 'icmp' 'icmp_ln96' <Predicate = (!icmp_ln90)> <Delay = 0.97> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%br_ln96 = br i1 %icmp_ln96, void %.split._crit_edge, void" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 37 'br' 'br_ln96' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (1.89ns)   --->   "%j_2 = add i32 %j_1, i32 1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 38 'add' 'j_2' <Predicate = (!icmp_ln90)> <Delay = 1.89> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 39 [1/1] (1.29ns)   --->   "%store_ln90 = store i13 %add_ln90, i13 %itr" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 39 'store' 'store_ln90' <Predicate = (!icmp_ln90)> <Delay = 1.29>
+ST_2 : Operation 40 [1/1] (1.29ns)   --->   "%store_ln90 = store i32 %j_2, i32 %j" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 40 'store' 'store_ln90' <Predicate = (!icmp_ln90)> <Delay = 1.29>
+ST_2 : Operation 41 [1/1] (1.29ns)   --->   "%store_ln92 = store i32 %i_1, i32 %i" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92]   --->   Operation 41 'store' 'store_ln92' <Predicate = (!icmp_ln90)> <Delay = 1.29>
 
-State 3 <SV = 2> <Delay = 7.30>
-ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i128 %gmem0"   --->   Operation 44 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%gmem0_addr = getelementptr i128 %gmem0, i32 %sext_ln90_cast" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 45 'getelementptr' 'gmem0_addr' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 46 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4096, i64 4096, i64 4096"   --->   Operation 47 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%specloopname_ln90 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 48 'specloopname' 'specloopname_ln90' <Predicate = (!icmp_ln90)> <Delay = 0.00>
-ST_3 : Operation 49 [1/2] (2.77ns)   --->   "%C_V_load = load i12 %C_V_addr" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 49 'load' 'C_V_load' <Predicate = (!icmp_ln90)> <Delay = 2.77> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4096> <RAM>
-ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%phi_ln96_load = load i496 %phi_ln96" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 50 'load' 'phi_ln96_load' <Predicate = (!icmp_ln90 & icmp_ln96)> <Delay = 0.00>
-ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%trunc_ln96_5 = trunc i496 %phi_ln96_load" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 51 'trunc' 'trunc_ln96_5' <Predicate = (!icmp_ln90 & icmp_ln96)> <Delay = 0.00>
-ST_3 : Operation 52 [1/1] (7.30ns)   --->   "%write_ln96 = write void @_ssdm_op_Write.m_axi.p1i128, i128 %gmem0_addr, i128 %trunc_ln96_5, i16 65535" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 52 'write' 'write_ln96' <Predicate = (!icmp_ln90 & icmp_ln96)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%trunc_ln96_1 = partselect i128 @_ssdm_op_PartSelect.i128.i496.i32.i32, i496 %phi_ln96_load, i32 128, i32 255" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 53 'partselect' 'trunc_ln96_1' <Predicate = (!icmp_ln90 & icmp_ln96)> <Delay = 0.00>
-ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%trunc_ln96_2 = partselect i128 @_ssdm_op_PartSelect.i128.i496.i32.i32, i496 %phi_ln96_load, i32 256, i32 383" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 54 'partselect' 'trunc_ln96_2' <Predicate = (!icmp_ln90 & icmp_ln96)> <Delay = 0.00>
-ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_s = partselect i112 @_ssdm_op_PartSelect.i112.i496.i32.i32, i496 %phi_ln96_load, i32 384, i32 495" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 55 'partselect' 'tmp_s' <Predicate = (!icmp_ln90 & icmp_ln96)> <Delay = 0.00>
-ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%phi_ln96_load_1 = load i496 %phi_ln96"   --->   Operation 56 'load' 'phi_ln96_load_1' <Predicate = (!icmp_ln90 & !icmp_ln96)> <Delay = 0.00>
-ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_1 = partselect i480 @_ssdm_op_PartSelect.i480.i496.i32.i32, i496 %phi_ln96_load_1, i32 16, i32 495"   --->   Operation 57 'partselect' 'tmp_1' <Predicate = (!icmp_ln90 & !icmp_ln96)> <Delay = 0.00>
-ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%tmp_2 = bitconcatenate i496 @_ssdm_op_BitConcatenate.i496.i16.i480, i16 %C_V_load, i480 %tmp_1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 58 'bitconcatenate' 'tmp_2' <Predicate = (!icmp_ln90 & !icmp_ln96)> <Delay = 0.00>
-ST_3 : Operation 59 [1/1] (1.45ns)   --->   "%select_ln96 = select i1 %icmp_ln96, i496 0, i496 %tmp_2" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 59 'select' 'select_ln96' <Predicate = (!icmp_ln90)> <Delay = 1.45> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.45> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_3 : Operation 60 [1/1] (1.29ns)   --->   "%store_ln96 = store i496 %select_ln96, i496 %phi_ln96" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 60 'store' 'store_ln96' <Predicate = (!icmp_ln90)> <Delay = 1.29>
-ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 61 'br' 'br_ln0' <Predicate = (!icmp_ln90)> <Delay = 0.00>
-ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 67 'ret' 'ret_ln0' <Predicate = (icmp_ln90)> <Delay = 0.00>
+State 3 <SV = 2> <Delay = 2.77>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i512 %gmem0"   --->   Operation 42 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%gmem0_addr = getelementptr i512 %gmem0, i32 %sext_ln90_cast" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 43 'getelementptr' 'gmem0_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 44 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4096, i64 4096, i64 4096"   --->   Operation 45 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 46 [1/2] (2.77ns)   --->   "%C_V_load = load i12 %C_V_addr" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 46 'load' 'C_V_load' <Predicate = (!icmp_ln90)> <Delay = 2.77> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4096> <RAM>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 58 'ret' 'ret_ln0' <Predicate = (icmp_ln90)> <Delay = 0.00>
 
 State 4 <SV = 3> <Delay = 7.30>
-ST_4 : Operation 62 [1/1] (7.30ns)   --->   "%write_ln96 = write void @_ssdm_op_Write.m_axi.p1i128, i128 %gmem0_addr, i128 %trunc_ln96_1, i16 65535" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 62 'write' 'write_ln96' <Predicate = (!icmp_ln90 & icmp_ln96)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 5 <SV = 4> <Delay = 7.30>
-ST_5 : Operation 63 [1/1] (7.30ns)   --->   "%write_ln96 = write void @_ssdm_op_Write.m_axi.p1i128, i128 %gmem0_addr, i128 %trunc_ln96_2, i16 65535" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 63 'write' 'write_ln96' <Predicate = (!icmp_ln90 & icmp_ln96)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 6 <SV = 5> <Delay = 7.30>
-ST_6 : Operation 64 [1/1] (0.00ns)   --->   "%trunc_ln96_3 = bitconcatenate i128 @_ssdm_op_BitConcatenate.i128.i16.i112, i16 %C_V_load, i112 %tmp_s" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 64 'bitconcatenate' 'trunc_ln96_3' <Predicate = (icmp_ln96)> <Delay = 0.00>
-ST_6 : Operation 65 [1/1] (7.30ns)   --->   "%write_ln96 = write void @_ssdm_op_Write.m_axi.p1i128, i128 %gmem0_addr, i128 %trunc_ln96_3, i16 65535" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 65 'write' 'write_ln96' <Predicate = (icmp_ln96)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%br_ln96 = br void %.split._crit_edge" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 66 'br' 'br_ln96' <Predicate = (icmp_ln96)> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%phi_ln96_load_1 = load i496 %phi_ln96" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 47 'load' 'phi_ln96_load_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "%specloopname_ln90 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90]   --->   Operation 48 'specloopname' 'specloopname_ln90' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%or_ln = bitconcatenate i512 @_ssdm_op_BitConcatenate.i512.i16.i496, i16 %C_V_load, i496 %phi_ln96_load_1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 49 'bitconcatenate' 'or_ln' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 50 [1/1] (7.30ns)   --->   "%write_ln96 = write void @_ssdm_op_Write.m_axi.p1i512, i512 %gmem0_addr, i512 %or_ln, i64 18446744073709551615" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 50 'write' 'write_ln96' <Predicate = (icmp_ln96)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "%br_ln96 = br void %.split._crit_edge" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 51 'br' 'br_ln96' <Predicate = (icmp_ln96)> <Delay = 0.00>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "%phi_ln96_load = load i496 %phi_ln96"   --->   Operation 52 'load' 'phi_ln96_load' <Predicate = (!icmp_ln96)> <Delay = 0.00>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_s = partselect i480 @_ssdm_op_PartSelect.i480.i496.i32.i32, i496 %phi_ln96_load, i32 16, i32 495"   --->   Operation 53 'partselect' 'tmp_s' <Predicate = (!icmp_ln96)> <Delay = 0.00>
+ST_4 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_1 = bitconcatenate i496 @_ssdm_op_BitConcatenate.i496.i16.i480, i16 %C_V_load, i480 %tmp_s" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 54 'bitconcatenate' 'tmp_1' <Predicate = (!icmp_ln96)> <Delay = 0.00>
+ST_4 : Operation 55 [1/1] (1.45ns)   --->   "%select_ln96 = select i1 %icmp_ln96, i496 0, i496 %tmp_1" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 55 'select' 'select_ln96' <Predicate = true> <Delay = 1.45> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.45> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 56 [1/1] (1.29ns)   --->   "%store_ln96 = store i496 %select_ln96, i496 %phi_ln96" [/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96]   --->   Operation 56 'store' 'store_ln96' <Predicate = true> <Delay = 1.29>
+ST_4 : Operation 57 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 57 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -173,29 +160,21 @@ The critical path consists of the following:
 
  <State 2>: 6.99ns
 The critical path consists of the following:
-	'load' operation ('j_load', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92) on local variable 'j' [27]  (0 ns)
-	'icmp' operation ('icmp_ln92', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92) [30]  (1.97 ns)
-	'select' operation ('j', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92) [35]  (0.705 ns)
-	'add' operation ('add_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) [37]  (1.55 ns)
-	'getelementptr' operation ('C_V_addr', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) [39]  (0 ns)
-	'load' operation ('C_V_load', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on array 'C_V' [40]  (2.77 ns)
+	'load' operation ('j_load', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92) on local variable 'j' [28]  (0 ns)
+	'icmp' operation ('icmp_ln92', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92) [31]  (1.97 ns)
+	'select' operation ('i', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:92) [33]  (0.705 ns)
+	'add' operation ('add_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) [38]  (1.55 ns)
+	'getelementptr' operation ('C_V_addr', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) [40]  (0 ns)
+	'load' operation ('C_V_load', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on array 'C_V' [41]  (2.77 ns)
 
- <State 3>: 7.3ns
+ <State 3>: 2.77ns
 The critical path consists of the following:
-	'getelementptr' operation ('gmem0_addr', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90) [19]  (0 ns)
-	bus write operation ('write_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) [46]  (7.3 ns)
+	'load' operation ('C_V_load', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on array 'C_V' [41]  (2.77 ns)
 
  <State 4>: 7.3ns
 The critical path consists of the following:
-	bus write operation ('write_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) [48]  (7.3 ns)
-
- <State 5>: 7.3ns
-The critical path consists of the following:
-	bus write operation ('write_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) [50]  (7.3 ns)
-
- <State 6>: 7.3ns
-The critical path consists of the following:
-	bus write operation ('write_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) [53]  (7.3 ns)
+	'load' operation ('phi_ln96_load_1', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on local variable 'phi_ln96' [26]  (0 ns)
+	bus write operation ('write_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) [46]  (7.3 ns)
 
 
 ============================================================
@@ -210,8 +189,6 @@ N/A
 	State 2
 	State 3
 	State 4
-	State 5
-	State 6
 
 
 ============================================================

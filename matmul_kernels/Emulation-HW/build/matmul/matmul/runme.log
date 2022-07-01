@@ -11,7 +11,7 @@
 source /tools/Xilinx/Vitis_HLS/2021.2/scripts/vitis_hls/hls.tcl -notrace
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'mdu' on host 'mdu-virtual-machine' (Linux_x86_64 version 5.4.0-120-generic) on Fri Jul 01 15:28:13 CEST 2022
+INFO: [HLS 200-10] For user 'mdu' on host 'mdu-virtual-machine' (Linux_x86_64 version 5.4.0-120-generic) on Fri Jul 01 15:57:16 CEST 2022
 INFO: [HLS 200-10] On os Ubuntu 18.04.3 LTS
 INFO: [HLS 200-10] In directory '/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul'
 Sourcing Tcl script 'matmul.tcl'
@@ -39,29 +39,29 @@ INFO: [HLS 200-1510] Running: config_export -deadlock_detection none
 INFO: [HLS 200-1510] Running: config_interface -m_axi_conservative_mode=1 
 INFO: [HLS 200-1510] Running: config_interface -m_axi_addr64=0 
 INFO: [HLS 200-1510] Running: config_interface -m_axi_auto_max_ports=1 
-INFO: [HLS 200-1510] Running: config_interface -m_axi_min_bitwidth 128 
-INFO: [HLS 200-1510] Running: config_interface -m_axi_max_bitwidth 128 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_min_bitwidth 512 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_max_bitwidth 512 
 INFO: [HLS 200-1510] Running: config_export -format xo -ipname matmul 
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 209.852 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.120 GB.
 INFO: [HLS 200-10] Analyzing design file '/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 5.21 seconds. CPU system time: 0.51 seconds. Elapsed time: 6.63 seconds; current allocated memory: 211.215 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 6.41 seconds. CPU system time: 0.66 seconds. Elapsed time: 5.92 seconds; current allocated memory: 211.215 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
 INFO: [HLS 214-284] Auto array partition mode is set into default.
 INFO: [HLS 214-241] Aggregating maxi variable 'out_r' with compact=none mode in 16-bits (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:16:0)
 INFO: [HLS 214-241] Aggregating maxi variable 'in2' with compact=none mode in 16-bits (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:16:0)
 INFO: [HLS 214-241] Aggregating maxi variable 'in1' with compact=none mode in 16-bits (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:16:0)
 INFO: [HLS 214-270] Starting automatic array partition analysis...
-INFO: [HLS 214-115] Multiple burst reads of length 512 and bit width 128 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34:9)
-INFO: [HLS 214-115] Multiple burst reads of length 512 and bit width 128 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45:9)
-INFO: [HLS 214-115] Multiple burst writes of length 512 and bit width 128 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90:9)
+INFO: [HLS 214-115] Multiple burst reads of length 128 and bit width 512 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34:9)
+INFO: [HLS 214-115] Multiple burst reads of length 128 and bit width 512 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45:9)
+INFO: [HLS 214-115] Multiple burst writes of length 128 and bit width 512 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90:9)
 INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i16.s_struct.ap_int<16>s' into 'matmul' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96:24)
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.53 seconds. CPU system time: 0.51 seconds. Elapsed time: 6.3 seconds; current allocated memory: 220.223 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.62 seconds. CPU system time: 0.49 seconds. Elapsed time: 6.38 seconds; current allocated memory: 220.223 MB.
 INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 220.223 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.31 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.32 seconds; current allocated memory: 225.703 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.21 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.24 seconds; current allocated memory: 225.641 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.34 seconds. CPU system time: 0 seconds. Elapsed time: 0.35 seconds; current allocated memory: 228.664 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.24 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.28 seconds; current allocated memory: 228.664 MB.
 INFO: [XFORM 203-510] Pipelining loop 'readA' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34) in function 'matmul' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'readB' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45) in function 'matmul' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'nopart2' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:72) in function 'matmul' automatically.
@@ -69,12 +69,12 @@ INFO: [XFORM 203-510] Pipelining loop 'writeC' (/home/mdu/Desktop/work_repo/work
 INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'nopart2' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:72) in function 'matmul' for pipelining.
 INFO: [HLS 200-489] Unrolling loop 'nopart3' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:76) in function 'matmul' completely with a factor of 64.
 INFO: [XFORM 203-102] Partitioning array 'temp_sum.V' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:29) automatically.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.02 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.09 seconds; current allocated memory: 258.109 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.94 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.01 seconds; current allocated memory: 257.867 MB.
 INFO: [XFORM 203-541] Flattening a loop nest 'nopart1' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68:22) in function 'matmul'.
 INFO: [HLS 200-472] Inferring partial write operation for 'C.V' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:82:57)
 INFO: [HLS 200-472] Inferring partial write operation for 'B.V' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51:21)
 INFO: [HLS 200-472] Inferring partial write operation for 'A.V' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40:21)
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.46 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.56 seconds; current allocated memory: 295.609 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.46 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.59 seconds; current allocated memory: 294.898 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'matmul' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -82,42 +82,30 @@ INFO: [HLS 200-42] -- Implementing module 'matmul_Pipeline_readA'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'readA'.
-WARNING: [HLS 200-880] The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40) and bus read operation ('gmem0_addr_read', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40) and bus read operation ('gmem0_addr_read', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'matmul_Pipeline_readA' (loop 'readA'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40) and bus read operation ('gmem0_addr_read', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'readA'
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'readA'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.23 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.26 seconds; current allocated memory: 298.070 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.2 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.25 seconds; current allocated memory: 297.605 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 298.070 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 297.605 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'matmul_Pipeline_readB' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'B_V'. Use bind_storage pragma to override this type.
 INFO: [SCHED 204-61] Pipelining loop 'readB'.
-WARNING: [HLS 200-880] The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_3', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51) on port 'gmem1' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51) and bus read operation ('gmem1_addr_read', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51) on port 'gmem1' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_3', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51) on port 'gmem1' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51) and bus read operation ('gmem1_addr_read', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51) on port 'gmem1' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'matmul_Pipeline_readB' (loop 'readB'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem1_addr_read_3', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51) on port 'gmem1' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51) and bus read operation ('gmem1_addr_read', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51) on port 'gmem1' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:51).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'readB'
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'readB'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 298.547 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 298.027 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 298.547 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 298.027 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'matmul_Pipeline_nopart1_nopart2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -204,45 +192,39 @@ WARNING: [HLS 200-885] The II Violation in module 'matmul_Pipeline_nopart1_nopar
 Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-885.html
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 32, Depth = 36, loop 'nopart1_nopart2'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 5.95 seconds. CPU system time: 0.1 seconds. Elapsed time: 6.38 seconds; current allocated memory: 309.750 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 5.94 seconds. CPU system time: 0.16 seconds. Elapsed time: 6.66 seconds; current allocated memory: 309.129 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.97 seconds. CPU system time: 0.11 seconds. Elapsed time: 1.22 seconds; current allocated memory: 309.750 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0.12 seconds. Elapsed time: 2.13 seconds; current allocated memory: 309.129 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'matmul_Pipeline_writeC' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'writeC'.
-WARNING: [HLS 200-880] The II Violation in module 'matmul_Pipeline_writeC' (loop 'writeC'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus write operation ('gmem0_addr_write_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) and bus write operation ('gmem0_addr_write_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'matmul_Pipeline_writeC' (loop 'writeC'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus write operation ('gmem0_addr_write_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) and bus write operation ('gmem0_addr_write_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'matmul_Pipeline_writeC' (loop 'writeC'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus write operation ('gmem0_addr_write_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) and bus write operation ('gmem0_addr_write_ln96', /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96) on port 'gmem0' (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:96).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-880.html
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 6, loop 'writeC'
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 4, loop 'writeC'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.84 seconds. CPU system time: 0.14 seconds. Elapsed time: 1.09 seconds; current allocated memory: 309.750 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.87 seconds. CPU system time: 0.12 seconds. Elapsed time: 1.09 seconds; current allocated memory: 309.129 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 309.750 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 309.129 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'matmul' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.46 seconds. CPU system time: 0 seconds. Elapsed time: 0.52 seconds; current allocated memory: 309.750 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.4 seconds. CPU system time: 0 seconds. Elapsed time: 0.42 seconds; current allocated memory: 309.129 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1.01 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.05 seconds; current allocated memory: 309.750 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.95 seconds. CPU system time: 0.01 seconds. Elapsed time: 1 seconds; current allocated memory: 309.129 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'matmul_Pipeline_readA' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -260,7 +242,7 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_Pipeline_readA/m_axi_
 WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_Pipeline_readA/m_axi_gmem0_ARREGION' to 0.
 WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_Pipeline_readA/m_axi_gmem0_ARUSER' to 0.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'matmul_Pipeline_readA'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.67 seconds. CPU system time: 0 seconds. Elapsed time: 0.74 seconds; current allocated memory: 309.750 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.51 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.51 seconds; current allocated memory: 309.129 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'matmul_Pipeline_readB' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -278,14 +260,14 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_Pipeline_readB/m_axi_
 WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_Pipeline_readB/m_axi_gmem1_ARREGION' to 0.
 WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_Pipeline_readB/m_axi_gmem1_ARUSER' to 0.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'matmul_Pipeline_readB'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.29 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.35 seconds; current allocated memory: 310.070 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.32 seconds; current allocated memory: 309.176 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'matmul_Pipeline_nopart1_nopart2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'matmul_Pipeline_nopart1_nopart2' pipeline 'nopart1_nopart2' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_16s_16ns_16_4_1': 64 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'matmul_Pipeline_nopart1_nopart2'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.52 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.56 seconds; current allocated memory: 318.379 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.44 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.63 seconds; current allocated memory: 317.355 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'matmul_Pipeline_writeC' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -304,7 +286,7 @@ WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_Pipeline_writeC/m_axi
 WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_Pipeline_writeC/m_axi_gmem0_AWUSER' to 0.
 WARNING: [RTGEN 206-101] Setting dangling out port 'matmul_Pipeline_writeC/m_axi_gmem0_BREADY' to 0.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'matmul_Pipeline_writeC'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.35 seconds. CPU system time: 0.21 seconds. Elapsed time: 2.74 seconds; current allocated memory: 337.426 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.37 seconds. CPU system time: 0.15 seconds. Elapsed time: 2.88 seconds; current allocated memory: 336.445 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'matmul' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -317,18 +299,18 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'matmul/out_r' to 's_axilit
 INFO: [RTGEN 206-500] Setting interface mode on function 'matmul' to 's_axilite & ap_ctrl_chain'.
 INFO: [RTGEN 206-100] Bundling port 'in1', 'in2', 'out_r', 'return' and 'ap_local_deadlock' to AXI-Lite port control.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'matmul'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.37 seconds. CPU system time: 0 seconds. Elapsed time: 0.46 seconds; current allocated memory: 339.012 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 337.699 MB.
 INFO: [RTMG 210-278] Implementing memory 'matmul_A_V_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
 INFO: [RTMG 210-278] Implementing memory 'matmul_B_V_RAM_1WNR_AUTO_1R1W_ram (RAM_1WnR)' using auto RAMs.
 INFO: [RTMG 210-278] Implementing memory 'matmul_C_V_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 0.03 seconds. Elapsed time: 2.1 seconds; current allocated memory: 345.039 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2.04 seconds. CPU system time: 0.04 seconds. Elapsed time: 2.18 seconds; current allocated memory: 343.672 MB.
 INFO: [HLS 200-1603] Design has inferred MAXI bursts, see Vitis HLS GUI synthesis summary report for detailed information.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1.45 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.54 seconds; current allocated memory: 354.438 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1.35 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.44 seconds; current allocated memory: 353.289 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for matmul.
 INFO: [VLOG 209-307] Generating Verilog RTL for matmul.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 31.37 seconds. CPU system time: 1.79 seconds. Elapsed time: 35.88 seconds; current allocated memory: 144.586 MB.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 31.81 seconds. CPU system time: 1.99 seconds. Elapsed time: 35.61 seconds; current allocated memory: -793.672 MB.
 INFO: [HLS 200-1510] Running: export_design 
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
 
@@ -338,14 +320,14 @@ INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
     ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
 source run_ippack.tcl -notrace
-ipx::create_core: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2771.328 ; gain = 4.984 ; free physical = 8381 ; free virtual = 24071
+ipx::create_core: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2771.328 ; gain = 4.984 ; free physical = 7305 ; free virtual = 23384
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2021.2/data/ip'.
 Running package_xo -xo_path /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/matmul/solution/impl/export.xo -kernel_name matmul -kernel_xml /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/matmul/solution/impl/ip/../kernel/kernel.xml -kernel_files /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp -ip_directory /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/matmul/solution/impl/ip/ip_unzip_dir -design_xml /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/matmul/solution/.autopilot/db/matmul.design.xml -debug_directory /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/matmul/solution/.debug -hls_directory /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/matmul/solution/impl/ip/hls_files
-INFO: [Common 17-206] Exiting Vivado at Fri Jul  1 15:29:23 2022...
+INFO: [Common 17-206] Exiting Vivado at Fri Jul  1 15:58:20 2022...
 INFO: [HLS 200-802] Generated output file matmul/solution/impl/export.xo
-INFO: [HLS 200-111] Finished Command export_design CPU user time: 26.35 seconds. CPU system time: 1.54 seconds. Elapsed time: 27.28 seconds; current allocated memory: 5.039 MB.
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 27.47 seconds. CPU system time: 1.69 seconds. Elapsed time: 28.92 seconds; current allocated memory: 5.531 MB.
 HLS completed successfully
-INFO: [HLS 200-112] Total CPU user time: 62.52 seconds. Total CPU system time: 4.21 seconds. Total elapsed time: 74.26 seconds; peak allocated memory: 359.477 MB.
-INFO: [Common 17-206] Exiting vitis_hls at Fri Jul  1 15:29:27 2022...
+INFO: [HLS 200-112] Total CPU user time: 62.57 seconds. Total CPU system time: 4.44 seconds. Total elapsed time: 67.4 seconds; peak allocated memory: 1.120 GB.
+INFO: [Common 17-206] Exiting vitis_hls at Fri Jul  1 15:58:23 2022...

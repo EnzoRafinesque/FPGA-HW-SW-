@@ -2,5 +2,5 @@
 <Messages>
 	<Message severity="INFO" prefix="[IMPL 213-8]" key="IMPL_8_1776" tag="" content="Exporting RTL as a Vivado IP." resolution=""/>
 	<Message severity="INFO" prefix="[HLS 200-802]" key="HLS 200-802" tag="" content="Generated output file matmul/solution/impl/export.xo" resolution=""/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command export_design CPU user time: 26.35 seconds. CPU system time: 1.54 seconds. Elapsed time: 27.28 seconds; current allocated memory: 5.039 MB." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command export_design CPU user time: 27.47 seconds. CPU system time: 1.69 seconds. Elapsed time: 28.92 seconds; current allocated memory: 5.531 MB." resolution=""/>
 </Messages>

@@ -14,9 +14,9 @@ local cmp59 <icmp_68> <integer> <Comparator> 'icmp' </home/mdu/Desktop/work_repo
 cmp59 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68
 reg: cmp59_reg_5312[0:0] lv
 
-local tmp_67 <> <integer> <> 'bitconcatenate' <>
-tmp_67 /tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:232
-reg: tmp_67_reg_5385[11:0] lv
+local tmp_66 <> <integer> <> 'bitconcatenate' <>
+tmp_66 /tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h:232
+reg: tmp_66_reg_5385[11:0] lv
 
 local cmp72 <icmp_68> <integer> <Comparator> 'icmp' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68>
 cmp72 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:68

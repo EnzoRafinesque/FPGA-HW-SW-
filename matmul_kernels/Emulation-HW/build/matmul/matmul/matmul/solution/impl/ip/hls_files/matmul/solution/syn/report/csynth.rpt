@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'matmul'
 ================================================================
 + General Information: 
-    * Date:           Fri Jul  1 15:28:57 2022
+    * Date:           Fri Jul  1 15:57:52 2022
     * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
     * Project:        matmul
     * Solution:       solution (Vitis Kernel Flow Target)
@@ -15,20 +15,20 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+---------+------------+-----------+-----+
-    |               Modules              |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |         |         |            |           |     |
-    |               & Loops              |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |   DSP   |     FF     |    LUT    | URAM|
-    +------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+---------+------------+-----------+-----+
-    |+ matmul                            |  Timing|  -0.00|   163995|  1.640e+06|         -|   163996|     -|        no|  44 (4%)|  64 (7%)|   6892 (1%)|  8260 (3%)|    -|
-    | + matmul_Pipeline_readA            |  Timing|  -0.00|    16387|  1.639e+05|         -|    16387|     -|        no|        -|        -|  1589 (~0%)|  276 (~0%)|    -|
-    |  o readA                           |      II|   7.30|    16385|  1.638e+05|         6|        4|  4096|       yes|        -|        -|           -|          -|    -|
-    | + matmul_Pipeline_readB            |  Timing|  -0.00|    16387|  1.639e+05|         -|    16387|     -|        no|        -|        -|  1589 (~0%)|  276 (~0%)|    -|
-    |  o readB                           |      II|   7.30|    16385|  1.638e+05|         6|        4|  4096|       yes|        -|        -|           -|          -|    -|
-    | + matmul_Pipeline_nopart1_nopart2  |       -|   2.40|   131077|  1.311e+06|         -|   131077|     -|        no|        -|  64 (7%)|  1125 (~0%)|  3734 (1%)|    -|
-    |  o nopart1_nopart2                 |      II|   7.30|   131075|  1.311e+06|        36|       32|  4096|       yes|        -|        -|           -|          -|    -|
-    | + matmul_Pipeline_writeC           |  Timing|  -0.00|    16387|  1.639e+05|         -|    16387|     -|        no|        -|        -|   966 (~0%)|  811 (~0%)|    -|
-    |  o writeC                          |      II|   7.30|    16385|  1.638e+05|         5|        4|  4096|       yes|        -|        -|           -|          -|    -|
-    +------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+---------+------------+-----------+-----+
+    +------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+-----------+---------+------------+-----------+-----+
+    |               Modules              |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |           |         |            |           |     |
+    |               & Loops              |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM    |   DSP   |     FF     |    LUT    | URAM|
+    +------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+-----------+---------+------------+-----------+-----+
+    |+ matmul                            |  Timing|  -0.00|   139419|  1.394e+06|         -|   139420|     -|        no|  128 (11%)|  64 (7%)|   7094 (1%)|  9698 (4%)|    -|
+    | + matmul_Pipeline_readA            |  Timing|  -0.00|     4099|  4.099e+04|         -|     4099|     -|        no|          -|        -|  1075 (~0%)|  226 (~0%)|    -|
+    |  o readA                           |       -|   7.30|     4097|  4.097e+04|         3|        1|  4096|       yes|          -|        -|           -|          -|    -|
+    | + matmul_Pipeline_readB            |  Timing|  -0.00|     4099|  4.099e+04|         -|     4099|     -|        no|          -|        -|  1075 (~0%)|  226 (~0%)|    -|
+    |  o readB                           |       -|   7.30|     4097|  4.097e+04|         3|        1|  4096|       yes|          -|        -|           -|          -|    -|
+    | + matmul_Pipeline_nopart1_nopart2  |       -|   2.40|   131077|  1.311e+06|         -|   131077|     -|        no|          -|  64 (7%)|  1125 (~0%)|  3734 (1%)|    -|
+    |  o nopart1_nopart2                 |      II|   7.30|   131075|  1.311e+06|        36|       32|  4096|       yes|          -|        -|           -|          -|    -|
+    | + matmul_Pipeline_writeC           |  Timing|  -0.00|     4099|  4.099e+04|         -|     4099|     -|        no|          -|        -|   598 (~0%)|  753 (~0%)|    -|
+    |  o writeC                          |       -|   7.30|     4097|  4.097e+04|         3|        1|  4096|       yes|          -|        -|           -|          -|    -|
+    +------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+-----------+---------+------------+-----------+-----+
 
 
 ================================================================
@@ -39,8 +39,8 @@
 | Interface   | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
 |             | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
 +-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
-| m_axi_gmem0 | 16 -> 128  | 32            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=16           |
-| m_axi_gmem1 | 16 -> 128  | 32            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=16           |
+| m_axi_gmem0 | 16 -> 512  | 32            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=58           |
+| m_axi_gmem1 | 16 -> 512  | 32            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=58           |
 +-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
 
 * S_AXILITE Interfaces
@@ -116,9 +116,9 @@
 +--------------+-----------+--------+-------+---------------------------------------------------------------------------------+
 | HW Interface | Direction | Length | Width | Location                                                                        |
 +--------------+-----------+--------+-------+---------------------------------------------------------------------------------+
-| m_axi_gmem0  | read      | 512    | 128   | /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34:9 |
-| m_axi_gmem1  | read      | 512    | 128   | /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45:9 |
-| m_axi_gmem0  | write     | 512    | 128   | /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90:9 |
+| m_axi_gmem0  | read      | 128    | 512   | /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34:9 |
+| m_axi_gmem1  | read      | 128    | 512   | /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:45:9 |
+| m_axi_gmem0  | write     | 128    | 512   | /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:90:9 |
 +--------------+-----------+--------+-------+---------------------------------------------------------------------------------+
 
 
@@ -130,15 +130,15 @@
 +---------------------------------------+-----+--------+---------------+-----+--------+---------+
 | + matmul                              | 64  |        |               |     |        |         |
 |  + matmul_Pipeline_readA              | 0   |        |               |     |        |         |
-|    add_ln34_fu_148_p2                 | -   |        | add_ln34      | add | fabric | 0       |
-|    add_ln38_fu_194_p2                 | -   |        | add_ln38      | add | fabric | 0       |
-|    add_ln40_fu_232_p2                 | -   |        | add_ln40      | add | fabric | 0       |
-|    j_6_fu_267_p2                      | -   |        | j_6           | add | fabric | 0       |
+|    add_ln34_fu_146_p2                 | -   |        | add_ln34      | add | fabric | 0       |
+|    add_ln38_fu_193_p2                 | -   |        | add_ln38      | add | fabric | 0       |
+|    add_ln40_fu_231_p2                 | -   |        | add_ln40      | add | fabric | 0       |
+|    j_6_fu_257_p2                      | -   |        | j_6           | add | fabric | 0       |
 |  + matmul_Pipeline_readB              | 0   |        |               |     |        |         |
-|    add_ln45_fu_148_p2                 | -   |        | add_ln45      | add | fabric | 0       |
-|    add_ln49_fu_194_p2                 | -   |        | add_ln49      | add | fabric | 0       |
-|    add_ln51_fu_232_p2                 | -   |        | add_ln51      | add | fabric | 0       |
-|    j_4_fu_267_p2                      | -   |        | j_4           | add | fabric | 0       |
+|    add_ln45_fu_146_p2                 | -   |        | add_ln45      | add | fabric | 0       |
+|    add_ln49_fu_193_p2                 | -   |        | add_ln49      | add | fabric | 0       |
+|    add_ln51_fu_231_p2                 | -   |        | add_ln51      | add | fabric | 0       |
+|    j_4_fu_257_p2                      | -   |        | j_4           | add | fabric | 0       |
 |  + matmul_Pipeline_nopart1_nopart2    | 64  |        |               |     |        |         |
 |    add_ln68_1_fu_1539_p2              | -   |        | add_ln68_1    | add | fabric | 0       |
 |    add_ln68_fu_1551_p2                | -   |        | add_ln68      | add | fabric | 0       |
@@ -272,10 +272,10 @@
 |    mac_muladd_16s_16s_16ns_16_4_1_U70 | 1   |        | temp_sum_V_63 | add | dsp    | 3       |
 |    add_ln72_fu_1640_p2                | -   |        | add_ln72      | add | fabric | 0       |
 |  + matmul_Pipeline_writeC             | 0   |        |               |     |        |         |
-|    add_ln90_fu_185_p2                 | -   |        | add_ln90      | add | fabric | 0       |
-|    add_ln94_fu_207_p2                 | -   |        | add_ln94      | add | fabric | 0       |
-|    add_ln96_fu_245_p2                 | -   |        | add_ln96      | add | fabric | 0       |
-|    j_2_fu_262_p2                      | -   |        | j_2           | add | fabric | 0       |
+|    add_ln90_fu_144_p2                 | -   |        | add_ln90      | add | fabric | 0       |
+|    add_ln94_fu_166_p2                 | -   |        | add_ln94      | add | fabric | 0       |
+|    add_ln96_fu_204_p2                 | -   |        | add_ln96      | add | fabric | 0       |
+|    j_2_fu_221_p2                      | -   |        | j_2           | add | fabric | 0       |
 +---------------------------------------+-----+--------+---------------+-----+--------+---------+
 
 
@@ -285,7 +285,7 @@
 +----------+------+------+--------+----------+---------+------+---------+
 | Name     | BRAM | URAM | Pragma | Variable | Storage | Impl | Latency |
 +----------+------+------+--------+----------+---------+------+---------+
-| + matmul | 44   | 0    |        |          |         |      |         |
+| + matmul | 128  | 0    |        |          |         |      |         |
 |   A_V_U  | 4    | -    |        | A_V      | ram_1p  | auto | 1       |
 |   B_V_U  | 4    | -    |        | B_V      | rom_np  | auto | 1       |
 |   C_V_U  | 4    | -    |        | C_V      | ram_t2p | auto | 1       |
