@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Fri Jul  1 15:13:52 2022",
- "timestampMillis": "1656681232406",
+ "dateTimestamp": "Fri Jul  1 15:28:04 2022",
+ "timestampMillis": "1656682084986",
  "buildStep": {
-  "cmdId": "b94dc5d5-7f07-4de7-a4e0-5680eb0d65fa",
+  "cmdId": "59e58171-068f-48d9-8cd1-db513c54d84e",
   "name": "v++",
   "logFile": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul.steps.log",
   "commandLine": "/tools/Xilinx/Vitis/2021.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --target hw_emu --compile -I../src --config matmul-compile.cfg -obuild/matmul.xo ../src/krnl_matrixmul.cpp ",
@@ -29,7 +29,7 @@
   "iniFiles": [
    {
     "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/matmul-compile.cfg",
-    "content": "platform=xilinx_zc706_base_202120_1\nsave-temps=1\nkernel=matmul\ndebug=1\nmessageDb=build/matmul.mdb\ntemp_dir=build\nreport_dir=build/reports\nlog_dir=build/logs\n\n[advanced]\nmisc=solution_name=matmul\n\n[hls]\nmax_memory_ports=matmul\nmemory_port_data_width=matmul:64"
+    "content": "platform=xilinx_zc706_base_202120_1\nsave-temps=1\nkernel=matmul\ndebug=1\nmessageDb=build/matmul.mdb\ntemp_dir=build\nreport_dir=build/reports\nlog_dir=build/logs\n\n[advanced]\nmisc=solution_name=matmul\n\n[hls]\nmax_memory_ports=matmul\nmemory_port_data_width=matmul:128"
    }
   ],
   "cwd": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW"
@@ -39,10 +39,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Jul  1 15:13:52 2022",
- "timestampMillis": "1656681232406",
+ "dateTimestamp": "Fri Jul  1 15:28:04 2022",
+ "timestampMillis": "1656682084986",
  "status": {
-  "cmdId": "b94dc5d5-7f07-4de7-a4e0-5680eb0d65fa",
+  "cmdId": "59e58171-068f-48d9-8cd1-db513c54d84e",
   "state": "CS_RUNNING"
  }
 }
@@ -50,8 +50,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Fri Jul  1 15:13:54 2022",
- "timestampMillis": "1656681234786",
+ "dateTimestamp": "Fri Jul  1 15:28:07 2022",
+ "timestampMillis": "1656682087871",
  "buildSummary": {
   "hardwarePlatform": "xilinx_zc706_base_202120_1.xpfm",
   "hardwareDsa": "hw.xsa",
@@ -86,10 +86,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Fri Jul  1 15:13:54 2022",
- "timestampMillis": "1656681234791",
+ "dateTimestamp": "Fri Jul  1 15:28:07 2022",
+ "timestampMillis": "1656682087877",
  "buildStep": {
-  "cmdId": "8bb68659-7e44-42dc-bac7-289db016c15b",
+  "cmdId": "d1da82f6-959d-4b65-82dd-34495f27d0b2",
   "name": "vitis_hls",
   "logFile": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/vitis_hls.log",
   "commandLine": "vitis_hls -f /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/matmul.tcl -messageDb vitis_hls.pb",
@@ -108,10 +108,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Jul  1 15:13:54 2022",
- "timestampMillis": "1656681234791",
+ "dateTimestamp": "Fri Jul  1 15:28:07 2022",
+ "timestampMillis": "1656682087877",
  "status": {
-  "cmdId": "8bb68659-7e44-42dc-bac7-289db016c15b",
+  "cmdId": "d1da82f6-959d-4b65-82dd-34495f27d0b2",
   "state": "CS_RUNNING"
  }
 }
@@ -119,10 +119,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Jul  1 15:15:01 2022",
- "timestampMillis": "1656681301017",
+ "dateTimestamp": "Fri Jul  1 15:29:27 2022",
+ "timestampMillis": "1656682167326",
  "status": {
-  "cmdId": "8bb68659-7e44-42dc-bac7-289db016c15b",
+  "cmdId": "d1da82f6-959d-4b65-82dd-34495f27d0b2",
   "state": "CS_PASSED"
  }
 }
@@ -130,8 +130,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jul  1 15:15:01 2022",
- "timestampMillis": "1656681301039",
+ "dateTimestamp": "Fri Jul  1 15:29:27 2022",
+ "timestampMillis": "1656682167364",
  "report": {
   "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/matmul/solution/.autopilot/db/matmul.design.xml",
   "name": "matmul",
@@ -144,8 +144,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jul  1 15:15:01 2022",
- "timestampMillis": "1656681301040",
+ "dateTimestamp": "Fri Jul  1 15:29:27 2022",
+ "timestampMillis": "1656682167365",
  "report": {
   "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/matmul/solution/.autopilot/db/.message_syn.xml",
   "name": "matmul",
@@ -158,8 +158,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jul  1 15:15:01 2022",
- "timestampMillis": "1656681301041",
+ "dateTimestamp": "Fri Jul  1 15:29:27 2022",
+ "timestampMillis": "1656682167366",
  "report": {
   "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/reports/matmul/hls_reports/matmul_csynth.rpt",
   "name": "matmul",
@@ -172,8 +172,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jul  1 15:15:01 2022",
- "timestampMillis": "1656681301041",
+ "dateTimestamp": "Fri Jul  1 15:29:27 2022",
+ "timestampMillis": "1656682167367",
  "report": {
   "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/matmul/solution/syn/report/matmul_csynth.xml",
   "name": "matmul",
@@ -186,8 +186,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jul  1 15:15:01 2022",
- "timestampMillis": "1656681301053",
+ "dateTimestamp": "Fri Jul  1 15:29:27 2022",
+ "timestampMillis": "1656682167381",
  "report": {
   "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/reports/matmul/system_estimate_matmul.xtxt",
   "name": "",
@@ -200,8 +200,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jul  1 15:15:01 2022",
- "timestampMillis": "1656681301218",
+ "dateTimestamp": "Fri Jul  1 15:29:27 2022",
+ "timestampMillis": "1656682167533",
  "report": {
   "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/guidance.html",
   "name": "",
@@ -214,8 +214,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jul  1 15:15:01 2022",
- "timestampMillis": "1656681301219",
+ "dateTimestamp": "Fri Jul  1 15:29:27 2022",
+ "timestampMillis": "1656682167534",
  "report": {
   "path": "/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/guidance.pb",
   "name": "",
@@ -228,10 +228,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Jul  1 15:15:01 2022",
- "timestampMillis": "1656681301219",
+ "dateTimestamp": "Fri Jul  1 15:29:27 2022",
+ "timestampMillis": "1656682167535",
  "status": {
-  "cmdId": "b94dc5d5-7f07-4de7-a4e0-5680eb0d65fa",
+  "cmdId": "59e58171-068f-48d9-8cd1-db513c54d84e",
   "state": "CS_PASSED"
  }
 }
