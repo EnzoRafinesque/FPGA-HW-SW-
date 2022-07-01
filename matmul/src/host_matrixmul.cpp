@@ -276,7 +276,7 @@ int main(int argc, char* argv[]) {
 	//OCL_CHECK(err, err = event.getProfilingInfo<uint64_t>(CL_PROFILING_COMMAND_END, &nstimeend));
     //auto matmul_time = (nstimeend - nstimestart) / repeat_counter;
    // auto matmul_time = (nstimeend - nstimestart);
-    print(C.data(), c_dim, c_dim);
+    //print(C.data(), c_dim, c_dim);
     //cout << "| " << std::left << std::setw(24) << "MATMUL_NAIVE: (cl::event) "
                //   << "|" << std::right << std::setw(24) << matmul_time  << " (NS)  |\n";
     //std::this_thread::sleep_for(2s);

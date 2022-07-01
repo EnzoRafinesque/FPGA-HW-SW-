@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="matmul_matmul,hls_ip_2021_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z045-ffg900-2,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=262299,HLS_SYN_TPT=none,HLS_SYN_MEM=20,HLS_SYN_DSP=0,HLS_SYN_FF=6828,HLS_SYN_LUT=8158,HLS_VERSION=2021_2}" *)
+(* CORE_GENERATION_INFO="matmul_matmul,hls_ip_2021_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z045-ffg900-2,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=196763,HLS_SYN_TPT=none,HLS_SYN_MEM=28,HLS_SYN_DSP=0,HLS_SYN_FF=6877,HLS_SYN_LUT=8306,HLS_VERSION=2021_2}" *)
 
 module matmul (
         ap_local_block,
@@ -281,7 +281,7 @@ parameter    C_S_AXI_CONTROL_ADDR_WIDTH = 6;
 parameter    C_S_AXI_DATA_WIDTH = 32;
 parameter    C_M_AXI_GMEM0_ID_WIDTH = 1;
 parameter    C_M_AXI_GMEM0_ADDR_WIDTH = 32;
-parameter    C_M_AXI_GMEM0_DATA_WIDTH = 32;
+parameter    C_M_AXI_GMEM0_DATA_WIDTH = 64;
 parameter    C_M_AXI_GMEM0_AWUSER_WIDTH = 1;
 parameter    C_M_AXI_GMEM0_ARUSER_WIDTH = 1;
 parameter    C_M_AXI_GMEM0_WUSER_WIDTH = 1;
@@ -293,7 +293,7 @@ parameter    C_M_AXI_GMEM0_CACHE_VALUE = 3;
 parameter    C_M_AXI_DATA_WIDTH = 32;
 parameter    C_M_AXI_GMEM1_ID_WIDTH = 1;
 parameter    C_M_AXI_GMEM1_ADDR_WIDTH = 32;
-parameter    C_M_AXI_GMEM1_DATA_WIDTH = 32;
+parameter    C_M_AXI_GMEM1_DATA_WIDTH = 64;
 parameter    C_M_AXI_GMEM1_AWUSER_WIDTH = 1;
 parameter    C_M_AXI_GMEM1_ARUSER_WIDTH = 1;
 parameter    C_M_AXI_GMEM1_WUSER_WIDTH = 1;
@@ -305,9 +305,9 @@ parameter    C_M_AXI_GMEM1_CACHE_VALUE = 3;
 
 parameter C_S_AXI_CONTROL_WSTRB_WIDTH = (32 / 8);
 parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
-parameter C_M_AXI_GMEM0_WSTRB_WIDTH = (32 / 8);
+parameter C_M_AXI_GMEM0_WSTRB_WIDTH = (64 / 8);
 parameter C_M_AXI_WSTRB_WIDTH = (32 / 8);
-parameter C_M_AXI_GMEM1_WSTRB_WIDTH = (32 / 8);
+parameter C_M_AXI_GMEM1_WSTRB_WIDTH = (64 / 8);
 
 output   ap_local_block;
 input   ap_clk;
@@ -458,9 +458,9 @@ wire    ap_CS_fsm_state75;
 reg    gmem0_blk_n_B;
 wire    ap_CS_fsm_state145;
 reg    gmem1_blk_n_AR;
-reg   [29:0] trunc_ln_reg_219;
-reg   [29:0] trunc_ln1_reg_225;
-reg   [29:0] trunc_ln4_reg_231;
+reg   [28:0] trunc_ln_reg_219;
+reg   [28:0] trunc_ln1_reg_225;
+reg   [28:0] trunc_ln4_reg_231;
 reg   [11:0] A_V_address0;
 reg    A_V_ce0;
 reg    A_V_we0;
@@ -494,8 +494,8 @@ wire   [3:0] grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWQOS;
 wire   [3:0] grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWREGION;
 wire   [0:0] grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_AWUSER;
 wire    grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WVALID;
-wire   [31:0] grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WDATA;
-wire   [3:0] grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WSTRB;
+wire   [63:0] grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WDATA;
+wire   [7:0] grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WSTRB;
 wire    grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WLAST;
 wire   [0:0] grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WID;
 wire   [0:0] grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_WUSER;
@@ -537,8 +537,8 @@ wire   [3:0] grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWQOS;
 wire   [3:0] grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWREGION;
 wire   [0:0] grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_AWUSER;
 wire    grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WVALID;
-wire   [31:0] grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WDATA;
-wire   [3:0] grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WSTRB;
+wire   [63:0] grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WDATA;
+wire   [7:0] grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WSTRB;
 wire    grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WLAST;
 wire   [0:0] grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WID;
 wire   [0:0] grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_WUSER;
@@ -601,8 +601,8 @@ wire   [3:0] grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWQOS;
 wire   [3:0] grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWREGION;
 wire   [0:0] grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWUSER;
 wire    grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WVALID;
-wire   [31:0] grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WDATA;
-wire   [3:0] grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WSTRB;
+wire   [63:0] grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WDATA;
+wire   [7:0] grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WSTRB;
 wire    grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WLAST;
 wire   [0:0] grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WID;
 wire   [0:0] grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_WUSER;
@@ -655,7 +655,7 @@ reg   [3:0] gmem0_ARREGION;
 reg   [0:0] gmem0_ARUSER;
 wire    gmem0_RVALID;
 reg    gmem0_RREADY;
-wire   [31:0] gmem0_RDATA;
+wire   [63:0] gmem0_RDATA;
 wire    gmem0_RLAST;
 wire   [0:0] gmem0_RID;
 wire   [8:0] gmem0_RFIFONUM;
@@ -683,7 +683,7 @@ reg   [3:0] gmem1_ARREGION;
 reg   [0:0] gmem1_ARUSER;
 wire    gmem1_RVALID;
 reg    gmem1_RREADY;
-wire   [31:0] gmem1_RDATA;
+wire   [63:0] gmem1_RDATA;
 wire    gmem1_RLAST;
 wire   [0:0] gmem1_RID;
 wire   [8:0] gmem1_RFIFONUM;
@@ -1142,7 +1142,7 @@ matmul_matmul_Pipeline_writeC grp_matmul_Pipeline_writeC_fu_151(
     .m_axi_gmem0_ARUSER(grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_ARUSER),
     .m_axi_gmem0_RVALID(1'b0),
     .m_axi_gmem0_RREADY(grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_RREADY),
-    .m_axi_gmem0_RDATA(32'd0),
+    .m_axi_gmem0_RDATA(64'd0),
     .m_axi_gmem0_RLAST(1'b0),
     .m_axi_gmem0_RID(1'd0),
     .m_axi_gmem0_RFIFONUM(9'd0),
@@ -1201,7 +1201,7 @@ control_s_axi_U(
 
 matmul_gmem0_m_axi #(
     .CONSERVATIVE( 1 ),
-    .USER_DW( 32 ),
+    .USER_DW( 64 ),
     .USER_AW( 32 ),
     .USER_MAXREQS( 69 ),
     .NUM_READ_OUTSTANDING( 16 ),
@@ -1319,7 +1319,7 @@ gmem0_m_axi_U(
 
 matmul_gmem1_m_axi #(
     .CONSERVATIVE( 1 ),
-    .USER_DW( 32 ),
+    .USER_DW( 64 ),
     .USER_AW( 32 ),
     .USER_MAXREQS( 69 ),
     .NUM_READ_OUTSTANDING( 16 ),
@@ -1423,11 +1423,11 @@ gmem1_m_axi_U(
     .I_AWREGION(4'd0),
     .I_WVALID(1'b0),
     .I_WREADY(gmem1_WREADY),
-    .I_WDATA(32'd0),
+    .I_WDATA(64'd0),
     .I_WID(1'd0),
     .I_WUSER(1'd0),
     .I_WLAST(1'b0),
-    .I_WSTRB(4'd0),
+    .I_WSTRB(8'd0),
     .I_BVALID(gmem1_BVALID),
     .I_BREADY(1'b0),
     .I_BRESP(gmem1_BRESP),
@@ -1529,9 +1529,9 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state1)) begin
-        trunc_ln1_reg_225 <= {{in2[31:2]}};
-        trunc_ln4_reg_231 <= {{out_r[31:2]}};
-        trunc_ln_reg_219 <= {{in1[31:2]}};
+        trunc_ln1_reg_225 <= {{in2[31:3]}};
+        trunc_ln4_reg_231 <= {{out_r[31:3]}};
+        trunc_ln_reg_219 <= {{in1[31:3]}};
     end
 end
 
@@ -2181,7 +2181,7 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_state2_io) & (1'b1 == ap_CS_fsm_state2))) begin
-        gmem0_ARLEN = 32'd2048;
+        gmem0_ARLEN = 32'd1024;
     end else if (((1'b1 == ap_CS_fsm_state73) | (1'b1 == ap_CS_fsm_state72))) begin
         gmem0_ARLEN = grp_matmul_Pipeline_readA_fu_128_m_axi_gmem0_ARLEN;
     end else begin
@@ -2283,7 +2283,7 @@ end
 
 always @ (*) begin
     if ((~((gmem0_AWREADY == 1'b0) | (grp_matmul_Pipeline_nopart1_nopart2_fu_144_ap_done == 1'b0)) & (1'b1 == ap_CS_fsm_state75))) begin
-        gmem0_AWLEN = 32'd2048;
+        gmem0_AWLEN = 32'd1024;
     end else if (((1'b1 == ap_CS_fsm_state77) | (1'b1 == ap_CS_fsm_state76))) begin
         gmem0_AWLEN = grp_matmul_Pipeline_writeC_fu_151_m_axi_gmem0_AWLEN;
     end else begin
@@ -2435,7 +2435,7 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_state2_io) & (1'b1 == ap_CS_fsm_state2))) begin
-        gmem1_ARLEN = 32'd2048;
+        gmem1_ARLEN = 32'd1024;
     end else if (((1'b1 == ap_CS_fsm_state73) | (1'b1 == ap_CS_fsm_state72))) begin
         gmem1_ARLEN = grp_matmul_Pipeline_readB_fu_136_m_axi_gmem1_ARLEN;
     end else begin

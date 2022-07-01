@@ -4,121 +4,65 @@ RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
 # ST_1
 local icmp_ln34 <icmp_34> <integer> <Comparator> 'icmp' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34>
 icmp_ln34 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:34
-reg: icmp_ln34_reg_333[0:0] lv
+reg: icmp_ln34_reg_325[0:0] lv
 
 local icmp_ln40 <icmp_40> <integer> <Comparator> 'icmp' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
 icmp_ln40 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: icmp_ln40_reg_337[0:0] lv
+reg: icmp_ln40_reg_329[0:0] lv
 
-# ST_17
-local gmem0_addr_read_15 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
-gmem0_addr_read_15 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_15_reg_426[31:0] lv
+# ST_9
+local gmem0_addr_read_7 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
+gmem0_addr_read_7 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
+reg: gmem0_addr_read_7_reg_378[63:0] lv
 
 
 RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage1)
 # ST_2
 local gmem0_addr_read <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
 gmem0_addr_read /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_reg_346[31:0] lv
-
-
-RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage10)
-# ST_11
-local gmem0_addr_read_9 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
-gmem0_addr_read_9 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_9_reg_391[31:0] lv
-
-
-RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage11)
-# ST_12
-local gmem0_addr_read_10 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
-gmem0_addr_read_10 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_10_reg_396[31:0] lv
-
-
-RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage12)
-# ST_13
-local gmem0_addr_read_11 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
-gmem0_addr_read_11 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_11_reg_401[31:0] lv
-
-
-RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage13)
-# ST_14
-local gmem0_addr_read_12 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
-gmem0_addr_read_12 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_12_reg_406[31:0] lv
-
-
-RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage14)
-# ST_15
-local gmem0_addr_read_13 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
-gmem0_addr_read_13 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_13_reg_411[31:0] lv
-
-
-RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage15)
-# ST_16
-local gmem0_addr_read_14 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
-gmem0_addr_read_14 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_14_reg_416[31:0] lv
+reg: gmem0_addr_read_reg_338[63:0] lv
 
 
 RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage2)
 # ST_3
 local gmem0_addr_read_1 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
 gmem0_addr_read_1 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_1_reg_351[31:0] lv
+reg: gmem0_addr_read_1_reg_343[63:0] lv
 
 
 RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage3)
 # ST_4
 local gmem0_addr_read_2 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
 gmem0_addr_read_2 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_2_reg_356[31:0] lv
+reg: gmem0_addr_read_2_reg_348[63:0] lv
 
 
 RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage4)
 # ST_5
 local gmem0_addr_read_3 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
 gmem0_addr_read_3 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_3_reg_361[31:0] lv
+reg: gmem0_addr_read_3_reg_353[63:0] lv
 
 
 RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage5)
 # ST_6
 local gmem0_addr_read_4 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
 gmem0_addr_read_4 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_4_reg_366[31:0] lv
+reg: gmem0_addr_read_4_reg_358[63:0] lv
 
 
 RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage6)
 # ST_7
 local gmem0_addr_read_5 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
 gmem0_addr_read_5 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_5_reg_371[31:0] lv
+reg: gmem0_addr_read_5_reg_363[63:0] lv
 
 
 RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage7)
 # ST_8
 local gmem0_addr_read_6 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
 gmem0_addr_read_6 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_6_reg_376[31:0] lv
-
-
-RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage8)
-# ST_9
-local gmem0_addr_read_7 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
-gmem0_addr_read_7 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_7_reg_381[31:0] lv
-
-
-RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage9)
-# ST_10
-local gmem0_addr_read_8 <read_40> <integer> <> 'read' </home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40>
-gmem0_addr_read_8 /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:40
-reg: gmem0_addr_read_8_reg_386[31:0] lv
+reg: gmem0_addr_read_6_reg_368[63:0] lv
 
 
 End Function 'matmul_Pipeline_readA'
