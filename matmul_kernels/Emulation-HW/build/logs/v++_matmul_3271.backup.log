@@ -1,0 +1,20 @@
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/reports/matmul
+	Log files: /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/logs/matmul
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul.xo.compile_summary, at Thu Jun 30 13:58:38 2022
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Thu Jun 30 13:58:38 2022
+INFO: [v++ 60-895]   Target platform: /tools/Xilinx/Vitis/2021.2/platforms/xilinx_zc706_base_202120_1/xilinx_zc706_base_202120_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/tools/Xilinx/Vitis/2021.2/platforms/xilinx_zc706_base_202120_1/hw/hw.xsa'
+INFO: [v++ 60-585] Compiling for hardware emulation target
+INFO: [v++ 60-423]   Target device: xilinx_zc706_base_202120_1
+INFO: [v++ 60-242] Creating kernel: 'matmul'
+WARNING: [v++ 60-2440] The option 'hls.max_memory_ports' is being deprecated. Please Create a TCL file with vitis_hls TCL command 'config_interface -m_axi_auto_max_ports=1'. Specify the TCL file using '--hls.pre_tcl' option
+WARNING: [v++ 60-2440] The option 'hls.memory_port_data_width' is being deprecated. Please Create a TCL file with vitis_hls TCL command 'config_interface -m_axi_min_bitwidth <width>' and 'config_interface -m_axi_max_bitwidth <width>'. Specify the TCL file using '--hls.pre_tcl' option
+
+===>The following messages were generated while  performing high-level synthesis for kernel: matmul Log file: /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/vitis_hls.log :
+ERROR: [v++ 207-1186] expected expression (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:10:19)
+ERROR: [v++ 60-300] Failed to build kernel(ip) matmul, see log for details: /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/vitis_hls.log
+ERROR: [v++ 60-773] In '/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/vitis_hls.log', caught Tcl error: ERROR: [HLS 207-1186] expected expression (/home/mdu/Desktop/work_repo/work_prj/matmul_kernels/src/krnl_matrixmul.cpp:10:19)
+ERROR: [v++ 60-599] Kernel compilation failed to complete
+ERROR: [v++ 60-592] Failed to finish compilation
+INFO: [v++ 60-1653] Closing dispatch client.
