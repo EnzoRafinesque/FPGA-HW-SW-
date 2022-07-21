@@ -1,21 +1,44 @@
-# HERO-MDH-Internship_Summer2022_SW_HW_Accel
+# Optimizations thanks to pragmas
 
-In this branch we'll extend the AXI data width.
+## Overview
+Here we'll re-use the matmul system (multiplication of 2 matrix) and optimize it with pragmas. To compare the results we check the latency, ressources (LUT and FF) and the excecution time on the zcu104 board.
 
-The AXI data width can be change directly in the configuration of the matmul_kernel.prj
+## Pragmas' used 
+### Pipeline
+Using pipeline reduces the initiation interval for a function or loop by allowing the concurrent execution of operations. For a better understanding below a representation of pipeline extracted from Vitis High-Level Synthesis User Guide.
+![image](https://user-images.githubusercontent.com/107047264/180212352-65bf49bc-338c-4e4f-894f-d5fd9efb9caa.png)
 
-![image](https://user-images.githubusercontent.com/107047264/176856378-cdc29b24-d837-425c-bafe-82ed94ece6a2.png)
+To use the pipeline we use under the loop we want to optimize: 
+`#pragma HLS PIPELINE`
 
+### Loop flatten
+Using loop flatten allows nested loops to be flattened into a single loop hierarchy with improved latency. Here an example where using the loop flatten we go from 36 transition to 28.
 
-Then build the project and it should change the size in the project configuration, here the matmul-compile.cfg:
+![image](https://user-images.githubusercontent.com/107047264/180215366-e7693c02-38fd-402b-a54d-ef69e9a9e9d4.png)
 
-![image](https://user-images.githubusercontent.com/107047264/176856544-405e517d-e926-4441-8ef3-f2dc42ce9a23.png)
+ By default, loops are flattened and we use "off" if it optimise your case under the selected loop with `#pragma HLS LOOP_FLATTEN off` 
+ 
+ ### Array partition
+ Using array partion partitions an array into smaller arrays or individual elements. There are 3 types of array partiton :
+ - cyclic :The array is partitioned cyclically by putting one element into each new array before coming back to the first array to repeat the cycle until the array is fully partitioned. The factor determine how many arrays are used
+ - block :Smaller arrays are created from consecutive blocks of the original array. The factor determines the numer of blocks
+ - complete :Complete partitioning means decompose the array into individual elements
+ 
+ To use the array partition on an array called A, with a cyclic form, a factor 8 and an array dimension 2 write `#pragma HLS ARRAY_PARTITION variable=A cyclic factor=8 dim=2`
+ 
+ ### Dataflow 
+Using dataflow enables task-level pipelining. That allows consumer functions or loops to start operation before the producer functions or loops have completed. This allows functions or loops to operate in parallel. For a better understanding below a representation of dataflow extracted from Vitis High-Level Synthesis User Guide.
+ 
+![image](https://user-images.githubusercontent.com/107047264/180222871-343673aa-45b5-4198-96fb-62cc67d1df26.png)
 
+## Experiments
+Now we'll try the pragmas and compare the optimization. We test the same code seven times :
+- without any pragmas
+- with pipeline
+- with pipeline and loop flatten
+- with pipeline, loop flatten and array partition factor 32
+- with pipeline, loop flatten, array partition factor 32 and dataflow
+- with dataflow
+- with pipeline, loop flatten and array partition factor 8
 
-In the case where the file isn't modify the project need to be rebuild. 
-
-In our case datas are in 16 bits, with an AXI data width of 32 bits we can see 2 datas (first ones between 0 to 15 below the red line and the second ones above the line) 
-in the same bus while checking with Vivado waveform.
-
-![image](https://user-images.githubusercontent.com/107047264/176856269-e06688bd-00c7-4d0a-82d5-8e976ea44088.png)
 
