@@ -41,4 +41,9 @@ Now we'll try the pragmas and compare the optimization. We test the same code se
 - with dataflow
 - with pipeline, loop flatten and array partition factor 8
 
+## Results
+After different tests on the zcu104 we have the results:
+
+![pragmas_results](https://user-images.githubusercontent.com/107047264/180436943-1a7229ab-a96a-424b-a113-0f2416aab893.png)
+
 
