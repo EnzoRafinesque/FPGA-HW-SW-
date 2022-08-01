@@ -1,2 +1,0 @@
-performing high-level synthesis for kernel: matmul
-Log file: /home/mdu/Desktop/work_repo/work_prj/matmul_kernels/Emulation-HW/build/matmul/matmul/vitis_hls.log
