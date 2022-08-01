@@ -1,0 +1,8 @@
+{
+    "lib": "libvart-dpu-runner.so",
+    "filename": "netname.xmodel",
+    "kernel": [
+        "subgraph_vgg_16\/conv1\/conv1_1\/Conv2D"
+    ],
+    "target": "DPUCZDX8G_ISA1_B4096"
+}
