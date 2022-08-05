@@ -88,7 +88,7 @@
 
 1.  data preprocess
   ```
-  data channel order: RGB(0~255)                  
+  data channel order: RGB(0~255)
   resize: short side reisze to 256 and keep the aspect ratio.(tf.image.resize_bilinear(image, [height, width], align_corners=False))
   center crop: 224 * 224
   input = input - [123.68, 116.78, 103.94] 
