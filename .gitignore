@@ -1,0 +1,4 @@
+*.JPEG 
+*.png 
+Vgg_16/data/Imagenet/*
+LeNet/MNIST/image_dir/*
