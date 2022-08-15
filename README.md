@@ -122,4 +122,28 @@ To conclude, to run the model we need the application built before, the prototxt
 
 ![image](https://user-images.githubusercontent.com/107047264/183617453-97214679-fc29-4af9-84c1-e71e5b780e21.png)
 
+## Running real time detetction
+
+Now that we know the steps to quantize, compile and run a vitis zoo model on the board. Now we want to try to run a real time detection through the board.
+
+We will use for that:
+- the board zcu104
+- a camera conected to the usb port of the board ( See3CAM)
+- a monitor conected to the the display port of the board
+
+For the application we are using the test_video_detection from Xilinx. As seen previously this test can be modified.
+Turn on the board and monitor at the same time to create the link between both. The monitor should display the file explorer of the board. 
+Now from the board shell open on your computer use the line:
+```
+DISPLAY =: 0.0 
+```
+And then the command line for yolov4  
+```
+./test_video_yolov4 yolov4_leaky_512_tf 0 -t 8 >/dev/null 2>&1 
+```
+- test_video_yolov4 corresponds to your test application depending on the detection neural network chosen.
+- yolov4_leaky_512_tf is the folder containing the files from quantization/compilation or directly models from vitis zoo. It regroups .xmodel, .json, .txt, .prototxt
+- 0 refers to the camera, if you want to run a file replace 0 by the path to the file
+- -t 8 is the number of threads
+- /dev/null 2>&1 exports the video flux to the monitor 
 
