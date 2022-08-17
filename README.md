@@ -118,9 +118,10 @@ int main(int argc, char* argv[]) {
 
 To conclude, to run the model we need the application built before, the prototxt from the quantization, the .json for the specified board and the xmodel from compilation (we rename or model vgg_16_tf . Then we choose the image we want our model to recognize under the name 001.jpeg (the image must have little dimensions such as 300x300). In this example we try this picture:
 
-![image](https://user-images.githubusercontent.com/107047264/183617354-2e40e3cf-46df-4399-bab6-8aebe86bdec0.png)
+![image](https://user-images.githubusercontent.com/107047264/185084676-ea679ed3-e508-4188-9582-2e607cc18e25.png)
 
-![image](https://user-images.githubusercontent.com/107047264/183617453-97214679-fc29-4af9-84c1-e71e5b780e21.png)
+![image](https://user-images.githubusercontent.com/107047264/185084907-887b3fa6-76fa-4bc1-b24b-2d03ea2e73a0.png)
+
 
 ## Running real time detetction
 
