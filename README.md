@@ -60,7 +60,7 @@ netron name_of_the_graph.pb
 ```
 
 ## Compilation
-Using the .pb obtained previously and the .json from the architechture we compile with the command “vai_c_tensorflow”  as below:
+Using the .pb obtained previously and the .json the .json for the architecture of the specified DPU (available on viis ai github) we compile with the command “vai_c_tensorflow”  as below:
 ```
 vai_c_tensorflow -f /PATH/TO/quantized_model.pb -a /PATH/TO/arch.json -o /OUTPUTPATH -n xmodel_name
 ```
@@ -112,7 +112,7 @@ int main(int argc, char* argv[]) {
 	return 0;
 }
 ```
-nb: the environment and libraries for the board are from the image file from Xilinx
+!!!!!!!! the environment and libraries/tests for the board are from the image file from Xilinx. In the repository is tests and process we used but there are on the image files with all the environment needed. There are here only if you want to have a look !!!!!!!!!
 
 ## Running the model
 
